@@ -414,6 +414,7 @@ section{padding:90px 0;position:relative;}
   display:flex;flex-direction:column;
 }
 .bonus-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.bonus-photo{width:calc(100% + 52px);height:170px;object-fit:cover;display:block;margin:-30px -26px 22px;border-radius:var(--radius) var(--radius) 0 0;}
 .bonus-num{
   position:absolute;top:20px;right:24px;
   font-family:'Fraunces',serif;font-style:italic;font-size:13px;
@@ -484,6 +485,8 @@ section{padding:90px 0;position:relative;}
 }
 .author-name{font-weight:600;font-size:14px;color:var(--sage-deep);}
 .author-role{font-size:12px;color:var(--muted);}
+.author-info{display:flex;align-items:center;gap:12px;}
+.author-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--sage-mist);}
 .review-highlight{
   display:inline-block;margin-top:14px;
   background:var(--cream);
@@ -908,11 +911,11 @@ footer a:hover{color:var(--terra-soft);}
             <span class="overlay-pill">✨ Бонуси для результату</span>
           </div>
           <div class="hero-photo">
-            <img src="https://lh3.googleusercontent.com/d/" alt="Олена Малетич" onerror="this.style.display='none';this.parentElement.querySelector('.photo-placeholder').style.display='block';">
+            <img src="https://lh3.googleusercontent.com/d/1btl0ltfQ_yIRriCnwl5ZZPSLt120vCrG=w1200" alt="Олена Малетич" onerror="this.style.display='none';this.parentElement.querySelector('.photo-placeholder').style.display='block';">
             <div class="photo-placeholder" style="display:none;">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
               <div>Місце для фото Олени</div>
-              <div class="photo-link">https://lh3.googleusercontent.com/d/</div>
+              <div class="photo-link">https://lh3.googleusercontent.com/d/1btl0ltfQ_yIRriCnwl5ZZPSLt120vCrG</div>
             </div>
           </div>
           <div class="hero-name-tag">
@@ -1027,6 +1030,7 @@ footer a:hover{color:var(--terra-soft);}
 
     <div class="bonus-track">
       <div class="bonus-card reveal">
+        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/1nqmwc6g8MA1hCq1N2OJkLv8Qo40GdcyN=w800" alt="Меню на 21 день" onerror="this.style.display='none';">
         <div class="bonus-num">01</div>
         <div class="bonus-icon">🎁</div>
         <h3 class="bonus-title">Меню на 21 день</h3>
@@ -1037,6 +1041,7 @@ footer a:hover{color:var(--terra-soft);}
         </div>
       </div>
       <div class="bonus-card reveal">
+        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/1-wK_02uZOHhGk0YMEa5tOQDBqBObQfFT=w800" alt="Гайд про літні напої" onerror="this.style.display='none';">
         <div class="bonus-num">02</div>
         <div class="bonus-icon">🥤</div>
         <h3 class="bonus-title">Гайд про літні напої</h3>
@@ -1047,6 +1052,7 @@ footer a:hover{color:var(--terra-soft);}
         </div>
       </div>
       <div class="bonus-card reveal">
+        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/13J5c6OpdO7ZVsc8TZn3kI6lnRVRp42bn=w800" alt="Гайд про десерти" onerror="this.style.display='none';">
         <div class="bonus-num">03</div>
         <div class="bonus-icon">🍰</div>
         <h3 class="bonus-title">Гайд про десерти</h3>
@@ -1057,6 +1063,7 @@ footer a:hover{color:var(--terra-soft);}
         </div>
       </div>
       <div class="bonus-card reveal">
+        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/1-f5gXeRa51QXltzqTxBe-F9EaML26McE=w800" alt="Гайд про целюліт" onerror="this.style.display='none';">
         <div class="bonus-num">04</div>
         <div class="bonus-icon">🍊</div>
         <h3 class="bonus-title">Гайд про целюліт</h3>
@@ -1091,9 +1098,12 @@ footer a:hover{color:var(--terra-soft);}
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Нереально! Я вперше почала відчувати свої сідниці, а не ноги. Раніше робила вправи і думала, що все не для мене… а тут прям ВАУ.</p>
         <div class="review-author">
-          <div>
-            <div class="author-name">Ірина, 29</div>
-            <div class="author-role">Учасниця курсу</div>
+          <div class="author-info">
+            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1Uqh-qM1e1NibICtv3DGMVoc_CK3hqwKz=w200" alt="Ірина" onerror="this.style.display='none';">
+            <div>
+              <div class="author-name">Ірина, 29</div>
+              <div class="author-role">Учасниця курсу</div>
+            </div>
           </div>
         </div>
         <span class="review-highlight">🍑 Вперше відчула сідниці</span>
@@ -1104,9 +1114,12 @@ footer a:hover{color:var(--terra-soft);}
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Дівчата, мої сідниці НІКОЛИ так не виглядали! Чесно, аж не вірю в дзеркало. Такі круглі, підкачані! Чоловік питає: «що ти там робиш такого?»</p>
         <div class="review-author">
-          <div>
-            <div class="author-name">Марина, 34</div>
-            <div class="author-role">Учасниця курсу</div>
+          <div class="author-info">
+            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1wxukVIybZNOR2b3MQ12wVQUPy6f80jcO=w200" alt="Марина" onerror="this.style.display='none';">
+            <div>
+              <div class="author-name">Марина, 34</div>
+              <div class="author-role">Учасниця курсу</div>
+            </div>
           </div>
         </div>
         <span class="review-highlight">✨ Круглі та підкачані</span>
@@ -1117,9 +1130,12 @@ footer a:hover{color:var(--terra-soft);}
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Це щось неймовірне! За 21 день мінус 7 кг, і найголовніше — я втримую вагу. Я ще ні разу так не гордилась собою!</p>
         <div class="review-author">
-          <div>
-            <div class="author-name">Наталя, 38</div>
-            <div class="author-role">Учасниця курсу</div>
+          <div class="author-info">
+            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1I2mh2GHYBkltHWnpBjWV6ZjATt8NQoOD=w200" alt="Наталя" onerror="this.style.display='none';">
+            <div>
+              <div class="author-name">Наталя, 38</div>
+              <div class="author-role">Учасниця курсу</div>
+            </div>
           </div>
         </div>
         <span class="review-highlight">📉 −7 кг за 21 день</span>
@@ -1130,9 +1146,12 @@ footer a:hover{color:var(--terra-soft);}
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Не знаю як, але в мене реально з'явилась талія! Животик підтягнувся, і я вперше за 5 років одягнула джинси без втягування.</p>
         <div class="review-author">
-          <div>
-            <div class="author-name">Аня, 28</div>
-            <div class="author-role">Учасниця курсу</div>
+          <div class="author-info">
+            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1_rX2qopl7JCsJVaMIM0d2oUmkmPsQwiY=w200" alt="Аня" onerror="this.style.display='none';">
+            <div>
+              <div class="author-name">Аня, 28</div>
+              <div class="author-role">Учасниця курсу</div>
+            </div>
           </div>
         </div>
         <span class="review-highlight">👖 Джинси без втягування</span>
@@ -1143,9 +1162,12 @@ footer a:hover{color:var(--terra-soft);}
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Я навіть не вірила, що в моєму віці можна так підкачати сідниці. Чоловік задоволений! Дякую за курс!</p>
         <div class="review-author">
-          <div>
-            <div class="author-name">Людмила, 42</div>
-            <div class="author-role">Учасниця курсу</div>
+          <div class="author-info">
+            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1-SCePAk4qKyjcs0EoF0oCyoNTM4GfLmx=w200" alt="Людмила" onerror="this.style.display='none';">
+            <div>
+              <div class="author-name">Людмила, 42</div>
+              <div class="author-role">Учасниця курсу</div>
+            </div>
           </div>
         </div>
         <span class="review-highlight">💪 У 42 — нова форма</span>
@@ -1225,11 +1247,11 @@ footer a:hover{color:var(--terra-soft);}
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
         <div class="about-photo">
-          <img src="https://lh3.googleusercontent.com/d/" alt="Олена Малетич" onerror="this.style.display='none';this.parentElement.querySelector('.photo-placeholder').style.display='block';">
+          <img src="https://lh3.googleusercontent.com/d/14oUdny7gPT4E-UjSsMeYycFjjeFy9gGg=w1200" alt="Олена Малетич" onerror="this.style.display='none';this.parentElement.querySelector('.photo-placeholder').style.display='block';">
           <div class="photo-placeholder" style="display:none;text-align:center;padding:40px;color:var(--sage-dark);font-family:Fraunces,serif;font-style:italic;">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 16px;opacity:0.4;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
             <div>Місце для фото</div>
-            <div class="photo-link" style="font-size:11px;margin-top:8px;opacity:0.6;font-family:Manrope,sans-serif;font-style:normal;word-break:break-all;">https://lh3.googleusercontent.com/d/</div>
+            <div class="photo-link" style="font-size:11px;margin-top:8px;opacity:0.6;font-family:Manrope,sans-serif;font-style:normal;word-break:break-all;">https://lh3.googleusercontent.com/d/14oUdny7gPT4E-UjSsMeYycFjjeFy9gGg</div>
           </div>
         </div>
         <div class="about-pill-top"><span class="dot"></span>Сертифікований тренер</div>
