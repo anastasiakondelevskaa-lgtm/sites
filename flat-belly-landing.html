@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Плоский живіт та -3…-5 см у талії за 7 днів · Інтенсив</title>
+<meta name="description" content="Покроковий 7-денний інтенсив: прибери набряки, здуття та «вечірній живіт» без дієт і виснажливого преса. Робота з першопричинами, а не з симптомами.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#c0392b;--red-dark:#a93226;--black:#1a1613;
+  --cream:#f5f0e8;--cream-mid:#ede5d8;--warm:#faf8f4;
+  --text:#2a2420;--muted:#7a6a5a;--border:#ddd5c8;
+  --grid:rgba(0,0,0,0.05);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--warm);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
+img{max-width:100%;display:block}
+.container{max-width:660px;margin:0 auto;padding:0 22px}
+section{padding:66px 0}
+
+/* Grid backgrounds */
+.grid{background-color:var(--warm);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+.grid-cream{background-color:var(--cream);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+.grid-dark{background-color:#2a2420;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;color:var(--cream)}
+
+/* Shared bits */
+.red-tag{display:inline-block;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;margin-bottom:18px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#b09070;margin-bottom:14px}
+.btn{display:block;width:100%;padding:18px 24px;background:var(--red);color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-align:center;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .1s}
+.btn:hover{background:var(--red-dark)}
+.btn:active{transform:translateY(1px)}
+.btn-note{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
+.fi{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.fi.show{opacity:1;transform:none}
+
+/* Reusable image / video placeholders */
+.img-placeholder{background:var(--cream-mid);border:1px solid var(--border);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.img-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(0,0,0,.025) 8px,rgba(0,0,0,.025) 9px)}
+.img-placeholder span{position:relative;z-index:1;font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:center;padding:0 12px;font-weight:500}
+
+/* ============ HERO ============ */
+#hero{padding:0;position:relative;overflow:hidden}
+.hero-inner{max-width:660px;margin:0 auto;padding:40px 22px 60px}
+.hero-h1{font-size:clamp(34px,8.5vw,60px);font-weight:700;line-height:1.06;letter-spacing:-.01em;color:var(--black);margin:14px 0 18px}
+.hero-h1 em{font-style:italic;font-weight:400;color:var(--red)}
+.hero-lead{font-size:16px;line-height:1.7;color:var(--text);margin-bottom:22px;max-width:560px}
+.hero-lead strong{font-weight:600}
+.hero-pains{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.hero-pain{font-size:12px;font-weight:600;letter-spacing:.02em;background:#fff;border:1px solid var(--border);box-shadow:1px 1px 0 var(--border);padding:8px 13px;color:var(--text)}
+.hero-pain span{color:var(--red)}
+.hero-cta-wrap{max-width:420px}
+
+/* Video block */
+.video-wrap{margin:32px 0 8px;position:relative}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#2a2420,#3a322b);border:1px solid var(--border);box-shadow:4px 4px 0 var(--border);overflow:hidden;cursor:pointer}
+.video-frame::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,.02) 10px,rgba(255,255,255,.02) 11px)}
+.video-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video-overlay{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px}
+.play-btn{width:72px;height:72px;border-radius:50%;background:var(--red);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;box-shadow:0 8px 30px rgba(192,57,43,.45)}
+.play-btn:hover{transform:scale(1.08);background:var(--red-dark)}
+.play-btn::before{content:'';display:block;width:0;height:0;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff;margin-left:5px}
+.video-caption{color:var(--cream);font-size:13px;letter-spacing:.06em;font-weight:500;max-width:320px;line-height:1.5}
+.video-label{font-family:'Playfair Display',serif;font-size:19px;color:#fff;font-weight:600}
+.video-under{font-size:12px;color:var(--muted);margin-top:12px;text-align:center;letter-spacing:.04em}
+
+/* ============ PAIN / recognition ============ */
+#recognition{background:var(--cream)}
+.sec-h{font-size:clamp(26px,6vw,40px);font-weight:700;margin-bottom:14px;line-height:1.15}
+.sec-h em{font-style:italic;color:var(--red);font-weight:400}
+.sec-intro{font-size:15px;color:var(--muted);margin-bottom:30px;max-width:560px}
+.check-list{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+.check-item{background:#fff;border:1px solid var(--border);box-shadow:1px 1px 0 var(--border);padding:16px 18px;font-size:14.5px;line-height:1.6;display:flex;gap:12px;align-items:flex-start}
+.check-item::before{content:'✓';color:var(--red);font-weight:700;font-size:13px;flex-shrink:0;margin-top:2px;width:20px;height:20px;border:1.5px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.pull-quote{border-left:3px solid var(--red);background:#fff;border:1px solid var(--border);box-shadow:2px 2px 0 var(--border);padding:22px 24px 22px 22px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,4vw,22px);line-height:1.5;color:var(--text)}
+.pull-quote strong{color:var(--red);font-weight:600;font-style:normal}
+
+/* ============ TRUTH / causes ============ */
+#truth{background:var(--warm)}
+.truth-lead{font-size:16px;line-height:1.75;margin-bottom:8px}
+.truth-lead strong{font-weight:600}
+.truth-note{font-size:14px;color:var(--muted);margin-bottom:32px}
+.causes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px}
+.cause-card{background:#fff;border:1px solid var(--border);box-shadow:2px 2px 0 var(--border);padding:22px 20px;position:relative}
+.cause-num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--cream-mid);line-height:1;position:absolute;top:16px;right:18px}
+.cause-emoji{font-size:26px;display:block;margin-bottom:12px}
+.cause-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:6px;color:var(--black)}
+.cause-desc{font-size:13px;color:var(--muted);line-height:1.55}
+.truth-final{background:var(--black);color:var(--cream);padding:22px 24px;font-family:'Playfair Display',serif;font-size:clamp(17px,4vw,22px);font-style:italic;line-height:1.45}
+.truth-final em{color:#e8a598;font-style:italic}
+
+/* ============ PROGRAM ============ */
+#program{background:var(--cream)}
+.block-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:34px 0 16px}
+.block-label:first-of-type{margin-top:0}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prog-item{background:#fff;border:1px solid var(--border);box-shadow:2px 2px 0 var(--border);padding:18px 18px}
+.prog-item.wide{grid-column:1 / -1}
+.prog-ico{width:40px;height:40px;background:var(--cream);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.prog-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:5px;color:var(--black)}
+.prog-desc{font-size:13px;color:var(--muted);line-height:1.55}
+.live-list{display:flex;flex-direction:column;gap:10px}
+.live-item{background:#fff;border:1px solid var(--border);box-shadow:2px 2px 0 var(--border);padding:16px 18px;display:flex;gap:14px;align-items:center}
+.live-num{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--red);flex-shrink:0;width:34px;text-align:center}
+.live-txt{font-size:14.5px;font-weight:500;line-height:1.4}
+.live-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:3px 9px;margin-bottom:14px;border-radius:2px}
+
+/* ============ EXPERT ============ */
+#expert{background:var(--warm)}
+.expert-photo{background:#fff;border:1px solid var(--border);box-shadow:3px 3px 0 var(--border);padding:10px 10px 26px;transform:rotate(-.5deg);margin-bottom:28px;max-width:340px;margin-left:auto;margin-right:auto}
+.expert-photo .img-placeholder{aspect-ratio:4/5}
+.expert-name{font-size:24px;font-weight:700;margin-bottom:4px}
+.expert-role{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.expert-quote{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0;margin-bottom:24px}
+.expert-quote-txt{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,4vw,22px);line-height:1.45;margin-bottom:10px}
+.expert-quote-by{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.expert-bio{font-size:15px;line-height:1.8}
+.expert-bio p+p{margin-top:14px}
+.expert-bio strong{font-weight:600}
+
+/* ============ RESULTS ============ */
+#results{background:var(--cream)}
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px}
+.stat-big{background:var(--black);color:var(--cream);border:1px solid var(--black);padding:26px 22px;grid-column:1 / -1;text-align:center}
+.stat-big .stat-num{font-family:'Playfair Display',serif;font-size:clamp(44px,13vw,72px);font-weight:700;line-height:1;color:#fff;margin-bottom:8px}
+.stat-big .stat-num em{color:#e8a598;font-style:italic}
+.stat-big .stat-lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-mid)}
+.stat-card{background:#fff;border:1px solid var(--border);box-shadow:2px 2px 0 var(--border);padding:22px 18px;text-align:center}
+.stat-card .stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--red);line-height:1;margin-bottom:6px}
+.stat-card .stat-lbl{font-size:12px;color:var(--muted);line-height:1.4}
+.result-checks{display:flex;flex-direction:column;gap:8px}
+.result-check{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding:6px 0}
+.result-check::before{content:'✔';color:var(--red);font-weight:700;flex-shrink:0}
+
+/* ============ FAQ ============ */
+#faq{background:var(--warm)}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:#fff;border:1px solid var(--border);box-shadow:2px 2px 0 var(--border);overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:18px 52px 18px 20px;font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--black);position:relative;line-height:1.4}
+.faq-q::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--red);transition:transform .3s;font-family:'Inter',sans-serif}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 20px 18px;font-size:14px;color:var(--muted);line-height:1.7}
+
+/* ============ FINAL / OFFER ============ */
+#offer{background:var(--cream)}
+.plan{background:#fff;border:2px solid var(--red);box-shadow:4px 4px 0 rgba(192,57,43,.18);padding:34px 26px;position:relative;max-width:460px;margin:0 auto}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;white-space:nowrap}
+.plan-name{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;text-align:center}
+.plan-price{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;line-height:1;text-align:center;color:var(--black)}
+.plan-price sup{font-size:22px;font-weight:400;vertical-align:super;color:var(--red)}
+.plan-old{text-align:center;font-size:14px;color:var(--muted);text-decoration:line-through;margin-bottom:24px;margin-top:6px}
+.plan-feats{list-style:none;margin-bottom:26px}
+.plan-feats li{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.5}
+.plan-feats li:first-child{border-top:1px solid var(--border)}
+.plan-feats li::before{content:'✦';color:var(--red);flex-shrink:0;font-size:11px;margin-top:3px}
+.plan-note{font-size:12px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.6}
+
+/* ============ FINAL CTA (dark) ============ */
+#finalcta{text-align:center;padding:84px 0}
+.fc-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#c4a882;margin-bottom:18px}
+.fc-h{font-size:clamp(30px,8vw,54px);color:var(--cream);margin-bottom:22px;line-height:1.12;font-weight:700}
+.fc-h em{font-style:italic;color:#e8a598;font-weight:400}
+.fc-sub{font-size:15px;color:#c9bfb2;max-width:460px;margin:0 auto 32px;line-height:1.7}
+.fc-btn-wrap{max-width:460px;margin:0 auto}
+.fc-btn{background:var(--cream);color:var(--black)}
+.fc-btn:hover{background:#fff}
+
+/* Footer */
+footer{background:var(--black);color:#8a7f72;text-align:center;padding:32px 22px;font-size:12px;letter-spacing:.04em}
+
+/* Sticky mobile CTA */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:99;padding:12px 18px;background:rgba(245,240,232,0.97);backdrop-filter:blur(8px);border-top:1px solid var(--border);display:none}
+.sticky .btn{padding:15px 20px}
+
+@media(max-width:560px){
+  .sticky{display:block}
+  body{padding-bottom:74px}
+  .causes,.prog-grid,.stats-row{grid-template-columns:1fr}
+  .stat-card .stat-num{font-size:34px}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="grid">
+  <div class="hero-inner">
+    <div class="red-tag fi">7-денний онлайн-інтенсив</div>
+    <div class="eyebrow fi">Без дієт · Без виснажливого преса</div>
+    <h1 class="hero-h1 fi">Плоский живіт та <em>-3…-5 см</em> у талії за 7 днів</h1>
+    <p class="hero-lead fi">
+      Перестань боротися із симптомами. Зрозумій, <strong>чому саме у тебе випирає живіт</strong>,
+      і прибери справжню причину — набряки, здуття та «вечірній живіт».
+    </p>
+    <div class="hero-pains fi">
+      <div class="hero-pain"><span>◆</span> Затримка рідини</div>
+      <div class="hero-pain"><span>◆</span> Здуття</div>
+      <div class="hero-pain"><span>◆</span> Слабкі глибокі м'язи</div>
+      <div class="hero-pain"><span>◆</span> Некоректне дихання</div>
+    </div>
+
+    <!-- ===== ВІДЕО-ПРЕЗЕНТАЦІЯ ІНТЕНСИВУ ===== -->
+    <div class="video-wrap fi">
+      <div class="video-frame" id="videoFrame" role="button" tabindex="0" aria-label="Відтворити відео-презентацію інтенсиву"
+           data-video-src="">
+        <!-- Реальне відео підставляється сюди. Приклад:
+        <video controls poster="poster.jpg" preload="none">
+          <source src="presentation.mp4" type="video/mp4">
+        </video> -->
+        <div class="video-overlay" id="videoOverlay">
+          <button class="play-btn" type="button" aria-hidden="true"></button>
+          <div class="video-label">[ Відео-презентація інтенсиву ]</div>
+          <div class="video-caption">Дивись за 90 секунд, як працює система з першопричинами живота</div>
+        </div>
+      </div>
+      <div class="video-under">▶ Плейсхолдер відео 1280×720 — заміни на mp4 / iframe (YouTube, Vimeo, Kinescope)</div>
+    </div>
+
+    <div class="hero-cta-wrap fi">
+      <a href="#offer" class="btn">Приєднатися до інтенсиву</a>
+      <p class="btn-note">Час прибрати зайву рідину та повернути легкість</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ЗНАЙОМА СИТУАЦІЯ ============ -->
+<section id="recognition" class="grid-cream">
+  <div class="container">
+    <h2 class="sec-h fi">Знайома <em>ситуація?</em></h2>
+    <p class="sec-intro fi">Прочитай і чесно скажи собі, скільки пунктів — про тебе.</p>
+    <div class="check-list">
+      <div class="check-item fi">Вранці ти прокидаєшся зі свіжим обличчям і рівним животом, а вже до обіду тіло починає набрякати, а живіт округлюється так, ніби ти на шостому місяці вагітності.</div>
+      <div class="check-item fi">Резинка білизни чи джинсів залишає глибокі сліди на шкірі, а ввечері улюблений одяг тисне так, що хочеться якнайшвидше вдягти щось оверсайз.</div>
+      <div class="check-item fi">Тобі здається, що ти «поправляєшся» буквально від склянки води — тіло миттєво затримує рідину та виглядає залитим і важким.</div>
+      <div class="check-item fi">Після кожного прийому їжі перша думка — непомітно розстебнути ґудзик на штанях, бо всередині все розпирає.</div>
+      <div class="check-item fi">Ти сумлінно качала прес і худнула, але нижня частина живота все одно не стає пласкою, а набряки нікуди не зникають.</div>
+    </div>
+    <blockquote class="pull-quote fi">
+      Найгірше в цьому — <strong>відчуття безсилля.</strong> Ти робиш усе «за правилами»,
+      обмежуєш себе, але тіло все одно знову набрякає та живіт випирає.
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ ПРАВДА / ПРИЧИНИ ============ -->
+<section id="truth" class="grid">
+  <div class="container">
+    <div class="red-tag fi">Правда індустрії</div>
+    <h2 class="sec-h fi">Правда, про яку зазвичай <em>мовчать</em> у фітнес-індустрії</h2>
+    <p class="truth-lead fi"><strong>Випираючий живіт — це не завжди зайвий жир.</strong></p>
+    <p class="truth-note fi">Насправді за ним майже завжди стоять чотири зовсім інші причини:</p>
+    <div class="causes">
+      <div class="cause-card fi">
+        <span class="cause-num">01</span>
+        <span class="cause-emoji">💧</span>
+        <div class="cause-name">Затримка рідини</div>
+        <div class="cause-desc">Набряковість, через яку тіло виглядає «залитим» і важким уже до обіду.</div>
+      </div>
+      <div class="cause-card fi">
+        <span class="cause-num">02</span>
+        <span class="cause-emoji">🎈</span>
+        <div class="cause-name">Здуття</div>
+        <div class="cause-desc">Живіт роздувається після їжі, розпирає зсередини й тисне на одяг.</div>
+      </div>
+      <div class="cause-card fi">
+        <span class="cause-num">03</span>
+        <span class="cause-emoji">🎯</span>
+        <div class="cause-name">Слабкі глибокі м'язи</div>
+        <div class="cause-desc">Внутрішній «корсет» не тримає живіт — і жодні скручування цього не виправлять.</div>
+      </div>
+      <div class="cause-card fi">
+        <span class="cause-num">04</span>
+        <span class="cause-emoji">🌬️</span>
+        <div class="cause-name">Некоректне дихання</div>
+        <div class="cause-desc">Поверхневе дихання «в груди» блокує роботу діафрагми та тонус живота.</div>
+      </div>
+    </div>
+    <p class="truth-final fi">На цьому інтенсиві ми працюємо <em>з причинами</em>, а не із симптомами.</p>
+  </div>
+</section>
+
+<!-- ============ ПРОГРАМА ============ -->
+<section id="program" class="grid-cream">
+  <div class="container">
+    <div class="red-tag fi">Що всередині</div>
+    <h2 class="sec-h fi">Швидкий старт та <em>програма</em></h2>
+
+    <div class="block-label fi">↓ Швидкий старт — уже в перший день</div>
+    <div class="prog-grid">
+      <div class="prog-item fi">
+        <div class="prog-ico">🧪</div>
+        <div class="prog-name">Експрес-тест</div>
+        <div class="prog-desc">Визнач за 5 хвилин, яка саме причина випирає твій живіт.</div>
+      </div>
+      <div class="prog-item fi">
+        <div class="prog-ico">📖</div>
+        <div class="prog-name">Міні-урок «5 помилок»</div>
+        <div class="prog-desc">Які звичні дії щодня повертають набряки та здуття.</div>
+      </div>
+      <div class="prog-item wide fi">
+        <div class="prog-ico">🎁</div>
+        <div class="prog-name">Бонус «Протинабряковий протокол»</div>
+        <div class="prog-desc">Готовий покроковий план, який знімає набряки вже за перші дні.</div>
+      </div>
+    </div>
+
+    <div class="block-label fi">↓ Основна програма 7 днів</div>
+    <div class="prog-grid">
+      <div class="prog-item fi">
+        <div class="prog-ico">🌀</div>
+        <div class="prog-name">Щоденна лімфозарядка</div>
+        <div class="prog-desc">М'який дренаж, що розганяє рідину та прибирає набряки.</div>
+      </div>
+      <div class="prog-item fi">
+        <div class="prog-ico">💪</div>
+        <div class="prog-name">Глибокі м'язи живота</div>
+        <div class="prog-desc">Комплекс для внутрішнього «корсета» — без класичного преса.</div>
+      </div>
+      <div class="prog-item fi">
+        <div class="prog-ico">🫁</div>
+        <div class="prog-name">Дихальні практики</div>
+        <div class="prog-desc">Правильне дихання діафрагмою, що підтягує живіт зсередини.</div>
+      </div>
+      <div class="prog-item fi">
+        <div class="prog-ico">🥗</div>
+        <div class="prog-name">Чек-лист харчування</div>
+        <div class="prog-desc">Що прибрати, щоб не провокувати здуття та затримку води.</div>
+      </div>
+      <div class="prog-item wide fi">
+        <div class="prog-ico">✅</div>
+        <div class="prog-name">Щоденні завдання та підтримка</div>
+        <div class="prog-desc">Маленькі кроки щодня + супровід, щоб точно дійти до результату.</div>
+      </div>
+    </div>
+
+    <div class="block-label fi">↓ Прямі ефіри</div>
+    <span class="live-tag fi">Live · 3 зустрічі</span>
+    <div class="live-list">
+      <div class="live-item fi"><span class="live-num">1</span><span class="live-txt">Чому живіт випирає навіть у струнких?</span></div>
+      <div class="live-item fi"><span class="live-num">2</span><span class="live-txt">Як прибрати здуття та набряки?</span></div>
+      <div class="live-item fi"><span class="live-num">3</span><span class="live-txt">Формула стабільного результату.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ЕКСПЕРТ ============ -->
+<section id="expert" class="grid">
+  <div class="container">
+    <div class="red-tag fi">Твій експерт</div>
+    <div class="expert-photo fi">
+      <div class="img-placeholder"><span>[ Фото експерта 800×1000 ]<br>fitness · wellness · body</span></div>
+    </div>
+    <h2 class="expert-name fi">Ім'я Прізвище</h2>
+    <p class="expert-role fi">Тренер з жіночого тіла · Автор інтенсиву</p>
+    <div class="expert-quote fi">
+      <p class="expert-quote-txt">«Я пройшла три пологи й на власному тілі знаю, що живіт після них — це не про жир, а про рідину, дихання та глибокі м'язи».</p>
+      <p class="expert-quote-by">— особиста історія</p>
+    </div>
+    <div class="expert-bio fi">
+      <p>Після <strong>трьох пологів</strong> я зіткнулася з тим самим випираючим животом і набряками, з якими не справлявся жоден прес. Класичні поради не працювали — тіло залишалося залитим і важким.</p>
+      <p>Тоді я почала розбиратися з <strong>першопричинами</strong>: лімфою, диханням, глибокими м'язами та харчуванням. Саме ця система повернула мені плаский живіт і легкість — і саме її я зібрала для тебе у цьому 7-денному інтенсиві.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ РЕЗУЛЬТАТ ============ -->
+<section id="results" class="grid-cream">
+  <div class="container">
+    <div class="red-tag fi">Результат за 7 днів</div>
+    <h2 class="sec-h fi">Що ти отримаєш <em>уже цього тижня</em></h2>
+    <div class="stats-row">
+      <div class="stat-big fi">
+        <div class="stat-num"><em>-3…-5</em> см</div>
+        <div class="stat-lbl">у талії за 7 днів</div>
+      </div>
+      <div class="stat-card fi">
+        <div class="stat-num">↓ Набряки</div>
+        <div class="stat-lbl">тіло перестає «затримувати» воду</div>
+      </div>
+      <div class="stat-card fi">
+        <div class="stat-num">↓ Здуття</div>
+        <div class="stat-lbl">живіт не розпирає після їжі</div>
+      </div>
+    </div>
+    <div class="result-checks">
+      <div class="result-check fi">Мінус 3–5 см у талії</div>
+      <div class="result-check fi">Менше набряків</div>
+      <div class="result-check fi">Менше здуття</div>
+      <div class="result-check fi">Розуміння причин, чому живіт випирав саме у тебе</div>
+      <div class="result-check fi">Система для довготривалого результату, а не разовий ефект</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="grid">
+  <div class="container">
+    <div class="red-tag fi">Питання та відповіді</div>
+    <h2 class="sec-h fi">Часті <em>запитання</em></h2>
+    <div class="faq-list" style="margin-top:26px">
+      <div class="faq-item fi">
+        <button class="faq-q" type="button">Мені потрібне спортивне минуле чи інвентар?</button>
+        <div class="faq-a"><div class="faq-a-inner">Ні. Всі практики адаптовані під будь-який рівень і виконуються вдома без обладнання. Лімфозарядки та дихальні техніки — м'які й безпечні.</div></div>
+      </div>
+      <div class="faq-item fi">
+        <button class="faq-q" type="button">Скільки часу займатиме на день?</button>
+        <div class="faq-a"><div class="faq-a-inner">У середньому 20–30 хвилин на день. Формат щоденних коротких завдань, які легко вбудувати навіть у зайнятий графік.</div></div>
+      </div>
+      <div class="faq-item fi">
+        <button class="faq-q" type="button">Це чергова дієта?</button>
+        <div class="faq-a"><div class="faq-a-inner">Ні. Ми не саджаємо тебе на дієту й не мучимо пресом. Є чек-лист харчування, який прибирає продукти-провокатори здуття та затримки води — без голодування.</div></div>
+      </div>
+      <div class="faq-item fi">
+        <button class="faq-q" type="button">Чи залишиться доступ до матеріалів?</button>
+        <div class="faq-a"><div class="faq-a-inner">Так, доступ до уроків, чек-листів та записів прямих ефірів залишається з тобою, щоб ти могла повертатися до системи будь-коли.</div></div>
+      </div>
+      <div class="faq-item fi">
+        <button class="faq-q" type="button">А якщо мій живіт — це справді жир?</button>
+        <div class="faq-a"><div class="faq-a-inner">Навіть тоді ти прибереш набряки, здуття та зміцниш глибокі м'язи — талія візуально зменшиться, а ти отримаєш чітке розуміння, з чим працювати далі.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОФЕР / ПРАЙС ============ -->
+<section id="offer" class="grid-cream">
+  <div class="container">
+    <div class="red-tag fi" style="display:block;text-align:center;margin-left:auto;margin-right:auto;width:fit-content">Старт інтенсиву</div>
+    <h2 class="sec-h fi" style="text-align:center">Забронюй <em>своє місце</em></h2>
+    <div style="height:22px"></div>
+    <div class="plan fi">
+      <div class="plan-badge">Тариф зі стартовою ціною</div>
+      <div class="plan-name">Інтенсив «Плоский живіт за 7 днів»</div>
+      <div class="plan-price"><sup>₴</sup>590</div>
+      <div class="plan-old">₴1 490</div>
+      <ul class="plan-feats">
+        <li>Швидкий старт: експрес-тест + міні-урок «5 помилок»</li>
+        <li>Бонус «Протинабряковий протокол»</li>
+        <li>Щоденна лімфозарядка на 7 днів</li>
+        <li>Комплекс для глибоких м'язів живота</li>
+        <li>Дихальні практики + чек-лист харчування</li>
+        <li>3 прямі ефіри з експертом та підтримка</li>
+      </ul>
+      <a href="#" class="btn">Хочу плоский живіт та -3…-5 см у талії</a>
+      <p class="plan-note">Це лише перший крок до твого нового тіла.<br>Кількість місць на потоці обмежена.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ФІНАЛЬНИЙ CTA ============ -->
+<section id="finalcta" class="grid-dark">
+  <div class="container">
+    <p class="fc-eyebrow fi">Час повернути легкість</p>
+    <h2 class="fc-h fi">Це лише <em>перший крок</em><br>до твого нового тіла</h2>
+    <p class="fc-sub fi">Прибери справжню причину випираючого живота — і побач результат уже за 7 днів.</p>
+    <div class="fc-btn-wrap fi">
+      <a href="#offer" class="btn fc-btn">Хочу плоский живіт та -3…-5 см у талії</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 · Інтенсив «Плоский живіт та -3…-5 см у талії за 7 днів»
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky" id="stickyBar">
+  <a href="#offer" class="btn">Приєднатися до інтенсиву →</a>
+</div>
+
+<script>
+// ===== Reveal on scroll (.fi -> .show) =====
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('show'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// ===== Sticky mobile CTA: hide over offer section =====
+const sticky = document.getElementById('stickyBar');
+const offer = document.getElementById('offer');
+window.addEventListener('scroll', () => {
+  if (!offer || !sticky) return;
+  const r = offer.getBoundingClientRect();
+  const overOffer = r.top < window.innerHeight && r.bottom > 0;
+  sticky.style.display = (window.innerWidth <= 560 && !overOffer) ? 'block' : 'none';
+}, { passive: true });
+
+// ===== FAQ accordion =====
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    // close others
+    document.querySelectorAll('.faq-item.open').forEach(other => {
+      if (other !== item) {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      }
+    });
+    if (isOpen) {
+      item.classList.remove('open');
+      answer.style.maxHeight = null;
+    } else {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// ===== Video: click-to-play (swaps in real <video>/<iframe> when data-video-src is set) =====
+(function () {
+  const frame = document.getElementById('videoFrame');
+  if (!frame) return;
+  function play() {
+    const src = frame.getAttribute('data-video-src');
+    const overlay = document.getElementById('videoOverlay');
+    if (src) {
+      // If a real source is configured, load it in an iframe player
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3';
+      frame.appendChild(iframe);
+      if (overlay) overlay.style.display = 'none';
+    } else {
+      // Placeholder feedback — no real video yet
+      const btn = overlay && overlay.querySelector('.play-btn');
+      if (btn) { btn.style.transform = 'scale(.92)'; setTimeout(() => btn.style.transform = '', 150); }
+    }
+  }
+  frame.addEventListener('click', play);
+  frame.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
+})();
+</script>
+</body>
+</html>
