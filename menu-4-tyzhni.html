@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#EBEAE6;
+  --white:#FFFFFF;
+  --pink:#F3CFD1;
+  --pink-deep:#c2717a;
+  --olive:#658447;
+  --olive-dark:#4a6335;
+  --dark:#122A14;
+  --border:#ddd4ce;
+  --font-hand:'Caveat',cursive;
+}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:#cfc9c2;padding:24px 0}
+h1,h2,h3{font-family:'Playfair Display',serif}
+.page{width:210mm;min-height:297mm;background:
+  radial-gradient(ellipse 50% 35% at 100% 0%, rgba(243,207,209,.55) 0%, rgba(243,207,209,0) 70%),
+  radial-gradient(ellipse 45% 35% at 0% 100%, rgba(101,132,71,.18) 0%, rgba(101,132,71,0) 70%),
+  var(--bg);
+  margin:0 auto 24px;padding:12mm 12mm 10mm;box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
+.hand{font-family:var(--font-hand);font-weight:700}
+.sticker{position:absolute;background:var(--olive);color:var(--white);width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--font-hand);font-size:16px;line-height:1.15;transform:rotate(-9deg);box-shadow:0 6px 16px rgba(18,42,20,.25);padding:6px}
+
+/* ===== COVER ===== */
+.cover{padding:0;position:relative;overflow:hidden;background:var(--bg)}
+.cover-photo{width:100%;height:180mm;position:relative;background:linear-gradient(135deg,#dcd8d0,#c7c2b8);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#8d887c}
+.cover-photo .cam{font-size:46px;opacity:.8}
+.cover-photo .cam-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.75}
+.cover-content{position:relative;padding:16mm 16mm 14mm;background:var(--bg);flex:1;display:flex;flex-direction:column;justify-content:center}
+.cover-eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--olive-dark);font-weight:700;margin-bottom:14px}
+.cover-title{font-size:34px;font-weight:700;color:var(--dark);line-height:1.1;margin-bottom:10px;max-width:150mm}
+.cover-subtitle{font-size:13.5px;color:var(--dark);font-weight:500;margin-bottom:6px;line-height:1.4;max-width:150mm}
+.cover-tagline{font-size:22px;color:var(--pink-deep);font-family:var(--font-hand);margin-bottom:16px;transform:rotate(-1.5deg)}
+.cover-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:16px}
+.cover-meta div b{display:block;font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--pink-deep);margin-bottom:2px}
+.cover-meta div span{font-size:10.5px;color:var(--dark);font-weight:500}
+.cover-brand{display:flex;justify-content:space-between;align-items:flex-end;font-size:9.5px;color:var(--olive-dark)}
+.cover-brand b{color:var(--dark);font-family:'Playfair Display',serif;font-size:12px}
+.cover-brand .role{display:block;font-size:10px;color:var(--olive-dark);font-weight:400}
+.cover-badge{display:inline-flex;align-items:center;gap:6px;background:var(--olive);color:var(--white);font-size:9.5px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:10px;box-shadow:0 3px 10px rgba(74,99,53,.25)}
+
+/* ===== SHOPPING LIST ===== */
+.page-title{font-size:21px;font-weight:700;color:var(--dark)}
+.page-sub{font-size:11.5px;color:var(--olive-dark);margin-bottom:12px}
+.shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;align-content:start}
+.shop-card{background:var(--white);border-radius:14px;padding:13px 16px;box-shadow:0 2px 8px rgba(18,42,20,.06)}
+.shop-store{font-family:'Playfair Display',serif;font-weight:700;font-size:14px;color:var(--dark);margin-bottom:9px;padding-bottom:7px;border-bottom:2px solid var(--pink-deep)}
+.shop-cat{font-size:10.8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--olive-dark);margin:10px 0 4px}
+.shop-cat:first-of-type{margin-top:0}
+.shop-list{list-style:none;font-size:11.3px;line-height:1.55;color:var(--dark)}
+.shop-list li{position:relative;padding-left:16px;margin-bottom:1px}
+.shop-list li::before{content:'';position:absolute;left:0;top:3px;width:9px;height:9px;background:var(--pink);border:1.4px solid var(--pink-deep);border-radius:3px}
+
+/* ===== HOW-TO PAGE ===== */
+.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-dark);font-weight:700;margin-bottom:5px}
+.howto-title{font-size:19px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.25}
+.howto-intro{font-size:11.3px;line-height:1.5;color:var(--dark);background:var(--white);border-radius:12px;padding:12px 15px;margin-bottom:12px;border-left:4px solid var(--pink-deep)}
+.sec{display:flex;gap:11px;margin-bottom:9px;background:var(--white);border-radius:14px;padding:10px 13px;box-shadow:0 2px 8px rgba(18,42,20,.06)}
+.sec-num{width:28px;height:28px;min-width:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--white);box-shadow:0 2px 6px rgba(18,42,20,.2)}
+.n1{background:var(--pink-deep)}.n2{background:var(--olive)}.n3{background:var(--dark)}.n4{background:var(--olive-dark)}.n5{background:var(--pink-deep)}
+.sec-body{flex:1}
+.sec-title{font-family:'Playfair Display',serif;font-weight:700;font-size:13px;color:var(--dark);margin-bottom:4px}
+.sec-text{font-size:10.5px;line-height:1.45;color:var(--dark)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.feat-item{background:var(--bg);border-radius:8px;padding:7px 10px;font-size:10px;line-height:1.4}
+.feat-item b{color:var(--olive-dark);display:block;font-size:8.8px;margin-bottom:1px}
+.kbju-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.kbju-chip{border-radius:10px;padding:7px 6px;text-align:center}
+.kbju-chip .v{font-size:13px;font-weight:800}
+.kbju-chip .l{font-size:9px;text-transform:uppercase;letter-spacing:.04em;opacity:.9}
+.kbju-chip.c1{background:var(--pink-deep);color:var(--white)}
+.kbju-chip.c2{background:var(--pink);color:var(--dark)}
+.kbju-chip.c3{background:var(--olive);color:var(--white)}
+.perk-list{list-style:none;margin-top:4px;font-size:10.5px;line-height:1.5}
+.perk-list li{position:relative;padding-left:20px;margin-bottom:2px}
+.perk-list .ic{position:absolute;left:0;top:0}
+.howto-close{margin-top:6px;font-family:var(--font-hand);font-size:16px;color:var(--pink-deep);text-align:center;transform:rotate(-1deg)}
+
+/* ===== DAY MENU (reference 3 style) ===== */
+.ph{display:flex;justify-content:space-between;align-items:center;padding-bottom:7px;border-bottom:1px solid var(--border);margin-bottom:10px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--olive-dark);font-weight:700}
+.day-pill{display:inline-flex;align-items:center;gap:8px;background:var(--olive);color:var(--white);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 18px;border-radius:30px;margin-bottom:4px;box-shadow:0 4px 12px rgba(74,99,53,.25)}
+.day-note{font-family:var(--font-hand);font-size:17px;color:var(--pink-deep);margin-bottom:10px;padding-left:6px;transform:rotate(-1deg);display:inline-block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:12px;flex:1;min-height:0}
+.meal-card{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 3px 14px rgba(18,42,20,.08);background:linear-gradient(135deg,#dcd8d0,#c7c2b8)}
+.meal-photo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.9);font-size:32px}
+.meal-photo .meal-tag{position:absolute;top:10px;left:10px;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:20px;color:var(--white);z-index:2}
+.tag-breakfast{background:var(--pink-deep)}
+.tag-lunch{background:var(--olive)}
+.tag-snack{background:var(--dark)}
+.tag-dinner{background:var(--olive-dark)}
+.meal-photo .cam-mark{position:absolute;top:10px;right:10px;font-size:13px;opacity:.7;z-index:2}
+.meal-panel{position:absolute;left:0;right:0;bottom:0;padding:9px 12px 9px;background:rgba(255,255,255,.68);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);z-index:1}
+.meal-title{font-family:'Playfair Display',serif;font-weight:700;font-size:14.5px;color:var(--dark);margin-bottom:4px;text-shadow:0 1px 2px rgba(255,255,255,.4);line-height:1.2}
+.meal-kbju{font-size:10.8px;color:var(--dark);font-weight:600}
+.meal-kbju b{color:var(--pink-deep)}
+.meal-ref{margin-top:4px;font-size:10.3px}
+.meal-ref a{color:var(--olive-dark);text-decoration:none;font-weight:700}
+.ready-note{font-size:10.3px;color:var(--dark);margin-top:2px}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
+.stat{border-radius:13px;padding:9px 6px;text-align:center;box-shadow:0 2px 8px rgba(18,42,20,.1)}
+.stat .num{font-size:18px;font-weight:800}
+.stat .lbl{font-size:9.3px;letter-spacing:.05em;text-transform:uppercase;margin-top:1px;opacity:.9}
+.stat.kcal{background:var(--pink-deep)}.stat.kcal .num,.stat.kcal .lbl{color:var(--white)}
+.stat.prot{background:var(--olive)}.stat.prot .num,.stat.prot .lbl{color:var(--white)}
+.stat.fat{background:var(--pink)}.stat.fat .num,.stat.fat .lbl{color:var(--dark)}
+.stat.carb{background:var(--dark)}.stat.carb .num,.stat.carb .lbl{color:var(--white)}
+.tip{margin-top:10px;background:var(--white);border:2px dashed var(--pink-deep);border-radius:14px;padding:9px 18px;font-size:11px;color:var(--dark);text-align:center}
+.tip .hand{font-size:15px;color:var(--pink-deep);display:block;margin-bottom:1px}
+.pf{margin-top:auto;padding-top:7px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:var(--olive-dark)}
+.pf a{color:var(--olive-dark);text-decoration:none;font-weight:700;margin-right:12px}
+.pf .pnum{font-weight:700;color:var(--dark);font-size:10.5px}
+
+/* ===== RECIPE PAGE (cookbook template style) ===== */
+.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-dark);font-weight:700;margin-bottom:5px}
+.page-title{font-size:21px;font-weight:700;color:var(--dark);margin-bottom:2px;display:inline-block}
+.title-row{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.title-hand{font-family:var(--font-hand);font-size:20px;color:var(--pink-deep);transform:rotate(-2deg);display:inline-block}
+.recipe-grid2{display:flex;flex-direction:column;gap:14px;flex:1}
+.rcard{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 3px 14px rgba(18,42,20,.08);display:flex;flex:1}
+.rcard-photo{width:38%;position:relative;display:flex;align-items:center;justify-content:center;font-size:44px;color:rgba(255,255,255,.9)}
+.rcard-photo .rnum{position:absolute;top:10px;left:10px;width:24px;height:24px;border-radius:50%;background:var(--pink-deep);color:var(--white);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(18,42,20,.2)}
+.rcard-body{flex:1;padding:14px 18px;display:flex;flex-direction:column}
+.rcard-title{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--dark);margin-bottom:8px}
+.rmeta{display:flex;gap:14px;background:var(--olive);border-radius:10px;padding:7px 14px;margin-bottom:10px;font-size:10px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.02em}
+.rmeta span b{display:block;font-size:13.5px;font-weight:800;color:var(--white);text-transform:none;letter-spacing:0}
+.rcols{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;font-size:11.3px;line-height:1.45;flex:1}
+.rcols h4{font-size:9.8px;text-transform:uppercase;letter-spacing:.05em;color:var(--olive-dark);margin-bottom:4px;font-weight:700}
+.rcols ul{list-style:none}
+.rcols ul li{position:relative;padding-left:16px;margin-bottom:2px}
+.rcols ul li::before{content:'';position:absolute;left:0;top:2px;width:9px;height:9px;background:var(--pink);border:1.4px solid var(--pink-deep);border-radius:3px}
+.rcols ol{list-style:none;counter-reset:step}
+.rcols ol li{counter-increment:step;position:relative;padding-left:16px;margin-bottom:3px}
+.rcols ol li::before{content:counter(step);position:absolute;left:0;top:0;color:var(--white);background:var(--olive);font-weight:700;font-size:7.5px;width:12px;height:12px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.portion-box2{margin-top:8px;background:var(--bg);border-left:3px solid var(--pink-deep);padding:6px 10px;font-size:10.3px;border-radius:0 6px 6px 0}
+.portion-box2 b{color:var(--pink-deep)}
+.rp1,.rp2,.rp3{background:linear-gradient(160deg,#dcd8d0,#c7c2b8);color:#8d887c}
+.rcard-photo .cam-mark{position:absolute;top:10px;right:10px;font-size:14px;opacity:.7}
+</style>
+</head>
+<body>
+<!-- COVER -->
+<section class="page cover" id="page-1">
+  <div class="cover-photo" style="background-image:url('photos/cover-collage.jpg');background-size:cover;background-position:center 30%">
+    <div class="sticker" style="top:24px;right:24px">з любов'ю ♥</div>
+  </div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">🌿 Меню та книга рецептів</div>
+    <h1 class="cover-title">Сімейний раціон:<br>здоров'я та легкість</h1>
+    <div class="cover-subtitle">Персональний раціон від нутриціолога — практичне меню на 4 тижні для всієї родини</div>
+    <div class="cover-badge">🎓 Збалансований сімейний раціон від дипломованого нутриціолога</div>
+    <div class="cover-tagline">«Готуй один раз — харчуйся збалансовано разом із сім'єю!»</div>
+    <div class="cover-meta">
+      <div><b>Формат</b><span>4 прийоми їжі на день</span></div>
+      <div><b>Калораж для жінки</b><span>~1600 ккал/день · Б 110–125 г</span></div>
+      <div><b>Концепція</b><span>Без окремого готування для родини</span></div>
+      <div><b>Продукти</b><span>АТБ, Сільпо, Новус</span></div>
+    </div>
+    <div class="cover-brand">
+      <div>Автор: <b>Олена Малетич</b><span class="role">Нутриціолог</span></div>
+      <div>Меню та книга рецептів · 50 сторінок</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW TO USE PAGE -->
+<section class="page" id="page-2">
+  <div class="ph"><span>Про раціон</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Вступ</div>
+  <h1 class="howto-title">📖 Про цей раціон: як користуватися гайдом</h1>
+  <div class="howto-intro">Привіт! Я ваш нутриціолог, і знаю, як важко поєднати бажання харчуватися правильно, любов родини до смачної їжі та брак часу. Цей раціон створений не для голодування, а для того, щоб м'яко і без стресу привчити всю родину до здорового харчування. Тут немає екзотичних чи дорогих суперфудів — лише прості продукти з АТБ та Сільпо, збалансовані за КБЖВ, смачні десерти та турбота про ваше здоров'я.</div>
+
+  <div class="sec">
+    <div class="sec-num n1">🎯</div>
+    <div class="sec-body">
+      <div class="sec-title">1. Для кого цей гайд?</div>
+      <div class="sec-text">Для всіх, хто хоче харчуватися смачно і збалансовано, піклується про здоров'я родини, але не має часу годинами стояти біля плити. Страви готуються швидко, з доступних продуктів, а частина страв на обід чи вечерю готується «на два дні», що економить ваш час.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-num n2">🥗</div>
+    <div class="sec-body">
+      <div class="sec-title">2. Структура меню (кількість порцій)</div>
+      <div class="sec-text">Раціон розрахований на 4 повні тижні і включає:</div>
+      <div class="feat-grid">
+        <div class="feat-item"><b>Сніданки — 28 варіантів</b>Швидкі сендвічі, пишні оладки, корисні каші та сирні страви.</div>
+        <div class="feat-item"><b>Обіди — 28 страв</b>М'ясо, птиця, риба з гарнірами. Частина — на 2 дні для зручності.</div>
+        <div class="feat-item"><b>Вечері — 28 страв</b>Легкі, але ситні: запечена риба, салати, запіканки, овочі.</div>
+        <div class="feat-item"><b>Перекуси — 28 ідей</b>Швидкі магазинні смаколики та домашні десерти.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-num n3">🔥</div>
+    <div class="sec-body">
+      <div class="sec-title">3. На які КБЖВ розраховано?</div>
+      <div class="sec-text">Меню побудоване за принципом комфортного дефіциту або підтримки вагових цілей: ~1450–1600 ккал/день.</div>
+      <div class="kbju-row">
+        <div class="kbju-chip c1"><div class="v">95–125 г</div><div class="l">Білки</div></div>
+        <div class="kbju-chip c2"><div class="v">38–52 г</div><div class="l">Жири</div></div>
+        <div class="kbju-chip c3"><div class="v">140–190 г</div><div class="l">Вуглеводи</div></div>
+      </div>
+      <div class="sec-text" style="margin-top:6px">Кожен день у меню вже містить пораховані цифри КБЖВ, а десерти й магазинні солодощі (зефір, Kinder тощо) гармонійно вписані в калораж без шкоди для форми!</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-num n4">🍳</div>
+    <div class="sec-body">
+      <div class="sec-title">4. Книга рецептів та особливості приготування</div>
+      <div class="sec-text">У другій частині гайду на вас чекає детальна книга рецептів:</div>
+      <div class="feat-grid">
+        <div class="feat-item"><b>На 1 порцію</b>Сніданки й десерти — на 1 порцію, а обіди/вечері мають розрахунок на родину та на порцію.</div>
+        <div class="feat-item"><b>Магазинні зручності</b>Готові продукти (курячий рулет, балик з АТБ) вже враховані в систему.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-num n5">🛒</div>
+    <div class="sec-body">
+      <div class="sec-title">5. Усі плюшки та фішки меню</div>
+      <ul class="perk-list">
+        <li><span class="ic">🛒</span>Готові списки покупок на кожен тиждень з розподілом на АТБ та Сільпо/Новус (із чекбоксами, щоб відмічати куплене).</li>
+        <li><span class="ic">🔄</span>Система «Готуємо раз — їмо два дні» для економії вашого часу на кухні.</li>
+        <li><span class="ic">🍫</span>Жодних жорстких заборон: улюблені магазинні десерти (Kinder, зефір, мармелад, шоколад) легально входять у раціон.</li>
+        <li><span class="ic">📱</span>Зручний формат: можна дивитися з телефону, планшета або роздрукувати на холодильник.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="howto-close">смачного і легкого тобі раціону!</div>
+  <div class="pf"><div><a href="#">Зміст</a></div><span class="pnum">2</span></div>
+</section>
+
+
+<section class="page" id="page-3">
+  <div class="ph"><span>Тиждень 1</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">🛒 Список покупок</div>
+  <h1 class="page-title" style="margin-bottom:2px">Тиждень 1</h1>
+  <div class="page-sub">Розраховано на родину з 3–4 осіб на 7 днів</div>
+  <div class="shop-grid">
+<div class="shop-card">
+<div class="shop-store">АТБ · Базовий кошик</div>
+<div class="shop-cat">М'ясо та птиця</div>
+<ul class="shop-list">
+<li>Філе куряче — 2 кг</li><li>Філе індички — 700 г</li><li>Фарш курячий/індичий — 500 г</li><li>Куряча печінка — 600 г</li>
+</ul>
+<div class="shop-cat">Молочні продукти &amp; яйця</div>
+<ul class="shop-list">
+<li>Кисломолочний сир 5-9% — 5 пачок / 1 кг</li><li>Яйця курячі — 2-3 десятка</li><li>Грецький йогурт 0-2% — 6-7 баночок</li><li>Сметана 15% — 1 стакан</li><li>Молоко 2.5% або рослинне — 1 л</li>
+</ul>
+<div class="shop-cat">Крупи та бакалія</div>
+<ul class="shop-list">
+<li>Цільнозерновий хліб — 1 буханка</li><li>Вівсяні пластівці — 1 пачка</li><li>Гречка — 1 кг</li><li>Кіноа — 1 пачка</li><li>Цільнозерновий лаваш — 2 пачки</li><li>Оливкова/соняшникова олія</li><li>Какао-порошок — 1 пачка</li><li>Гірчиця — 1 баночка</li>
+</ul>
+<div class="shop-cat">Заморозка</div>
+<ul class="shop-list">
+<li>Броколі заморожена — 2 пачки / 800 г</li><li>Хек або минтай філе — 800 г</li><li>Заморожена полуниця — 1 пачка</li>
+</ul>
+</div>
+<div class="shop-card">
+<div class="shop-store">Сільпо / Новус · Спец-товари</div>
+<div class="shop-cat">Риба</div>
+<ul class="shop-list"><li>Скумбрія свіжозаморожена — 2 шт.</li><li>Сьомга/форель слабосолона — 100 г</li></ul>
+<div class="shop-cat">Овочі та зелень</div>
+<ul class="shop-list">
+<li>Картопля — 1 кг</li><li>Кабачки/цукіні — 1.5 кг</li><li>Капуста білокачанна — 1 качан</li><li>Морква — 0.5 кг</li><li>Перець болгарський червоний — 2 шт.</li><li>Помідори — 1 кг</li><li>Огірки солоні/мариновані — 1 банка</li><li>Томати у власному соку — 2 банки по 400 г</li><li>Свіжий шпинат, зелень (кріп, петрушка, базилік)</li><li>Лимони — 2 шт.</li><li>Часник</li><li>Червона цибуля</li>
+</ul>
+<div class="shop-cat">Фрукти</div>
+<ul class="shop-list"><li>Банани — 1.5 кг</li><li>Яблука/персики — 0.5 кг</li><li>Фініки — 100 г</li></ul>
+<div class="shop-cat">Сири</div>
+<ul class="shop-list"><li>Моцарела — 150 г</li><li>Фета — 100 г</li><li>Твердий сир 45-50% — 150 г</li></ul>
+<div class="shop-cat">Смаколики та інше</div>
+<ul class="shop-list">
+<li>Булочки цільнозернові для бургерів — 2-3 шт.</li><li>Арахісова паста без цукру</li><li>Насіння соняшника та гарбуза</li><li>Глазуровані сирки — 2 шт.</li><li>Батончик Fizi/EatMe — 1 шт.</li><li>Морозиво «Хрещатик» — 1 шт.</li>
+</ul>
+</div>
+</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">3</span></div>
+</section>
+
+<section class="page" id="page-4">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Понеділок · Тиждень 1</div><br>
+  <div class="day-note hand">старт тижня — легко й смачно!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/df4e0037-1000055399.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Сирники з бананом та йогуртом</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 32 г · Ж: 11 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-11">Повний рецепт → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/6366dc24-1000055396.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Індичка запечена з картоплею + салат з капусти</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 38 г · Ж: 14 г · У: 45 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/fizi-bar.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Капучино + ПП-батончик Fizi/EatMe</div>
+        <div class="meal-kbju"><b>Ккал: 320</b> · Б: 8 г · Ж: 12 г · У: 43 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/98929a32-1000055400.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Риба під пряним маринадом + броколі + хліб</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 36 г · Ж: 12 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1580</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">114 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">49 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">166 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">4</span></div>
+</section>
+
+<section class="page" id="page-5">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Вівторок · Тиждень 1</div><br>
+  <div class="day-note hand">ще один смачний день</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/35e2aede-1000055392.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Солоний вівсяно-млинець із сьомгою та сиром</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 28 г · Ж: 16 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-11">Повний рецепт → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/6366dc24-1000055396.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Індичка запечена з картоплею + салат з капусти</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 38 г · Ж: 14 г · У: 45 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/2ac8e980-1000055404.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Морозиво «Творожно-фінікове»</div>
+        <div class="meal-kbju"><b>Ккал: 310</b> · Б: 21 г · Ж: 6 г · У: 42 г</div>
+        <div class="meal-ref"><a href="#page-14">Повний рецепт → стор. 14</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/98929a32-1000055400.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Риба під пряним маринадом + броколі + хліб</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 36 г · Ж: 12 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1590</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">123 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">48 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">163 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">5</span></div>
+</section>
+
+<section class="page" id="page-6">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Середа · Тиждень 1</div><br>
+  <div class="day-note hand">середина тижня, тримаємось!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/e9e7b3b2-1000055393.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Солодкий протеїновий вівсяно-млинець з бананом</div>
+        <div class="meal-kbju"><b>Ккал: 430</b> · Б: 34 г · Ж: 13 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-11">Повний рецепт → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/kotlety.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Курячі котлетки з сиром + гречка + овочі</div>
+        <div class="meal-kbju"><b>Ккал: 480</b> · Б: 42 г · Ж: 14 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/president-cheese.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Глазурований сирок + 1 яблуко</div>
+        <div class="meal-kbju"><b>Ккал: 290</b> · Б: 6 г · Ж: 12 г · У: 38 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/7399b48d-1000055401.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Цукіні-лазанья з курячим фаршем та моцарелою</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 42 г · Ж: 16 г · У: 22 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1610</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">124 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">55 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">150 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">6</span></div>
+</section>
+
+<section class="page" id="page-7">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Четвер · Тиждень 1</div><br>
+  <div class="day-note hand">майже вихідні</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/0675712b-1000055395.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Хрусткий лаваш-тост із яйцем та сиром</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 25 г · Ж: 18 г · У: 31 г</div>
+        <div class="meal-ref"><a href="#page-11">Сніданки → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/kotlety.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Курячі котлетки з сиром + гречка + овочі</div>
+        <div class="meal-kbju"><b>Ккал: 480</b> · Б: 42 г · Ж: 14 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/0ca42380-1000055405.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Шоколадно-бананове морозиво</div>
+        <div class="meal-kbju"><b>Ккал: 310</b> · Б: 22 г · Ж: 4 г · У: 45 г</div>
+        <div class="meal-ref"><a href="#page-14">Повний рецепт → стор. 14</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/7399b48d-1000055401.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Цукіні-лазанья з курячим фаршем та моцарелою</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 42 г · Ж: 16 г · У: 22 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1590</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">131 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">52 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">144 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">7</span></div>
+</section>
+
+<section class="page" id="page-8">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> П'ятниця · Тиждень 1</div><br>
+  <div class="day-note hand">фінішна пряма цього тижня!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/df4e0037-1000055399.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Сирники з бананом та сметаною</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 30 г · Ж: 12 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-11">Повний рецепт → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/781b22ad-1000055397.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Куряча печінка в томатах + кіноа/гречка</div>
+        <div class="meal-kbju"><b>Ккал: 440</b> · Б: 38 г · Ж: 12 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/roshen-cookies.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Печиво «До кави» 40г + мигдаль 15г</div>
+        <div class="meal-kbju"><b>Ккал: 330</b> · Б: 7 г · Ж: 17 г · У: 37 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/ee61c9c1-1000055403.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Скумбрія запечена з овочами та гарбузовим насінням</div>
+        <div class="meal-kbju"><b>Ккал: 450</b> · Б: 33 г · Ж: 25 г · У: 21 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1610</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">108 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">66 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">141 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">8</span></div>
+</section>
+
+<section class="page" id="page-9">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Субота · Тиждень 1</div><br>
+  <div class="day-note hand">вихідного дня смаку</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/113f9d03-1000055394.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Соковита домашня ПП-шаурма з куркою</div>
+        <div class="meal-kbju"><b>Ккал: 420</b> · Б: 35 г · Ж: 9 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-11">Повний рецепт → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/781b22ad-1000055397.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Куряча печінка в томатах + кіноа/гречка</div>
+        <div class="meal-kbju"><b>Ккал: 440</b> · Б: 38 г · Ж: 12 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/2a4645b7-1000055406.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Полунично-протеїнове морозиво або йогурт з ягодами</div>
+        <div class="meal-kbju"><b>Ккал: 270</b> · Б: 18 г · Ж: 4 г · У: 39 г</div>
+        <div class="meal-ref"><a href="#page-14">Повний рецепт → стор. 14</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/ee61c9c1-1000055403.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Скумбрія запечена з овочами та насінням</div>
+        <div class="meal-kbju"><b>Ккал: 450</b> · Б: 33 г · Ж: 25 г · У: 21 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1580</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">124 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">50 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">151 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">9</span></div>
+</section>
+
+<section class="page" id="page-10">
+  <div class="ph"><span>Тиждень 1 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Неділя · Тиждень 1</div><br>
+  <div class="day-note hand">останній день — попереду новий тиждень</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/e9e7b3b2-1000055393.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Солодкий протеїновий вівсяно-млинець</div>
+        <div class="meal-kbju"><b>Ккал: 430</b> · Б: 34 г · Ж: 13 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-11">Повний рецепт → стор. 11</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/2acfc7eb-1000055398.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Соковитий сімейний курячий бургер</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 38 г · Ж: 15 г · У: 45 г</div>
+        <div class="meal-ref"><a href="#page-12">Повний рецепт → стор. 12</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/hreshchatyk.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Морозиво «Хрещатик» або «Каштан» 75г</div>
+        <div class="meal-kbju"><b>Ккал: 240</b> · Б: 3 г · Ж: 14 г · У: 24 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo" style="background-image:url('photos/ef46dd27-1000055402.jpg');background-size:cover;background-position:center"><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Кабачок з фетою + курячі «піци» з моцарелою</div>
+        <div class="meal-kbju"><b>Ккал: 420</b> · Б: 44 г · Ж: 18 г · У: 18 г</div>
+        <div class="meal-ref"><a href="#page-13">Повний рецепт → стор. 13</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1560</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">119 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">60 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">131 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🛒 Завтра — новий тиждень! Онови список покупок і підготуй свіжі продукти на наступні 7 днів.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">10</span></div>
+</section>
+
+<section class="page" id="page-11">
+  <div class="ph"><span>Тиждень 1 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Сніданки</h1><span class="title-hand">доброго ранку!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/df4e0037-1000055399.jpg');background-size:cover;background-position:center"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Ніжні сирники з бананом</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>4 хв</b></span><span>Порцій<b>2-3</b></span></div>
+        <div class="rcols">
+          <div><h4>На всю родину (2-3 порції)</h4><ul><li>Сир 5% — 400 г</li><li>Яйце — 1 шт.</li><li>Банан — 1 шт.</li><li>Вівсяне борошно — 3 ст. л.</li><li>Ванілін, кориця</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Сир розімніть з яйцем та бананом.</li><li>Додайте вівсянку.</li><li>Сформуйте сирники та смажте на антипригарній пательні під кришкою по 4 хвилини з кожного боку.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 1.5 порції від загальної маси (~220 г) + 2 ст. л. грецького йогурту або 1 ст. л. сметани 15%.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/35e2aede-1000055392.jpg');background-size:cover;background-position:center"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Солоний вівсяно-млинець</div>
+        <div class="rmeta"><span>Підготовка<b>12 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Вівсянка — 50 г</li><li>Яйце — 1 шт.</li><li>Дрібка солі</li><li>Вода/молоко — 40 мл</li></ul><h4>Начинка</h4><ul><li>Сир/фета — 40 г</li><li>Сьомга/шинка — 30 г</li><li>Огірок, зелень</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Збийте вівсянку з яйцем та водою, вилийте на пательню, обсмажте з двох боків.</li><li>На одну половину викладіть начинку та накрийте іншою половиною.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/e9e7b3b2-1000055393.jpg');background-size:cover;background-position:center"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Солодкий протеїновий вівсяно-млинець</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Вівсянка — 60 г</li><li>Яйце — 1 шт.</li><li>Протеїн — 25 г (або +10 г вівсянки)</li><li>Вода</li></ul><h4>Начинка</h4><ul><li>Арахісова паста — 10 г</li><li>Банан — 1/2 шт.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Збийте блендером тісто, обсмажте млинець.</li><li>Змастіть пастою та прикрасьте бананом.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/113f9d03-1000055394.jpg');background-size:cover;background-position:center"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Домашня ПП-шаурма</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>2 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Лаваш цільнозерновий — 50 г</li><li>Куряча грудка запечена — 120 г</li><li>Огірок, помідор, капуста — 100 г</li><li>Соус: 2 ст. л. йогурту + часник + кріп + сіль</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змастіть лаваш соусом, викладіть курку та овочі, загорніть конвертом та підрум'яньте на сухій пательні 2 хвилини.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">11</span></div>
+</section>
+
+<section class="page" id="page-12">
+  <div class="ph"><span>Тиждень 1 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Обіди для всієї родини</h1><span class="title-hand">смачного обіду!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/6366dc24-1000055396.jpg');background-size:cover;background-position:center"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечена індичка з картоплею у спеціях</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>35 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На форму для родини</h4><ul><li>Філе індички/курки — 700 г</li><li>Картопля — 800 г</li><li>Олія — 1.5 ст. л.</li><li>Спеції (паприка, часник, сіль)</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Наріжте картоплю та м'ясо, перемішайте з олією та спеціями.</li><li>Запікайте 35 хв при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 1/4 частина всієї форми (~150 г м'яса + 160 г картоплі) + 150 г свіжого салату з капусти з 1 ч. л. насіння соняшника.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/kotlety.jpg');background-size:cover;background-position:center"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Соковиті курячі котлетки з сиром</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>10-12 шт</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину (10-12 шт.)</h4><ul><li>Куряче філе — 600 г кубиками</li><li>Твердий сир — 100 г</li><li>Яйце — 1 шт.</li><li>Грецький йогурт — 2 ст. л.</li><li>Борошно — 2 ст. л.</li><li>Сіль, зелень</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте інгредієнти, ложкою викладайте на пательню, смажте під кришкою без олії.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 2-3 котлетки (~150 г) + 150 г вареної гречки/кіноа + свіжі овочі.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/781b22ad-1000055397.jpg');background-size:cover;background-position:center"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Куряча печінка в томатах та перці</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>8 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Печінка куряча — 600 г</li><li>Томати у власному соку — 400 г</li><li>Перець болгарський — 2 шт.</li><li>Цибуля — 2 шт.</li><li>Олія — 1 ст. л.</li><li>Лимонний сік, часник, зелень</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Обсмажте овочі на олії 5 хв, додайте печінку (по 3 хв з боку), залийте томатами і тушкуйте 8 хв.</li><li>В кінці — сік лимона.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> ~200 г печінки з овочевим соусом + 150 г вареної гречки/кіноа.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/2acfc7eb-1000055398.jpg');background-size:cover;background-position:center"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Соковитий сімейний курячий бургер</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Булочка цільнозернова — 60 г</li><li>Рублена куряча котлета — 120 г</li><li>Твердий сир — 15 г</li><li>Помідор, солоний огірок, салат</li><li>Соус: 1 ст. л. йогурту + 1/2 ч. л. гірчиці</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Підсушіть булочку, зберіть бургер із гарячою котлетою та сиром.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">12</span></div>
+</section>
+
+<section class="page" id="page-13">
+  <div class="ph"><span>Тиждень 1 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Вечері для всієї родини</h1><span class="title-hand">приємного вечора!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/98929a32-1000055400.jpg');background-size:cover;background-position:center"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Соковита риба під пряним маринадом</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>25 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Філе хека або минтая — 800 г</li><li>Олія — 1 ст. л.</li><li>Сік 1/2 лимона, часник, кріп, паприка</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змастіть рибу маринадом, викладіть на деко, накрийте фольгою і запікайте 25 хв при 200°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> ~180-200 г готової риби + 150-200 г броколі + 1 скибка цільнозернового хліба (30 г).</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/7399b48d-1000055401.jpg');background-size:cover;background-position:center"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Цукіні-лазанья з курячим фаршем</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>30 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На велику форму</h4><ul><li>Цукіні — 700 г слайсами</li><li>Курячий фарш — 500 г</li><li>Томати у власному соку — 400 г</li><li>Моцарела — 150 г</li><li>Йогурт — 150 г + 1 яйце</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Обсмажте фарш з томатами.</li><li>Посоліть цукіні та промокніть вологу.</li><li>У форму шарами: цукіні → фарш → йогуртовий соус.</li><li>Зверху моцарела.</li><li>Запікайте 30 хв при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> рівно 1/4 частина всієї форми (~280-300 г).</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/ee61c9c1-1000055403.jpg');background-size:cover;background-position:center"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечена скумбрія з броколі та насінням</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>20 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Філе скумбрії — 2 шт.</li><li>Броколі — 500 г</li><li>Шпинат — 100 г</li><li>Насіння гарбуза — 30 г</li><li>Лимон, трави</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Запікайте скумбрію 20 хв при 180°C.</li><li>Броколі припустіть на пательні з водою 5-7 хв.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 1/2 філе скумбрії (~130 г) + 150 г броколі + жменя шпинату + 1 ст. л. насіння (10 г).</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/ef46dd27-1000055402.jpg');background-size:cover;background-position:center"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечений кабачок з фетою та курячі «піци»</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>20 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Кабачок: 1/2 розрізати вздовж, надрізи, 30 г фети, часник</li><li>Курячі піци: 150 г філе розрізати, помідор + 30 г моцарели</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Кабачок запекти з фетою та часником 20 хв.</li><li>Курячу піцу викласти з помідором і моцарелою та запекти 15 хв.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">13</span></div>
+</section>
+
+<section class="page" id="page-14">
+  <div class="ph"><span>Тиждень 1 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Нові ПП-десерти</h1><span class="title-hand">солодкого!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/2ac8e980-1000055404.jpg');background-size:cover;background-position:center"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Морозиво «Творожно-фінікове» (найсолодше)</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>40 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Сир 5% — 150 г</li><li>Фініки без кісточки — 3 шт. (~30 г)</li><li>Кориця — дрібка</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Зблендерити до ідеальної однорідності.</li><li>Покласти у морозилку на 30-40 хвилин.</li></ol></div>
+        </div>
+        <div class="kbju-strip">310 ккал · Б 21 г · Ж 6 г · В 42 г</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/0ca42380-1000055405.jpg');background-size:cover;background-position:center"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Шоколадно-бананове морозиво</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Заморожений банан — 100 г</li><li>Какао-порошок — 1 ст. л.</li><li>Протеїн шоколадний — 20 г (або йогурт 100 г)</li><li>Молоко — 50 мл</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Збити все у блендері до кремового стану.</li></ol></div>
+        </div>
+        <div class="kbju-strip">310 ккал · Б 22 г · Ж 4 г · В 45 г</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo" style="background-image:url('photos/2a4645b7-1000055406.jpg');background-size:cover;background-position:center"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Полунично-протеїнове морозиво</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Заморожена полуниця — 100 г</li><li>Протеїн ванільний/полуничний — 20 г (або йогурт 120 г + 1 ч. л. меду)</li><li>Вода/молоко — 30 мл</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Зблендерити заморожену ягоду з білковою основою.</li></ol></div>
+        </div>
+        <div class="kbju-strip">270 ккал · Б 18 г · Ж 4 г · В 39 г</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-3">Покупки</a><a href="#page-4">Меню</a><a href="#page-11">Рецепти</a></div><span class="pnum">14</span></div>
+</section>
+
+<section class="page" id="page-15">
+  <div class="ph"><span>Тиждень 2</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">🛒 Список покупок</div>
+  <h1 class="page-title" style="margin-bottom:2px">Тиждень 2</h1>
+  <div class="page-sub">Розраховано на родину з 3–4 осіб на 7 днів</div>
+  <div class="shop-grid">
+<div class="shop-card">
+<div class="shop-store">АТБ · Базовий кошик</div>
+<div class="shop-cat">М'ясо, птиця та делікатеси</div>
+<ul class="shop-list">
+<li>Курячий рулет / запечене філе в нарізці — 1 пачка / 200 г</li><li>Філе індички або курки — 1.5 кг</li><li>Яловича або нежирна свиняча вирізка — 700 г</li><li>Фарш з індички/курки — 500 г</li>
+</ul>
+<div class="shop-cat">Молочні продукти &amp; яйця</div>
+<ul class="shop-list">
+<li>Кисломолочний сир 5-9% — 4 пачки / 800 г</li><li>Яйця курячі — 2-3 десятка</li><li>Грецький йогурт 0-2% — 5 баночок</li><li>Твердий сир 45-50% — 200 г</li><li>Кисломолочний сир м'який / крем-сир — 1 баночка</li>
+</ul>
+<div class="shop-cat">Крупи та бакалія</div>
+<ul class="shop-list">
+<li>Цільнозерновий/тостовий хліб — 1 буханка</li><li>Рис басматі або нешліфований — 1 кг</li><li>Макарони з твердих сортів — 1 пачка / 400 г</li><li>Вівсяні пластівці</li><li>Оливкова/соняшникова олія</li><li>Томатна паста</li>
+</ul>
+<div class="shop-cat">Заморозка</div>
+<ul class="shop-list">
+<li>Морський коктейль або креветки — 400 г</li><li>Стручкова квасоля заморожена — 1 пачка / 400 г</li><li>Заморожене манго або персик — 1 пачка</li>
+</ul>
+</div>
+<div class="shop-card">
+<div class="shop-store">Сільпо / Новус · Спец-товари</div>
+<div class="shop-cat">Риба</div>
+<ul class="shop-list"><li>Філе судака, минтая або тріски — 700 г</li></ul>
+<div class="shop-cat">Овочі та зелень</div>
+<ul class="shop-list">
+<li>Морква — 0.5 кг</li><li>Цибуля ріпчаста</li><li>Кабачки/цукіні — 1 кг</li><li>Болгарський перець — 3 шт.</li><li>Помідори свіжі та черрі — 1 кг</li><li>Огірки свіжі — 0.5 кг</li><li>Печериці — 300 г</li><li>Салат Айсберг / мікс зелені</li><li>Лимон</li><li>Часник</li>
+</ul>
+<div class="shop-cat">Фрукти</div>
+<ul class="shop-list"><li>Яблука, банани, полуниця або сезонні ягоди — 1 кг</li></ul>
+<div class="shop-cat">Солодощі та магазинні смаколики</div>
+<ul class="shop-list">
+<li>Зефір класичний або в шоколаді — 1 пачка</li><li>Kinder Pingui / Kinder Delice — 2 шт.</li><li>Протеїновий батончик (Fizi/GoOn)</li><li>Арахісова паста</li>
+</ul>
+</div>
+</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">15</span></div>
+</section>
+
+<section class="page" id="page-16">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Понеділок · Тиждень 2</div><br>
+  <div class="day-note hand">старт тижня — легко й смачно!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Канапе: хліб, м'який сир, курячий рулет, огірок, яйце</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 26 г · Ж: 14 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-23">Повний рецепт → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечена яловичина з рисом басматі та овочами</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 40 г · Ж: 13 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-24">Повний рецепт → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Kinder Pingui + 1 яблуко</div>
+        <div class="meal-kbju"><b>Ккал: 230</b> · Б: 4 г · Ж: 10 г · У: 31 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Паста з морепродуктами у томатно-часниковому соусі</div>
+        <div class="meal-kbju"><b>Ккал: 430</b> · Б: 32 г · Ж: 12 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-25">Повний рецепт → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1520</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">102 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">49 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">167 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">16</span></div>
+</section>
+
+<section class="page" id="page-17">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Вівторок · Тиждень 2</div><br>
+  <div class="day-note hand">ще один смачний день</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Лінивий сирний мус із ягодами та мигдалем</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 30 г · Ж: 12 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-23">Повний рецепт → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечена яловичина з рисом басматі та овочами</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 40 г · Ж: 13 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-24">Повний рецепт → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Зефір класичний 2 шт./60г + горіхи 15г</div>
+        <div class="meal-kbju"><b>Ккал: 310</b> · Б: 4 г · Ж: 8 г · У: 55 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Паста з морепродуктами у томатному соусі</div>
+        <div class="meal-kbju"><b>Ккал: 430</b> · Б: 32 г · Ж: 12 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-25">Повний рецепт → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1590</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">106 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">45 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">189 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">17</span></div>
+</section>
+
+<section class="page" id="page-18">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Середа · Тиждень 2</div><br>
+  <div class="day-note hand">середина тижня, тримаємось!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Швидкі курячо-овочеві оладки + грецький йогурт</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 35 г · Ж: 13 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-23">Повний рецепт → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечена курка у соєво-медовому маринаді з картоплею</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 38 г · Ж: 12 г · У: 50 г</div>
+        <div class="meal-ref"><a href="#page-24">Повний рецепт → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Протеїновий батончик Fizi/GoOn + капучино</div>
+        <div class="meal-kbju"><b>Ккал: 310</b> · Б: 15 г · Ж: 11 г · У: 38 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Біла риба, тушкована з овочами + зелений салат</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 36 г · Ж: 11 г · У: 36 г</div>
+        <div class="meal-ref"><a href="#page-25">Повний рецепт → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1570</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">124 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">47 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">162 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">18</span></div>
+</section>
+
+<section class="page" id="page-19">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Четвер · Тиждень 2</div><br>
+  <div class="day-note hand">майже вихідні</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Французький тост із корицею, сиром та ягодами</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 24 г · Ж: 10 г · У: 53 г</div>
+        <div class="meal-ref"><a href="#page-23">Повний рецепт → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечена курка у соєво-медовому маринаді з картоплею</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 38 г · Ж: 12 г · У: 50 г</div>
+        <div class="meal-ref"><a href="#page-24">Повний рецепт → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Морозиво «Манго-кокос»</div>
+        <div class="meal-kbju"><b>Ккал: 310</b> · Б: 18 г · Ж: 6 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-26">Повний рецепт → стор. 26</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Біла риба, тушкована з овочами + зелений салат</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 36 г · Ж: 11 г · У: 36 г</div>
+        <div class="meal-ref"><a href="#page-25">Повний рецепт → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1560</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">116 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">39 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">185 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">19</span></div>
+</section>
+
+<section class="page" id="page-20">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> П'ятниця · Тиждень 2</div><br>
+  <div class="day-note hand">фінішна пряма цього тижня!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Канапе-сніданок з хлібом, курячим рулетом та сиром</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 26 г · Ж: 14 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-23">Повний рецепт → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Гречана запіканка з індичим фаршем та грибами</div>
+        <div class="meal-kbju"><b>Ккал: 450</b> · Б: 40 г · Ж: 13 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-24">Повний рецепт → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Kinder Delice 39г + 1 банан</div>
+        <div class="meal-kbju"><b>Ккал: 270</b> · Б: 4 г · Ж: 10 г · У: 41 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Теплий салат із курячими стрипсами та стручковою квасолею</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 42 г · Ж: 14 г · У: 26 г</div>
+        <div class="meal-ref"><a href="#page-25">Повний рецепт → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1510</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">112 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">51 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">150 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">20</span></div>
+</section>
+
+<section class="page" id="page-21">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Субота · Тиждень 2</div><br>
+  <div class="day-note hand">вихідного дня смаку</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Хрусткі цукіні-оладки без борошна з йогуртом та яйцем</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 22 г · Ж: 16 г · У: 36 г</div>
+        <div class="meal-ref"><a href="#page-23">Сніданки → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Гречана запіканка з індичим фаршем та грибами</div>
+        <div class="meal-kbju"><b>Ккал: 450</b> · Б: 40 г · Ж: 13 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-24">Повний рецепт → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Морозиво «Полунично-протеїнове»</div>
+        <div class="meal-kbju"><b>Ккал: 270</b> · Б: 18 г · Ж: 4 г · У: 39 г</div>
+        <div class="meal-ref"><a href="#page-26">Повний рецепт → стор. 26</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Теплий салат із курячими стрипсами та стручковою квасолею</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 42 г · Ж: 14 г · У: 26 г</div>
+        <div class="meal-ref"><a href="#page-25">Повний рецепт → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1500</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">122 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">47 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">144 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">21</span></div>
+</section>
+
+<section class="page" id="page-22">
+  <div class="ph"><span>Тиждень 2 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Неділя · Тиждень 2</div><br>
+  <div class="day-note hand">останній день — попереду новий тиждень</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Французький тост із корицею, сиром та ягодами</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 24 г · Ж: 10 г · У: 53 г</div>
+        <div class="meal-ref"><a href="#page-23">Повний рецепт → стор. 23</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Соковиті курячі «Піци» на деку з картопляним пюре</div>
+        <div class="meal-kbju"><b>Ккал: 480</b> · Б: 44 г · Ж: 14 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-24">Обіди → стор. 24</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Зефір у шоколаді 1-2 шт. + кава/чай</div>
+        <div class="meal-kbju"><b>Ккал: 250</b> · Б: 2 г · Ж: 7 г · У: 44 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Запечений кабачок з фетою, часником та йогуртом</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 18 г · Ж: 16 г · У: 41 г</div>
+        <div class="meal-ref"><a href="#page-25">Вечері → стор. 25</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1510</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">88 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">47 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">182 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🛒 Завтра — новий тиждень! Онови список покупок і підготуй свіжі продукти на наступні 7 днів.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">22</span></div>
+</section>
+
+<section class="page" id="page-23">
+  <div class="ph"><span>Тиждень 2 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Сніданки</h1><span class="title-hand">доброго ранку!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Сендвіч із курячим рулетом з АТБ</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Цільнозерновий хліб — 60 г (2 скибки)</li><li>Кисломолочний м'який сир — 30 г</li><li>Курячий рулет / запечена курка — 50 г</li><li>Варене яйце — 1 шт.</li><li>Огірок</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змастіть хліб м'яким сиром, викладіть курячий рулет, кружальця яйця та огірок.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Лінивий сирний мус із ягодами</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Кисломолочний сир 5% — 150 г</li><li>Грецький йогурт — 80 г</li><li>Мед/підсолоджувач — 1 ч. л.</li><li>Ягоди свіжі/заморожені — 100 г</li><li>Мигдаль — 10 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Сир збийте з йогуртом та медом блендером до текстури ніжного крему.</li><li>Зверху посипте ягодами та подрібненим мигдалем.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Курячо-овочеві оладки</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>4 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Куряче філе дрібно нарізане — 120 г</li><li>Тертий кабачок — 80 г (віджати сік)</li><li>Яйце — 1 шт.</li><li>Борошно — 1 ст. л. (20 г)</li><li>Зелень, сіль</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте інгредієнти.</li><li>Викладайте ложкою на антипригарну пательню та смажте під кришкою по 4 хв з боку.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Солодкий французький тост</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію для жінки</h4><ul><li>Тостовий цільнозерновий хліб — 50 г (2 шт.)</li><li>Яйце — 1 шт.</li><li>Молоко — 30 мл, кориця</li><li>Подача: сир 5% — 80 г, ягоди/½ банана</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Вмочіть хліб у суміш яйця, молока та кориці.</li><li>Обсмажте на сухій пательні.</li><li>Зверху викладіть сир та ягоди.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">23</span></div>
+</section>
+
+<section class="page" id="page-24">
+  <div class="ph"><span>Тиждень 2 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Обіди для всієї родини</h1><span class="title-hand">смачного обіду!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечена яловичина у фользі</div>
+        <div class="rmeta"><span>Підготовка<b>10 хв</b></span><span>Готування<b>60 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Яловича/свиняча вирізка — 700 г</li><li>Часник, гірчиця — 1 ст. л.</li><li>Соєвий соус — 2 ст. л.</li><li>Паприка, сіль</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Замаринуйте м'ясо у спеціях та соєвому соусі.</li><li>Щільно загорніть у фольгу та запікайте при 180°C 50–60 хвилин.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 150 г запеченого м'яса + 150 г вареного рису басматі + свіжі овочі.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Курка в соєво-медовому маринаді</div>
+        <div class="rmeta"><span>Підготовка<b>10 хв</b></span><span>Готування<b>25 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Куряче філе/стегна без шкіри — 700 г</li><li>Соєвий соус — 3 ст. л.</li><li>Мед — 1 ч. л.</li><li>Часник — 2 зубчики</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Замаринуйте курку на 15 хв.</li><li>Запікайте у духовці 25 хвилин при 190°C до карамельної скоринки.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 150 г курки + 160 г запеченої або відвареної картоплі + салат.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Гречана запіканка з індичим фаршем та грибами</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>25 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Варена гречка — 400 г</li><li>Фарш індичий — 500 г</li><li>Печериці — 300 г</li><li>Цибуля — 1 шт.</li><li>Яйця — 2 шт. (для змащування)</li><li>Твердий сир — 80 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Обсмажте фарш з цибулею та грибами.</li><li>Змішайте з гречкою та збитими яйцями.</li><li>Викладіть у форму, посипте сиром та запікайте 25 хв при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 1/4 частина всієї форми (~280 г).</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">24</span></div>
+</section>
+
+<section class="page" id="page-25">
+  <div class="ph"><span>Тиждень 2 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Вечері для всієї родини</h1><span class="title-hand">приємного вечора!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Паста з морепродуктами в томатному соусі</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Макарони з твердих сортів — 250 г (сухих)</li><li>Морський коктейль/креветки — 400 г</li><li>Помідори у власному соку — 300 г</li><li>Часник, олія — 1 ст. л.</li><li>Базилік</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Обсмажте часник на олії, додайте морепродукти (3 хв), залийте томатами і тушкуйте 5 хв.</li><li>Змішайте з відвареною пастою.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 1/4 частина всієї страви (~250 г у готовому вигляді).</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Біла риба, тушкована з овочами</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>15 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Філе судака/минтая — 700 г</li><li>Цибуля — 1 шт.</li><li>Морква — 1 шт.</li><li>Болгарський перець — 1 шт.</li><li>Томатна паста — 2 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Овочі наріжте соломкою, пасеруйте 5 хв.</li><li>Викладіть шматочки риби, додайте томатну пасту, розведену водою, тушкуйте під кришкою 15 хв.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> ~180 г риби з овочевим соусом + велика порція свіжого салату.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Теплий салат із курячими стрипсами та квасолею</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Куряче філе — 500 г</li><li>Стручкова квасоля — 400 г</li><li>Помідори черрі — 200 г</li><li>Соєвий соус — 2 ст. л.</li><li>Олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Обсмажте смужки курки у соєвому соусі.</li><li>Окремо припустіть стручкову квасолю 5 хв.</li><li>Змішайте курку, квасолю, черрі та збризніть олією.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>Порція для жінки:</b> 1/4 частина від усієї великої миски салату (~250 г).</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">25</span></div>
+</section>
+
+<section class="page" id="page-26">
+  <div class="ph"><span>Тиждень 2 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Нові ПП-десерти</h1><span class="title-hand">солодкого!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Морозиво «Манго-кокос»</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Заморожене манго — 100 г</li><li>Грецький йогурт — 100 г (або кокосове молоко 50 мл)</li><li>Протеїн ванільний — 15 г (або 1 ч. л. меду)</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Зблендерити заморожені шматочки манго з йогуртом до кремової текстури.</li></ol></div>
+        </div>
+        <div class="kbju-strip">310 ккал · Б 18 г · Ж 6 г · В 46 г</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Домашнє ягідне морозиво</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>20 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Заморожена полуниця/ягоди — 120 г</li><li>Кисломолочний сир 5% — 80 г</li><li>Грецький йогурт — 50 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Зблендерити все до однорідної маси, охолодити 20 хвилин.</li></ol></div>
+        </div>
+        <div class="kbju-strip">270 ккал · Б 18 г · Ж 4 г · В 39 г</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-15">Покупки</a><a href="#page-16">Меню</a><a href="#page-23">Рецепти</a></div><span class="pnum">26</span></div>
+</section>
+
+<section class="page" id="page-27">
+  <div class="ph"><span>Тиждень 3</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">🛒 Список покупок</div>
+  <h1 class="page-title" style="margin-bottom:2px">Тиждень 3</h1>
+  <div class="page-sub">Розраховано на родину з 3–4 осіб на 7 днів</div>
+  <div class="shop-grid">
+<div class="shop-card">
+<div class="shop-store">АТБ · Базовий кошик</div>
+<div class="shop-cat">М'ясо, птиця та делікатеси</div>
+<ul class="shop-list">
+<li>Куряче філе — 1.5 кг</li><li>Свинина нежирна (вирізка/корейка) — 700 г</li><li>Фарш курячий — 500 г</li><li>М'ясна нарізка/балик з АТБ — 1 пачка / 200 г</li>
+</ul>
+<div class="shop-cat">Молочні продукти &amp; яйця</div>
+<ul class="shop-list">
+<li>Кисломолочний сир 5-9% — 4 пачки / 800 г</li><li>Яйця курячі — 2-3 десятка</li><li>Грецький йогурт 0-2% — 6 баночок</li><li>Твердий сир — 150 г</li><li>М'який крем-сир — 1 баночка</li>
+</ul>
+<div class="shop-cat">Крупи та бакалія</div>
+<ul class="shop-list">
+<li>Цільнозерновий/тостовий хліб — 1 буханка</li><li>Кускус — 1 пачка</li><li>Кукурудзяна крупа — 1 пачка</li><li>Спагеті/макарони з твердих сортів — 1 пачка</li><li>Вівсяні пластівці</li><li>Оливкова/соняшникова олія</li>
+</ul>
+<div class="shop-cat">Заморозка</div>
+<ul class="shop-list">
+<li>Філе хек/минтай — 700 г</li><li>Цвітна капуста заморожена — 1 пачка / 400 г</li><li>Заморожена вишня — 1 пачка</li>
+</ul>
+</div>
+<div class="shop-card">
+<div class="shop-store">Сільпо / Новус · Спец-товари</div>
+<div class="shop-cat">Риба</div>
+<ul class="shop-list"><li>Слабосолона форель або сьомга — 100 г</li></ul>
+<div class="shop-cat">Овочі та зелень</div>
+<ul class="shop-list">
+<li>Баклажани — 2 шт.</li><li>Перець болгарський — 3 шт.</li><li>Помідори та черрі — 1.5 кг</li><li>Огірки свіжі — 0.5 кг</li><li>Морква</li><li>Цибуля ріпчаста</li><li>Свіжа зелень (петрушка, кріп)</li><li>Лимон</li><li>Часник</li>
+</ul>
+<div class="shop-cat">Фрукти</div>
+<ul class="shop-list"><li>Груші, яблука, банани, ківі — разом ~1.5 кг</li></ul>
+<div class="shop-cat">Солодощі та магазинні смаколики</div>
+<ul class="shop-list">
+<li>Kinder Молочний скибочка або Kinder Bueno — 2 шт.</li><li>Зефір біло-рожевий/у шоколаді — 1 пачка</li><li>Протеїновий батончик (Fizi/Nutrend)</li><li>Шоколад гіркий 70% — 1 плитка</li>
+</ul>
+</div>
+</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">27</span></div>
+</section>
+
+<section class="page" id="page-28">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Понеділок · Тиждень 3</div><br>
+  <div class="day-note hand">старт тижня — легко й смачно!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Ніжний полента-сніданок з вареним яйцем та сиром</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 18 г · Ж: 12 г · У: 52 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Свиняча вирізка, запечена з баклажанами та кускусом</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 38 г · Ж: 14 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Kinder Молочний скибочка + 1 груша</div>
+        <div class="meal-kbju"><b>Ккал: 220</b> · Б: 4 г · Ж: 8 г · У: 33 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Запечений хек під овочевою «шубою» з цвітною капустою</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 38 г · Ж: 11 г · У: 37 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1480</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">98 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">45 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">170 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">28</span></div>
+</section>
+
+<section class="page" id="page-29">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Вівторок · Тиждень 3</div><br>
+  <div class="day-note hand">ще один смачний день</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Швидкі сендвічі з баликом з АТБ, огірком та м'яким сиром</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 24 г · Ж: 12 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Свиняча вирізка, запечена з баклажанами та кускусом</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 38 г · Ж: 14 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Зефір 2 шт. + 3 квадратики темного шоколаду</div>
+        <div class="meal-kbju"><b>Ккал: 300</b> · Б: 3 г · Ж: 6 г · У: 58 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Запечений хек під овочевою «шубою» з цвітною капустою</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 38 г · Ж: 11 г · У: 37 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1550</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">103 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">43 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">187 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">29</span></div>
+</section>
+
+<section class="page" id="page-30">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Середа · Тиждень 3</div><br>
+  <div class="day-note hand">середина тижня, тримаємось!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Соковитий солоний оладок з сиру та зелені</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 28 г · Ж: 14 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Куряче філе в соусі «Капрезе» + печена картопля</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 42 г · Ж: 13 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Протеїновий батончик Fizi/Nutrend + чай/кава</div>
+        <div class="meal-kbju"><b>Ккал: 290</b> · Б: 15 г · Ж: 10 г · У: 35 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Запіканка зі спагеті, курячого фаршу та болгарського перцю</div>
+        <div class="meal-kbju"><b>Ккал: 420</b> · Б: 36 г · Ж: 12 г · У: 42 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1570</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">121 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">49 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">161 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">30</span></div>
+</section>
+
+<section class="page" id="page-31">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Четвер · Тиждень 3</div><br>
+  <div class="day-note hand">майже вихідні</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Солоний оладок з сиру та зелені</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 28 г · Ж: 14 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Куряче філе в соусі «Капрезе» + печена картопля</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 42 г · Ж: 13 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Десерт «Вишнева насолода»</div>
+        <div class="meal-kbju"><b>Ккал: 270</b> · Б: 18 г · Ж: 4 г · У: 40 г</div>
+        <div class="meal-ref"><a href="#page-38">Повний рецепт → стор. 38</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Запіканка зі спагеті, курячого фаршу та болгарського перцю</div>
+        <div class="meal-kbju"><b>Ккал: 420</b> · Б: 36 г · Ж: 12 г · У: 42 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1550</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">124 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">43 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">166 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">31</span></div>
+</section>
+
+<section class="page" id="page-32">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> П'ятниця · Тиждень 3</div><br>
+  <div class="day-note hand">фінішна пряма цього тижня!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Сендвічі з баликом з АТБ, огірком та м'яким сиром</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 24 г · Ж: 12 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Курячі крученики з грибами + запечений гарбуз/картопля</div>
+        <div class="meal-kbju"><b>Ккал: 450</b> · Б: 40 г · Ж: 13 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Kinder Bueno 1 пачка + 1 ківі</div>
+        <div class="meal-kbju"><b>Ккал: 260</b> · Б: 4 г · Ж: 11 г · У: 36 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Салат-мікс із слабосолоною фореллю, яйцем та кускусом</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 26 г · Ж: 15 г · У: 42 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1500</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">94 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">51 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">165 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">32</span></div>
+</section>
+
+<section class="page" id="page-33">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Субота · Тиждень 3</div><br>
+  <div class="day-note hand">вихідного дня смаку</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Швидка вівсянка «Шоколадно-горіхова»</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 16 г · Ж: 12 г · У: 54 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Курячі крученики з грибами + запечений гарбуз/картопля</div>
+        <div class="meal-kbju"><b>Ккал: 450</b> · Б: 40 г · Ж: 13 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Сирно-вишневий ПП-мус</div>
+        <div class="meal-kbju"><b>Ккал: 260</b> · Б: 20 г · Ж: 3 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-38">Повний рецепт → стор. 38</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Салат-мікс із слабосолоною фореллю, яйцем та кускусом</div>
+        <div class="meal-kbju"><b>Ккал: 410</b> · Б: 26 г · Ж: 15 г · У: 42 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1510</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">102 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">43 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">177 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">33</span></div>
+</section>
+
+<section class="page" id="page-34">
+  <div class="ph"><span>Тиждень 3 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Неділя · Тиждень 3</div><br>
+  <div class="day-note hand">останній день — попереду новий тиждень</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Швидка вівсянка «Шоколадно-горіхова»</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 16 г · Ж: 12 г · У: 54 г</div>
+        <div class="meal-ref"><a href="#page-35">Повний рецепт → стор. 35</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Ледачі фаршовані перці з курячим фаршем та рисом</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 38 г · Ж: 13 г · У: 50 г</div>
+        <div class="meal-ref"><a href="#page-36">Повний рецепт → стор. 36</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Зефір у шоколаді 1-2 шт. + кава</div>
+        <div class="meal-kbju"><b>Ккал: 240</b> · Б: 2 г · Ж: 6 г · У: 44 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Теплий салат із баклажанами, томатами та сиром Фета</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 16 г · Ж: 16 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-37">Повний рецепт → стор. 37</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1480</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">72 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">47 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">191 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🛒 Завтра — новий тиждень! Онови список покупок і підготуй свіжі продукти на наступні 7 днів.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">34</span></div>
+</section>
+
+<section class="page" id="page-35">
+  <div class="ph"><span>Тиждень 3 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Сніданки</h1><span class="title-hand">доброго ранку!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Ніжний полента-сніданок</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>10 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Кукурудзяна крупа — 40 г (сухої)</li><li>Вода — 150 мл</li><li>Твердий сир — 20 г</li><li>Варене яйце — 1 шт.</li><li>Свіжий огірок/помідор</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Відваріть кукурудзяну крупу у воді (7-10 хв), в кінці вмішайте натертий сир.</li><li>Подавайте з нарізаним яйцем та огірком.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Сендвічі з баликом з АТБ</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Хліб цільнозерновий — 60 г (2 скибки)</li><li>М'який сир — 25 г</li><li>Балик / м'ясна нарізка з АТБ — 50 г</li><li>Огірок та зелень</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змастіть хліб м'яким сиром, викладіть скибочки балику, огірок та зелень.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Солоні сирники/оладки із зеленню</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>4 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Кисломолочний сир 5% — 130 г</li><li>Яйце — 1 шт.</li><li>Борошно цільнозернове — 25 г</li><li>Зелень (кріп/петрушка), дрібка солі</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте всі інгредієнти до однорідності.</li><li>Сформуйте 3-4 сирники та обсмажте на антипригарній пательні по 3-4 хвилини з кожного боку.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Вівсянка «Шоколадно-горіхова»</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Вівсяні пластівці — 45 г</li><li>Какао-порошок — 1 ч. л.</li><li>Вода/молоко — 150 мл</li><li>Арахісова паста/горіхи — 15 г</li><li>Мед/підсолоджувач</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Запустіть пластівці з какао у гарячу воду/молоко, проваріть 3-5 хв.</li><li>Зверху додайте арахісову пасту або горіхи.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">35</span></div>
+</section>
+
+<section class="page" id="page-36">
+  <div class="ph"><span>Тиждень 3 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Обіди для всієї родини</h1><span class="title-hand">смачного обіду!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечена свиняча вирізка з баклажанами</div>
+        <div class="rmeta"><span>Підготовка<b>10 хв</b></span><span>Готування<b>40 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Свиняча вирізка нежирна — 700 г</li><li>Баклажани — 2 шт.</li><li>Часник, соєвий соус — 2 ст. л.</li><li>Олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Свинину та баклажани наріжте крупними шматочками, замаринуйте в соєвому соусі з часником та олією.</li><li>Запікайте при 190°C 40 хвилин.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 150 г м'яса з баклажанами + 130 г вареного кускусу.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Куряче філе в соусі «Капрезе»</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>30 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Куряче філе — 700 г</li><li>Помідори — 2 шт.</li><li>Моцарела/твердий сир — 100 г</li><li>Базилік, сіль</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>На філе зробіть надрізи, вкладіть у них кружальця помідорів та сиру.</li><li>Запікайте 25-30 хвилин при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 150 г філе з томатами та сиром + 160 г запеченої картоплі.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Соковиті курячі крученики</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>25 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Куряче філе відбите — 600 г</li><li>Печериці обсмажені — 200 г</li><li>Твердий сир — 60 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>У відбиті шматочки філе загорніть гриби з сиром, скріпіть зубочистками.</li><li>Запікайте в духовці 25 хвилин.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 2 крученики (~160 г) + 150 г запеченого картопляного/гарбузового гарніру.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Ледачі фаршовані перці</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>40 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Курячий фарш — 500 г</li><li>Рис напівзварений — 150 г</li><li>Болгарський перець — 4 шт.</li><li>Томатний соус — 200 мл</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте фарш з рисом та спеціями.</li><li>Наповніть половинки перців, залийте томатним соусом і випікайте 40 хвилин при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 2 фаршовані половинки перцю.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">36</span></div>
+</section>
+
+<section class="page" id="page-37">
+  <div class="ph"><span>Тиждень 3 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Вечері для всієї родини</h1><span class="title-hand">приємного вечора!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечений хек під овочевою «шубою»</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>20 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Філе хека/минтая — 700 г</li><li>Морква — 1 шт.</li><li>Цибуля — 1 шт.</li><li>Грецький йогурт — 3 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Натерті моркву та цибулю змішайте з йогуртом.</li><li>Викладіть суміш на рибу та запікайте 20 хвилин.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 170 г риби з овочами + 150 г цвітної капусти.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запіканка зі спагеті та курячим фаршем</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>20 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Спагеті — 200 г (сухих)</li><li>Курячий фарш — 400 г</li><li>Болгарський перець — 1 шт.</li><li>Яйця — 2 шт. (для заливки)</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Обсмажте фарш з перцем.</li><li>Змішайте з відвареними спагеті та збитими яйцями.</li><li>Запікайте у формі 20 хвилин.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 1/4 частина від усієї запіканки (~230 г).</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Салат із слабосолоною фореллю та кускусом</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Форель слабосолона — 100 г</li><li>Варений кускус — 200 г</li><li>Огірок — 2 шт.</li><li>Шпинат/зелень, олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте кускус, нарізану форель, огірок та шпинат.</li><li>Заправте олією та лимонним соком.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 1/4 частина від загальної миски салату.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Теплий салат із баклажанами та Фетою</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Баклажани запечені — 2 шт.</li><li>Помідори — 2 шт.</li><li>Сир Фета — 100 г</li><li>Свіжа зелень, олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Запечені баклажани наріжте кубиками, змішайте з помідорами, кришеною Фетою та зеленню.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 1/4 частина салату + 1 скибка цільнозернового хліба.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">37</span></div>
+</section>
+
+<section class="page" id="page-38">
+  <div class="ph"><span>Тиждень 3 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Нові ПП-десерти</h1><span class="title-hand">солодкого!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">ПП-десерт «Вишнева насолода»</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Кисломолочний сир 5% — 100 г</li><li>Грецький йогурт — 50 г</li><li>Заморожена вишня — 80 г (протушкувати 2 хв)</li><li>1 вівсяне печиво або 20 г граноли</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>На дно стакана викладіть подрібнене печиво, потім сир, збитий з йогуртом, а зверху — вишневий соус.</li></ol></div>
+        </div>
+        <div class="kbju-strip">270 ккал · Б 18 г · Ж 4 г · В 40 г</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Сирно-вишневий ПП-мус</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Кисломолочний сир 5% — 120 г</li><li>Вишня заморожена без кісточок — 80 г</li><li>Мед/стевія — 1 ч. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Зблендерити сир з розмороженою вишнею та медом до стану повітряного мусу.</li></ol></div>
+        </div>
+        <div class="kbju-strip">260 ккал · Б 20 г · Ж 3 г · В 38 г</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-27">Покупки</a><a href="#page-28">Меню</a><a href="#page-35">Рецепти</a></div><span class="pnum">38</span></div>
+</section>
+
+<section class="page" id="page-39">
+  <div class="ph"><span>Тиждень 4</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">🛒 Список покупок</div>
+  <h1 class="page-title" style="margin-bottom:2px">Тиждень 4</h1>
+  <div class="page-sub">Розраховано на родину з 3–4 осіб на 7 днів</div>
+  <div class="shop-grid">
+<div class="shop-card">
+<div class="shop-store">АТБ · Базовий кошик</div>
+<div class="shop-cat">М'ясо, птиця та делікатеси</div>
+<ul class="shop-list">
+<li>Куряче філе — 1.5 кг</li><li>Яловича або нежирна свиняча вирізка — 700 г</li><li>Фарш з індички або курки — 500 г</li><li>Філе індички — 600 г</li><li>Запечена індичка / курячий паштет з АТБ — 1 пачка / 150-200 г</li>
+</ul>
+<div class="shop-cat">Молочні продукти &amp; яйця</div>
+<ul class="shop-list">
+<li>Кисломолочний сир 5-9% — 4 пачки / 800 г</li><li>Яйця курячі — 2-3 десятка</li><li>Грецький йогурт 0-2% — 6 баночок</li><li>Сир Сулугуні або Моцарела — 150 г</li><li>Вершковий м'який сир — 1 баночка</li>
+</ul>
+<div class="shop-cat">Крупи та бакалія</div>
+<ul class="shop-list">
+<li>Цільнозерновий/тостовий хліб — 1 буханка</li><li>Булгур — 1 пачка</li><li>Гречана локшина (Соба) або макарони — 1 пачка</li><li>Лаваш цільнозерновий — 1 пачка</li><li>Вівсяні пластівці</li><li>Оливкова/соняшникова олія</li>
+</ul>
+<div class="shop-cat">Заморозка</div>
+<ul class="shop-list">
+<li>Філе тилапії або хека — 700 г</li><li>Заморожена овочева суміш (мексиканська/хортек) — 1 пачка / 400 г</li><li>Заморожена чорниця або чорна смородина — 1 пачка</li>
+</ul>
+</div>
+<div class="shop-card">
+<div class="shop-store">Сільпо / Новус · Спец-товари</div>
+<div class="shop-cat">Риба</div>
+<ul class="shop-list"><li>Тунець консервований у власному соку — 2 банки по 160 г</li></ul>
+<div class="shop-cat">Овочі та зелень</div>
+<ul class="shop-list">
+<li>Кабачки — 1 кг</li><li>Болгарський перець — 3 шт.</li><li>Помідори та черрі — 1.5 кг</li><li>Свіжі огірки — 0.5 кг</li><li>Стебла селери</li><li>М'ята</li><li>Зелений лук</li><li>Часник</li><li>Лимон</li>
+</ul>
+<div class="shop-cat">Фрукти</div>
+<ul class="shop-list"><li>Яблука, банани, апельсини або грейпфрут — разом ~1.5 кг</li></ul>
+<div class="shop-cat">Солодощі та магазинні смаколики</div>
+<ul class="shop-list">
+<li>Kinder Maxi або Kinder Country — 2 шт.</li><li>Зефір ванільний — 1 пачка</li><li>Фруктовий мармелад — 1 пачка</li><li>Протеїновий батончик (Fizi/GoOn)</li><li>Темний шоколад</li>
+</ul>
+</div>
+</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">39</span></div>
+</section>
+
+<section class="page" id="page-40">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Понеділок · Тиждень 4</div><br>
+  <div class="day-note hand">старт тижня — легко й смачно!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Гарячі конвертики з лаваша, паштету/індички та сиру</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 25 г · Ж: 13 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечена індичка з ніжним булгуром та свіжими овочами</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 40 г · Ж: 12 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Kinder Country + 1 апельсин</div>
+        <div class="meal-kbju"><b>Ккал: 230</b> · Б: 4 г · Ж: 9 г · У: 33 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Філе білої риби з овочевою сумішшю та трав'яним соусом</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 37 г · Ж: 10 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1470</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">106 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">44 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">162 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">40</span></div>
+</section>
+
+<section class="page" id="page-41">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Вівторок · Тиждень 4</div><br>
+  <div class="day-note hand">ще один смачний день</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Пишний білково-вівсяний омлет з помідорами та зеленню</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 26 г · Ж: 14 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечена індичка з ніжним булгуром та свіжими овочами</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 40 г · Ж: 12 г · У: 48 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Зефір 2 шт. + 15 г мигдалю</div>
+        <div class="meal-kbju"><b>Ккал: 310</b> · Б: 4 г · Ж: 8 г · У: 55 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Філе білої риби з овочевою сумішшю та трав'яним соусом</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 37 г · Ж: 10 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1540</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">107 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">44 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">179 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">41</span></div>
+</section>
+
+<section class="page" id="page-42">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Середа · Тиждень 4</div><br>
+  <div class="day-note hand">середина тижня, тримаємось!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Сирно-бананові вафлі або оладки без олії</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 26 г · Ж: 10 г · У: 51 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Індичі фрикадельки в томатно-базиліковому соусі + печена картопля</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 38 г · Ж: 13 г · У: 50 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Протеїновий батончик Fizi/GoOn + кава</div>
+        <div class="meal-kbju"><b>Ккал: 300</b> · Б: 15 г · Ж: 11 г · У: 35 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Гречана локшина (Соба) з куркою та овочами стир-фрай</div>
+        <div class="meal-kbju"><b>Ккал: 430</b> · Б: 36 г · Ж: 11 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1600</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">115 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">45 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">182 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">42</span></div>
+</section>
+
+<section class="page" id="page-43">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Четвер · Тиждень 4</div><br>
+  <div class="day-note hand">майже вихідні</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Сирно-бананові вафлі або оладки без олії</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 26 г · Ж: 10 г · У: 51 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Індичі фрикадельки в томатно-базиліковому соусі + печена картопля</div>
+        <div class="meal-kbju"><b>Ккал: 470</b> · Б: 38 г · Ж: 13 г · У: 50 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Чернично-сирний трайфл</div>
+        <div class="meal-kbju"><b>Ккал: 260</b> · Б: 18 г · Ж: 4 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-50">Повний рецепт → стор. 50</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Гречана локшина (Соба) з куркою та овочами стир-фрай</div>
+        <div class="meal-kbju"><b>Ккал: 430</b> · Б: 36 г · Ж: 11 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1560</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">118 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">38 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">185 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">43</span></div>
+</section>
+
+<section class="page" id="page-44">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> П'ятниця · Тиждень 4</div><br>
+  <div class="day-note hand">фінішна пряма цього тижня!</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Конвертики з лаваша, паштету/індички та сиру</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 25 г · Ж: 13 г · У: 43 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечений яловичий/свинячий рулет із зеленню + рис басматі</div>
+        <div class="meal-kbju"><b>Ккал: 480</b> · Б: 42 г · Ж: 14 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Kinder Maxi + 1 яблуко</div>
+        <div class="meal-kbju"><b>Ккал: 240</b> · Б: 3 г · Ж: 8 г · У: 39 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Поживний салат із консервованим тунцем, яйцем та квасолею</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 38 г · Ж: 13 г · У: 33 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1510</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">108 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">48 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">161 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Сьогодні готуємо обід і вечерю одразу на 2 дні — завтра лише розігріваємо. Пий достатньо води протягом дня.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">44</span></div>
+</section>
+
+<section class="page" id="page-45">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Субота · Тиждень 4</div><br>
+  <div class="day-note hand">вихідного дня смаку</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Білково-вівсяний омлет із помідорами та зеленню</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 26 г · Ж: 14 г · У: 38 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Запечений яловичий/свинячий рулет із зеленню + рис басматі</div>
+        <div class="meal-kbju"><b>Ккал: 480</b> · Б: 42 г · Ж: 14 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">ПП-сошник із ягідним соусом</div>
+        <div class="meal-kbju"><b>Ккал: 270</b> · Б: 19 г · Ж: 5 г · У: 37 г</div>
+        <div class="meal-ref"><a href="#page-50">Повний рецепт → стор. 50</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Поживний салат із тунцем, яйцем та квасолею</div>
+        <div class="meal-kbju"><b>Ккал: 400</b> · Б: 38 г · Ж: 13 г · У: 33 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1530</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">125 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">46 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">154 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🌿 Обід і вечеря вже готові з учора — просто розігрій та насолоджуйся стравою.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">45</span></div>
+</section>
+
+<section class="page" id="page-46">
+  <div class="ph"><span>Тиждень 4 · Меню</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="day-pill"><span>🌿</span> Неділя · Тиждень 4</div><br>
+  <div class="day-note hand">останній день — попереду новий тиждень</div>
+  <div class="grid2">
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-breakfast">Сніданок</span>
+      <div class="meal-panel"><div class="meal-title">Канапе-сендвічі з вершковим сиром, тунцем та огірком</div>
+        <div class="meal-kbju"><b>Ккал: 390</b> · Б: 26 г · Ж: 11 г · У: 46 г</div>
+        <div class="meal-ref"><a href="#page-47">Повний рецепт → стор. 47</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-lunch">Обід</span>
+      <div class="meal-panel"><div class="meal-title">Соковита куряча грудка під сиром та ананасом + печений кабачок</div>
+        <div class="meal-kbju"><b>Ккал: 460</b> · Б: 44 г · Ж: 12 г · У: 44 г</div>
+        <div class="meal-ref"><a href="#page-48">Повний рецепт → стор. 48</a></div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-snack">Перекус</span>
+      <div class="meal-panel"><div class="meal-title">Мармелад фруктовий 50г + 2 квадратики темного шоколаду</div>
+        <div class="meal-kbju"><b>Ккал: 240</b> · Б: 2 г · Ж: 5 г · У: 47 г</div>
+        <div class="ready-note">Готовий покупний продукт — не потребує приготування.</div>
+      </div></div></div>
+    <div class="meal-card"><div class="meal-photo"><span class="cam-mark">📷</span><span class="meal-tag tag-dinner">Вечеря</span>
+      <div class="meal-panel"><div class="meal-title">Запечені кабачкові човники з курячим фаршем та томатами</div>
+        <div class="meal-kbju"><b>Ккал: 380</b> · Б: 34 г · Ж: 13 г · У: 32 г</div>
+        <div class="meal-ref"><a href="#page-49">Повний рецепт → стор. 49</a></div>
+      </div></div></div>
+  </div>
+  <div class="stat-row"><div class="stat kcal"><div class="num">1470</div><div class="lbl">ккал</div></div><div class="stat prot"><div class="num">106 г</div><div class="lbl">білки</div></div><div class="stat fat"><div class="num">41 г</div><div class="lbl">жири</div></div><div class="stat carb"><div class="num">169 г</div><div class="lbl">вугл.</div></div></div>
+  <div class="tip">🎉 Вітаємо! Ти пройшла всі 4 тижні гайду. Продовжуй у тому ж дусі — можна почати цикл заново або скласти власне меню за цими принципами.</div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">46</span></div>
+</section>
+
+<section class="page" id="page-47">
+  <div class="ph"><span>Тиждень 4 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Сніданки</h1><span class="title-hand">доброго ранку!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Конвертики з лаваша з паштетом/індичкою</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>3 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Лаваш цільнозерновий — 50 г</li><li>Запечена індичка / курячий паштет — 40 г</li><li>Сир Сулугуні/твердий — 25 г</li><li>Зелень, помідор</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Викладіть на лаваш паштет/нарізану індичку, натертий сир та скибочки помідора.</li><li>Згорніть конвертиком та підрум'яньте на сухій пательні 2-3 хвилини.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Білково-вівсяний омлет</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>7 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Яйце — 1 шт.</li><li>Білок яєчний — 1 шт. (або 2 цілих яйця)</li><li>Вівсяні пластівці — 30 г</li><li>Молоко — 30 мл</li><li>Помідор — 1/2 шт., зелень</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Збийте яйця з пластівцями та молоком.</li><li>Вилийте на пательню, зверху викладіть помідор і зелень.</li><li>Готуйте під кришкою 5-7 хвилин.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Сирно-бананові оладки</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Кисломолочний сир 5% — 120 г</li><li>Банан — 1/2 шт. (розмятий)</li><li>Яйце — 1 шт.</li><li>Борошно — 25 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте інгредієнти до маси без грудочок.</li><li>Смажте оладки на антипригарній пательні з двох боків на середньому вогні.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Сендвічі з тунцем та огірком</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>1</b></span></div>
+        <div class="rcols">
+          <div><h4>На 1 порцію</h4><ul><li>Хліб цільнозерновий — 60 г (2 скибки)</li><li>Тунець у власному соку — 50 г (віджати сік)</li><li>Вершковий м'який сир — 20 г</li><li>Огірок свіжий</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змастіть хліб вершковим сиром, викладіть тунець та нарізаний огірок.</li></ol></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">47</span></div>
+</section>
+
+<section class="page" id="page-48">
+  <div class="ph"><span>Тиждень 4 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Обіди для всієї родини</h1><span class="title-hand">смачного обіду!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечена індичка з булгуром</div>
+        <div class="rmeta"><span>Підготовка<b>10 хв</b></span><span>Готування<b>30 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Філе індички — 600 г</li><li>Соєвий соус — 2 ст. л.</li><li>Паприка, сухий часник</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Замаринуйте філе індички у соусі та спеціях.</li><li>Запікайте 30 хвилин при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 140 г запеченого філе + 130 г вареного булгуру + свіжі овочі.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Індичі фрикадельки в томатному соусі</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>20 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Фарш з індички/курки — 500 г</li><li>Цибуля — 1 шт.</li><li>Томати у власному соку — 300 г</li><li>Базилік</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Сформуйте фрикадельки, злегка обсмажте, залийте подрібненими томатами та тушкуйте 20 хвилин під кришкою.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 4-5 фрикадельок із соусом (~180 г) + 160 г печеної картоплі.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Яловичий/свинячий рулет із зеленню</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>50 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Вирізка (яловичина/свинина) — 700 г</li><li>Часник — 3 зубчики</li><li>Зелень (петрушка, кріп) — 1 пучок</li><li>Олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Розпластайте м'ясо, змастіть подрібненим часником із зеленню, поверніть у рулет, зв'яжіть ниткою.</li><li>Запікайте у фользі 50 хвилин при 190°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 150 г рулету + 140 г вареного рису басматі.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Куряча грудка під сиром та ананасом</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>25 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Куряче філе — 600 г</li><li>Консервований ананас (або помідор) — 4 кільця</li><li>Сир твердий — 80 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Філе злегка відбийте, покладіть кільце ананаса, посипте сиром і випікайте 25 хвилин при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 1 велике філе (~160 г) + запечені кабачки чи інші овочі.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">48</span></div>
+</section>
+
+<section class="page" id="page-49">
+  <div class="ph"><span>Тиждень 4 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Вечері для всієї родини</h1><span class="title-hand">приємного вечора!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Біла риба з овочевою сумішшю</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>25 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Філе тилапії або хека — 700 г</li><li>Заморожена овочева суміш — 400 г</li><li>Лимонний сік, олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>У форму викладіть овочі, зверху філе риби, збризніть лимоном та олією.</li><li>Запікайте 25 хвилин при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 170 г риби + 150 г запечених овочів.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Гречана локшина (Соба) з куркою</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>10 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Локшина Соба — 200 г (сухої)</li><li>Куряче філе — 400 г</li><li>Болгарський перець — 1 шт.</li><li>Соєвий соус — 3 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Смужки курки та перцю обсмажте 7-10 хв, змішайте з соєвим соусом та відвареною локшиною Соба.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 1/4 частина всієї страви (~220 г).</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">3</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Поживний салат із тунцем та квасолею</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Тунець у власному соку — 2 банки (200 г м'яса)</li><li>Консервована/варена квасоля — 200 г</li><li>Варені яйця — 2 шт.</li><li>Огірок — 2 шт.</li><li>Олія — 1 ст. л.</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Змішайте тунець, квасолю, нарізані яйця та огірки.</li><li>Заправте олією.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 1/4 частина від загальної миски салату.</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">4</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Запечені кабачкові човники</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>35 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>На родину</h4><ul><li>Кабачки — 2 шт. (розрізати навпіл, вийняти м'якуш)</li><li>Фарш курячий — 400 г</li><li>Помідор — 1 шт.</li><li>Сир — 60 г</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Наповніть човники з кабачка фаршем та томатами, посипте сиром і запікайте 35 хвилин при 180°C.</li></ol></div>
+        </div>
+        <div class="portion-box2"><b>На 1 порцію:</b> 2 половинки кабачка з начинкою.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">49</span></div>
+</section>
+
+<section class="page" id="page-50">
+  <div class="ph"><span>Тиждень 4 · Рецепти</span><span>Сімейний раціон · 4 тижні</span></div>
+  <div class="kicker">Книга рецептів</div>
+  <div class="title-row"><h1 class="page-title">Нові ПП-десерти</h1><span class="title-hand">солодкого!</span></div>
+  <div class="recipe-grid2">
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">1</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">Чорнично-сирний трайфл</div>
+        <div class="rmeta"><span>Підготовка<b>8 хв</b></span><span>Готування<b>5 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Кисломолочний сир 5% — 100 г</li><li>Грецький йогурт — 50 г</li><li>Заморожена чорниця — 70 г</li><li>Мед/стевія — 1 ч. л.</li><li>1 шт. вівсяного печива</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Сир збийте з йогуртом та медом.</li><li>У стакан викладіть шар кришеного печива, шар сиру та шар чорниці.</li></ol></div>
+        </div>
+        <div class="kbju-strip">260 ккал · Б 18 г · Ж 4 г · В 38 г</div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-photo"><span class="rnum">2</span></div>
+      <div class="rcard-body">
+        <div class="rcard-title">ПП-сошник із ягідним соусом</div>
+        <div class="rmeta"><span>Підготовка<b>5 хв</b></span><span>Готування<b>15 хв</b></span><span>Порцій<b>3-4</b></span></div>
+        <div class="rcols">
+          <div><h4>Інгредієнти</h4><ul><li>Кисломолочний сир 5% — 120 г</li><li>Яйце — 1/2 шт. (або 1 жовток)</li><li>Заморожені ягоди — 60 г</li><li>Ванілін, підсолоджувач</li></ul></div>
+          <div><h4>Спосіб приготування</h4><ol><li>Запечіть сирну масу з жовтком у невеликій формі (15 хв).</li><li>Подавайте з протушкованими ягодами.</li></ol></div>
+        </div>
+        <div class="kbju-strip">270 ккал · Б 19 г · Ж 5 г · В 37 г</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><div><a href="#page-2">Зміст</a><a href="#page-39">Покупки</a><a href="#page-40">Меню</a><a href="#page-47">Рецепти</a></div><span class="pnum">50</span></div>
+</section>
+
+</body>
+</html>
