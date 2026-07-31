@@ -1,0 +1,451 @@
+/* ==========================================================================
+   Сімейний раціон: здоров'я та легкість — дизайн-система
+   ========================================================================== */
+
+:root {
+  --bg: #EBEAE6;
+  --white: #FFFFFF;
+  --pink: #F3CFD1;
+  --pink-deep: #C2717A;
+  --olive: #658447;
+  --olive-dark: #4A6335;
+  --dark: #122A14;
+  --border: #DDD4CE;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #d8d6d1;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  font-size: 11.3px;
+  line-height: 1.5;
+}
+
+.hand {
+  font-family: 'Caveat', cursive;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ==========================================================================
+   Сторінка (A4)
+   ========================================================================== */
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto 10mm;
+  overflow: hidden;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(243, 207, 209, 0.55) 0%, rgba(243, 207, 209, 0) 46%),
+    radial-gradient(circle at 0% 100%, rgba(101, 132, 71, 0.18) 0%, rgba(101, 132, 71, 0) 46%);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.page-body {
+  flex: 1 1 auto;
+  padding: 9mm 12mm 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---- наскрізна навігація (верх/низ) -------------------------------------- */
+
+.ph {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8mm 12mm 0;
+  font-size: 10.5px;
+  color: var(--olive-dark);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ph .ph-right { color: var(--dark); opacity: 0.55; font-weight: 500; }
+
+.pf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3mm 12mm 7mm;
+  font-size: 10.5px;
+  color: var(--olive-dark);
+  border-top: 1px solid var(--border);
+  margin: 0 12mm;
+}
+
+.pf-nav a {
+  color: var(--olive-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pf-nav span.sep { color: var(--border); margin: 0 5px; }
+
+.pf-page { color: var(--dark); opacity: 0.5; font-weight: 600; }
+
+/* ==========================================================================
+   Kicker / H1 спільні елементи
+   ========================================================================== */
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.3px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+  margin-bottom: 6px;
+}
+
+h1.h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   1. ОБКЛАДИНКА
+   ========================================================================== */
+
+.cover-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 166mm;
+  flex: none;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  background-image: url('images/cover-collage.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-sticker {
+  position: absolute;
+  right: 14mm;
+  bottom: -9mm;
+  width: 32mm;
+  height: 32mm;
+  border-radius: 50%;
+  background: var(--olive);
+  color: var(--white);
+  transform: rotate(-9deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 17px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 3;
+  padding: 2mm;
+}
+
+.cover-text {
+  flex: 1 1 auto;
+  padding: 9mm 14mm 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cover-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+  margin-bottom: 8px;
+}
+
+.cover-h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.18;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.cover-subtitle {
+  font-size: 13px;
+  color: var(--dark);
+  opacity: 0.85;
+  max-width: 130mm;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.cover-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  background: var(--olive);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 9px;
+}
+
+.cover-quote {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--pink-deep);
+  transform: rotate(-2deg);
+  margin: 2px 0 10px 4px;
+  max-width: 140mm;
+  line-height: 1.2;
+}
+
+.cover-meta-card {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: auto;
+}
+
+.cover-meta-item {
+  padding: 7px 16px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.cover-meta-item:nth-child(2n) { border-right: none; }
+.cover-meta-item:nth-child(3), .cover-meta-item:nth-child(4) { border-bottom: none; }
+
+.cover-meta-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--olive-dark);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.cover-meta-value {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 6mm 14mm 8mm;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  flex: none;
+}
+
+.cover-footer-author { font-size: 12px; font-weight: 700; color: var(--dark); }
+.cover-footer-role { font-size: 10px; color: var(--olive-dark); font-weight: 600; }
+.cover-footer-right { font-size: 10.5px; color: var(--dark); opacity: 0.6; text-align: right; }
+
+/* ==========================================================================
+   2. ПРО РАЦІОН
+   ========================================================================== */
+
+.intro-card {
+  background: var(--white);
+  border-left: 4px solid var(--pink-deep);
+  border-radius: 4px 10px 10px 4px;
+  padding: 9px 14px;
+  font-size: 11.3px;
+  line-height: 1.45;
+  color: var(--dark);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  margin: 6px 0 7px;
+}
+
+.num-block {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  padding: 8px 12px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.num-badge {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.num-badge.c1, .num-badge.c5 { background: var(--pink-deep); }
+.num-badge.c2 { background: var(--olive); }
+.num-badge.c3 { background: var(--dark); }
+.num-badge.c4 { background: var(--olive-dark); }
+
+.num-body { flex: 1 1 auto; min-width: 0; }
+
+.num-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: var(--dark);
+}
+
+.num-text {
+  font-size: 11px;
+  line-height: 1.42;
+  color: var(--dark);
+  opacity: 0.92;
+}
+
+/* structure mini-grid 2x2 */
+.mini-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.mini-cell {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 9px;
+}
+
+.mini-cell-title {
+  font-size: 10.8px;
+  font-weight: 800;
+  color: var(--olive-dark);
+  margin-bottom: 2px;
+}
+
+.mini-cell-num {
+  font-family: 'Playfair Display', serif;
+  color: var(--pink-deep);
+  font-weight: 700;
+}
+
+.mini-cell-text {
+  font-size: 10px;
+  line-height: 1.32;
+  color: var(--dark);
+  opacity: 0.85;
+}
+
+/* КБЖВ chips */
+.chip-row {
+  display: flex;
+  gap: 6px;
+  margin: 6px 0 6px;
+}
+
+.chip {
+  flex: 1;
+  border-radius: 8px;
+  padding: 5px 8px;
+  color: var(--white);
+  text-align: center;
+}
+.chip.pink { background: var(--pink); color: var(--dark); }
+.chip.olive { background: var(--olive); }
+.chip.dark { background: var(--dark); }
+
+.chip-label {
+  font-size: 9.3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  opacity: 0.85;
+}
+.chip-value {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* recipe-book mini cards */
+.mini-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.mini-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 9px;
+}
+
+.mini-card-title {
+  font-size: 10.6px;
+  font-weight: 800;
+  color: var(--olive-dark);
+  margin-bottom: 2px;
+}
+
+.mini-card-text {
+  font-size: 10px;
+  line-height: 1.32;
+  opacity: 0.85;
+}
+
+/* emoji bullet list */
+.bullet-list { margin-top: 4px; }
+.bullet-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 11px;
+  line-height: 1.38;
+  padding: 3.5px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.bullet-item:last-child { border-bottom: none; }
+.bullet-emoji { flex: none; font-size: 13px; }
+
+.closing-line {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--pink-deep);
+  text-align: center;
+  margin-top: 6px;
+  padding: 2px 0 0;
+}
