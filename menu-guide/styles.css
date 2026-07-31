@@ -51,6 +51,20 @@ body {
   box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 8px 30px rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
+  break-after: page;
+}
+
+@media print {
+  html, body { background: none; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+@page {
+  size: 210mm 297mm;
+  margin: 0;
 }
 
 .page-body {
