@@ -109,6 +109,8 @@ em{font-style:italic}
   text-transform:uppercase;
   color:var(--ink-faint);
 }
+.photo-slot.has-photo{ border:none; background:none; }
+.photo-slot.has-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 
 /* ===================== COVER ===================== */
 .page.cover{ padding:56px 56px 64px; display:flex; flex-direction:column; gap:34px; }
@@ -212,6 +214,12 @@ em{font-style:italic}
   background:var(--card); border:1px solid var(--line); border-radius:12px;
   padding:16px 22px;
 }
+.meal-card.has-thumb{
+  display:grid; grid-template-columns:96px 1fr; gap:18px; align-items:center; padding:12px;
+}
+.meal-thumb{ width:96px; height:96px; border-radius:10px; overflow:hidden; }
+.meal-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.meal-card.has-thumb .meal-body{ min-width:0; }
 .meal-tag{
   display:inline-block; font-size:11px; font-weight:600; letter-spacing:.16em;
   padding:5px 14px; border-radius:20px; color:#fff; margin-bottom:9px;
@@ -269,61 +277,11 @@ em{font-style:italic}
 <div class="doc">
 <section class="page cover"><div class="page-num">01</div>
     <div class="cover-collage">
-      <div class="photo-slot cs-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div>
-      <div class="photo-slot cs-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div>
-      <div class="photo-slot cs-3">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div>
-      <div class="photo-slot cs-4">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div>
-      <div class="photo-slot cs-5">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div>
+      <div class="photo-slot has-photo cs-1"><img src="photos/day22_breakfast_tortilla_salmon.jpg" alt="" loading="lazy"></div>
+      <div class="photo-slot has-photo cs-2"><img src="photos/day31_breakfast_pancakes_cherry.jpg" alt="" loading="lazy"></div>
+      <div class="photo-slot has-photo cs-3"><img src="photos/day5_dinner_trout_steak.jpg" alt="" loading="lazy"></div>
+      <div class="photo-slot has-photo cs-4"><img src="photos/day2_dinner_chicken_quailegg_salad.jpg" alt="" loading="lazy"></div>
+      <div class="photo-slot has-photo cs-5"><img src="photos/day1_breakfast_syrniki_jam.jpg" alt="" loading="lazy"></div>
     </div>
     <div class="cover-text">
       <div class="cover-kicker">Стиль життя та здорове тіло</div>
@@ -384,27 +342,6 @@ em{font-style:italic}
       </div></div>
     </section><section class="page day"><div class="page-num">04</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 1 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Понеділок</h2>
@@ -413,29 +350,41 @@ em{font-style:italic}
     <p class="day-accent">Старт! Найважчий крок — почати — ти вже зробила.</p>
     
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирники «Лавка традицій» Баба Peredala (150г) + сметана President 10% (20г) та ягоди (50г).</p>
-        <p class="meal-macro">Ккал: 385 · Б: 25 г ·
-        Ж: 13 г · В: 40 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day1_breakfast_syrniki_jam.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирники «Лавка традицій» Баба Peredala (150г) + сметана President 10% (20г) та ягоди (50г).</p>
+          <p class="meal-macro">Ккал: 385 · Б: 25 г ·
+          Ж: 13 г · В: 40 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Запечене індиче стегно (готуємо 2 порції одразу — 140г) + гречка (50г сухої) + салат із свіжої капусти та огірка з оливковою олією.</p>
-        <p class="meal-macro">Ккал: 470 · Б: 36 г ·
-        Ж: 15 г · В: 45 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Запечене індиче стегно (готуємо 2 порції одразу — 140г) + гречка (50г сухої) + салат із свіжої капусти та огірка з оливковою олією.</p>
+          <p class="meal-macro">Ккал: 470 · Б: 36 г ·
+          Ж: 15 г · В: 45 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Зефір «Стимул» (1 шт.) + чай/кава.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 3 г ·
-        Ж: 7 г · В: 32 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day1_snack_zefir_tea.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Зефір «Стимул» (1 шт.) + чай/кава.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 3 г ·
+          Ж: 7 г · В: 32 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечене філе хека Norven (160г) під сирною скоринкою з легкого сиру Gouda Fit Cesvaine 10% (20г) + тушкована броколі.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 12 г · В: 37 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day1_dinner_hake_cheese_broccoli.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечене філе хека Norven (160г) під сирною скоринкою з легкого сиру Gouda Fit Cesvaine 10% (20г) + тушкована броколі.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 12 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -446,27 +395,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">05</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 2 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Вівторок</h2>
@@ -476,28 +404,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Омлет із 2 яєць із шпинатом + тост із житнього хліба Agrola «Львівський» (1 скибочка) з крем-сиром Exquisa Fitline 0,2% (30г) та червоною рибою (30г).</p>
-        <p class="meal-macro">Ккал: 375 · Б: 23 г ·
-        Ж: 14 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Омлет із 2 яєць із шпинатом + тост із житнього хліба Agrola «Львівський» (1 скибочка) з крем-сиром Exquisa Fitline 0,2% (30г) та червоною рибою (30г).</p>
+          <p class="meal-macro">Ккал: 375 · Б: 23 г ·
+          Ж: 14 г · В: 39 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Запечене індиче стегно (вчорашня порція — 140г) + гречка + салат.</p>
-        <p class="meal-macro">Ккал: 470 · Б: 36 г ·
-        Ж: 15 г · В: 45 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Запечене індиче стегно (вчорашня порція — 140г) + гречка + салат.</p>
+          <p class="meal-macro">Ккал: 470 · Б: 36 г ·
+          Ж: 15 г · В: 45 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Батончик Sonko, глазурований шоколадом (1 шт.) + кава.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 9 г · В: 28 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day2_snack_sonko_ricecakes.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Батончик Sonko, глазурований шоколадом (1 шт.) + кава.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 9 г · В: 28 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із міксу зелені, запеченого курячого філе «Наша Ряба» (120г), чері, перепелиних яєць (3 шт.) та соусу Heinz Zero (1 ст.л.).</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 13 г · В: 35 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day2_dinner_chicken_quailegg_salad.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із міксу зелені, запеченого курячого філе «Наша Ряба» (120г), чері, перепелиних яєць (3 шт.) та соусу Heinz Zero (1 ст.л.).</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 13 г · В: 35 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -508,27 +448,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">06</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 3 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Середа</h2>
@@ -542,28 +461,40 @@ em{font-style:italic}
         </div>
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Оладки (приготовані із суміші «Сто пудів» — 40г сух.) зі сметаною President 10% та джемом Helios без цукру (15г).</p>
-        <p class="meal-macro">Ккал: 380 · Б: 24 г ·
-        Ж: 12 г · В: 42 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Оладки (приготовані із суміші «Сто пудів» — 40г сух.) зі сметаною President 10% та джемом Helios без цукру (15г).</p>
+          <p class="meal-macro">Ккал: 380 · Б: 24 г ·
+          Ж: 12 г · В: 42 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Курячий шніцель «Наша Ряба» (запечений із травами — 140г) + рис басматі (50г сухого) + салат із буряка з волоськими горіхами.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 37 г ·
-        Ж: 14 г · В: 50 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day3-4_lunch_schnitzel_rice_beet.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Курячий шніцель «Наша Ряба» (запечений із травами — 140г) + рис басматі (50г сухого) + салат із буряка з волоськими горіхами.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 37 г ·
+          Ж: 14 г · В: 50 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Натуральні цукерки Bob Snail (вишня-яблуко) — 1 пачка + чай.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 2 г ·
-        Ж: 6 г · В: 34 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day3_snack_bobsnail.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Натуральні цукерки Bob Snail (вишня-яблуко) — 1 пачка + чай.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 2 г ·
+          Ж: 6 г · В: 34 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Мінтай Norven (філе без шкіри — 160г), запечений у рукаві з овочами (кабачок, болгарський перець) під соусом Сацебелі «Торчин».</p>
-        <p class="meal-macro">Ккал: 390 · Б: 34 г ·
-        Ж: 11 г · В: 38 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day3_dinner_pollock_veg.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Мінтай Norven (філе без шкіри — 160г), запечений у рукаві з овочами (кабачок, болгарський перець) під соусом Сацебелі «Торчин».</p>
+          <p class="meal-macro">Ккал: 390 · Б: 34 г ·
+          Ж: 11 г · В: 38 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -574,27 +505,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">07</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 4 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Четвер</h2>
@@ -604,28 +514,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Запіканка «Волошкове поле» з курагою (180г) + чай/кава.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 22 г ·
-        Ж: 13 г · В: 41 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Запіканка «Волошкове поле» з курагою (180г) + чай/кава.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 22 г ·
+          Ж: 13 г · В: 41 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Курячий шніцель (вчорашня порція — 140г) + рис басматі + салат із пекінської капусти.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 37 г ·
-        Ж: 14 г · В: 50 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day3-4_lunch_schnitzel_rice_beet.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Курячий шніцель (вчорашня порція — 140г) + рис басматі + салат із пекінської капусти.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 37 г ·
+          Ж: 14 г · В: 50 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">сир President «Ніжний» 0,2% (100г) з хлібцями Finn Crisp (2 шт.).</p>
-        <p class="meal-macro">Ккал: 210 · Б: 5 г ·
-        Ж: 9 г · В: 26 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day4_snack_crackers_creamcheese.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">сир President «Ніжний» 0,2% (100г) з хлібцями Finn Crisp (2 шт.).</p>
+          <p class="meal-macro">Ккал: 210 · Б: 5 г ·
+          Ж: 9 г · В: 26 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Індичий фарш (домашній із філе — 130г), тушкований у вигляді міні-тефтель із томатним соусом, подається зі стручковою квасолею.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 14 г · В: 36 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day4_dinner_turkey_meatballs.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Індичий фарш (домашній із філе — 130г), тушкований у вигляді міні-тефтель із томатним соусом, подається зі стручковою квасолею.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 14 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -636,27 +558,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">08</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 5 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">П'ятниця</h2>
@@ -666,28 +567,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Лаваш вірменський (рулет) із начинкою із зернистого сиру «Молокія» 0,2%, зелені та яйця, обсмажений на сухій пательні.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 25 г ·
-        Ж: 15 г · В: 38 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Лаваш вірменський (рулет) із начинкою із зернистого сиру «Молокія» 0,2%, зелені та яйця, обсмажений на сухій пательні.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 25 г ·
+          Ж: 15 г · В: 38 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day5_lunch_bulgur_sausages_veg.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Булгур (50г сухого) + індичі сосиски Алан Fitness Format (2 шт. — 120г) + тушковані овочі (морква, цибуля, кабачок).</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Булгур (50г сухого) + індичі сосиски Алан Fitness Format (2 шт. — 120г) + тушковані овочі (морква, цибуля, кабачок).</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Чорний шоколад (20г) + чашка кави з молоком «Ферма» 1%.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 3 г ·
+          Ж: 7 г · В: 32 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Чорний шоколад (20г) + чашка кави з молоком «Ферма» 1%.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 3 г ·
-        Ж: 7 г · В: 32 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Стейк з форелі (130г) на грилі + салат із свіжих огірків та зелені із соком лимона.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 32 г ·
-        Ж: 13 г · В: 38 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day5_dinner_trout_steak.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Стейк з форелі (130г) на грилі + салат із свіжих огірків та зелені із соком лимона.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 32 г ·
+          Ж: 13 г · В: 38 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -698,27 +611,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">09</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 6 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Субота</h2>
@@ -727,29 +619,41 @@ em{font-style:italic}
     <p class="day-accent">Вихідні — не привід зривати ритм, а нагода готувати із задоволенням.</p>
     
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирники «Пан Кабан» (150г) + йогурт питний натуральний + свіжі ягоди.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 26 г ·
-        Ж: 12 г · В: 39 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day6_breakfast_syrniki_cream.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирники «Пан Кабан» (150г) + йогурт питний натуральний + свіжі ягоди.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 26 г ·
+          Ж: 12 г · В: 39 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Запечена картопля шматочками (150г) + запечені гомілки «Наша Ряба» Барбекю (без шкіри — 140г) + салат із капусти.</p>
-        <p class="meal-macro">Ккал: 490 · Б: 38 г ·
-        Ж: 16 г · В: 46 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day6_lunch_drumsticks_potato_coleslaw.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Запечена картопля шматочками (150г) + запечені гомілки «Наша Ряба» Барбекю (без шкіри — 140г) + салат із капусти.</p>
+          <p class="meal-macro">Ккал: 490 · Б: 38 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Горіхи волоські (20г) + зелене яблуко.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 10 г · В: 27 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day6_snack_walnuts_apple.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Горіхи волоські (20г) + зелене яблуко.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 10 г · В: 27 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із тунцем у власному соку, кукурудзою та лиллям салату, заправлений оливковою олією.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day6_dinner_tuna_corn_salad.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із тунцем у власному соку, кукурудзою та лиллям салату, заправлений оливковою олією.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -760,27 +664,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">10</div>
     <div class="page-meta"><span>Тиждень 1 · Меню</span><span class="page-meta-dot">•</span><span>День 7 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Неділя</h2>
@@ -794,28 +677,40 @@ em{font-style:italic}
         </div>
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Готові млинці «Хуторок» Французькі з куркою (2 шт. — 150г) + свіжі овочі.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 24 г ·
-        Ж: 13 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Готові млинці «Хуторок» Французькі з куркою (2 шт. — 150г) + свіжі овочі.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 24 г ·
+          Ж: 13 г · В: 39 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Гречка (50г сухого) + гуляш із яловичини (130г м'яса — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 470 · Б: 36 г ·
-        Ж: 15 г · В: 46 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day7-8_lunch_buckwheat_beef_goulash.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Гречка (50г сухого) + гуляш із яловичини (130г м'яса — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 470 · Б: 36 г ·
+          Ж: 15 г · В: 46 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Маршмеллоу «Їж Наше» Тучки-штучки (40г) + чай.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 3 г ·
-        Ж: 2 г · В: 42 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day7_snack_marshmallow.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Маршмеллоу «Їж Наше» Тучки-штучки (40г) + чай.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 3 г ·
+          Ж: 2 г · В: 42 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечена біла риба (хек — 160г) із цвітною капустою під сирною скоринкою (сир Zвени Гора Фігура — 15г).</p>
-        <p class="meal-macro">Ккал: 410 · Б: 33 г ·
-        Ж: 14 г · В: 37 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day7_dinner_hake_cheese_cauliflower.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечена біла риба (хек — 160г) із цвітною капустою під сирною скоринкою (сир Zвени Гора Фігура — 15г).</p>
+          <p class="meal-macro">Ккал: 410 · Б: 33 г ·
+          Ж: 14 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -856,17 +751,7 @@ em{font-style:italic}
             </div>
           </div>
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day1_breakfast_syrniki_jam.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Збалансовані сирники</div>
               <div class="recipe-meta">Підготовка 10 хв · Готування 10 хв · Порцій 2–3</div>
@@ -887,17 +772,7 @@ em{font-style:italic}
         <h2 class="page-title">Книга рецептів тижня</h2>
         <div class="recipe-list">
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day1_dinner_hake_cheese_broccoli.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Хек під сирною скоринкою з броколі</div>
               <div class="recipe-meta">Підготовка 10 хв · Готування 25 хв · Порцій 1</div>
@@ -966,27 +841,6 @@ em{font-style:italic}
       </div></div>
     </section><section class="page day"><div class="page-num">14</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 8 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Понеділок</h2>
@@ -996,28 +850,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Бутерброди на житньому хлібі Agrola з крем-сиром President «Ніжний» 0,2% та запеченою індичою шинкою Укрпромпостач (40г).</p>
-        <p class="meal-macro">Ккал: 380 · Б: 23 г ·
-        Ж: 14 г · В: 40 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Бутерброди на житньому хлібі Agrola з крем-сиром President «Ніжний» 0,2% та запеченою індичою шинкою Укрпромпостач (40г).</p>
+          <p class="meal-macro">Ккал: 380 · Б: 23 г ·
+          Ж: 14 г · В: 40 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Гуляш із яловичини (вчорашня порція — 130г) + гречка + салат.</p>
-        <p class="meal-macro">Ккал: 470 · Б: 36 г ·
-        Ж: 15 г · В: 46 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day7-8_lunch_buckwheat_beef_goulash.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Гуляш із яловичини (вчорашня порція — 130г) + гречка + салат.</p>
+          <p class="meal-macro">Ккал: 470 · Б: 36 г ·
+          Ж: 15 г · В: 46 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Батончик Kinder Country + чай.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 8 г · В: 31 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day8_snack_kinder_country.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Батончик Kinder Country + чай.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 8 г · В: 31 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечена індича грудка (120г) з тушкованими овочами та аджикою «Ніжин».</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day8_dinner_turkey_veg_sauce.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечена індича грудка (120г) з тушкованими овочами та аджикою «Ніжин».</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1028,27 +894,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">15</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 9 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Вівторок</h2>
@@ -1058,28 +903,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирники «Лавка традицій» (150г) + сметана President 10% та джем Helios.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 26 г ·
-        Ж: 11 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирники «Лавка традицій» (150г) + сметана President 10% та джем Helios.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 26 г ·
+          Ж: 11 г · В: 39 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Макарони з твердих сортів (50г сухих) + курячі гомілки без шкірки (140г — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day9-10_lunch_pasta_drumsticks_feta.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Макарони з твердих сортів (50г сухих) + курячі гомілки без шкірки (140г — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Кефір «Ферма» 1% (250мл) + жменя мигдалю (15г).</p>
-        <p class="meal-macro">Ккал: 200 · Б: 5 г ·
-        Ж: 9 г · В: 23 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day9_snack_yogurt_almonds.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Кефір «Ферма» 1% (250мл) + жменя мигдалю (15г).</p>
+          <p class="meal-macro">Ккал: 200 · Б: 5 г ·
+          Ж: 9 г · В: 23 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із креветками Norven XXL (90г), міксом салатів, чері та оливковою олією.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 13 г · В: 37 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day9_dinner_shrimp_salad.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із креветками Norven XXL (90г), міксом салатів, чері та оливковою олією.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1090,27 +947,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">16</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 10 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Середа</h2>
@@ -1120,28 +956,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Омлет із сиром Gouda Fit 10% (25г) + тост із бездріжджового хліба Agrola.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 23 г ·
-        Ж: 15 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Омлет із сиром Gouda Fit 10% (25г) + тост із бездріжджового хліба Agrola.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 23 г ·
+          Ж: 15 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day9-10_lunch_pasta_drumsticks_feta.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Макарони з твердих сортів + запечені курячі гомілки (вчорашня порція — 140г) + овочевий салат із соусом Heinz Zero.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Макарони з твердих сортів + запечені курячі гомілки (вчорашня порція — 140г) + овочевий салат із соусом Heinz Zero.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Зефір пастила + свіжі ягоди.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 3 г ·
+          Ж: 7 г · В: 34 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Зефір пастила + свіжі ягоди.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 3 г ·
-        Ж: 7 г · В: 34 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Стручкова квасоля, тушкована з яйцем та шматочками курячого філе (100г).</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day10_dinner_greenbeans_egg_chicken.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Стручкова квасоля, тушкована з яйцем та шматочками курячого філе (100г).</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1152,27 +1000,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">17</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 11 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Четвер</h2>
@@ -1182,28 +1009,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Вівсяна каша на молоці «Ферма» 1% з половинкою банана та арахісовою пастою (15г).</p>
-        <p class="meal-macro">Ккал: 380 · Б: 24 г ·
-        Ж: 14 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Вівсяна каша на молоці «Ферма» 1% з половинкою банана та арахісовою пастою (15г).</p>
+          <p class="meal-macro">Ккал: 380 · Б: 24 г ·
+          Ж: 14 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day11-12_lunch_bulgur_turkey_cucumber.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Булгур (50г сухого) + запечене філе індички (130г — готуємо на 2 дні) + салат з огірків.</p>
+          <p class="meal-macro">Ккал: 460 · Б: 35 г ·
+          Ж: 15 г · В: 44 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Булгур (50г сухого) + запечене філе індички (130г — готуємо на 2 дні) + салат з огірків.</p>
-        <p class="meal-macro">Ккал: 460 · Б: 35 г ·
-        Ж: 15 г · В: 44 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Творожний крем-сирок President «Ніжний» 0,2% (150г) + ківі.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 6 г ·
+          Ж: 9 г · В: 22 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Творожний крем-сирок President «Ніжний» 0,2% (150г) + ківі.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 6 г ·
-        Ж: 9 г · В: 22 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Мінтай Norven, запечений під лимоном із гарніром із запечених кабачків.</p>
-        <p class="meal-macro">Ккал: 410 · Б: 34 г ·
-        Ж: 14 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Мінтай Norven, запечений під лимоном із гарніром із запечених кабачків.</p>
+          <p class="meal-macro">Ккал: 410 · Б: 34 г ·
+          Ж: 14 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1214,27 +1053,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">18</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 12 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">П'ятниця</h2>
@@ -1244,28 +1062,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Рисові хлібці (3 шт.) з пастою з авокадо та червоною рибою (30г).</p>
-        <p class="meal-macro">Ккал: 370 · Б: 25 г ·
-        Ж: 12 г · В: 38 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Рисові хлібці (3 шт.) з пастою з авокадо та червоною рибою (30г).</p>
+          <p class="meal-macro">Ккал: 370 · Б: 25 г ·
+          Ж: 12 г · В: 38 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day11-12_lunch_bulgur_turkey_cucumber.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Булгур + запечене філе індички (вчорашня порція — 130г) + салат.</p>
+          <p class="meal-macro">Ккал: 460 · Б: 35 г ·
+          Ж: 15 г · В: 44 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Булгур + запечене філе індички (вчорашня порція — 130г) + салат.</p>
-        <p class="meal-macro">Ккал: 460 · Б: 35 г ·
-        Ж: 15 г · В: 44 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Морозиво «Ласунка» 0%+0% зі стевією (1 стаканчик) + чай.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 3 г ·
+          Ж: 7 г · В: 33 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Морозиво «Ласунка» 0%+0% зі стевією (1 стаканчик) + чай.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 3 г ·
-        Ж: 7 г · В: 33 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із тунцем у власному соку, яйцем, чері та соусом Heinz Zero.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 32 г ·
-        Ж: 13 г · В: 37 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із тунцем у власному соку, яйцем, чері та соусом Heinz Zero.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 32 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1276,27 +1106,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">19</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 13 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Субота</h2>
@@ -1306,28 +1115,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Запіканка «Волошкове поле» (180г) зі сметаною President 10%.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 27 г ·
-        Ж: 15 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Запіканка «Волошкове поле» (180г) зі сметаною President 10%.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 27 г ·
+          Ж: 15 г · В: 36 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day13-14_lunch_plov_cabbage.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Плов із курячим філе «Наша Ряба» (пп-рецепт на мінімумі олії — готуємо на 2 дні) + салат із капусти.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Плов із курячим філе «Наша Ряба» (пп-рецепт на мінімумі олії — готуємо на 2 дні) + салат із капусти.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Горіхи волоські (20г) + банан.</p>
+          <p class="meal-macro">Ккал: 220 · Б: 4 г ·
+          Ж: 10 г · В: 28 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Горіхи волоські (20г) + банан.</p>
-        <p class="meal-macro">Ккал: 220 · Б: 4 г ·
-        Ж: 10 г · В: 28 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечені кабачки з начинкою з нежирного домашнього сиру та зелені.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечені кабачки з начинкою з нежирного домашнього сиру та зелені.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1338,27 +1159,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">20</div>
     <div class="page-meta"><span>Тиждень 2 · Меню</span><span class="page-meta-dot">•</span><span>День 14 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Неділя</h2>
@@ -1371,29 +1171,41 @@ em{font-style:italic}
           <p>Сьогодні саме той день, коли часто хочеться все кинути — і це нормально, а не провал. На другому тижні новизна вже не тішить, а старий шаблон поведінки ще не витіснений повністю: мозок опиняється «між двома звичками» і сприймає це як дискомфорт, вимагаючи повернути звичне. Дослідження Філіппи Лаллі (University College London) показують: у середньому дії стають автоматичними приблизно за 66 днів — і саме зараз, на середині цього шляху, спротив відчувається найсильніше. Не борись із собою — просто зроби сьогоднішній вибір ще раз, і система продовжить вибудовуватись.</p>
         </div>
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Омлет із томатами та зеленню + шматочок хліба Agrola з сиром Звени Гора Фігура.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 23 г ·
-        Ж: 14 г · В: 39 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day14_breakfast_omelet_tomato.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Омлет із томатами та зеленню + шматочок хліба Agrola з сиром Звени Гора Фігура.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 23 г ·
+          Ж: 14 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day13-14_lunch_plov_cabbage.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Плов із курячим філе (вчорашня порція) + салат.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day14_snack_darkchoc_coffee.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Шоколад чорний (20г) + кава.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 3 г ·
+          Ж: 7 г · В: 32 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Плов із курячим філе (вчорашня порція) + салат.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Шоколад чорний (20г) + кава.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 3 г ·
-        Ж: 7 г · В: 32 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Стейк хека з гарніром із запеченої броколі.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 13 г · В: 37 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Стейк хека з гарніром із запеченої броколі.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1407,17 +1219,7 @@ em{font-style:italic}
         <h2 class="page-title">Книга рецептів тижня</h2>
         <div class="recipe-list">
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day7-8_lunch_buckwheat_beef_goulash.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Гуляш із яловичини</div>
               <div class="recipe-meta">Підготовка 15 хв · Готування 50 хв · Порцій 2 (на 2 дні)</div>
@@ -1434,17 +1236,7 @@ em{font-style:italic}
             </div>
           </div>
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day9-10_lunch_pasta_drumsticks_feta.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Курячі гомілки запечені без шкірки</div>
               <div class="recipe-meta">Підготовка 10 хв · Готування 35 хв · Порцій 2 (на 2 дні)</div>
@@ -1465,17 +1257,7 @@ em{font-style:italic}
         <h2 class="page-title">Книга рецептів тижня</h2>
         <div class="recipe-list">
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day13-14_lunch_plov_cabbage.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Плов із курячим філе (ПП-рецепт)</div>
               <div class="recipe-meta">Підготовка 15 хв · Готування 40 хв · Порцій 2 (на 2 дні)</div>
@@ -1492,17 +1274,7 @@ em{font-style:italic}
             </div>
           </div>
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day9_dinner_shrimp_salad.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Салат із креветками та зеленню</div>
               <div class="recipe-meta">Підготовка 10 хв · Порцій 1</div>
@@ -1544,27 +1316,6 @@ em{font-style:italic}
       </div></div>
     </section><section class="page day"><div class="page-num">24</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 15 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Понеділок</h2>
@@ -1574,28 +1325,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Кукурудзяні хлібці Кірієч (3 шт.) з крем-сиром Exquisa Fitline 0,2% та шматочками запеченої індички.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 24 г ·
-        Ж: 13 г · В: 40 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Кукурудзяні хлібці Кірієч (3 шт.) з крем-сиром Exquisa Fitline 0,2% та шматочками запеченої індички.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 24 г ·
+          Ж: 13 г · В: 40 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day15-16_lunch_thigh_buckwheat_coleslaw.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Гречана каша (50г сухої) + тушковане куряче стегно без шкірки (130г — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day15_snack_zefir_chocolate.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Зефір у шоколаді (1 шт.).</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 8 г · В: 31 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Гречана каша (50г сухої) + тушковане куряче стегно без шкірки (130г — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Зефір у шоколаді (1 шт.).</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 8 г · В: 31 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат «Грецький» з фетою та запеченим курячим філе (100г).</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат «Грецький» з фетою та запеченим курячим філе (100г).</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1606,27 +1369,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">25</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 16 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Вівторок</h2>
@@ -1636,28 +1378,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Ліниві вареники із зернистого сиру «Молокія» 0,2% зі сметаною President та ягодами.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 26 г ·
-        Ж: 12 г · В: 38 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Ліниві вареники із зернистого сиру «Молокія» 0,2% зі сметаною President та ягодами.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 26 г ·
+          Ж: 12 г · В: 38 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day15-16_lunch_thigh_buckwheat_coleslaw.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Гречана каша + тушковане куряче стегно (вчорашня порція).</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day16_snack_yogurt_apple.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Йогурт питний натуральний + яблуко.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 5 г ·
+          Ж: 9 г · В: 23 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Гречана каша + тушковане куряче стегно (вчорашня порція).</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Йогурт питний натуральний + яблуко.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 5 г ·
-        Ж: 9 г · В: 23 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечений хек Norven із кабачковою ікрою (домашньою) та свіжими овочами.</p>
-        <p class="meal-macro">Ккал: 410 · Б: 34 г ·
-        Ж: 14 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечений хек Norven із кабачковою ікрою (домашньою) та свіжими овочами.</p>
+          <p class="meal-macro">Ккал: 410 · Б: 34 г ·
+          Ж: 14 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1668,27 +1422,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">26</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 17 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Середа</h2>
@@ -1698,28 +1431,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Млинці «Вправна Ніно» з куркою та грибами (2 шт. — 150г) + помідор.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 22 г ·
-        Ж: 16 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Млинці «Вправна Ніно» з куркою та грибами (2 шт. — 150г) + помідор.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 22 г ·
+          Ж: 16 г · В: 39 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Рис басматі + запечені курячі гомілки «Наша Ряба» (140г — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Рис басматі + запечені курячі гомілки «Наша Ряба» (140г — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day17_snack_fruit_pastila.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Фруктова пастила без цукру + чай.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 3 г ·
+          Ж: 7 г · В: 34 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Фруктова пастила без цукру + чай.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 3 г ·
-        Ж: 7 г · В: 34 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Омлет зі шпинатом та креветками Norven (80г).</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Омлет зі шпинатом та креветками Norven (80г).</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1730,27 +1475,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">27</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 18 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Четвер</h2>
@@ -1760,28 +1484,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Вівсяна каша на молоці «Ферма» 1% з бананом та волоськими горіхами (10г).</p>
-        <p class="meal-macro">Ккал: 370 · Б: 23 г ·
-        Ж: 13 г · В: 41 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Вівсяна каша на молоці «Ферма» 1% з бананом та волоськими горіхами (10г).</p>
+          <p class="meal-macro">Ккал: 370 · Б: 23 г ·
+          Ж: 13 г · В: 41 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Рис басматі + запечені курячі гомілки (вчорашня порція).</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Рис басматі + запечені курячі гомілки (вчорашня порція).</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Жменя мигдалю + апельсин.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 6 г ·
-        Ж: 8 г · В: 25 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Жменя мигдалю + апельсин.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 6 г ·
+          Ж: 8 г · В: 25 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечене філе індички (120г) з тушкованою стручковою квасолею та соусом Heinz Zero.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 13 г · В: 37 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечене філе індички (120г) з тушкованою стручковою квасолею та соусом Heinz Zero.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1792,27 +1528,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">28</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 19 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">П'ятниця</h2>
@@ -1821,29 +1536,41 @@ em{font-style:italic}
     <p class="day-accent">Тіло змінюється тихо й непомітно для ока, але невпинно.</p>
     
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Тости з житнього хліба Agrola з яйцем пашот і сиром Звени Гора Фігура.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 25 г ·
-        Ж: 14 г · В: 38 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day19_breakfast_poached_egg_toast.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Тости з житнього хліба Agrola з яйцем пашот і сиром Звени Гора Фігура.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 25 г ·
+          Ж: 14 г · В: 38 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Суп із курячими фрикадельками (з філе індички) та овочами + хлібці Фінн Крісп (2 шт.).</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Суп із курячими фрикадельками (з філе індички) та овочами + хлібці Фінн Крісп (2 шт.).</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Батончик Kinder Country.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 8 г · В: 31 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Батончик Kinder Country.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 8 г · В: 31 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із тунцем, яйцем, огірком та оливковою олією.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із тунцем, яйцем, огірком та оливковою олією.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1854,27 +1581,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">29</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 20 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Субота</h2>
@@ -1884,28 +1590,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирники «Баба Peredala» (150г) з ягодами та сметаною President.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 26 г ·
-        Ж: 15 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирники «Баба Peredala» (150г) з ягодами та сметаною President.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 26 г ·
+          Ж: 15 г · В: 36 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Картопляне пюре на олії/молоці (150г) + запечена нежирна яловичина (130г) + салат.</p>
-        <p class="meal-macro">Ккал: 490 · Б: 38 г ·
-        Ж: 17 г · В: 45 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Картопляне пюре на олії/молоці (150г) + запечена нежирна яловичина (130г) + салат.</p>
+          <p class="meal-macro">Ккал: 490 · Б: 38 г ·
+          Ж: 17 г · В: 45 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Горіхи грецькі (20г) + груша.</p>
-        <p class="meal-macro">Ккал: 220 · Б: 4 г ·
-        Ж: 10 г · В: 28 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Горіхи грецькі (20г) + груша.</p>
+          <p class="meal-macro">Ккал: 220 · Б: 4 г ·
+          Ж: 10 г · В: 28 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Стейк хека з гарніром із запечених овочів (перець, кабачок).</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Стейк хека з гарніром із запечених овочів (перець, кабачок).</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1916,27 +1634,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">30</div>
     <div class="page-meta"><span>Тиждень 3 · Меню</span><span class="page-meta-dot">•</span><span>День 21 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Неділя</h2>
@@ -1950,28 +1647,40 @@ em{font-style:italic}
         </div>
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Омлет із двома яйцями та томатами + тост із маслечком та сиром Gouda Fit 10%.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 24 г ·
-        Ж: 12 г · В: 41 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Омлет із двома яйцями та томатами + тост із маслечком та сиром Gouda Fit 10%.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 24 г ·
+          Ж: 12 г · В: 41 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day21-22_lunch_pasta_bolognese.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Макарони з твердих сортів із м'ясним соусом болоньєзе (на домашньому фарші з індичого філе).</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Макарони з твердих сортів із м'ясним соусом болоньєзе (на домашньому фарші з індичого філе).</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Шоколад чорний (20г) + чай.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 3 г ·
+          Ж: 7 г · В: 32 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Шоколад чорний (20г) + чай.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 3 г ·
-        Ж: 7 г · В: 32 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запіканка з броколі та курячим філе «Наша Ряба» під легким сиром.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 13 г · В: 37 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запіканка з броколі та курячим філе «Наша Ряба» під легким сиром.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -1985,17 +1694,7 @@ em{font-style:italic}
         <h2 class="page-title">Книга рецептів тижня</h2>
         <div class="recipe-list">
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day15-16_lunch_thigh_buckwheat_coleslaw.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Тушковане куряче стегно без шкірки</div>
               <div class="recipe-meta">Підготовка 10 хв · Готування 30 хв · Порцій 2 (на 2 дні)</div>
@@ -2122,27 +1821,6 @@ em{font-style:italic}
       </div></div>
     </section><section class="page day"><div class="page-num">34</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 22 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Понеділок</h2>
@@ -2151,29 +1829,41 @@ em{font-style:italic}
     <p class="day-accent">Останній ривок місяця. Ти — вже інша людина, ніж 22 дні тому.</p>
     
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Тортилья гриль Dijo із начинкою з крем-сиру Exquisa та червоної риби (30г).</p>
-        <p class="meal-macro">Ккал: 380 · Б: 25 г ·
-        Ж: 14 г · В: 38 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day22_breakfast_tortilla_salmon.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Тортилья гриль Dijo із начинкою з крем-сиру Exquisa та червоної риби (30г).</p>
+          <p class="meal-macro">Ккал: 380 · Б: 25 г ·
+          Ж: 14 г · В: 38 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day21-22_lunch_pasta_bolognese.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Макарони з болоньєзе (вчорашня порція).</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Макарони з болоньєзе (вчорашня порція).</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Зефір класичний (1 шт.).</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 8 г · В: 31 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Зефір класичний (1 шт.).</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 8 г · В: 31 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечений мінтай Norven з кабачком та зеленню.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечений мінтай Norven з кабачком та зеленню.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2184,27 +1874,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">35</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 23 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Вівторок</h2>
@@ -2214,28 +1883,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирники «Пан Кабан» (150г) + ягідний соус.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 26 г ·
-        Ж: 11 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирники «Пан Кабан» (150г) + ягідний соус.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 26 г ·
+          Ж: 11 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day23-24_lunch_buckwheat_thigh.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Гречана каша + запечене куряче стегно без шкірки (130г — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Гречана каша + запечене куряче стегно без шкірки (130г — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Йогурт питний + ківі.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 5 г ·
+          Ж: 9 г · В: 23 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Йогурт питний + ківі.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 5 г ·
-        Ж: 9 г · В: 23 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із тунцем, яйцем та пекінською капустою.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 13 г · В: 37 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із тунцем, яйцем та пекінською капустою.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2246,27 +1927,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">36</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 24 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Середа</h2>
@@ -2275,29 +1935,41 @@ em{font-style:italic}
     <p class="day-accent">Ти більше не воюєш із їжею — ви з нею вже домовились.</p>
     
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Лаваш вірменський (рулет) із запеченою курячою шинкою Алан та сиром.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 23 г ·
-        Ж: 15 г · В: 39 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day24_breakfast_lavash_ham.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Лаваш вірменський (рулет) із запеченою курячою шинкою Алан та сиром.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 23 г ·
+          Ж: 15 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day23-24_lunch_buckwheat_thigh.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Гречана каша + запечене куряче стегно (вчорашня порція).</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Гречана каша + запечене куряче стегно (вчорашня порція).</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Батончик Kinder Country.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 3 г ·
+          Ж: 7 г · В: 34 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Батончик Kinder Country.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 3 г ·
-        Ж: 7 г · В: 34 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Тушкована стручкова квасоля з індичим фаршем.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Тушкована стручкова квасоля з індичим фаршем.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2308,27 +1980,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">37</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 25 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Четвер</h2>
@@ -2338,28 +1989,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Вівсяна каша з бананом та арахісовою пастою.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 23 г ·
-        Ж: 13 г · В: 41 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Вівсяна каша з бананом та арахісовою пастою.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 23 г ·
+          Ж: 13 г · В: 41 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day25-26_lunch_rice_teriyaki_chicken.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Рис басматі + філе індички у соєвому соусі (130г — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 460 · Б: 35 г ·
+          Ж: 15 г · В: 44 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Рис басматі + філе індички у соєвому соусі (130г — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 460 · Б: 35 г ·
-        Ж: 15 г · В: 44 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Жменя мигдалю + апельсин.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 6 г ·
+          Ж: 9 г · В: 22 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Жменя мигдалю + апельсин.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 6 г ·
-        Ж: 9 г · В: 22 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечена біла риба (хек) з овочами.</p>
-        <p class="meal-macro">Ккал: 410 · Б: 34 г ·
-        Ж: 14 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечена біла риба (хек) з овочами.</p>
+          <p class="meal-macro">Ккал: 410 · Б: 34 г ·
+          Ж: 14 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2370,27 +2033,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">38</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 26 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">П'ятниця</h2>
@@ -2400,28 +2042,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Тости з житнього хліба Agrola з яйцем пашот і червоною рибою.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 25 г ·
-        Ж: 14 г · В: 38 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Тости з житнього хліба Agrola з яйцем пашот і червоною рибою.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 25 г ·
+          Ж: 14 г · В: 38 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day25-26_lunch_rice_teriyaki_chicken.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Рис басматі + філе індички (вчорашня порція).</p>
+          <p class="meal-macro">Ккал: 460 · Б: 35 г ·
+          Ж: 15 г · В: 44 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Рис басматі + філе індички (вчорашня порція).</p>
-        <p class="meal-macro">Ккал: 460 · Б: 35 г ·
-        Ж: 15 г · В: 44 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Зефір у шоколаді + чай.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 3 г ·
+          Ж: 7 г · В: 33 г</p>
+        </div>
       </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Зефір у шоколаді + чай.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 3 г ·
-        Ж: 7 г · В: 33 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат «Грецький» із куркою-гриль (100г).</p>
-        <p class="meal-macro">Ккал: 400 · Б: 32 г ·
-        Ж: 13 г · В: 37 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day26_dinner_greek_salad_chicken.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат «Грецький» із куркою-гриль (100г).</p>
+          <p class="meal-macro">Ккал: 400 · Б: 32 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2432,27 +2086,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">39</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 27 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Субота</h2>
@@ -2462,28 +2095,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирна запіканка (порційний шматочок) із сметаною President.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 27 г ·
-        Ж: 15 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирна запіканка (порційний шматочок) із сметаною President.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 27 г ·
+          Ж: 15 г · В: 36 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day27-28_lunch_potato_drumsticks.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Картопля запечена шматочками (150г) + запечені курячі гомілки «Наша Ряба» (140г — готуємо на 2 дні) + салат.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Картопля запечена шматочками (150г) + запечені курячі гомілки «Наша Ряба» (140г — готуємо на 2 дні) + салат.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Горіхи волоські (20г) + банан.</p>
+          <p class="meal-macro">Ккал: 220 · Б: 4 г ·
+          Ж: 10 г · В: 28 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Горіхи волоські (20г) + банан.</p>
-        <p class="meal-macro">Ккал: 220 · Б: 4 г ·
-        Ж: 10 г · В: 28 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечені кабачки з фаршем індички та легким сиром.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечені кабачки з фаршем індички та легким сиром.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2494,27 +2139,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">40</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 28 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Неділя</h2>
@@ -2528,28 +2152,40 @@ em{font-style:italic}
         </div>
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Омлет із томатами та зеленню + шматочок хліба Agrola з маслом.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 23 г ·
-        Ж: 14 г · В: 39 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Омлет із томатами та зеленню + шматочок хліба Agrola з маслом.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 23 г ·
+          Ж: 14 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day27-28_lunch_potato_drumsticks.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Картопля запечена + курячі гомілки (вчорашня порція) + салат.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day28_snack_darkchoc_coffee.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Шоколад чорний (20г) + кава.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 3 г ·
+          Ж: 7 г · В: 32 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Картопля запечена + курячі гомілки (вчорашня порція) + салат.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Шоколад чорний (20г) + кава.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 3 г ·
-        Ж: 7 г · В: 32 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Стейк червоної риби (форель — 130г) на грилі з броколі.</p>
-        <p class="meal-macro">Ккал: 400 · Б: 33 г ·
-        Ж: 13 г · В: 37 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Стейк червоної риби (форель — 130г) на грилі з броколі.</p>
+          <p class="meal-macro">Ккал: 400 · Б: 33 г ·
+          Ж: 13 г · В: 37 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2560,27 +2196,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">41</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 29 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Понеділок</h2>
@@ -2589,29 +2204,41 @@ em{font-style:italic}
     <p class="day-accent">Три дні до фінішу місяця — і до нової версії себе.</p>
     
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Рисові хлібці (3 шт.) з крем-сиром Exquisa та сиром Gouda Fit 10%.</p>
-        <p class="meal-macro">Ккал: 370 · Б: 24 г ·
-        Ж: 13 г · В: 40 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day29_breakfast_ricecakes_cheese.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Рисові хлібці (3 шт.) з крем-сиром Exquisa та сиром Gouda Fit 10%.</p>
+          <p class="meal-macro">Ккал: 370 · Б: 24 г ·
+          Ж: 13 г · В: 40 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day29-30_lunch_bulgur_beef_stew.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Булгур (50г сухого) + тушкована нежирна яловичина з овочами (130г — готуємо на 2 дні).</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day29_snack_kinder_bueno.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Батончик Kinder Bueno.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 4 г ·
+          Ж: 8 г · В: 31 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Булгур (50г сухого) + тушкована нежирна яловичина з овочами (130г — готуємо на 2 дні).</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Батончик Kinder Bueno.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 4 г ·
-        Ж: 8 г · В: 31 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Салат із тунцем та огірками з соусом Heinz Zero.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Салат із тунцем та огірками з соусом Heinz Zero.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2622,27 +2249,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">42</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 30 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Вівторок</h2>
@@ -2652,28 +2258,40 @@ em{font-style:italic}
     
     <div class="meal-list">
       <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Сирники «Баба Peredala» (150г) з ягодами.</p>
-        <p class="meal-macro">Ккал: 380 · Б: 26 г ·
-        Ж: 12 г · В: 38 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Сирники «Баба Peredala» (150г) з ягодами.</p>
+          <p class="meal-macro">Ккал: 380 · Б: 26 г ·
+          Ж: 12 г · В: 38 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day29-30_lunch_bulgur_beef_stew.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Булгур + тушкована яловичина (вчорашня порція) + салат.</p>
+          <p class="meal-macro">Ккал: 470 · Б: 35 г ·
+          Ж: 15 г · В: 47 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Булгур + тушкована яловичина (вчорашня порція) + салат.</p>
-        <p class="meal-macro">Ккал: 470 · Б: 35 г ·
-        Ж: 15 г · В: 47 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Йогурт «Ферма» + яблуко.</p>
+          <p class="meal-macro">Ккал: 200 · Б: 5 г ·
+          Ж: 9 г · В: 23 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Йогурт «Ферма» + яблуко.</p>
-        <p class="meal-macro">Ккал: 200 · Б: 5 г ·
-        Ж: 9 г · В: 23 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Запечений хек Norven із тушкованою капустою.</p>
-        <p class="meal-macro">Ккал: 410 · Б: 34 г ·
-        Ж: 14 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Запечений хек Norven із тушкованою капустою.</p>
+          <p class="meal-macro">Ккал: 410 · Б: 34 г ·
+          Ж: 14 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2684,27 +2302,6 @@ em{font-style:italic}
     </div>
     </section><section class="page day"><div class="page-num">43</div>
     <div class="page-meta"><span>Тиждень 4 · Меню</span><span class="page-meta-dot">•</span><span>День 31 з 31</span></div>
-    <div class="day-collage"><div class="photo-slot cs-day-1">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div><div class="photo-slot cs-day-2">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО</span>
-  </div>
-</div></div>
     <div class="day-title-wrap">
       <span class="day-title-line"></span>
       <h2 class="day-title">Середа</h2>
@@ -2717,29 +2314,41 @@ em{font-style:italic}
           <p>31 день тому цей вибір вимагав свідомого зусилля щоразу. Сьогодні частина цих рішень вже стала автоматичною — це і є нейронний слід нової звички, який ти збудувала власними діями. Далі не потрібно тримати себе «в лещатах» так само сильно, як на старті: система вже працює на тебе. Гарного продовження цього шляху.</p>
         </div>
     <div class="meal-list">
-      <div class="meal-card">
-        <span class="meal-tag tag-rose">СНІДАНОК</span>
-        <p class="meal-desc">Млинці «Хуторок» Французькі з вишнями (2 шт. — 150г) + чашка кави.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 22 г ·
-        Ж: 16 г · В: 39 г</p>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day31_breakfast_pancakes_cherry.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-rose">СНІДАНОК</span>
+          <p class="meal-desc">Млинці «Хуторок» Французькі з вишнями (2 шт. — 150г) + чашка кави.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 22 г ·
+          Ж: 16 г · В: 39 г</p>
+        </div>
+      </div>
+      <div class="meal-card has-thumb">
+        <div class="meal-thumb"><img src="photos/day31_lunch_pasta_chicken_tomato.jpg" alt="" loading="lazy"></div>
+        <div class="meal-body">
+          <span class="meal-tag tag-caramel">ОБІД</span>
+          <p class="meal-desc">Макарони з твердих сортів із запеченим курячим філе «Наша Ряба» (120г) та томатним соусом.</p>
+          <p class="meal-macro">Ккал: 480 · Б: 36 г ·
+          Ж: 16 г · В: 46 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-caramel">ОБІД</span>
-        <p class="meal-desc">Макарони з твердих сортів із запеченим курячим філе «Наша Ряба» (120г) та томатним соусом.</p>
-        <p class="meal-macro">Ккал: 480 · Б: 36 г ·
-        Ж: 16 г · В: 46 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-beige">ПЕРЕКУС</span>
+          <p class="meal-desc">Зефір пастила + свіжі ягоди.</p>
+          <p class="meal-macro">Ккал: 210 · Б: 3 г ·
+          Ж: 7 г · В: 34 г</p>
+        </div>
       </div>
       <div class="meal-card">
-        <span class="meal-tag tag-beige">ПЕРЕКУС</span>
-        <p class="meal-desc">Зефір пастила + свіжі ягоди.</p>
-        <p class="meal-macro">Ккал: 210 · Б: 3 г ·
-        Ж: 7 г · В: 34 г</p>
-      </div>
-      <div class="meal-card">
-        <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
-        <p class="meal-desc">Омлет зі шпинатом, помідорами чері та шматочком бринзи.</p>
-        <p class="meal-macro">Ккал: 390 · Б: 32 г ·
-        Ж: 12 г · В: 36 г</p>
+        
+        <div class="meal-body">
+          <span class="meal-tag tag-ink">ВЕЧЕРЯ</span>
+          <p class="meal-desc">Омлет зі шпинатом, помідорами чері та шматочком бринзи.</p>
+          <p class="meal-macro">Ккал: 390 · Б: 32 г ·
+          Ж: 12 г · В: 36 г</p>
+        </div>
       </div></div>
     
     <div class="totals-bar">
@@ -2753,17 +2362,7 @@ em{font-style:italic}
         <h2 class="page-title">Книга рецептів тижня</h2>
         <div class="recipe-list">
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day27-28_lunch_potato_drumsticks.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Картопля запечена з курячими гомілками</div>
               <div class="recipe-meta">Підготовка 15 хв · Готування 40 хв · Порцій 2 (на 2 дні)</div>
@@ -2780,17 +2379,7 @@ em{font-style:italic}
             </div>
           </div>
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day29-30_lunch_bulgur_beef_stew.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Тушкована яловичина з овочами</div>
               <div class="recipe-meta">Підготовка 15 хв · Готування 45 хв · Порцій 2 (на 2 дні)</div>
@@ -2838,17 +2427,7 @@ em{font-style:italic}
             </div>
           </div>
           <div class="recipe-card">
-            <div class="photo-slot recipe-photo">
-  <div class="photo-slot-inner">
-    <span class="photo-slot-icon"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="6" y="14" width="36" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>
-<path d="M17 14L20 9H28L31 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-<circle cx="24" cy="27" r="7" stroke="currentColor" stroke-width="1.6"/>
-<circle cx="35" cy="19" r="1.4" fill="currentColor"/>
-</svg></span>
-    <span class="photo-slot-label">ФОТО СТРАВИ</span>
-  </div>
-</div>
+            <div class="photo-slot has-photo recipe-photo"><img src="photos/day5_dinner_trout_steak.jpg" alt="" loading="lazy"></div>
             <div class="recipe-body">
               <div class="recipe-title-box">Стейк форелі на грилі</div>
               <div class="recipe-meta">Підготовка 5 хв · Готування 10 хв · Порцій 1</div>
