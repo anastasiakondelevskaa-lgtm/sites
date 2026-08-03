@@ -225,6 +225,16 @@ html,body{background:transparent}
 .sound-hint{margin:0 auto 10px}
 .reel{width:auto;height:min(38vh,360px);aspect-ratio:9/16}
 .hero-arrow{margin-top:12px;font-size:14px}
+
+/* ===== keep Anastasia's face clear: push hero text below it ===== */
+.hero{padding-top:clamp(150px,26vh,270px)}
+.reel{height:min(30vh,285px)}
+.hero .lead{margin:0 auto 5px}
+.hero .sub{margin:0 auto 10px}
+.hero .timer{margin:0 auto 10px!important}
+
+/* give the video more room on phones without covering the face */
+@media(max-width:600px){.hero .sub{display:none}.hero .lead{margin:0 auto 10px}}
 </style>
 </head>
 <body>
