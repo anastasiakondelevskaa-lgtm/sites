@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест: Чому випирає живіт і як це виправити? | Анастасія Унгурян</title>
+<meta name="description" content="Пройди тест за 3 хвилини та дізнайся справжню причину, чому живіт не стає плоским: діастаз, затиснуте дихання, ШКТ чи вісцеральний жир.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lime:#35d13a;
+  --lime2:#7fe884;
+  --lime-grad:linear-gradient(120deg,#26c22b 0%,#4ddc50 100%);
+  --ink:#181a11;
+  --ink-soft:#5c604e;
+  --dark:#0e1008;
+  --dark2:#151810;
+  --muted:rgba(255,255,255,.74);
+  --muted2:rgba(255,255,255,.5);
+  --line-d:rgba(255,255,255,.14);
+  --card:#ffffff;
+  --r:20px;
+  --a:#35d13a;
+  --b:#3aa0ff;
+  --c:#ffc233;
+  --d:#ff5b4d;
+  --red:#ff5b4d;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',system-ui,sans-serif;color:#fff;background:var(--dark);line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh}
+img{display:block;max-width:100%;height:auto}
+.wrap{width:min(720px,92vw);margin-inline:auto;position:relative}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:900}
+.hidden{display:none!important}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(1100px 620px at 18% -6%, rgba(53,209,58,.16), transparent 60%),
+  radial-gradient(900px 560px at 100% 10%, rgba(53,209,58,.09), transparent 55%),
+  var(--dark)}
+
+/* ── UI ── */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#12140d;background:var(--lime);padding:7px 15px;border-radius:100px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--lime-grad);color:#12140d;font-weight:800;font-size:clamp(15px,1.9vw,17px);padding:17px 40px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 16px 36px -14px rgba(53,209,58,.55);transition:transform .18s,filter .18s;width:100%}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid var(--line-d);box-shadow:none;font-weight:700}
+.btn-outline:hover{border-color:var(--lime);filter:none}
+
+/* ── TOPBAR ── */
+.topbar{padding:18px 0;text-align:center}
+.topbar .brand{font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:13px}
+.topbar .brand span{color:var(--lime)}
+
+/* ── INTRO ── */
+.intro{padding:6px 0 40px}
+.intro-photo{position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:26px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.intro-photo img{width:100%}
+.intro-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,10,6,.55) 0%,transparent 45%)}
+.intro h1{font-size:clamp(28px,6vw,42px);text-transform:none;margin:18px 0 14px;text-align:center}
+.intro h1 .lime{color:var(--lime)}
+.intro .sub{color:var(--muted);font-size:15.5px;max-width:56ch;margin:0 auto 26px;text-align:center}
+.intro .sub b{color:#fff}
+.trust{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.trust span{font-size:11.5px;font-weight:700;color:var(--muted2);background:rgba(255,255,255,.06);border:1px solid var(--line-d);padding:7px 13px;border-radius:100px}
+
+/* ── PROGRESS ── */
+.progress-wrap{position:sticky;top:0;z-index:5;background:rgba(14,16,8,.88);backdrop-filter:blur(10px);padding:14px 0;border-bottom:1px solid var(--line-d)}
+.progress-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;font-size:11.5px;font-weight:700;color:var(--muted2)}
+.progress-top .blk{color:var(--lime);text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+.progress-bar{height:6px;border-radius:100px;background:rgba(255,255,255,.1);overflow:hidden}
+.progress-fill{height:100%;background:var(--lime-grad);border-radius:100px;transition:width .35s ease}
+
+/* ── QUESTION CARD ── */
+.qwrap{padding:30px 0 60px}
+.qcard{background:var(--card);color:var(--ink);border-radius:var(--r);padding:clamp(22px,4vw,34px);box-shadow:0 30px 60px -28px rgba(0,0,0,.6)}
+.qcard .qnum{font-size:12px;font-weight:800;color:var(--lime-deep,#2a9e2f);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.qcard h2{font-size:clamp(19px,3.4vw,24px);margin-bottom:16px;color:var(--ink)}
+.qphoto{border-radius:14px;overflow:hidden;margin-bottom:18px;border:1px solid rgba(0,0,0,.06)}
+.qphoto img{width:100%}
+.qhint{background:rgba(53,209,58,.09);border:1px solid rgba(53,209,58,.25);border-radius:12px;padding:12px 15px;font-size:13.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:flex-start;gap:13px;text-align:left;background:#f4f5f0;border:1.5px solid transparent;border-radius:14px;padding:14px 16px;cursor:pointer;font-family:inherit;font-size:14.5px;color:var(--ink);line-height:1.45;transition:border-color .15s,background .15s,transform .1s}
+.opt:hover{border-color:var(--lime);background:#eef9ee}
+.opt:active{transform:scale(.99)}
+.opt.selected{border-color:var(--lime);background:#e5f8e5}
+.opt .letter{flex:none;width:28px;height:28px;border-radius:50%;background:#dfe2d6;color:var(--ink);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.opt.selected .letter{background:var(--lime-grad);color:#12140d}
+.multi .opt .letter{border-radius:8px}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.qback{background:none;border:none;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;padding:8px 0}
+.qback:hover{color:#fff}
+.qwrap .wrap>.btn{margin-top:18px}
+
+/* ── FLAGS SCREEN ── */
+.flag-list .opt{align-items:center}
+
+/* ── STOP WARNING ── */
+.warn-card{background:#2a120e;border:1.5px solid rgba(255,91,77,.45);border-radius:var(--r);padding:22px 24px;margin-bottom:22px}
+.warn-card .wt{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--red);font-size:15px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.03em}
+.warn-card p{color:rgba(255,255,255,.86);font-size:14px;line-height:1.6}
+.warn-card p+p{margin-top:8px}
+
+/* ── RESULT ── */
+.resultwrap{padding:30px 0 60px}
+.res-card{border-radius:var(--r);padding:clamp(26px,5vw,38px);margin-bottom:20px;position:relative;overflow:hidden}
+.res-card.main{background:#fff;color:var(--ink)}
+.res-badge{display:inline-flex;align-items:center;gap:9px;font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border-radius:100px;color:#0d0f08;margin-bottom:16px}
+.res-card.main h2{font-size:clamp(22px,4vw,30px);margin-bottom:14px;color:var(--ink)}
+.res-card.main h3{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin:18px 0 6px}
+.res-card.main p{font-size:15px;color:#33361f;line-height:1.65}
+.res-card.sec{background:rgba(255,255,255,.06);border:1px solid var(--line-d)}
+.res-card.sec .res-badge{opacity:.92}
+.res-card.sec h3{font-size:16px;margin-bottom:8px}
+.res-card.sec p{color:var(--muted);font-size:14px;line-height:1.6}
+
+.scorebars{display:flex;flex-direction:column;gap:10px;margin:8px 0 26px}
+.sbar-row{display:flex;align-items:center;gap:12px}
+.sbar-label{width:150px;flex:none;font-size:12px;font-weight:700;color:var(--muted2)}
+.sbar-track{flex:1;height:8px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:100px}
+.sbar-val{width:26px;flex:none;text-align:right;font-size:12px;font-weight:800;color:var(--muted)}
+
+.cta{background:linear-gradient(150deg,#1c2012,#0e1008);border:1px solid var(--line-d);border-radius:var(--r);padding:clamp(26px,5vw,36px);text-align:center;margin-top:6px}
+.cta h3{font-size:clamp(19px,3.4vw,24px);margin-bottom:10px}
+.cta p{color:var(--muted);font-size:14.5px;max-width:48ch;margin:0 auto 22px}
+.restart{display:block;text-align:center;margin-top:18px;color:var(--muted2);font-size:13px;font-weight:700;background:none;border:none;cursor:pointer;width:100%}
+.restart:hover{color:#fff}
+
+footer{text-align:center;padding:30px 0 40px;color:var(--muted2);font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap"><span class="brand">U&#8209;BODY <span>Тест</span></span></div></div>
+
+<!-- ═══ INTRO ═══ -->
+<section id="screen-intro" class="wrap intro">
+  <div class="intro-photo"><img src="assets/quiz-zhyvit/q1-bloat-timeline.jpg" alt="Живіт випирає протягом дня"></div>
+  <span class="eyebrow">Безкоштовний тест · 3 хвилини</span>
+  <h1 style="margin-top:16px">Чому <span class="lime">випирає живіт</span> і як це виправити?</h1>
+  <p class="sub">Привіт! Цей тест допоможе тобі за 3 хвилини зрозуміти <b>справжню причину</b>, чому живіт не стає плоским, і чому звичайне качання преса чи жорсткі дієти часто не працюють. Відповідай чесно — обирай варіанти, які найкраще описують твій стан.</p>
+  <button class="btn" onclick="startQuiz()">Почати тест →</button>
+  <div class="trust">
+    <span>17 запитань</span>
+    <span>Персональний результат</span>
+    <span>Без реєстрації</span>
+  </div>
+</section>
+
+<!-- ═══ QUIZ ═══ -->
+<section id="screen-quiz" class="hidden">
+  <div class="progress-wrap">
+    <div class="wrap">
+      <div class="progress-top"><span class="blk" id="blockLabel"></span><span id="qCounter"></span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+  <div class="qwrap wrap">
+    <div class="qcard" id="qcard"></div>
+  </div>
+</section>
+
+<!-- ═══ RESULT ═══ -->
+<section id="screen-result" class="wrap resultwrap hidden"></section>
+
+<footer>© Анастасія Унгурян · U&#8209;BODY</footer>
+
+<script>
+const BLOCKS = [
+  { name: "Блок 1 · Загальний скринінг", questions: [
+    { q:"Коли твій живіт випирає найбільше?",
+      img:"assets/quiz-zhyvit/q1-bloat-timeline.jpg",
+      opts:[
+        {t:"Зранку плаский, а до вечора помітно збільшується та «надувається»", s:{C:3}},
+        {t:"Приблизно однаковий протягом усього дня", s:{D:3}},
+        {t:"Постійно випирає вперед, особливо коли я просто стою розслаблено", s:{B:3}},
+        {t:"По центру видно валик, або живіт наче «провалюється» і розходиться в боки", s:{A:3}},
+      ]},
+    { q:"Який живіт на дотик при натисканні?",
+      opts:[
+        {t:"М'який, «надутий», всередині відчувається бурчання або важкість", s:{C:2}},
+        {t:"Щільний, пружний, важко захопити пальцями жирову складку", s:{D:2}},
+        {t:"М'який, але по центру (над чи під пупком) відчувається м'яка западина/провал", s:{A:2}},
+        {t:"Ребра розведені в боки, а живіт наче виштовхнутий вперед зсередини", s:{B:2}},
+      ]},
+  ]},
+  { name: "Блок 2 · Ознаки розходження м'язів (Діастаз)", questions: [
+    { q:"Чи були у тебе вагітності та пологи?",
+      opts:[
+        {t:"Ні", s:{A:0}},
+        {t:"Так (за будь-який термін: до 1 року, 1–3 роки чи більше)", s:{A:2}},
+      ]},
+    { q:"Самотест на розходження м'язів. Що ти відчуваєш під пальцями?",
+      img:"assets/quiz-zhyvit/q4-selftest.jpg",
+      hint:"Ляж на спину, ноги зігни в колінах, стопи на підлозі. Поклади пальці однієї руки поперек середньої лінії живота трохи вище пупка. Трохи підніми голову від підлоги.",
+      opts:[
+        {t:"М'язи напружені, пальці не провалюються", s:{A:0}},
+        {t:"Відчувається м'який провал завтовшки в 1–2 пальці", s:{A:2}},
+        {t:"Провалюється 3 і більше пальців або дно під пальцями «глибоке та м'яке»", s:{A:4}},
+      ]},
+    { q:"Перевірка на «будиночок» / «дашок». Чи з'являється по центральній лінії живота щільний гребінь?",
+      img:"assets/quiz-zhyvit/q5-domik-test.jpg",
+      hint:"Підніми голову лежачи на спині або згадай, що відбувається, коли ти встаєш з ліжка.",
+      opts:[
+        {t:"Ні, живіт залишається рівним або просто напружується", s:{A:0}},
+        {t:"Так, з'являється помітний випуклий гребінь по центру", s:{A:3}},
+      ]},
+    { q:"Чи спостерігаєш ти супутні симптоми? (Підтікання при чханні/стрибках, відчуття тиску «вниз», періодичний біль у попереку)",
+      opts:[
+        {t:"Ні, нічого з цього немає", s:{A:0}},
+        {t:"Так, є один або кілька симптомів", s:{A:2,B:1}},
+      ]},
+  ]},
+  { name: "Блок 3 · Дихання та постава (Глибокий корсет)", questions: [
+    { q:"Тест на паттерн дихання. Що рухається першим і найбільше?",
+      hint:"Поклади одну руку на верхні ребра/груди, а другу — на нижні ребра збоку. Зроби спокійний глибокий вдих.",
+      opts:[
+        {t:"Нижні ребра розширюються в боки, живіт злегка наповнюється", s:{B:0}},
+        {t:"Вгору піднімаються тільки плечі, ключиці та грудна клітка", s:{B:3}},
+        {t:"Надувається лише живіт уперед, а ребра залишаються повністю нерухомими", s:{B:2}},
+      ]},
+    { q:"Тест на поставу (подивись на себе в дзеркало збоку):",
+      img:"assets/quiz-zhyvit/q8-posture.jpg",
+      opts:[
+        {t:"Нейтральне положення (спина рівна, природні вигини)", s:{B:0}},
+        {t:"Сильний прогин у попереку, таз нахилений уперед, живіт вивалився", s:{B:3}},
+        {t:"Поперек згладжений, таз підвернутий під себе, плечі округлені", s:{B:3}},
+      ]},
+    { q:"Чи звикла ти свідомо втягувати живіт протягом дня?",
+      hint:"Постійний спазм м'язів блокує дихання і виштовхує низ живота вперед.",
+      opts:[
+        {t:"Ні, не контролюю це", s:{B:0}},
+        {t:"Так, майже завжди намагаюся тримати живіт втягнутим", s:{B:3}},
+      ]},
+    { q:"Чи випирають у тебе нижні ребра спереду?",
+      opts:[
+        {t:"Ні, ребра м'яко сходяться", s:{B:0}},
+        {t:"Так, нижні ребра розкриті та помітно виступають вперед", s:{B:2}},
+      ]},
+  ]},
+  { name: "Блок 4 · Травлення та ШКТ", questions: [
+    { q:"Коли саме збільшується живіт після прийому їжі?",
+      img:"assets/quiz-zhyvit/q11-eating.jpg",
+      opts:[
+        {t:"Майже одразу або через 20–30 хвилин", s:{C:3}},
+        {t:"Через 1–2 години", s:{C:2}},
+        {t:"Ніяк не пов'язано з їжею", s:{C:0}},
+      ]},
+    { q:"Чи турбують тебе гази, здуття, відчуття розпирання або бурчання?",
+      opts:[
+        {t:"Вкрай рідко або ніколи", s:{C:0}},
+        {t:"Так, це регулярна історія", s:{C:2}},
+      ]},
+    { q:"Чи є проблема з регулярністю випорожнення кишечника (запори/нерегулярність)?",
+      opts:[
+        {t:"Ні, все працює регулярно", s:{C:0}},
+        {t:"Так, бувають затримки або збої", s:{C:2}},
+      ]},
+    { q:"Чи помічала ти реакцію живота на конкретні продукти? (Молочне, свіжі овочі/бобові, солодке, хліб)",
+      opts:[
+        {t:"Ні, реакції немає", s:{C:0}},
+        {t:"Так, після певної їжі живіт стабільно «роздуває»", s:{C:3}},
+      ]},
+  ]},
+  { name: "Блок 5 · Метаболічний фактор (Вісцеральний жир)", questions: [
+    { q:"Розрахунок пропорцій: поділи обхват талії у найвужчому місці на свій зріст (у см)",
+      img:"assets/quiz-zhyvit/q15-waist.jpg",
+      hint:"Приклад: талія 80 см, зріст 165 см → 80/165 = 0,48",
+      opts:[
+        {t:"Результат менше 0,5", s:{D:0}},
+        {t:"Результат більше 0,5", s:{D:3}},
+      ]},
+    { q:"Як розподіляються відкладення на тілі?",
+      opts:[
+        {t:"Рівномірно по всьому тілу (руки, стегна, сідниці, живіт)", s:{D:0}},
+        {t:"Переважно на животі та талії, а ноги й руки залишаються стрункими", s:{D:2}},
+      ]},
+    { q:"Чи присутній у твоєму житті регулярний недосип або стрес?",
+      opts:[
+        {t:"Ні, сплю 7–8 годин, почуваюся спокійно", s:{D:0}},
+        {t:"Сплю менше 6 годин / живу в постійному стресі та напрузі", s:{D:2}},
+      ]},
+  ]},
+];
+
+const FLAGS = [
+  "Гострий або регулярний біль у ділянці живота / попереку",
+  "Щільне випинання в ділянці пупка, яке не зникає навіть у положенні лежачи",
+  "Різка зміна об'єму живота за короткий термін (2–3 тижні) без зміни раціону",
+  "Припущення щодо можливої вагітності",
+];
+
+const RESULTS = {
+  A:{ emoji:"🟢", color:"var(--a)", title:"Діастаз та слабкість глибокого корсету",
+      cause:"Твої прямі або глибокі м'язи живота після вагітності чи навантажень втратили внутрішній тонус. Звичайний прес зараз лише виштовхує живіт уперед «будиночком».",
+      action:"Забудь про класичні скручування! Тобі потрібне м'яке включення поперечного м'яза через дихальні техніки та контроль внутрішньочеревного тиску." },
+  B:{ emoji:"🔵", color:"var(--b)", title:"Затиснуте дихання та порушення постави",
+      cause:"Твій живіт випирає не через «зайву вагу», а через затиснуту діафрагму та нахил тазу. Коли діафрагма затиснута, вона тисне на внутрішні органи вниз і вперед.",
+      action:"Працювати з розслабленням діафрагми, зняттям спазму та поверненням тазу в нейтральне положення. За 7 днів живіт природно піде всередину!" },
+  C:{ emoji:"🟡", color:"var(--c)", title:"Фактор ШКТ та здуття",
+      cause:"Візуальний об'єм створює не жир, а набряклість тканин, застої та процеси бродіння в кишечнику (живіт «росте» протягом дня).",
+      action:"Поєднувати м'яку фізичну активацію (лімфодренажні техніки, самомасаж) з корекцією пізніх вечерь та виключенням продуктів-тригерів." },
+  D:{ emoji:"🔴", color:"var(--d)", title:"Метаболічний фактор та вісцеральний жир",
+      cause:"Накопичення вісцерального (внутрішнього) жиру навколо органів, часом на тлі стресу, високого кортизолу чи недосипання.",
+      action:"Працювати комплексно: регулярна помірна активність для всього тіла, відновлення сну та збалансоване харчування без жорстких обмежень." },
+};
+
+const TOTAL_Q = BLOCKS.reduce((n,b)=>n+b.questions.length,0);
+let flatQuestions = [];
+BLOCKS.forEach(b=>b.questions.forEach(q=>flatQuestions.push({...q, block:b.name})));
+
+let step = 0; // 0..TOTAL_Q-1 questions, TOTAL_Q = flags screen
+let answers = new Array(flatQuestions.length).fill(null);
+let flagAnswers = new Array(FLAGS.length).fill(false);
+
+function startQuiz(){
+  document.getElementById('screen-intro').classList.add('hidden');
+  document.getElementById('screen-quiz').classList.remove('hidden');
+  step = 0;
+  renderStep();
+  window.scrollTo({top:0});
+}
+
+function renderStep(){
+  if(step < flatQuestions.length){
+    renderQuestion(step);
+  } else {
+    renderFlags();
+  }
+}
+
+function renderQuestion(i){
+  const q = flatQuestions[i];
+  document.getElementById('blockLabel').textContent = q.block;
+  document.getElementById('qCounter').textContent = `Питання ${i+1} з ${flatQuestions.length}`;
+  document.getElementById('progressFill').style.width = (i/flatQuestions.length*100)+'%';
+
+  const letters = ['А','Б','В','Г'];
+  let html = `<div class="qnum">Питання ${i+1}</div><h2>${q.q}</h2>`;
+  if(q.img) html += `<div class="qphoto"><img src="${q.img}" alt=""></div>`;
+  if(q.hint) html += `<div class="qhint">📸 ${q.hint}</div>`;
+  html += `<div class="opts">`;
+  q.opts.forEach((o,idx)=>{
+    const sel = answers[i]===idx ? ' selected' : '';
+    html += `<button class="opt${sel}" onclick="selectAnswer(${i},${idx})"><span class="letter">${letters[idx]}</span><span>${o.t}</span></button>`;
+  });
+  html += `</div>`;
+  if(i>0) html += `<div class="qnav"><button class="qback" onclick="goBack()">← Назад</button><span></span></div>`;
+  document.getElementById('qcard').innerHTML = html;
+}
+
+function selectAnswer(i, idx){
+  answers[i] = idx;
+  step = i;
+  renderQuestion(i);
+  setTimeout(()=>{ step = i+1; renderStep(); window.scrollTo({top:0,behavior:'smooth'}); }, 260);
+}
+
+function goBack(){
+  step = Math.max(0, step-1);
+  renderStep();
+  window.scrollTo({top:0});
+}
+
+function renderFlags(){
+  document.getElementById('blockLabel').textContent = "Важливе застереження";
+  document.getElementById('qCounter').textContent = `Останній крок`;
+  document.getElementById('progressFill').style.width = '100%';
+
+  let html = `<div class="qnum">🚩 Перш ніж показати результат</div><h2>Чи є у тебе хоча б один із цих симптомів?</h2>`;
+  html += `<div class="opts multi flag-list">`;
+  FLAGS.forEach((f,idx)=>{
+    const sel = flagAnswers[idx] ? ' selected' : '';
+    html += `<button class="opt${sel}" onclick="toggleFlag(${idx})"><span class="letter">${flagAnswers[idx]?'✓':''}</span><span>${f}</span></button>`;
+  });
+  html += `</div>`;
+  html += `<button class="btn" style="margin-top:20px" onclick="finishQuiz()">Показати результат →</button>`;
+  html += `<div class="qnav"><button class="qback" onclick="goBack()">← Назад</button><span></span></div>`;
+  document.getElementById('qcard').innerHTML = html;
+}
+
+function toggleFlag(idx){
+  flagAnswers[idx] = !flagAnswers[idx];
+  renderFlags();
+}
+
+function finishQuiz(){
+  const totals = {A:0,B:0,C:0,D:0};
+  flatQuestions.forEach((q,i)=>{
+    if(answers[i]===null) return;
+    const s = q.opts[answers[i]].s;
+    Object.keys(s).forEach(k=> totals[k]+=s[k]);
+  });
+
+  const sorted = Object.entries(totals).sort((x,y)=>y[1]-x[1]);
+  const primary = sorted[0][0];
+  const secondary = (sorted[1] && sorted[1][1] > 0 && sorted[1][0]!==primary) ? sorted[1][0] : null;
+  const hasFlags = flagAnswers.some(Boolean);
+
+  document.getElementById('screen-quiz').classList.add('hidden');
+  const el = document.getElementById('screen-result');
+  el.classList.remove('hidden');
+
+  const maxScore = Math.max(...Object.values(totals), 1);
+  const colorMap = {A:'var(--a)',B:'var(--b)',C:'var(--c)',D:'var(--d)'};
+  const nameMap = {A:'Діастаз', B:'Дихання/постава', C:'ШКТ/здуття', D:'Вісцеральний жир'};
+
+  let html = '';
+
+  if(hasFlags){
+    html += `<div class="warn-card">
+      <div class="wt">⚠️ Зверни увагу</div>
+      <p>Ти позначила симптом(и), які потребують окремої уваги. У таких випадках першим кроком має бути консультація лікаря або фізичного терапевта, а не фітнес-інтенсив.</p>
+      <p>Ми дбаємо про твоє здоров'я — не ігноруй цей сигнал, навіть якщо результат тесту нижче виглядає обнадійливо.</p>
+    </div>`;
+  }
+
+  const r = RESULTS[primary];
+  html += `<div class="res-card main">
+    <span class="res-badge" style="background:${r.color}">${r.emoji} Результат ${primary}</span>
+    <h2>${r.title}</h2>
+    <h3>У чому причина</h3>
+    <p>${r.cause}</p>
+    <h3>Що робити</h3>
+    <p>${r.action}</p>
+  </div>`;
+
+  if(secondary){
+    const rs = RESULTS[secondary];
+    html += `<div class="res-card sec">
+      <span class="res-badge" style="background:${rs.color}">${rs.emoji} Супутній фактор ${secondary}</span>
+      <h3>${rs.title}</h3>
+      <p>${rs.cause}</p>
+    </div>`;
+  }
+
+  html += `<div class="scorebars">`;
+  ['A','B','C','D'].forEach(k=>{
+    const pct = Math.round(totals[k]/maxScore*100);
+    html += `<div class="sbar-row"><span class="sbar-label">${nameMap[k]}</span><div class="sbar-track"><div class="sbar-fill" style="width:${pct}%;background:${colorMap[k]}"></div></div><span class="sbar-val">${totals[k]}</span></div>`;
+  });
+  html += `</div>`;
+
+  html += `<div class="cta">
+    <h3>Це не вирок. Це твоя точка старту.</h3>
+    <p>Причину, яку показав тест, можна усунути без 24/7 в залі та жорстких дієт — простими щоденними діями.</p>
+    <a class="btn" href="#" target="_blank" rel="noopener">Отримати персональну рекомендацію</a>
+  </div>`;
+
+  html += `<button class="restart" onclick="restartQuiz()">↺ Пройти тест ще раз</button>`;
+
+  el.innerHTML = html;
+  window.scrollTo({top:0});
+}
+
+function restartQuiz(){
+  answers = new Array(flatQuestions.length).fill(null);
+  flagAnswers = new Array(FLAGS.length).fill(false);
+  step = 0;
+  document.getElementById('screen-result').classList.add('hidden');
+  document.getElementById('screen-intro').classList.remove('hidden');
+  window.scrollTo({top:0});
+}
+</script>
+</body>
+</html>
