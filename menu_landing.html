@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>6 готових меню під твою калорійність · Анастасія Унгурян</title>
-<meta name="description" content="Розрахуй свою денну норму калорій за формулою Міффліна — Сан Жеора і отримай готове меню на кожен день під свою ціль.">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>ФУДКОД · Їж смачно, худни легко · Анастасія Унгурян</title>
+<meta name="description" content="6 готових меню під твою калорійність. Розрахуй норму за формулою Міффліна — Сан Жеора і привчи себе (і родину) їсти смачно та корисно.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -20,39 +20,55 @@
   --lime-dark:#b9db4c;
   --mint:#e9f6ec;
   --mint-2:#dcf1e1;
+  --peach:#ffd9ae;
+  --coral:#ffb7a3;
+  --yellow:#ffe49a;
   --text:#16241b;
   --muted:#68796d;
   --border:#e3ede3;
-  --shadow:0 10px 30px rgba(15,46,29,.07);
-  --shadow-sm:0 4px 14px rgba(15,46,29,.06);
+  --shadow:0 14px 34px rgba(15,46,29,.09);
+  --shadow-sm:0 6px 18px rgba(15,46,29,.07);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Fraunces',serif;line-height:1.12;letter-spacing:-.01em}
-.container{max-width:680px;margin:0 auto;padding:0 22px}
-section{padding:60px 0}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.1;letter-spacing:-.01em}
+.container{max-width:700px;margin:0 auto;padding:0 22px}
+section{padding:64px 0}
 em{font-style:normal;color:var(--green-600)}
 .pill-tag{display:inline-flex;align-items:center;gap:6px;background:var(--mint);color:var(--green-700);font-size:12px;font-weight:700;letter-spacing:.02em;padding:7px 16px;border-radius:999px;margin-bottom:18px}
 .pill-tag::before{content:'●';color:var(--lime-dark);font-size:8px}
-.btn{display:block;width:100%;padding:18px 24px;background:linear-gradient(135deg,var(--green-600),var(--green-500));color:#fff;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;text-align:center;text-decoration:none;border:none;border-radius:999px;cursor:pointer;box-shadow:0 8px 20px rgba(47,148,87,.28);transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(47,148,87,.36)}
+.btn{display:block;width:100%;padding:18px 24px;background:linear-gradient(135deg,var(--green-600),var(--green-500));color:#fff;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;text-align:center;text-decoration:none;border:none;border-radius:999px;cursor:pointer;box-shadow:0 10px 22px rgba(47,148,87,.3);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(47,148,87,.38)}
 .btn.ghost{background:transparent;color:var(--green-700);border:2px solid var(--green-600);box-shadow:none}
 .btn.ghost:hover{background:var(--mint);transform:none}
-.btn.lime{background:var(--lime);color:var(--green-900);box-shadow:0 8px 20px rgba(215,245,111,.4)}
-.fi{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.btn.lime{background:var(--lime);color:var(--green-900);box-shadow:0 10px 22px rgba(215,245,111,.42)}
+.fi{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .fi.show{opacity:1;transform:none}
+.section-tag{margin-bottom:12px}
+.section-h{font-size:clamp(26px,6.5vw,40px);font-weight:600;color:var(--green-900);margin-bottom:10px}
+.section-sub{font-size:15px;color:var(--muted);max-width:520px;margin-bottom:32px;line-height:1.65}
+
+/* BRAND ROW */
+.brand-row{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.brand{font-family:'Fraunces',serif;font-weight:800;font-size:16px;letter-spacing:.03em;background:linear-gradient(135deg,var(--green-800),var(--green-500));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-by{font-size:11px;color:var(--muted)}
+.brand-by::before{content:'· ';color:var(--muted)}
 
 /* HERO */
-#hero{position:relative;overflow:hidden;padding:64px 0 56px}
-.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;z-index:0}
-.blob-1{width:340px;height:340px;background:var(--mint-2);top:-140px;right:-100px}
-.blob-2{width:260px;height:260px;background:var(--lime);opacity:.28;bottom:-80px;left:-90px}
+#hero{position:relative;overflow:hidden;padding:44px 0 56px}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0}
+.blob-1{width:360px;height:360px;background:var(--mint-2);top:-160px;right:-110px}
+.blob-2{width:280px;height:280px;background:var(--lime);opacity:.3;bottom:-100px;left:-100px}
 #hero .container{position:relative;z-index:1}
-.hero-h1{font-size:clamp(34px,8.5vw,54px);font-weight:600;color:var(--green-900);margin-bottom:16px}
-.hero-sub{font-size:15.5px;line-height:1.7;color:var(--muted);max-width:520px;margin-bottom:8px}
+.hero-h1{font-size:clamp(32px,8.2vw,52px);font-weight:600;color:var(--green-900);margin-bottom:16px}
+.hero-sub{font-size:15.5px;line-height:1.7;color:var(--muted);max-width:540px;margin-bottom:26px}
+.trigger-label{font-size:12px;font-weight:700;color:var(--green-700);margin-bottom:10px;letter-spacing:.02em}
+.trigger-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.trigger-chip{font-size:12.5px;font-weight:600;color:var(--green-800);background:#fff;border:1.5px solid var(--border);padding:8px 14px;border-radius:999px;text-decoration:none;transition:all .15s}
+.trigger-chip:hover{border-color:var(--green-500);background:var(--mint)}
 
 /* CALCULATOR CARD */
-.calc-card{background:var(--card);border-radius:28px;box-shadow:var(--shadow);padding:30px 24px;margin-top:32px}
+.calc-card{background:var(--card);border-radius:28px;box-shadow:var(--shadow);padding:30px 24px;margin-top:30px}
 .calc-head{display:flex;align-items:center;gap:10px;margin-bottom:4px}
 .calc-icon{width:38px;height:38px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .calc-title{font-size:22px;font-weight:600;color:var(--green-900)}
@@ -85,10 +101,45 @@ em{font-style:normal;color:var(--green-600)}
 .result-card a{flex-shrink:0;font-size:12px;font-weight:700;color:var(--green-700);text-decoration:none;background:#fff;padding:8px 14px;border-radius:999px;white-space:nowrap}
 .result-card.fam a{color:var(--green-900);background:var(--lime)}
 
+/* MARQUEE */
+.marquee{overflow:hidden;white-space:nowrap;background:var(--green-900);padding:16px 0}
+.marquee-track{display:inline-flex;gap:36px;animation:marquee 24s linear infinite}
+.marquee-track span{color:var(--lime);font-family:'Fraunces',serif;font-size:15px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* PAIN */
+#pain{background:var(--mint)}
+.pain-grid{display:flex;flex-direction:column;gap:10px}
+.pain-card{background:var(--card);border-radius:20px;box-shadow:var(--shadow-sm);padding:18px 18px 18px 16px;display:flex;gap:14px;align-items:flex-start}
+.pain-icon{width:44px;height:44px;border-radius:14px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pain-title{font-weight:700;font-size:14.5px;margin-bottom:3px;color:var(--green-900)}
+.pain-desc{font-size:13px;color:var(--muted);line-height:1.55}
+.pain-answer{margin-top:22px;background:var(--green-900);border-radius:20px;padding:22px 20px;color:#fff;font-size:14.5px;line-height:1.6}
+.pain-answer b{color:var(--lime)}
+
+/* DISHES CAROUSEL */
+#dishes{background:var(--bg)}
+.dish-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+.dish-arrows{display:flex;gap:8px;flex-shrink:0}
+.dish-row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;-ms-overflow-style:none;scrollbar-width:none}
+.dish-row::-webkit-scrollbar{display:none}
+.dish-card{scroll-snap-align:start;flex:0 0 58%;aspect-ratio:3/4;border-radius:26px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.dish-emoji{position:absolute;top:16px;left:16px;font-size:30px}
+.dish-play{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(15,46,29,.35);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.dish-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--green-900);margin-bottom:8px;line-height:1.25}
+.dish-kcal{display:inline-block;align-self:flex-start;font-size:11.5px;font-weight:700;color:var(--green-900);background:rgba(255,255,255,.75);padding:5px 12px;border-radius:999px}
+.dish-note{font-size:12px;color:var(--muted);margin-top:16px}
+
+/* PROGRAM */
+#program{background:var(--mint)}
+.prog-list{display:flex;flex-direction:column;gap:10px}
+.prog-card{background:var(--card);border-radius:20px;box-shadow:var(--shadow-sm);padding:18px 18px 18px 16px;display:flex;gap:14px;align-items:flex-start}
+.prog-icon{width:44px;height:44px;border-radius:14px;background:var(--lime);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.prog-title{font-weight:700;font-size:14.5px;margin-bottom:3px;color:var(--green-900)}
+.prog-desc{font-size:13px;color:var(--muted);line-height:1.55}
+
 /* MENUS */
-#menus{background:var(--mint)}
-.menus-h{font-size:clamp(26px,6.5vw,40px);font-weight:600;color:var(--green-900);margin-bottom:10px}
-.menus-intro{font-size:15px;color:var(--muted);max-width:520px;margin-bottom:32px}
+#menus{background:var(--bg)}
 .menu-list{display:flex;flex-direction:column;gap:16px}
 .menu-card{background:var(--card);border-radius:24px;box-shadow:var(--shadow-sm);padding:26px 22px;scroll-margin-top:24px}
 .menu-card.featured{background:var(--green-900);color:#fff;position:relative}
@@ -113,13 +164,16 @@ em{font-style:normal;color:var(--green-600)}
 .macro-dot.c{background:#9fd8b6}
 .menu-desc{font-size:14px;line-height:1.65;color:var(--text);margin-bottom:18px}
 .menu-card.featured .menu-desc{color:#dfeee3}
-.menu-bonuses{margin-bottom:18px}
+.menu-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
 .menu-bonus-chip{display:inline-block;font-size:11px;color:var(--green-700);background:var(--mint);padding:5px 12px;border-radius:999px}
 .menu-card.featured .menu-bonus-chip{color:var(--green-900);background:rgba(255,255,255,.9)}
+.menu-price{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--green-900);white-space:nowrap}
+.menu-price span{font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;color:var(--muted)}
+.menu-card.featured .menu-price{color:#fff}
+.menu-card.featured .menu-price span{color:#c3d6c9}
 
 /* BONUSES */
-#bonuses{background:var(--bg)}
-.bon-h{font-size:clamp(24px,6vw,36px);font-weight:600;color:var(--green-900);margin-bottom:28px}
+#bonuses{background:var(--mint)}
 .bon-list{display:flex;flex-direction:column;gap:10px}
 .bon-card{background:var(--card);border-radius:20px;box-shadow:var(--shadow-sm);padding:18px 18px 18px 16px;display:flex;gap:14px;align-items:flex-start}
 .bon-icon{width:44px;height:44px;border-radius:14px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
@@ -129,13 +183,14 @@ em{font-style:normal;color:var(--green-600)}
 .bon-free span{color:var(--green-700);font-weight:700}
 
 /* REVIEWS */
-#reviews{background:var(--mint)}
-.rev-h{font-size:clamp(24px,6vw,36px);font-weight:600;color:var(--green-900);margin-bottom:28px}
+#reviews{background:var(--bg)}
 .carousel-outer{overflow:hidden;width:100%}
 .carousel-track{display:flex;transition:transform .4s ease;width:100%}
 .rev-card{min-width:100%;width:100%;flex-shrink:0;background:var(--card);border-radius:22px;box-shadow:var(--shadow-sm);padding:28px 24px}
 .rev-stars{color:var(--lime-dark);font-size:14px;letter-spacing:3px;margin-bottom:16px}
 .rev-text{font-family:'Fraunces',serif;font-size:18px;line-height:1.55;margin-bottom:18px;color:var(--text)}
+.rev-author-row{display:flex;align-items:center;gap:10px}
+.rev-avatar{width:34px;height:34px;border-radius:50%;background:var(--mint);color:var(--green-700);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
 .rev-author{font-size:12px;font-weight:700;color:var(--green-700)}
 .carousel-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
 .carousel-dots{display:flex;gap:8px}
@@ -150,6 +205,7 @@ em{font-style:normal;color:var(--green-600)}
 .fc-h{font-size:clamp(32px,9vw,54px);color:#fff;margin-bottom:20px;line-height:1.1;font-weight:600}
 .fc-txt{font-size:15px;color:#b7cdbe;max-width:420px;margin:0 auto 32px;line-height:1.75}
 #finalcta .btn{max-width:400px;margin:0 auto 14px}
+.fc-price{font-size:12.5px;color:#8fa896}
 
 footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
 .foot-name{font-size:13px;color:#7f9686}
@@ -157,9 +213,13 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
 .sticky{position:fixed;bottom:16px;left:16px;right:16px;z-index:99;display:none}
 @media(max-width:640px){
   .sticky{display:block}
-  section{padding:48px 0}
+  section{padding:52px 0}
   #finalcta{padding-bottom:96px}
   .calc-grid{grid-template-columns:1fr}
+  .dish-card{flex:0 0 68%}
+}
+@media(min-width:640px){
+  .dish-card{flex:0 0 240px}
 }
 </style>
 </head>
@@ -170,9 +230,20 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="container">
-    <div class="pill-tag fi">🥗 6 готових меню</div>
-    <h1 class="hero-h1 fi">Обери <em>своє</em> меню за 30 секунд</h1>
-    <p class="hero-sub fi">Порахуй свою денну норму калорій за науковою формулою Міффліна — Сан Жеора — і одразу отримай готове меню під свою ціль. Без ручних підрахунків і зайвих запитань.</p>
+    <div class="brand-row fi"><span class="brand">ФУДКОД</span><span class="brand-by">від Анастасії Унгурян</span></div>
+    <h1 class="hero-h1 fi">Їж смачно. Худни легко. <em>Назавжди без зривів.</em></h1>
+    <p class="hero-sub fi">6 готових меню, які привчать тебе — і твою родину — харчуватись смачно та корисно. Це не дієта, а звичка, яка стає бонусом для тіла, шкіри, енергії і самопочуття вже за тиждень.</p>
+
+    <div class="fi">
+      <div class="trigger-label">Впізнаєш себе?</div>
+      <div class="trigger-row">
+        <a href="#pain" class="trigger-chip">Зайва вага</a>
+        <a href="#pain" class="trigger-chip">Постійні зриви</a>
+        <a href="#pain" class="trigger-chip">Здуття</a>
+        <a href="#pain" class="trigger-chip">Дискомфорт після їжі</a>
+        <a href="#pain" class="trigger-chip">Хочу підтягнуте тіло</a>
+      </div>
+    </div>
 
     <div class="calc-card fi">
       <div class="calc-head">
@@ -246,7 +317,7 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
           <div class="result-card fam">
             <div>
               <div class="result-card-name">+ Сімейне меню</div>
-              <div class="result-card-sub">1450–1600 ккал · готуєш раз — їсть уся родина</div>
+              <div class="result-card-sub">1450–1600 ккал · 490 грн · готуєш раз — їсть уся родина</div>
             </div>
             <a href="#menu-family">Дивитись →</a>
           </div>
@@ -256,12 +327,157 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>✦ БЕЗ ЗРИВІВ</span><span>✦ БЕЗ ГОЛОДУ</span><span>✦ СМАЧНО</span><span>✦ ПРОСТО</span><span>✦ ДЛЯ ВСІЄЇ РОДИНИ</span><span>✦ КБЖВ НА КОЖЕН ПРИЙОМ ЇЖІ</span>
+    <span>✦ БЕЗ ЗРИВІВ</span><span>✦ БЕЗ ГОЛОДУ</span><span>✦ СМАЧНО</span><span>✦ ПРОСТО</span><span>✦ ДЛЯ ВСІЄЇ РОДИНИ</span><span>✦ КБЖВ НА КОЖЕН ПРИЙОМ ЇЖІ</span>
+  </div>
+</div>
+
+<!-- PAIN / TRIGGERS -->
+<section id="pain">
+<div class="container">
+  <div class="pill-tag section-tag fi">Впізнаєш себе?</div>
+  <h2 class="section-h fi">Справа не тільки у волі. Справа в системі</h2>
+  <p class="section-sub fi">Якщо щось із цього — про тебе, тобі точно потрібне робоче меню, а не чергова дієта на силі волі.</p>
+
+  <div class="pain-grid">
+    <div class="pain-card fi">
+      <div class="pain-icon">🎈</div>
+      <div><div class="pain-title">Здуття та важкість</div><div class="pain-desc">Їси начебто правильно, а живіт роздутий і дискомфорт після їжі не минає.</div></div>
+    </div>
+    <div class="pain-card fi">
+      <div class="pain-icon">🍫</div>
+      <div><div class="pain-title">Постійні зриви</div><div class="pain-desc">Тримаєшся тиждень на силі волі — і зриваєшся на солодке чи фастфуд увечері.</div></div>
+    </div>
+    <div class="pain-card fi">
+      <div class="pain-icon">⚖️</div>
+      <div><div class="pain-title">Зайва вага, яка не йде</div><div class="pain-desc">Начебто їси менше, а вага стоїть на місці або повертається назад.</div></div>
+    </div>
+    <div class="pain-card fi">
+      <div class="pain-icon">💪</div>
+      <div><div class="pain-title">Тренуєшся, а тіло не змінюється</div><div class="pain-desc">Справа не тільки в тренуваннях — без правильного харчування підтягнутого тіла не буде.</div></div>
+    </div>
+    <div class="pain-card fi">
+      <div class="pain-icon">📉</div>
+      <div><div class="pain-title">Худнеш і втрачаєш м'язи</div><div class="pain-desc">Разом з жиром йде і м'язова маса — тіло стає не підтягнутим, а просто меншим.</div></div>
+    </div>
+    <div class="pain-card fi">
+      <div class="pain-icon">📈</div>
+      <div><div class="pain-title">Набираєш масу — а разом і жир</div><div class="pain-desc">Хочеш рости в м'язах, а не в об'ємах на талії.</div></div>
+    </div>
+    <div class="pain-card fi">
+      <div class="pain-icon">👨‍👩‍👧</div>
+      <div><div class="pain-title">Родина їсть інше</div><div class="pain-desc">Готуєш собі окремо, всім іншим — окремо. І так щодня.</div></div>
+    </div>
+  </div>
+
+  <div class="pain-answer fi">ФУДКОД вирішує все це одним готовим меню на день: <b>без втрати м'язів при схудненні</b>, <b>без набору жиру при наборі маси</b> — і зі своїм меню для всієї родини.</div>
+</div>
+</section>
+
+<!-- DISHES CAROUSEL -->
+<!-- TODO: замінити карточки-заглушки на реальні фото/відео страв із меню -->
+<section id="dishes">
+<div class="container">
+  <div class="dish-head-row">
+    <div>
+      <div class="pill-tag section-tag fi">Що всередині</div>
+      <h2 class="section-h fi" style="margin-bottom:0">Ось що ти будеш їсти</h2>
+    </div>
+    <div class="dish-arrows fi">
+      <button class="arr" id="dishPrev">←</button>
+      <button class="arr" id="dishNext">→</button>
+    </div>
+  </div>
+  <p class="section-sub fi">Приклади страв із меню — легкі в приготуванні, ситні та прораховані до грама.</p>
+
+  <div class="dish-row fi" id="dishRow">
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--mint-2),var(--mint))">
+      <span class="dish-emoji">🥗</span>
+      <div class="dish-name">Боул з куркою, кіноа й овочами</div>
+      <span class="dish-kcal">~420 ккал</span>
+    </div>
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--peach),var(--yellow))">
+      <span class="dish-emoji">🐟</span>
+      <span class="dish-play">▶</span>
+      <div class="dish-name">Лосось на грилі з броколі</div>
+      <span class="dish-kcal">~480 ккал</span>
+    </div>
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--coral),var(--peach))">
+      <span class="dish-emoji">🥞</span>
+      <div class="dish-name">Протеїнові панкейки з ягодами</div>
+      <span class="dish-kcal">~350 ккал</span>
+    </div>
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--mint),var(--lime))">
+      <span class="dish-emoji">🥑</span>
+      <div class="dish-name">Салат з тунцем і авокадо</div>
+      <span class="dish-kcal">~390 ккал</span>
+    </div>
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--yellow),var(--mint-2))">
+      <span class="dish-emoji">🍗</span>
+      <span class="dish-play">▶</span>
+      <div class="dish-name">Курка теріякі з рисом</div>
+      <span class="dish-kcal">~470 ккал</span>
+    </div>
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--mint-2),var(--coral))">
+      <span class="dish-emoji">🍓</span>
+      <div class="dish-name">Смузі-боул з гранолою</div>
+      <span class="dish-kcal">~310 ккал</span>
+    </div>
+    <div class="dish-card" style="background:linear-gradient(160deg,var(--mint),var(--peach))">
+      <span class="dish-emoji">🍲</span>
+      <div class="dish-name">Крем-суп з овочами й фрикадельками</div>
+      <span class="dish-kcal">~340 ккал</span>
+    </div>
+  </div>
+  <div class="dish-note fi">Реальні фото та відео страв з'являться тут — зараз місце тримають заглушки.</div>
+</div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+<div class="container">
+  <div class="pill-tag section-tag fi">Як це працює</div>
+  <h2 class="section-h fi">Плануєш життя наперед — не думаєш щодня, що готувати</h2>
+  <p class="section-sub fi">Кожне меню побудоване так, щоб забирати мінімум часу і не залишати місця для зривів.</p>
+
+  <div class="prog-list">
+    <div class="prog-card fi">
+      <div class="prog-icon">🍽</div>
+      <div><div class="prog-title">3 прийоми їжі + смачний перекус</div><div class="prog-desc">Щодня — сніданок, обід, вечеря і перекус, які реально хочеться їсти.</div></div>
+    </div>
+    <div class="prog-card fi">
+      <div class="prog-icon">👩‍🍳</div>
+      <div><div class="prog-title">Готуєш раз на 2 дні</div><div class="prog-desc">Обіди та вечері одразу на два дні наперед — менше часу на кухні.</div></div>
+    </div>
+    <div class="prog-card fi">
+      <div class="prog-icon">🔄</div>
+      <div><div class="prog-title">Список продуктів-замінників</div><div class="prog-desc">Немає якогось інгредієнта під рукою? Завжди є рівноцінна заміна.</div></div>
+    </div>
+    <div class="prog-card fi">
+      <div class="prog-icon">🛒</div>
+      <div><div class="prog-title">Список покупок на кожен тиждень</div><div class="prog-desc">Один похід у магазин — і ти знаєш, що готуватимеш увесь тиждень.</div></div>
+    </div>
+    <div class="prog-card fi">
+      <div class="prog-icon">📊</div>
+      <div><div class="prog-title">КБЖВ на кожен прийом їжі</div><div class="prog-desc">Розписано і на кожну страву окремо, і підсумок на день — нічого рахувати самій.</div></div>
+    </div>
+    <div class="prog-card fi">
+      <div class="prog-icon">🎉</div>
+      <div><div class="prog-title">Неділя — твій чіт-міл</div><div class="prog-desc">Один прийом їжі без обмежень — їж, що хочеш. А на вечерю повертаєшся до звичного меню.</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- MENUS -->
 <section id="menus">
 <div class="container">
-  <div class="pill-tag fi">🍽 Меню</div>
-  <h2 class="menus-h fi">6 готових меню під будь-яку ціль</h2>
-  <p class="menus-intro fi">Кожне меню — це прораховане Б/Ж/В на день, готові страви та список покупок. Обирай за своєю нормою або переходь за результатом калькулятора вище.</p>
+  <div class="pill-tag section-tag fi">🍽 Меню</div>
+  <h2 class="section-h fi">6 готових меню під будь-яку ціль</h2>
+  <p class="section-sub fi">Кожне меню — це прораховане Б/Ж/В на день, готові страви та список покупок. Обирай за своєю нормою або переходь за результатом калькулятора вище.</p>
 
   <div class="menu-list">
 
@@ -277,8 +493,9 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
       </div>
       <p class="menu-desc">Найглибший дефіцит калорій у лінійці: ситно та збалансовано, без відчуття голоду навіть при невеликій калорійності.</p>
       <!-- TODO: замінити на фінальний опис меню №1 -->
-      <div class="menu-bonuses">
+      <div class="menu-bottom">
         <span class="menu-bonus-chip">🎁 4 бонуси в подарунок</span>
+        <div class="menu-price">350<span> грн</span></div>
       </div>
       <a href="#" class="btn ghost">Замовити меню №1</a>
     </div>
@@ -295,8 +512,9 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
       </div>
       <p class="menu-desc">Комфортний темп схуднення без різких обмежень — підходить для більшості жінок із середньою активністю.</p>
       <!-- TODO: замінити на фінальний опис меню №2 -->
-      <div class="menu-bonuses">
+      <div class="menu-bottom">
         <span class="menu-bonus-chip">🎁 4 бонуси в подарунок</span>
+        <div class="menu-price">350<span> грн</span></div>
       </div>
       <a href="#" class="btn ghost">Замовити меню №2</a>
     </div>
@@ -313,8 +531,9 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
       </div>
       <p class="menu-desc">М'який дефіцит або підтримка вже досягнутого результату — без відчуття обмеження в їжі.</p>
       <!-- TODO: замінити на фінальний опис меню №3 -->
-      <div class="menu-bonuses">
+      <div class="menu-bottom">
         <span class="menu-bonus-chip">🎁 4 бонуси в подарунок</span>
+        <div class="menu-price">350<span> грн</span></div>
       </div>
       <a href="#" class="btn ghost">Замовити меню №3</a>
     </div>
@@ -331,8 +550,9 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
       </div>
       <p class="menu-desc">Для тих, хто активно тренується: достатньо енергії на тренування й водночас контроль калорійності.</p>
       <!-- TODO: замінити на фінальний опис меню №4 -->
-      <div class="menu-bonuses">
+      <div class="menu-bottom">
         <span class="menu-bonus-chip">🎁 4 бонуси в подарунок</span>
+        <div class="menu-price">350<span> грн</span></div>
       </div>
       <a href="#" class="btn ghost">Замовити меню №4</a>
     </div>
@@ -349,8 +569,9 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
       </div>
       <p class="menu-desc">Найвищий калораж лінійки — для набору маси або компенсації високих фізичних навантажень.</p>
       <!-- TODO: замінити на фінальний опис меню №5 -->
-      <div class="menu-bonuses">
+      <div class="menu-bottom">
         <span class="menu-bonus-chip">🎁 4 бонуси в подарунок</span>
+        <div class="menu-price">350<span> грн</span></div>
       </div>
       <a href="#" class="btn ghost">Замовити меню №5</a>
     </div>
@@ -366,10 +587,11 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
         <div><span class="macro-dot f"></span>Жири 38–51г</div>
         <div><span class="macro-dot c"></span>Вуглеводи 140–190г</div>
       </div>
-      <p class="menu-desc">Найпопулярніший вибір: збалансовано так, щоб підходило і тобі, і партнеру, і дітям — без окремої готовки для кожного.</p>
+      <p class="menu-desc">Найпопулярніший вибір: збалансовано так, щоб підходило і тобі, і партнеру, і дітям — привчає всю родину їсти корисно, без окремої готовки для кожного.</p>
       <!-- TODO: замінити на фінальний опис сімейного меню -->
-      <div class="menu-bonuses">
+      <div class="menu-bottom">
         <span class="menu-bonus-chip">🎁 4 бонуси в подарунок</span>
+        <div class="menu-price">490<span> грн</span></div>
       </div>
       <a href="#" class="btn lime">Замовити сімейне меню</a>
     </div>
@@ -381,8 +603,8 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
 <!-- BONUSES -->
 <section id="bonuses">
 <div class="container">
-  <div class="pill-tag fi">🎁 Бонуси</div>
-  <h2 class="bon-h fi">До кожного меню — 4 бонуси в подарунок</h2>
+  <div class="pill-tag section-tag fi">🎁 Бонуси</div>
+  <h2 class="section-h fi">До кожного меню — 4 бонуси в подарунок</h2>
   <div class="bon-list">
     <div class="bon-card fi">
       <div class="bon-icon">🛒</div>
@@ -421,16 +643,16 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
 <!-- TODO: замінити плейсхолдер-відгуки на реальні відгуки клієнток -->
 <section id="reviews">
 <div class="container">
-  <div class="pill-tag fi">💬 Відгуки</div>
-  <h2 class="rev-h fi">Що говорять дівчата</h2>
+  <div class="pill-tag section-tag fi">💬 Відгуки</div>
+  <h2 class="section-h fi">Що говорять дівчата</h2>
   <div class="fi">
     <div class="carousel-outer" id="carouselOuter">
       <div class="carousel-track" id="track">
-        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Нарешті не треба думати, що готувати. Взяла меню на 1450 — все розписано, зручний список покупок.»</p><p class="rev-author">Марія К.</p></div>
-        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Порахувала свою норму за калькулятором — і меню справді підійшло. За місяць мінус 3 кг без голодування.»</p><p class="rev-author">Олена В.</p></div>
-        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Взяли сімейне меню на всіх — готую один раз, а їсть уся сім'я. Це просто рятівник вечорами.»</p><p class="rev-author">Юлія Д. · мама двох дітей</p></div>
-        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Бонус про етикетки відкрив очі — стільки років купувала «дієтичне» з цукром у складі.»</p><p class="rev-author">Наталія Р.</p></div>
-        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Гайд «якщо зірвався» — те, чого мені бракувало. Більше немає почуття провини після одного зайвого шматочка.»</p><p class="rev-author">Вікторія С.</p></div>
+        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Нарешті не треба думати, що готувати. Взяла меню на 1450 — все розписано, зручний список покупок.»</p><div class="rev-author-row"><div class="rev-avatar">МК</div><p class="rev-author">Марія К.</p></div></div>
+        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Порахувала свою норму за калькулятором — і меню справді підійшло. За місяць мінус 3 кг без голодування.»</p><div class="rev-author-row"><div class="rev-avatar">ОВ</div><p class="rev-author">Олена В.</p></div></div>
+        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Взяли сімейне меню на всіх — готую один раз, а їсть уся сім'я. Це просто рятівник вечорами.»</p><div class="rev-author-row"><div class="rev-avatar">ЮД</div><p class="rev-author">Юлія Д. · мама двох дітей</p></div></div>
+        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Бонус про етикетки відкрив очі — стільки років купувала «дієтичне» з цукром у складі.»</p><div class="rev-author-row"><div class="rev-avatar">НР</div><p class="rev-author">Наталія Р.</p></div></div>
+        <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Гайд «якщо зірвався» — те, чого мені бракувало. Більше немає почуття провини після одного зайвого шматочка.»</p><div class="rev-author-row"><div class="rev-avatar">ВС</div><p class="rev-author">Вікторія С.</p></div></div>
       </div>
     </div>
     <div class="carousel-bottom">
@@ -449,17 +671,18 @@ footer{background:var(--green-900);padding:26px 22px 40px;text-align:center;bord
 <div class="container">
   <div class="pill-tag fi" style="background:rgba(255,255,255,.1);color:var(--lime)">Готово?</div>
   <h2 class="fc-h fi">Обери своє меню вже сьогодні</h2>
-  <p class="fc-txt fi">Порахуй норму за калькулятором вище або одразу перейди до меню — і почни харчуватись збалансовано вже з завтрашнього дня.</p>
+  <p class="fc-txt fi">Порахуй норму за калькулятором вище або одразу перейди до меню — і почни харчуватись смачно та збалансовано вже з завтрашнього дня.</p>
   <a href="#hero" class="btn lime fi">Порахувати мою норму</a>
+  <div class="fc-price fi">Меню — від 350 грн · сімейне — 490 грн</div>
 </div>
 </section>
 
 <footer>
-  <div class="foot-name">Анастасія Унгурян · Готові меню харчування</div>
+  <div class="foot-name">Анастасія Унгурян · ФУДКОД — готові меню харчування</div>
 </footer>
 
 <div class="sticky" id="stickyBar">
-  <a href="#menus" class="btn">Обрати меню</a>
+  <a href="#menus" class="btn">Обрати меню від 350 грн</a>
 </div>
 
 <script>
@@ -522,7 +745,7 @@ document.getElementById('calcForm').addEventListener('submit',function(e){
 
   const matched=menus.find(m=>target<=m.max);
   document.getElementById('resMenuName').textContent=matched.name;
-  document.getElementById('resMenuSub').textContent='Найближче до твоєї норми · '+target+' ккал';
+  document.getElementById('resMenuSub').textContent='Найближче до твоєї норми · '+target+' ккал · 350 грн';
   document.getElementById('resMenuLink').setAttribute('href','#'+matched.id);
 
   document.getElementById('result').classList.add('show');
@@ -546,6 +769,17 @@ document.getElementById('calcForm').addEventListener('submit',function(e){
   document.getElementById('nextBtn').onclick=()=>{clearInterval(autoTimer);goTo(cur+1);startAuto();};
   function startAuto(){autoTimer=setInterval(()=>goTo(cur+1),4500);}
   startAuto();
+})();
+
+// стрічка страв — кнопки прокрутки
+(function(){
+  const row=document.getElementById('dishRow');
+  const prev=document.getElementById('dishPrev');
+  const next=document.getElementById('dishNext');
+  if(!row)return;
+  function step(){return row.querySelector('.dish-card').offsetWidth+14;}
+  prev.addEventListener('click',()=>row.scrollBy({left:-step(),behavior:'smooth'}));
+  next.addEventListener('click',()=>row.scrollBy({left:step(),behavior:'smooth'}));
 })();
 </script>
 </body>
