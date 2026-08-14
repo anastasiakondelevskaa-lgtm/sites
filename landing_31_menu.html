@@ -6,7 +6,7 @@
 <title>31 день збалансованого харчування — Олена Малетич</title>
 <meta name="description" content="31 день збалансованого харчування без голоду, складних інгредієнтів і виснажливих дієт. Готове меню зі звичайних продуктів, рецепти з фото, списки покупок і гід по замінах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
   ЗОБРАЖЕННЯ: усі фото на сторінці — плейсхолдери з src="https://admin.vgsolutions.cloud/static/img/<файл>".
   Щойно на цьому шляху зʼявиться файл з відповідною назвою — він автоматично підʼявиться на сайті
@@ -21,36 +21,36 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green-950:#1f2e1f;
-  --green-900:#2b3f2a;
-  --green-700:#3f6b42;
-  --green-600:#4d7d4c;
-  --green-500:#6a9968;
-  --green-300:#a9c9a2;
-  --green-200:#cfe3c6;
-  --green-100:#e6f0df;
-  --green-50:#f2f7ee;
-  --beige-100:#f7f1e4;
-  --beige-200:#f0e6d2;
-  --beige-300:#e6d7bb;
-  --cream:#fbf8f2;
+  --green-950:#23281c;
+  --green-900:#3a4728;
+  --green-700:#59692f;
+  --green-600:#6e7f3a;
+  --green-500:#8a9a5b;
+  --green-300:#bcc794;
+  --green-200:#d7deb9;
+  --green-100:#e8ecd6;
+  --green-50:#f2f4e9;
+  --beige-100:#f1eee3;
+  --beige-200:#e9e3d1;
+  --beige-300:#ded4b8;
+  --cream:#f2f0e8;
   --white:#ffffff;
-  --coral:#ef7a52;
-  --coral-dark:#d9603a;
-  --pink:#f6a8c6;
-  --pink-light:#fbdce9;
-  --pink-deep:#e8628f;
-  --pink-deep-dark:#d14c78;
-  --pink-line:#f0a0c0;
-  --canvas-green:#a9c95a;
-  --canvas-green-dark:#8fb548;
-  --ink:#232821;
-  --ink-soft:#565f52;
-  --line:#e4ddc9;
-  --shadow-sm:0 2px 10px rgba(43,63,42,.06);
-  --shadow-md:0 14px 40px rgba(43,63,42,.10);
-  --shadow-lg:0 26px 70px rgba(43,63,42,.14);
-  --radius-lg:28px;
+  --coral:#c06a3d;
+  --coral-dark:#a2552f;
+  --pink:#d7deb9;
+  --pink-light:#f3e6db;
+  --pink-deep:#c06a3d;
+  --pink-deep-dark:#a2552f;
+  --pink-line:#8a9a5b;
+  --canvas-green:#f2f0e8;
+  --canvas-green-dark:#e9e3d1;
+  --ink:#28281f;
+  --ink-soft:#66655a;
+  --line:#e0dac8;
+  --shadow-sm:0 2px 10px rgba(40,40,31,.06);
+  --shadow-md:0 14px 40px rgba(40,40,31,.09);
+  --shadow-lg:0 26px 70px rgba(40,40,31,.13);
+  --radius-lg:26px;
   --radius-md:20px;
   --radius-sm:14px;
 }
@@ -58,13 +58,12 @@ html{scroll-behavior:smooth}
 body{
   font-family:'Manrope',sans-serif;
   background:var(--canvas-green);
-  background-image:radial-gradient(circle at 8% 8%, rgba(255,255,255,.12), transparent 40%),radial-gradient(circle at 92% 60%, rgba(255,255,255,.10), transparent 40%);
   color:var(--ink);
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.serif{font-family:'Fredoka',sans-serif;line-height:1.1;font-weight:600;letter-spacing:-.01em;color:var(--green-950)}
+h1,h2,h3,.serif{font-family:'Unbounded',sans-serif;line-height:1.15;font-weight:600;letter-spacing:-.02em;color:var(--green-950)}
 img{max-width:100%;display:block}
 a{color:inherit}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
@@ -72,19 +71,20 @@ a{color:inherit}
 section{
   width:calc(100% - 32px);
   max-width:1180px;
-  margin:28px auto;
+  margin:24px auto;
   padding:88px 0;
-  background:var(--cream);
-  border:3px solid var(--pink-line);
-  border-radius:44px;
-  box-shadow:var(--shadow-lg);
+  background:var(--white);
+  border:1.5px solid var(--pink-line);
+  border-radius:32px;
+  box-shadow:var(--shadow-md);
   position:relative;
   overflow:hidden;
   scroll-margin-top:80px;
 }
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-700);background:var(--green-100);padding:8px 16px;border-radius:999px;margin-bottom:20px;border:1.5px solid var(--green-200)}
-.eyebrow::before{content:'🌸';font-size:12px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green-500)}
 .eyebrow.coral{color:var(--pink-deep-dark);background:var(--pink-light);border-color:var(--pink)}
+.eyebrow.coral::before{background:var(--coral)}
 h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .lead{font-size:18px;color:var(--ink-soft);max-width:640px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
@@ -126,9 +126,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .section-green h2,.section-green .serif{color:#fff}
 
 /* ---------- IMAGE PLACEHOLDER ---------- */
-.ph-img{position:relative;overflow:hidden;background:var(--green-50);border:2.5px solid var(--pink-line)}
-.ph-img::after{content:'💛';position:absolute;top:8px;right:10px;font-size:18px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15));z-index:3}
-.hero-photo-main::after,.hero-float-card .ph-img::after,.bonus-card .ph-img::after{display:none}
+.ph-img{position:relative;overflow:hidden;background:var(--green-50);border:1.5px solid var(--pink-line)}
 .ph-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:none}
 .ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;color:var(--ink-soft)}
 .ph-fallback .ic{font-size:22px;opacity:.6}
@@ -166,7 +164,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 
 /* ---------- HERO ---------- */
 .hero{padding:36px 0 90px;position:relative;overflow:hidden}
-.hero-scribble{position:absolute;bottom:-38px;right:36px;opacity:.75;z-index:1}
+.hero-scribble{position:absolute;bottom:-38px;right:36px;opacity:.5;z-index:1}
 @media(max-width:640px){.hero-scribble{display:none}}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2}
 .hero-grid>*{min-width:0}
@@ -438,7 +436,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       </div>
       <div class="hero-discount-badge"><b>-42%</b><span>10 хвилин</span></div>
       <svg class="hero-scribble" viewBox="0 0 140 90" width="110" height="70" fill="none" aria-hidden="true">
-        <path d="M6 46C18 20 34 8 48 18C60 26 46 44 34 40C22 36 30 16 52 12C78 7 108 16 130 42" stroke="var(--green-700)" stroke-width="7" stroke-linecap="round"/>
+        <path d="M6 46C18 20 34 8 48 18C60 26 46 44 34 40C22 36 30 16 52 12C78 7 108 16 130 42" stroke="var(--green-500)" stroke-width="2" stroke-linecap="round"/>
       </svg>
       <div class="hero-float-card card glass">
         <div class="ph-img">
@@ -699,7 +697,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1190 ₴</span><span class="new-price">690 ₴</span></div>
           <div class="save-tag">Знижка -42% · Заощадь 500 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню ♥</a>
+          <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
@@ -716,7 +714,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1290 ₴</span><span class="new-price">740 ₴</span></div>
           <div class="save-tag">Знижка -43% · Заощадь 550 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню ♥</a>
+          <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
@@ -733,7 +731,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1390 ₴</span><span class="new-price">790 ₴</span></div>
           <div class="save-tag">Знижка -43% · Заощадь 600 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню ♥</a>
+          <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
@@ -750,7 +748,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1490 ₴</span><span class="new-price">840 ₴</span></div>
           <div class="save-tag">Знижка -44% · Заощадь 650 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню ♥</a>
+          <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
@@ -767,7 +765,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1590 ₴</span><span class="new-price">890 ₴</span></div>
           <div class="save-tag">Знижка -44% · Заощадь 700 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню ♥</a>
+          <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
@@ -784,7 +782,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">2790 ₴</span><span class="new-price">1590 ₴</span></div>
           <div class="save-tag">Знижка -43% · Заощадь 1200 ₴</div>
           <ul class="price-feats"><li>31 день меню для всієї сім'ї</li><li>Спільний список покупок на тиждень</li><li>Рецепти з фото та заміни продуктів</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn light block">Обрати сімейне меню ♥</a>
+          <a href="#" class="btn light block">Обрати сімейне меню →</a>
         </div>
       </div>
     </div>
