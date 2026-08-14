@@ -80,6 +80,7 @@ section{
   box-shadow:var(--shadow-lg);
   position:relative;
   overflow:hidden;
+  scroll-margin-top:80px;
 }
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-700);background:var(--green-100);padding:8px 16px;border-radius:999px;margin-bottom:20px;border:1.5px solid var(--green-200)}
 .eyebrow::before{content:'🌸';font-size:12px}
@@ -228,6 +229,11 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .calc-macros{display:flex;gap:8px;margin:16px 0 22px;flex-wrap:wrap}
 .calc-macros span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 11px;border-radius:10px;font-size:12px;font-weight:700}
 .calc-placeholder{color:rgba(255,255,255,.55);font-size:14px;line-height:1.6}
+.family-teaser{margin-top:14px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;gap:12px}
+.family-teaser .ic{font-size:22px;flex-shrink:0}
+.family-teaser .t{font-size:13px;font-weight:800;color:#fff}
+.family-teaser .s{font-size:11.5px;color:rgba(255,255,255,.7)}
+.family-teaser a{margin-left:auto;flex-shrink:0;font-size:12px;font-weight:800;color:var(--green-900);background:#fff;padding:8px 13px;border-radius:999px;text-decoration:none;white-space:nowrap}
 
 /* ---------- PROBLEM CARDS ---------- */
 .problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
@@ -302,7 +308,8 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 @media(max-width:960px){.price-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.price-grid{grid-template-columns:1fr}}
-.price-card{background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-sm);border:1.5px solid var(--line);display:flex;flex-direction:column;position:relative;transition:transform .2s ease,box-shadow .2s ease}
+.price-card{background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-sm);border:1.5px solid var(--line);display:flex;flex-direction:column;position:relative;transition:transform .2s ease,box-shadow .2s ease;scroll-margin-top:80px}
+@media(max-width:560px){.price-card{scroll-margin-top:120px}}
 .price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
 .price-card .ph-img{aspect-ratio:16/10;border-radius:0;border-width:0 0 1.5px 0}
 .price-card-body{padding:26px}
@@ -319,6 +326,21 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .price-feats{list-style:none;font-size:13px;color:var(--ink-soft);margin-bottom:24px}
 .price-feats li{padding-left:22px;position:relative;margin-bottom:8px}
 .price-feats li::before{content:'✓';position:absolute;left:0;color:var(--green-600);font-weight:800}
+.price-card.flagship{grid-column:1/-1;background:linear-gradient(135deg,var(--green-900),var(--green-700));border-color:var(--pink-line)}
+.price-card.flagship .price-goal,.price-card.flagship .price-kcal,.price-card.flagship p{color:#fff}
+.price-card.flagship .price-macros{background:rgba(255,255,255,.1)}
+.price-card.flagship .price-macros b,.price-card.flagship .price-macros span{color:#fff}
+.price-card.flagship .old-price{color:rgba(255,255,255,.65)}
+.price-card.flagship .new-price{color:#fff}
+.price-card.flagship .save-tag{color:#ffd8e6}
+.price-card.flagship .price-feats{color:rgba(255,255,255,.85)}
+.price-card.flagship .price-feats li::before{color:#c8f0c0}
+.price-card.flagship .ph-img{border-color:var(--pink-line)}
+@media(min-width:641px){
+  .price-card.flagship{flex-direction:row;align-items:stretch}
+  .price-card.flagship .ph-img{width:38%;aspect-ratio:auto;border-width:0 3px 0 0;flex-shrink:0}
+  .price-card.flagship .price-card-body{flex:1;padding:34px}
+}
 
 /* ---------- TESTIMONIALS ---------- */
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
@@ -363,6 +385,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 @media(max-width:760px){.mobile-sticky{display:block}}
 
 @media(max-width:640px){section{padding:64px 0}.calc-form,.calc-side{padding:30px 22px}}
+@media(max-width:560px){section{scroll-margin-top:120px}}
 </style>
 </head>
 <body>
@@ -518,6 +541,14 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div>
             <a href="#pricing" class="btn light block" id="resCta">Обрати це меню зі знижкою -42% →</a>
           </div>
+          <div class="family-teaser">
+            <span class="ic">👨‍👩‍👧</span>
+            <div>
+              <div class="t">+ Сімейне меню</div>
+              <div class="s">Один список покупок на тиждень — на всю родину</div>
+            </div>
+            <a href="#menu-family">Дивитись →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -651,11 +682,11 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="center" style="max-width:640px">
       <span class="eyebrow">Меню системи</span>
       <h2>Обери меню під свою ціль</h2>
-      <p class="lead center">5 меню за калорійністю — від максимального дефіциту до високого калоражу. Калькулятор вище підбирає потрібне автоматично.</p>
+      <p class="lead center">5 персональних меню за калорійністю — від максимального дефіциту до високого калоражу, і окремо Сімейне меню для всіх домашніх. Калькулятор вище підбирає потрібне автоматично.</p>
     </div>
 
     <div class="price-grid">
-      <div class="price-card fi">
+      <div class="price-card fi" id="menu-1250">
         <div class="ph-img"><span class="price-top-tag">Максимальний дефіцит</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1250 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1250.jpg" alt="Меню 1250 ккал" onerror="this.style.display='none'"></div>
         <div class="price-card-body">
           <div class="price-goal">Мала вага або мінімальна активність</div>
@@ -672,7 +703,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
 
-      <div class="price-card fi">
+      <div class="price-card fi" id="menu-1450">
         <div class="ph-img"><span class="price-top-tag">Помірний дефіцит</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1450 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1450.jpg" alt="Меню 1450 ккал" onerror="this.style.display='none'"></div>
         <div class="price-card-body">
           <div class="price-goal">Середнє схуднення</div>
@@ -689,7 +720,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
 
-      <div class="price-card fi">
+      <div class="price-card fi" id="menu-1650">
         <div class="ph-img"><span class="price-top-tag">М'який дефіцит</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1650 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1650.jpg" alt="Меню 1650 ккал" onerror="this.style.display='none'"></div>
         <div class="price-card-body">
           <div class="price-goal">Базова підтримка ваги</div>
@@ -706,7 +737,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
 
-      <div class="price-card fi">
+      <div class="price-card fi" id="menu-1900">
         <div class="ph-img"><span class="price-top-tag">Активна підтримка</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1900 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1900.jpg" alt="Меню 1900 ккал" onerror="this.style.display='none'"></div>
         <div class="price-card-body">
           <div class="price-goal">Помірний набір м'язів або схуднення для активних</div>
@@ -723,7 +754,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
 
-      <div class="price-card fi">
+      <div class="price-card fi" id="menu-2200">
         <div class="ph-img"><span class="price-top-tag">Високий калораж</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 2200 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-2200.jpg" alt="Меню 2200 ккал" onerror="this.style.display='none'"></div>
         <div class="price-card-body">
           <div class="price-goal">Набір маси або високі фізичні навантаження</div>
@@ -737,6 +768,23 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="save-tag">Знижка -44% · Заощадь 700 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню ♥</a>
+        </div>
+      </div>
+
+      <div class="price-card flagship fi" id="menu-family">
+        <div class="ph-img"><span class="price-top-tag" style="background:#fff;color:var(--green-900)">Топ вибір для сім'ї</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Сімейне меню</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-family.jpg" alt="Сімейне меню на 31 день" onerror="this.style.display='none'"></div>
+        <div class="price-card-body">
+          <div class="price-goal">Чоловік · дружина · 1–2 дітей</div>
+          <div class="price-kcal">Сімейне меню на 31 день</div>
+          <p style="font-size:14px;color:rgba(255,255,255,.85);margin-bottom:16px;max-width:480px">Один продуктовий кошик на тиждень — на всю родину. Готуєш один раз, а не окремо собі й окремо всім іншим.</p>
+          <div class="price-macros">
+            <div class="row"><span>Порції</span><b>під кожного члена родини</b></div>
+            <div class="row"><span>Чіт-міл</span><b>не передбачений</b></div>
+          </div>
+          <div class="price-row"><span class="old-price">2790 ₴</span><span class="new-price">1590 ₴</span></div>
+          <div class="save-tag">Знижка -43% · Заощадь 1200 ₴</div>
+          <ul class="price-feats"><li>31 день меню для всієї сім'ї</li><li>Спільний список покупок на тиждень</li><li>Рецепти з фото та заміни продуктів</li><li>4 бонуси в подарунок</li></ul>
+          <a href="#" class="btn light block">Обрати сімейне меню ♥</a>
         </div>
       </div>
     </div>
@@ -926,7 +974,9 @@ document.getElementById('calcBtn').addEventListener('click', ()=>{
   document.getElementById('resMenuName').textContent = nearest + ' ккал';
   document.getElementById('resMacros').innerHTML =
     '<span>Б '+m.p+'г</span><span>Ж '+m.f+'г</span><span>В '+m.c+'г</span>';
-  document.getElementById('resCta').textContent = 'Обрати меню на ' + nearest + ' ккал зі знижкою -42% →';
+  const resCta = document.getElementById('resCta');
+  resCta.textContent = 'Обрати меню на ' + nearest + ' ккал зі знижкою -42% →';
+  resCta.setAttribute('href', '#menu-' + nearest);
 
   document.getElementById('calcPlaceholder').style.display = 'none';
   document.getElementById('calcResult').style.display = 'block';
