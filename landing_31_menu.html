@@ -6,7 +6,7 @@
 <title>31 день збалансованого харчування — Олена Малетич</title>
 <meta name="description" content="31 день збалансованого харчування без голоду, складних інгредієнтів і виснажливих дієт. Готове меню зі звичайних продуктів, рецепти з фото, списки покупок і гід по замінах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
   ЗОБРАЖЕННЯ: усі фото на сторінці — плейсхолдери з src="https://admin.vgsolutions.cloud/static/img/<файл>".
   Щойно на цьому шляху зʼявиться файл з відповідною назвою — він автоматично підʼявиться на сайті
@@ -37,6 +37,13 @@
   --white:#ffffff;
   --coral:#ef7a52;
   --coral-dark:#d9603a;
+  --pink:#f6a8c6;
+  --pink-light:#fbdce9;
+  --pink-deep:#e8628f;
+  --pink-deep-dark:#d14c78;
+  --pink-line:#f0a0c0;
+  --canvas-green:#a9c95a;
+  --canvas-green-dark:#8fb548;
   --ink:#232821;
   --ink-soft:#565f52;
   --line:#e4ddc9;
@@ -50,40 +57,53 @@
 html{scroll-behavior:smooth}
 body{
   font-family:'Manrope',sans-serif;
-  background:var(--cream);
+  background:var(--canvas-green);
+  background-image:radial-gradient(circle at 8% 8%, rgba(255,255,255,.12), transparent 40%),radial-gradient(circle at 92% 60%, rgba(255,255,255,.10), transparent 40%);
   color:var(--ink);
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.serif{font-family:'Fraunces',serif;line-height:1.1;font-weight:600;letter-spacing:-.01em;color:var(--green-950)}
+h1,h2,h3,.serif{font-family:'Fredoka',sans-serif;line-height:1.1;font-weight:600;letter-spacing:-.01em;color:var(--green-950)}
 img{max-width:100%;display:block}
 a{color:inherit}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
 .container-narrow{max-width:760px;margin:0 auto;padding:0 24px}
-section{padding:88px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-700);background:var(--green-100);padding:8px 16px;border-radius:999px;margin-bottom:20px}
-.eyebrow.coral{color:var(--coral-dark);background:#fdece3}
+section{
+  width:calc(100% - 32px);
+  max-width:1180px;
+  margin:28px auto;
+  padding:88px 0;
+  background:var(--cream);
+  border:3px solid var(--pink-line);
+  border-radius:44px;
+  box-shadow:var(--shadow-lg);
+  position:relative;
+  overflow:hidden;
+}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-700);background:var(--green-100);padding:8px 16px;border-radius:999px;margin-bottom:20px;border:1.5px solid var(--green-200)}
+.eyebrow::before{content:'🌸';font-size:12px}
+.eyebrow.coral{color:var(--pink-deep-dark);background:var(--pink-light);border-color:var(--pink)}
 h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .lead{font-size:18px;color:var(--ink-soft);max-width:640px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:18px 30px;background:var(--coral);color:#fff;
+  padding:18px 30px;background:var(--pink-deep);color:#fff;
   font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;
   text-decoration:none;border:none;border-radius:999px;cursor:pointer;
-  box-shadow:0 12px 30px rgba(239,122,82,.35);
+  box-shadow:0 12px 30px rgba(232,98,143,.35);
   transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-  white-space:nowrap;
+  text-align:center;
 }
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(239,122,82,.42);background:var(--coral-dark)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(232,98,143,.42);background:var(--pink-deep-dark)}
 .btn.block{width:100%}
-.btn.outline{background:transparent;color:var(--green-900);border:1.5px solid var(--green-900);box-shadow:none}
+.btn.outline{background:transparent;color:var(--green-900);border:2px solid var(--green-900);box-shadow:none}
 .btn.outline:hover{background:var(--green-900);color:#fff}
-.btn.light{background:#fff;color:var(--green-900);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+.btn.light{background:#fff;color:var(--pink-deep-dark);box-shadow:0 10px 26px rgba(0,0,0,.08)}
 .btn.sm{padding:12px 20px;font-size:13px}
 .pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
-.pill.coral{background:var(--coral);color:#fff}
+.pill.coral{background:var(--pink-deep);color:#fff}
 .pill.green{background:var(--green-700);color:#fff}
 .pill.ghost{background:rgba(255,255,255,.65);color:var(--green-900);border:1px solid var(--green-200)}
 .card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
@@ -105,7 +125,9 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .section-green h2,.section-green .serif{color:#fff}
 
 /* ---------- IMAGE PLACEHOLDER ---------- */
-.ph-img{position:relative;overflow:hidden;background:var(--green-50);border:1.5px dashed var(--green-300)}
+.ph-img{position:relative;overflow:hidden;background:var(--green-50);border:2.5px solid var(--pink-line)}
+.ph-img::after{content:'💛';position:absolute;top:8px;right:10px;font-size:18px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15));z-index:3}
+.hero-photo-main::after,.hero-float-card .ph-img::after,.bonus-card .ph-img::after{display:none}
 .ph-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:none}
 .ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;color:var(--ink-soft)}
 .ph-fallback .ic{font-size:22px;opacity:.6}
@@ -135,7 +157,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
   border-radius:999px;padding:10px 12px 10px 22px;
   box-shadow:var(--shadow-md);
 }
-.nav-mark{width:38px;height:38px;border-radius:50%;background:var(--green-100);display:flex;align-items:center;justify-content:center;font-size:17px;text-decoration:none;flex-shrink:0}
+.nav-mark{width:38px;height:38px;border-radius:50%;background:var(--pink-light);border:2px solid var(--pink);display:flex;align-items:center;justify-content:center;font-size:17px;text-decoration:none;flex-shrink:0}
 .nav-links{display:flex;gap:26px;font-size:13.5px;font-weight:700;color:var(--green-900)}
 .nav-links a{text-decoration:none;opacity:.75;transition:opacity .15s ease}
 .nav-links a:hover{opacity:1}
@@ -143,7 +165,10 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 
 /* ---------- HERO ---------- */
 .hero{padding:36px 0 90px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-scribble{position:absolute;bottom:-38px;right:36px;opacity:.75;z-index:1}
+@media(max-width:640px){.hero-scribble{display:none}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2}
+.hero-grid>*{min-width:0}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
 .hero h1{font-size:clamp(34px,4.6vw,56px);margin-bottom:22px}
 .hero h1 em{font-style:normal;color:var(--green-700);background:linear-gradient(180deg,transparent 62%,var(--green-200) 62%)}
@@ -170,6 +195,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 
 /* ---------- EXPERT ---------- */
 .expert-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.expert-grid>*{min-width:0}
 @media(max-width:860px){.expert-grid{grid-template-columns:1fr}}
 .expert-photo{border-radius:28px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;max-width:360px}
 .expert-tags{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 28px}
@@ -196,7 +222,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
   font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink-soft);min-width:80px
 }
 .seg button.active{background:var(--green-700);border-color:var(--green-700);color:#fff}
-.calc-result .num{font-family:'Fraunces',serif;font-size:52px;font-weight:600;color:#fff;line-height:1}
+.calc-result .num{font-family:'Fredoka',serif;font-size:52px;font-weight:600;color:#fff;line-height:1}
 .calc-result .unit{font-size:14px;opacity:.75;margin-bottom:18px}
 .calc-tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px;font-size:13px;margin-bottom:20px}
 .calc-macros{display:flex;gap:8px;margin:16px 0 22px;flex-wrap:wrap}
@@ -219,6 +245,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 
 /* ---------- INSIDE / FEATURES ---------- */
 .inside-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:36px}
+.inside-grid>*{min-width:0}
 @media(max-width:900px){.inside-grid{grid-template-columns:1fr}}
 .feat-list{display:flex;flex-direction:column;gap:22px}
 .feat{display:flex;gap:16px;align-items:flex-start}
@@ -227,7 +254,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .feat p{font-size:14px;color:var(--ink-soft)}
 .week-mock{background:#fff;border-radius:28px;box-shadow:var(--shadow-lg);padding:26px;border:1px solid var(--line)}
 .week-mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.week-mock-head b{font-family:'Fraunces';font-size:18px}
+.week-mock-head b{font-family:'Fredoka';font-size:18px}
 .day-row{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border-radius:14px;font-size:13px;gap:10px}
 .day-row+.day-row{margin-top:8px}
 .day-row.active{background:var(--green-100)}
@@ -251,7 +278,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:560px){.bonus-grid{grid-template-columns:1fr}}
 .bonus-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative}
 .bonus-card .ph-img{aspect-ratio:4/3;border-radius:0;border-width:0 0 1.5px 0}
-.bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Fraunces';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
+.bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Fredoka';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
 .bonus-body{padding:22px}
 .bonus-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
 .bonus-card p{font-size:13.5px;color:var(--ink-soft)}
@@ -264,7 +291,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .offer .lead{color:var(--green-200);margin-left:auto;margin-right:auto}
 .timer-big{display:flex;justify-content:center;gap:14px;margin:40px 0}
 .timer-big .box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:18px 26px;min-width:100px;backdrop-filter:blur(6px)}
-.timer-big .box b{display:block;font-family:'Fraunces';font-size:44px;font-variant-numeric:tabular-nums;color:#fff}
+.timer-big .box b{display:block;font-family:'Fredoka';font-size:44px;font-variant-numeric:tabular-nums;color:#fff}
 .timer-big .box span{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-200)}
 .progress-wrap{max-width:480px;margin:0 auto 36px}
 .progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--green-200);margin-bottom:8px}
@@ -281,13 +308,13 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .price-card-body{padding:26px}
 .price-top-tag{position:absolute;top:14px;left:14px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:999px;z-index:2;max-width:calc(100% - 28px)}
 .price-goal{font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:10px;min-height:34px}
-.price-kcal{font-family:'Fraunces';font-size:28px;margin-bottom:14px}
+.price-kcal{font-family:'Fredoka';font-size:28px;margin-bottom:14px}
 .price-macros{display:flex;flex-direction:column;gap:5px;font-size:11.5px;color:var(--ink-soft);margin-bottom:18px;background:var(--green-50);border-radius:12px;padding:10px 12px}
 .price-macros .row{display:flex;justify-content:space-between}
 .price-macros b{color:var(--green-900)}
 .price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
 .old-price{font-size:15px;color:var(--ink-soft);text-decoration:line-through}
-.new-price{font-family:'Fraunces';font-size:32px;font-weight:700;color:var(--green-950)}
+.new-price{font-family:'Fredoka';font-size:32px;font-weight:700;color:var(--green-950)}
 .save-tag{font-size:12px;font-weight:800;color:var(--coral-dark);margin-bottom:18px}
 .price-feats{list-style:none;font-size:13px;color:var(--ink-soft);margin-bottom:24px}
 .price-feats li{padding-left:22px;position:relative;margin-bottom:8px}
@@ -323,7 +350,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 /* ---------- FOOTER ---------- */
 footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28px;font-size:13px}
 .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:36px}
-.foot-logo{font-family:'Fraunces';font-size:22px;color:#fff;margin-bottom:10px}
+.foot-logo{font-family:'Fredoka';font-size:22px;color:#fff;margin-bottom:10px}
 .foot-logo span{color:var(--coral)}
 .foot-links{display:flex;gap:26px;flex-wrap:wrap}
 .foot-links a{text-decoration:none;color:rgba(255,255,255,.65)}
@@ -387,6 +414,9 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         <img src="https://admin.vgsolutions.cloud/static/img/hero-main.jpg" alt="Збалансована тарілка з меню на 31 день" onerror="this.style.display='none'">
       </div>
       <div class="hero-discount-badge"><b>-42%</b><span>10 хвилин</span></div>
+      <svg class="hero-scribble" viewBox="0 0 140 90" width="110" height="70" fill="none" aria-hidden="true">
+        <path d="M6 46C18 20 34 8 48 18C60 26 46 44 34 40C22 36 30 16 52 12C78 7 108 16 130 42" stroke="var(--green-700)" stroke-width="7" stroke-linecap="round"/>
+      </svg>
       <div class="hero-float-card card glass">
         <div class="ph-img">
           <div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:14px">🍽️</span></div>
@@ -638,7 +668,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1190 ₴</span><span class="new-price">690 ₴</span></div>
           <div class="save-tag">Знижка -42% · Заощадь 500 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню</a>
+          <a href="#" class="btn block">Обрати меню ♥</a>
         </div>
       </div>
 
@@ -655,7 +685,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1290 ₴</span><span class="new-price">740 ₴</span></div>
           <div class="save-tag">Знижка -43% · Заощадь 550 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню</a>
+          <a href="#" class="btn block">Обрати меню ♥</a>
         </div>
       </div>
 
@@ -672,7 +702,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1390 ₴</span><span class="new-price">790 ₴</span></div>
           <div class="save-tag">Знижка -43% · Заощадь 600 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню</a>
+          <a href="#" class="btn block">Обрати меню ♥</a>
         </div>
       </div>
 
@@ -689,7 +719,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1490 ₴</span><span class="new-price">840 ₴</span></div>
           <div class="save-tag">Знижка -44% · Заощадь 650 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню</a>
+          <a href="#" class="btn block">Обрати меню ♥</a>
         </div>
       </div>
 
@@ -706,7 +736,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="price-row"><span class="old-price">1590 ₴</span><span class="new-price">890 ₴</span></div>
           <div class="save-tag">Знижка -44% · Заощадь 700 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
-          <a href="#" class="btn block">Обрати меню</a>
+          <a href="#" class="btn block">Обрати меню ♥</a>
         </div>
       </div>
     </div>
