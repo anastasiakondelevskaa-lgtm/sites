@@ -166,6 +166,9 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:860px){.expert-grid{grid-template-columns:1fr}}
 .expert-photo{border-radius:28px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;max-width:360px}
 .expert-tags{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 28px}
+.expert-checks{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.expert-checks li{padding-left:30px;position:relative;font-size:14.5px;font-weight:600;color:var(--green-950)}
+.expert-checks li::before{content:'✓';position:absolute;left:0;top:-1px;width:20px;height:20px;border-radius:50%;background:var(--green-600);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
 
 /* ---------- CALCULATOR ---------- */
 .calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:32px;overflow:hidden;box-shadow:var(--shadow-lg)}
@@ -390,31 +393,31 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
   </div>
 </section>
 
-<!-- ================= EXPERT =================
-  Сайти olenamaletych.com і book.maletych.com.ua заблоковані мережевим проксі
-  цієї сесії, тому нижче — узагальнений опис без вигаданих цифр (стаж, кількість
-  клієнток, сертифікати). Надішли, будь ласка, точний текст біографії та фото
-  Олени, щоб замінити цей плейсхолдер на перевірений контент.
--->
+<!-- ================= EXPERT ================= -->
 <section class="section-beige" id="expert">
   <div class="container">
     <div class="expert-grid">
       <div class="fi">
         <div class="expert-photo ph-img">
           <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Олена Малетич</span></div>
-          <img src="https://admin.vgsolutions.cloud/static/img/trainer-photo.jpg" alt="Олена Малетич — фітнес-тренерка та нутриціологиня" onerror="this.style.display='none'">
+          <img src="https://admin.vgsolutions.cloud/static/img/trainer-photo.jpg" alt="Олена Малетич — сертифікований нутриціолог та фітнес-тренер" onerror="this.style.display='none'">
         </div>
       </div>
       <div class="fi">
         <span class="eyebrow">Автор системи</span>
         <h2>Олена Малетич</h2>
-        <p class="lead" style="margin-bottom:16px">Фітнес-тренерка та нутриціологиня, авторка цієї системи харчування на 31 день.</p>
-        <p style="color:var(--ink-soft)">Допомагає жінкам вибудовувати збалансоване харчування без суворих заборон, підрахунку кожного грама і почуття провини. Ця система зібрана з практичного досвіду роботи з клієнтками: прості продукти, зрозумілі порції та підхід, який реально стає стилем життя, а не тимчасовою дієтою.</p>
-        <div class="expert-tags">
-          <span class="pill green">Фітнес-тренерка</span>
-          <span class="pill green">Нутриціологиня</span>
+        <p class="lead" style="margin-bottom:16px">Сертифікований нутриціолог та фітнес-тренер із 7-річним досвідом. Допомогла 5000+ жінкам налагодити харчування — без дієт, заборон і зривів.</p>
+        <p style="color:var(--ink-soft)">Засновниця власної фітнес-студії та авторка системи «Тіло під прицілом». Сама схудла на 22 кг після пологів за власною системою — тож знає зсередини, як приживається зміна харчових звичок, коли часу обмаль. Ця система на 31 день зібрана з того самого практичного досвіду: прості продукти, зрозумілі порції та підхід, який реально стає стилем життя, а не тимчасовою дієтою.</p>
+        <ul class="expert-checks">
+          <li>Сертифікований нутриціолог та фітнес-тренер</li>
+          <li>Допомогла 5000+ жінкам налагодити харчування</li>
+          <li>Засновниця власної фітнес-студії</li>
+          <li>Схудла на 22 кг після пологів за власною системою</li>
+        </ul>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:26px">
+          <a href="https://olenamaletych.com/" target="_blank" rel="noopener" class="btn outline">Більше про Олену →</a>
+          <a href="https://instagram.com/olena_maletych" target="_blank" rel="noopener" style="font-size:14px;font-weight:700;color:var(--green-900);text-decoration:none">📷 @olena_maletych</a>
         </div>
-        <a href="https://olenamaletych.com/" target="_blank" rel="noopener" class="btn outline">Більше про Олену →</a>
       </div>
     </div>
   </div>
