@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СИСТЕМА.31 — не дієта, а система харчування на 31 день</title>
-<meta name="description" content="Не дієта — система. Готове меню на 31 день зі звичайних продуктів. Рецепти з фото, списки покупок, гід по замінах — без голоду і виснажливих дієт.">
+<title>31 день збалансованого харчування — Олена Малетич</title>
+<meta name="description" content="31 день збалансованого харчування без голоду, складних інгредієнтів і виснажливих дієт. Готове меню зі звичайних продуктів, рецепти з фото, списки покупок і гід по замінах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
@@ -161,6 +161,12 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .hero-discount-badge span{font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
 @media(max-width:640px){.hero-float-card{left:0;bottom:-20px;width:190px}.hero-discount-badge{right:0}}
 
+/* ---------- EXPERT ---------- */
+.expert-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+@media(max-width:860px){.expert-grid{grid-template-columns:1fr}}
+.expert-photo{border-radius:28px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;max-width:360px}
+.expert-tags{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 28px}
+
 /* ---------- CALCULATOR ---------- */
 .calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:32px;overflow:hidden;box-shadow:var(--shadow-lg)}
 @media(max-width:860px){.calc-wrap{grid-template-columns:1fr}}
@@ -298,7 +304,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .faq-item.open .faq-q .x{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-a p{padding:0 4px 22px;font-size:14.5px;color:var(--ink-soft);max-width:640px}
-.faq-item.open .faq-a{max-height:260px}
+.faq-item.open .faq-a{max-height:320px}
 
 /* ---------- FINAL CTA ---------- */
 .final-cta{text-align:center;background:var(--beige-100)}
@@ -336,9 +342,10 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 <!-- ================= NAV ================= -->
 <div class="nav">
   <div class="container nav-inner">
-    <a href="#top" class="logo">СИСТЕМА<span>.31</span></a>
+    <a href="#top" class="logo"><span>31</span> день</a>
     <div class="nav-links">
       <a href="#calculator">Калькулятор КБЖВ</a>
+      <a href="#expert">Про Олену</a>
       <a href="#inside">Що всередині</a>
       <a href="#pricing">Меню</a>
       <a href="#faq">Питання</a>
@@ -355,7 +362,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         <span class="pill coral">-42% наступні 10 хвилин</span>
         <span class="pill green">Не дієта — система на 31 день</span>
       </div>
-      <h1>Не дієта. <em>Система</em> харчування на 31 день, яка стає стилем життя</h1>
+      <h1>31 день <em>збалансованого харчування</em> — без голоду, складних інгредієнтів і виснажливих дієт</h1>
       <p class="lead">Готове меню на кожен день зі звичайних продуктів. Рецепти з фото, списки покупок на тиждень і жодних заборон — тільки система, яка приживається надовго.</p>
       <div class="hero-actions">
         <a href="#calculator" class="btn">Розрахувати своє КБЖВ і підібрати меню</a>
@@ -378,6 +385,36 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
           <div class="t">День 12 з 31</div>
           <div class="s">Приклад дня з меню</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERT =================
+  Сайти olenamaletych.com і book.maletych.com.ua заблоковані мережевим проксі
+  цієї сесії, тому нижче — узагальнений опис без вигаданих цифр (стаж, кількість
+  клієнток, сертифікати). Надішли, будь ласка, точний текст біографії та фото
+  Олени, щоб замінити цей плейсхолдер на перевірений контент.
+-->
+<section class="section-beige" id="expert">
+  <div class="container">
+    <div class="expert-grid">
+      <div class="fi">
+        <div class="expert-photo ph-img">
+          <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Олена Малетич</span></div>
+          <img src="https://admin.vgsolutions.cloud/static/img/trainer-photo.jpg" alt="Олена Малетич — фітнес-тренерка та нутриціологиня" onerror="this.style.display='none'">
+        </div>
+      </div>
+      <div class="fi">
+        <span class="eyebrow">Автор системи</span>
+        <h2>Олена Малетич</h2>
+        <p class="lead" style="margin-bottom:16px">Фітнес-тренерка та нутриціологиня, авторка цієї системи харчування на 31 день.</p>
+        <p style="color:var(--ink-soft)">Допомагає жінкам вибудовувати збалансоване харчування без суворих заборон, підрахунку кожного грама і почуття провини. Ця система зібрана з практичного досвіду роботи з клієнтками: прості продукти, зрозумілі порції та підхід, який реально стає стилем життя, а не тимчасовою дієтою.</p>
+        <div class="expert-tags">
+          <span class="pill green">Фітнес-тренерка</span>
+          <span class="pill green">Нутриціологиня</span>
+        </div>
+        <a href="https://olenamaletych.com/" target="_blank" rel="noopener" class="btn outline">Більше про Олену →</a>
       </div>
     </div>
   </div>
@@ -710,28 +747,16 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     </div>
     <div style="margin-top:36px" id="faqList">
       <div class="faq-item open">
-        <div class="faq-q"><span>Чи потрібні дорогі або екзотичні продукти?</span><span class="x">+</span></div>
-        <div class="faq-a"><p>Ні. Усі продукти в меню — прості й доступні, їх можна знайти в будь-якому супермаркеті поруч із домом. Жодних рідкісних суперфудів чи закордонних замовлень.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span>Як довго діє спеціальна ціна?</span><span class="x">+</span></div>
-        <div class="faq-a"><p>Знижка -42% та 4 бонуси в подарунок діють лише 10 хвилин з моменту, як ти відкрила цю сторінку. Після — система повертається до звичайної вартості без бонусів.</p></div>
+        <div class="faq-q"><span>Які продукти використовуються в меню?</span><span class="x">+</span></div>
+        <div class="faq-a"><p>Прості продукти, які можна знайти у будь-якому магазині поруч із домом. Жодних рідкісних суперфудів чи закордонних замовлень.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span>Якщо я зовсім не вмію готувати?</span><span class="x">+</span></div>
         <div class="faq-a"><p>Система створена саме для цього. Кожен рецепт — покроковий, з фото та зрозумілими інгредієнтами. Більшість страв займають 15–30 хвилин і не потребують кулінарного досвіду.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span>Як працюють посилання в PDF?</span><span class="x">+</span></div>
-        <div class="faq-a"><p>У PDF-меню кожна страва з позначкою «Рецепт →» — це клікабельне посилання. Натискаєш прямо в розкладі — і одразу потрапляєш на сторінку з рецептом у Книзі рецептів.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span>Як система підбирає моє меню?</span><span class="x">+</span></div>
-        <div class="faq-a"><p>Калькулятор рахує твою денну норму за формулою Маффіна — Сан Жеора і автоматично підбирає одне з 5 меню: до 1350 ккал — 1250 ккал, 1351–1550 — 1450 ккал, 1551–1750 — 1650 ккал, 1751–2000 — 1900 ккал, понад 2000 — 2200 ккал.</p></div>
-      </div>
-      <div class="faq-item">
         <div class="faq-q"><span>Що робити з чіт-мілом, якщо я на дієті?</span><span class="x">+</span></div>
-        <div class="faq-a"><p>Чіт-міл — це не «зрив», а частина системи: одна усвідомлена улюблена страва щонеділі, врахована в загальному балансі калорій. Це знижує ризик зривів і робить систему стійкою на довгу дистанцію.</p></div>
+        <div class="faq-a"><p>Тут важливо розуміти: це не дієта, а система — тому чіт-міл не є винятком чи зривом, він закладений у саму систему. Раз на тиждень, у неділю, ти свідомо їси улюблену страву, і вона вже врахована в загальному балансі калорій. Саме тому це працює на довгу дистанцію: без заборон нема і зривів, а звичка харчуватись збалансовано приживається природно, а не через силу.</p></div>
       </div>
     </div>
   </div>
@@ -756,11 +781,12 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
   <div class="container">
     <div class="foot-top">
       <div>
-        <div class="foot-logo">СИСТЕМА<span>.31</span></div>
+        <div class="foot-logo"><span>31</span> день</div>
         <p style="max-width:280px;opacity:.75">Не дієта — система харчування на 31 день, яка стає стилем життя.</p>
       </div>
       <div class="foot-links">
         <a href="#calculator">Калькулятор КБЖВ</a>
+        <a href="#expert">Про Олену</a>
         <a href="#inside">Що всередині</a>
         <a href="#pricing">Меню</a>
         <a href="#faq">Питання</a>
