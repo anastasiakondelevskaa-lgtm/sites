@@ -6,7 +6,7 @@
 <title>31 день збалансованого харчування — Олена Малетич</title>
 <meta name="description" content="31 день збалансованого харчування без голоду, складних інгредієнтів і виснажливих дієт. Готове меню зі звичайних продуктів, рецепти з фото, списки покупок і гід по замінах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
   ЗОБРАЖЕННЯ: усі фото на сторінці — плейсхолдери з src="https://admin.vgsolutions.cloud/static/img/<файл>".
   Щойно на цьому шляху зʼявиться файл з відповідною назвою — він автоматично підʼявиться на сайті
@@ -17,41 +17,42 @@
     gallery-1.jpg … gallery-8.jpg
     bonus-1.jpg … bonus-4.jpg
     menu-1250.jpg, menu-1450.jpg, menu-1650.jpg, menu-1900.jpg, menu-2200.jpg, menu-family.jpg
+    family-preview-1.jpg … family-preview-4.jpg
     testimonial-1.jpg … testimonial-3.jpg
     trainer-photo.jpg
 -->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green-950:#23281c;
-  --green-900:#3a4728;
-  --green-700:#59692f;
-  --green-600:#6e7f3a;
+  --green-950:#16140f;
+  --green-900:#201d16;
+  --green-700:#3a352a;
+  --green-600:#57503e;
   --green-500:#8a9a5b;
   --green-300:#bcc794;
   --green-200:#d7deb9;
   --green-100:#e8ecd6;
   --green-50:#f2f4e9;
-  --beige-100:#f1eee3;
-  --beige-200:#e9e3d1;
+  --beige-100:#efece3;
+  --beige-200:#e6e1d2;
   --beige-300:#ded4b8;
-  --cream:#f2f0e8;
+  --cream:#f7f4ec;
   --white:#ffffff;
-  --coral:#c06a3d;
-  --coral-dark:#a2552f;
-  --pink:#d7deb9;
-  --pink-light:#f3e6db;
-  --pink-deep:#c06a3d;
-  --pink-deep-dark:#a2552f;
-  --pink-line:#8a9a5b;
-  --canvas-green:#f2f0e8;
+  --coral:#ff6a3d;
+  --coral-dark:#e0501f;
+  --pink:#ffd8c4;
+  --pink-light:#ffe9dd;
+  --pink-deep:#ff6a3d;
+  --pink-deep-dark:#e0501f;
+  --pink-line:#e7e1d0;
+  --canvas-green:#f7f4ec;
   --canvas-green-dark:#e9e3d1;
-  --ink:#28281f;
-  --ink-soft:#66655a;
-  --line:#e0dac8;
-  --shadow-sm:0 2px 10px rgba(40,40,31,.06);
-  --shadow-md:0 14px 40px rgba(40,40,31,.09);
-  --shadow-lg:0 26px 70px rgba(40,40,31,.13);
+  --ink:#1c1a15;
+  --ink-soft:#6b675c;
+  --line:#e6e1d2;
+  --shadow-sm:0 2px 10px rgba(22,20,15,.07);
+  --shadow-md:0 14px 40px rgba(22,20,15,.10);
+  --shadow-lg:0 26px 70px rgba(22,20,15,.16);
   --radius-lg:26px;
   --radius-md:20px;
   --radius-sm:14px;
@@ -65,7 +66,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.serif{font-family:'Unbounded',sans-serif;line-height:1.15;font-weight:600;letter-spacing:-.02em;color:var(--green-950)}
+h1,h2,h3,.serif{font-family:'Anton',sans-serif;line-height:1.05;font-weight:400;letter-spacing:0;text-transform:uppercase;color:var(--green-950)}
 img{max-width:100%;display:block}
 a{color:inherit}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
@@ -140,7 +141,10 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
   background:var(--green-950);color:#fff;
   padding:10px 16px;
 }
-.topbar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+.topbar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;text-align:center}
+.topbar-group{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar-calc{display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:999px;white-space:nowrap;transition:background .15s ease}
+.topbar-calc:hover{background:rgba(255,255,255,.12)}
 .topbar-text{font-size:13px;font-weight:600}
 .topbar-text b{color:#ffd8ba}
 .topbar .btn{padding:9px 18px;font-size:12px;box-shadow:none}
@@ -233,7 +237,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
   font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink-soft);min-width:80px
 }
 .seg button.active{background:var(--green-700);border-color:var(--green-700);color:#fff}
-.calc-result .num{font-family:'Fredoka',serif;font-size:52px;font-weight:600;color:#fff;line-height:1}
+.calc-result .num{font-family:'Anton',sans-serif;font-size:52px;font-weight:400;color:#fff;line-height:1}
 .calc-result .unit{font-size:14px;opacity:.75;margin-bottom:18px}
 .calc-tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px;font-size:13px;margin-bottom:20px}
 .calc-macros{display:flex;gap:8px;margin:16px 0 22px;flex-wrap:wrap}
@@ -251,6 +255,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:560px){.problem-grid{grid-template-columns:1fr}}
 .problem-card{background:#fff;border-radius:var(--radius-md);padding:28px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
 .problem-card .ic{font-size:28px;margin-bottom:14px}
+.num-badge{width:48px;height:48px;border-radius:12px;background:var(--green-950);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:18px;flex-shrink:0;margin-bottom:14px}
 .problem-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
 .problem-card p{font-size:14px;color:var(--ink-soft)}
 .solution-banner{
@@ -265,12 +270,12 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:900px){.inside-grid{grid-template-columns:1fr}}
 .feat-list{display:flex;flex-direction:column;gap:22px}
 .feat{display:flex;gap:16px;align-items:flex-start}
-.feat .ic{width:46px;height:46px;border-radius:14px;background:var(--green-100);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.feat .ic{width:46px;height:46px;border-radius:12px;background:var(--green-950);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:16px;flex-shrink:0}
 .feat h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:4px;color:var(--green-950)}
 .feat p{font-size:14px;color:var(--ink-soft)}
 .week-mock{background:#fff;border-radius:28px;box-shadow:var(--shadow-lg);padding:26px;border:1px solid var(--line)}
 .week-mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.week-mock-head b{font-family:'Fredoka';font-size:18px}
+.week-mock-head b{font-family:'Anton';font-size:18px}
 .day-row{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border-radius:14px;font-size:13px;gap:10px}
 .day-row+.day-row{margin-top:8px}
 .day-row.active{background:var(--green-100)}
@@ -304,7 +309,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:560px){.bonus-grid{grid-template-columns:1fr}}
 .bonus-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative}
 .bonus-card .ph-img{aspect-ratio:4/3;border-radius:0;border-width:0 0 1.5px 0}
-.bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Fredoka';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
+.bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Anton';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
 .bonus-body{padding:22px}
 .bonus-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
 .bonus-card p{font-size:13.5px;color:var(--ink-soft)}
@@ -317,26 +322,51 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .offer .lead{color:var(--green-200);margin-left:auto;margin-right:auto}
 .date-badge{display:inline-flex;flex-direction:column;align-items:center;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:18px 34px;margin:32px 0;backdrop-filter:blur(6px)}
 .date-badge .d-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-200)}
-.date-badge .d-val{font-family:'Unbounded';font-size:32px;color:#fff}
+.date-badge .d-val{font-family:'Anton';font-size:32px;color:#fff}
+
+/* ---------- FAMILY MENU ---------- */
+.fam-macros{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:36px 0 44px}
+.fm-chip{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 22px;border-radius:16px;min-width:120px}
+.fm-chip b{font-family:'Anton';font-size:20px}
+.fm-chip span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;opacity:.75}
+.fm-kcal{background:#fbe2e8;color:#9c2f47}
+.fm-p{background:var(--green-100);color:var(--green-900)}
+.fm-f{background:#fbe2e8;color:#9c2f47}
+.fm-c{background:var(--green-950);color:#fff}
+.fam-struct-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:44px}
+@media(max-width:900px){.fam-struct-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fam-struct-grid{grid-template-columns:1fr}}
+.fam-struct-item{background:#fff;border-radius:var(--radius-md);padding:26px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+.fam-struct-item h3{font-size:16px;margin-bottom:6px}
+.fam-struct-item p{font-size:13.5px;color:var(--ink-soft)}
+.fam-callouts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:44px}
+@media(max-width:700px){.fam-callouts{grid-template-columns:1fr}}
+.fam-callout{background:var(--green-950);color:#fff;border-radius:var(--radius-md);padding:24px;display:flex;gap:16px;align-items:flex-start}
+.fam-callout .fc-ic{font-size:26px;flex-shrink:0}
+.fam-callout h3{color:#fff;font-size:15px;margin-bottom:6px;text-transform:none}
+.fam-callout p{font-size:13.5px;color:rgba(255,255,255,.75)}
+.fam-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}
+@media(max-width:700px){.fam-preview-grid{grid-template-columns:1fr 1fr}}
+.fam-checks{max-width:640px;margin:0 auto}
 
 /* ---------- PRICING ---------- */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 @media(max-width:960px){.price-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.price-grid{grid-template-columns:1fr}}
 .price-card{background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-sm);border:1.5px solid var(--line);display:flex;flex-direction:column;position:relative;transition:transform .2s ease,box-shadow .2s ease;scroll-margin-top:80px}
-@media(max-width:560px){.price-card{scroll-margin-top:120px}}
+@media(max-width:560px){.price-card{scroll-margin-top:180px}}
 .price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
 .price-card .ph-img{aspect-ratio:16/10;border-radius:0;border-width:0 0 1.5px 0}
 .price-card-body{padding:26px}
 .price-top-tag{position:absolute;top:14px;left:14px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:999px;z-index:2;max-width:calc(100% - 28px)}
 .price-goal{font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:10px;min-height:34px}
-.price-kcal{font-family:'Fredoka';font-size:28px;margin-bottom:14px}
+.price-kcal{font-family:'Anton';font-size:28px;margin-bottom:14px}
 .price-macros{display:flex;flex-direction:column;gap:5px;font-size:11.5px;color:var(--ink-soft);margin-bottom:18px;background:var(--green-50);border-radius:12px;padding:10px 12px}
 .price-macros .row{display:flex;justify-content:space-between}
 .price-macros b{color:var(--green-900)}
 .price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
 .old-price{font-size:15px;color:var(--ink-soft);text-decoration:line-through}
-.new-price{font-family:'Fredoka';font-size:32px;font-weight:700;color:var(--green-950)}
+.new-price{font-family:'Anton';font-size:32px;font-weight:700;color:var(--green-950)}
 .save-tag{font-size:12px;font-weight:800;color:var(--coral-dark);margin-bottom:18px}
 .price-feats{list-style:none;font-size:13px;color:var(--ink-soft);margin-bottom:24px}
 .price-feats li{padding-left:22px;position:relative;margin-bottom:8px}
@@ -387,7 +417,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 /* ---------- FOOTER ---------- */
 footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28px;font-size:13px}
 .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:36px}
-.foot-logo{font-family:'Fredoka';font-size:22px;color:#fff;margin-bottom:10px}
+.foot-logo{font-family:'Anton';font-size:22px;color:#fff;margin-bottom:10px}
 .foot-logo span{color:var(--coral)}
 .foot-links{display:flex;gap:26px;flex-wrap:wrap}
 .foot-links a{text-decoration:none;color:rgba(255,255,255,.65)}
@@ -400,7 +430,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 @media(max-width:760px){.mobile-sticky{display:block}}
 
 @media(max-width:640px){section{padding:64px 0}.calc-form,.calc-side{padding:30px 22px}}
-@media(max-width:560px){section{scroll-margin-top:120px}}
+@media(max-width:560px){section{scroll-margin-top:180px}}
 </style>
 </head>
 <body>
@@ -408,8 +438,11 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 <!-- ================= TOP BAR ================= -->
 <div class="topbar">
   <div class="topbar-inner">
-    <span class="topbar-text">🔥 Знижка на меню + 4 бонуси — до <b id="tb-date">15 серпня</b></span>
-    <a href="#pricing" class="btn">Забрати знижку</a>
+    <a href="#calculator" class="topbar-calc">🧮 Розрахувати свою норму</a>
+    <div class="topbar-group">
+      <span class="topbar-text">🔥 Знижка на меню + 4 бонуси — до <b id="tb-date">15 серпня</b></span>
+      <a href="#pricing" class="btn">Забрати знижку</a>
+    </div>
   </div>
 </div>
 
@@ -585,10 +618,10 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <h2>Впізнаєш себе?</h2>
     </div>
     <div class="problem-grid">
-      <div class="problem-card fi"><div class="ic">🌀</div><h3>«Що приготувати сьогодні?»</h3><p>Це питання відбирає більше сил, ніж саме приготування їжі. Щовечора одне й те саме коло.</p></div>
-      <div class="problem-card fi"><div class="ic">🛒</div><h3>Хаотичні закупи</h3><p>Купуєш навмання, половина продуктів псується в холодильнику, а на потрібне — знову не вистачає.</p></div>
-      <div class="problem-card fi"><div class="ic">😔</div><h3>Зриви та почуття провини</h3><p>Суворі заборони — це дієта. Вона працює тиждень-два, а потім зрив і повернення на старт.</p></div>
-      <div class="problem-card fi"><div class="ic">🤷‍♀️</div><h3>Незрозумілі норми</h3><p>Скільки саме їсти, щоб і досягти цілі, і не голодувати? Порахувати самій — довго і складно.</p></div>
+      <div class="problem-card fi"><div class="num-badge">01</div><h3>«Що приготувати сьогодні?»</h3><p>Це питання відбирає більше сил, ніж саме приготування їжі. Щовечора одне й те саме коло.</p></div>
+      <div class="problem-card fi"><div class="num-badge">02</div><h3>Хаотичні закупи</h3><p>Купуєш навмання, половина продуктів псується в холодильнику, а на потрібне — знову не вистачає.</p></div>
+      <div class="problem-card fi"><div class="num-badge">03</div><h3>Зриви та почуття провини</h3><p>Суворі заборони — це дієта. Вона працює тиждень-два, а потім зрив і повернення на старт.</p></div>
+      <div class="problem-card fi"><div class="num-badge">04</div><h3>Незрозумілі норми</h3><p>Скільки саме їсти, щоб і досягти цілі, і не голодувати? Порахувати самій — довго і складно.</p></div>
     </div>
     <div class="solution-banner fi">
       <p>Це не дієта — це система: що готувати, скільки купувати і чим замінити, якщо чогось немає. Тобі лишається тільки готувати і їсти.</p>
@@ -607,11 +640,11 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     </div>
     <div class="inside-grid">
       <div class="feat-list fi">
-        <div class="feat"><div class="ic">📅</div><div><h3>31 день · 4 тижні</h3><p>7 днів на тиждень, 3 основні прийоми їжі + 1 перекус щодня. Все розписано наперед.</p></div></div>
-        <div class="feat"><div class="ic">🍕</div><div><h3>1 чіт-міл щонеділі</h3><p>У кожному з 5 меню — свідомий психологічно розвантажувальний прийом їжі без почуття провини.</p></div></div>
-        <div class="feat"><div class="ic">🔗</div><div><h3>Клікабельні рецепти</h3><p>Натискаєш на страву в розкладі — і одразу потрапляєш на сторінку рецепта з фото та кроками.</p></div></div>
-        <div class="feat"><div class="ic">🧾</div><div><h3>Списки покупок на тиждень</h3><p>Готовий перелік інгредієнтів під кожен тиждень — просто закрити список у магазині.</p></div></div>
-        <div class="feat"><div class="ic">🔄</div><div><h3>Система замін</h3><p>Немає потрібного продукту вдома чи в магазині? Чіткі інструкції, чим замінити без втрати балансу КБЖВ.</p></div></div>
+        <div class="feat"><div class="ic">01</div><div><h3>31 день · 4 тижні</h3><p>7 днів на тиждень, 3 основні прийоми їжі + 1 перекус щодня. Все розписано наперед.</p></div></div>
+        <div class="feat"><div class="ic">02</div><div><h3>1 чіт-міл щонеділі</h3><p>У кожному з 5 меню — свідомий психологічно розвантажувальний прийом їжі без почуття провини.</p></div></div>
+        <div class="feat"><div class="ic">03</div><div><h3>Клікабельні рецепти</h3><p>Натискаєш на страву в розкладі — і одразу потрапляєш на сторінку рецепта з фото та кроками.</p></div></div>
+        <div class="feat"><div class="ic">04</div><div><h3>Списки покупок на тиждень</h3><p>Готовий перелік інгредієнтів під кожен тиждень — просто закрити список у магазині.</p></div></div>
+        <div class="feat"><div class="ic">05</div><div><h3>Система замін</h3><p>Немає потрібного продукту вдома чи в магазині? Чіткі інструкції, чим замінити без втрати балансу КБЖВ.</p></div></div>
       </div>
       <div class="week-mock fi">
         <div class="week-mock-head"><b>Тиждень 1 · День 3</b><span class="pill green">1686 ккал</span></div>
@@ -719,6 +752,59 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
   </div>
 </section>
 
+<!-- ================= FAMILY MENU ================= -->
+<section class="section-beige" id="family">
+  <div class="container">
+    <div class="center" style="max-width:680px">
+      <span class="eyebrow">Для всієї родини</span>
+      <h2>Сімейне меню на 31 день</h2>
+      <p class="lead center">«Цей раціон створений не для голодування, а для того, щоб м'яко і без стресу привчити всю родину до здорового харчування. Тут немає екзотичних чи дорогих суперфудів — лише прості продукти з АТБ та Сільпо» — Олена Малетич.</p>
+    </div>
+
+    <div class="fam-macros fi">
+      <div class="fm-chip fm-kcal"><b>1450–1600</b><span>ккал / день</span></div>
+      <div class="fm-chip fm-p"><b>95–125 г</b><span>білки</span></div>
+      <div class="fm-chip fm-f"><b>38–52 г</b><span>жири</span></div>
+      <div class="fm-chip fm-c"><b>140–190 г</b><span>вуглеводи</span></div>
+    </div>
+
+    <div class="fam-struct-grid">
+      <div class="fam-struct-item fi"><div class="num-badge">28</div><h3>Сніданків</h3><p>Швидкі сендвічі, пишні оладки, корисні каші та сирні страви.</p></div>
+      <div class="fam-struct-item fi"><div class="num-badge">28</div><h3>Обідів</h3><p>М'ясо, птиця, риба з гарнірами — частина готується одразу на 2 дні.</p></div>
+      <div class="fam-struct-item fi"><div class="num-badge">28</div><h3>Вечерь</h3><p>Легкі, але ситні: запечена риба, салати, запіканки, овочі.</p></div>
+      <div class="fam-struct-item fi"><div class="num-badge">28</div><h3>Перекусів</h3><p>Швидкі магазинні смаколики та домашні десерти.</p></div>
+    </div>
+
+    <div class="fam-callouts">
+      <div class="fam-callout fi">
+        <span class="fc-ic">⏱️</span>
+        <div><h3>«Готуємо раз — їмо два дні»</h3><p>Частина обідів і вечерь одразу розрахована на 2 дні — менше часу біля плити для всієї родини.</p></div>
+      </div>
+      <div class="fam-callout fi">
+        <span class="fc-ic">🍫</span>
+        <div><h3>Без жорстких заборон</h3><p>Улюблені магазинні смаколики (Kinder, зефір, мармелад, шоколад) легально входять у раціон.</p></div>
+      </div>
+    </div>
+
+    <div class="fam-preview-grid">
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Список покупок: АТБ + Сільпо</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-1.jpg" alt="Список покупок сімейного меню" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Меню на день з фото страв</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-2.jpg" alt="Меню на день" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Книга рецептів для родини</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-3.jpg" alt="Книга рецептів" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Порція окремо для тебе</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-4.jpg" alt="Порція для жінки" onerror="this.style.display='none'"></div>
+    </div>
+
+    <ul class="expert-checks fam-checks">
+      <li>Готові списки покупок на кожен тиждень — з розподілом на АТБ і Сільпо/Новус, із чекбоксами</li>
+      <li>У кожному рецепті є окрема порція для тебе — не тільки на всю форму для родини</li>
+      <li>Зручний формат: дивись з телефону, планшета або роздрукуй на холодильник</li>
+    </ul>
+
+    <div class="center" style="margin-top:36px">
+      <a href="#menu-family" class="btn">Обрати сімейне меню →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PRICING ================= -->
 <section id="pricing" class="grid-bg">
   <div class="container">
@@ -740,8 +826,8 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
             <div class="row"><span>Жири</span><b>45 г · 405 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>130 г · 520 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1200 ₴</span><span class="new-price">690 ₴</span></div>
-          <div class="save-tag">Знижка -42% · Заощадь 510 ₴</div>
+          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">490 ₴</span></div>
+          <div class="save-tag">Знижка -42% · Заощадь 360 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
@@ -757,8 +843,8 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
             <div class="row"><span>Жири</span><b>50 г · 450 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>155 г · 620 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1200 ₴</span><span class="new-price">690 ₴</span></div>
-          <div class="save-tag">Знижка -42% · Заощадь 510 ₴</div>
+          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">490 ₴</span></div>
+          <div class="save-tag">Знижка -42% · Заощадь 360 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
@@ -774,8 +860,8 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
             <div class="row"><span>Жири</span><b>55 г · 495 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>180 г · 720 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1200 ₴</span><span class="new-price">690 ₴</span></div>
-          <div class="save-tag">Знижка -42% · Заощадь 510 ₴</div>
+          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">490 ₴</span></div>
+          <div class="save-tag">Знижка -42% · Заощадь 360 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
@@ -791,8 +877,8 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
             <div class="row"><span>Жири</span><b>65 г · 585 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>210 г · 840 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1200 ₴</span><span class="new-price">690 ₴</span></div>
-          <div class="save-tag">Знижка -42% · Заощадь 510 ₴</div>
+          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">490 ₴</span></div>
+          <div class="save-tag">Знижка -42% · Заощадь 360 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
@@ -808,8 +894,8 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
             <div class="row"><span>Жири</span><b>70 г · 630 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>260 г · 1040 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1200 ₴</span><span class="new-price">690 ₴</span></div>
-          <div class="save-tag">Знижка -42% · Заощадь 510 ₴</div>
+          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">490 ₴</span></div>
+          <div class="save-tag">Знижка -42% · Заощадь 360 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
@@ -825,8 +911,8 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
             <div class="row"><span>Порції</span><b>під кожного члена родини</b></div>
             <div class="row"><span>Раціон</span><b>без обмежень</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1550 ₴</span><span class="new-price">890 ₴</span></div>
-          <div class="save-tag">Знижка -43% · Заощадь 660 ₴</div>
+          <div class="price-row"><span class="old-price">1360 ₴</span><span class="new-price">790 ₴</span></div>
+          <div class="save-tag">Знижка -42% · Заощадь 570 ₴</div>
           <ul class="price-feats"><li>31 день меню для всієї сім'ї</li><li>Спільний список покупок на тиждень</li><li>Рецепти з фото та заміни продуктів</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn light block">Обрати сімейне меню →</a>
         </div>
