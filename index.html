@@ -123,8 +123,17 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 }
 .btn-ghost:hover{color:var(--green-700)}
 
+/* MOTIVATIONAL PHOTOS */
+.photo-block{width:100%;aspect-ratio:4/3;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--green-100),var(--green-50));margin-bottom:16px}
+.photo-block img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:46px}
+.photo-block.ratio-wide{aspect-ratio:16/10}
+
+/* MOTIVATION INTERSTITIAL */
+.motiv-title{font-size:clamp(20px,5.5vw,25px);color:var(--green-950);text-align:center;margin-bottom:8px}
+.motiv-sub{font-size:14px;color:var(--ink-soft);text-align:center;margin-bottom:22px;line-height:1.6}
+
 /* INTRO */
-.intro-emoji{font-size:44px;margin-bottom:14px}
 .intro-title{font-size:clamp(24px,7vw,32px);color:var(--green-950);margin-bottom:12px}
 .intro-desc{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:22px}
 .intro-points{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
@@ -135,7 +144,6 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 .intro-foot{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:14px}
 
 /* RESULT */
-.result-emoji{font-size:40px;text-align:center;margin-bottom:8px}
 .result-title{text-align:center;font-size:clamp(21px,6vw,27px);color:var(--green-950);margin-bottom:4px}
 .result-sub{text-align:center;font-size:13px;color:var(--ink-soft);margin-bottom:22px}
 
@@ -206,7 +214,10 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
     <!-- INTRO -->
     <div class="step active" data-step="intro">
-      <div class="intro-emoji">🥗</div>
+      <div class="photo-block">
+        <img id="introImg" src="https://lh3.googleusercontent.com/d/ID_ФОТО_INTRO" alt="" onerror="this.style.display='none';document.getElementById('introFallback').style.display='flex';">
+        <div class="photo-fallback" id="introFallback">🥗</div>
+      </div>
       <h1 class="intro-title">Дізнайся свою денну норму КБЖВ за 60 секунд</h1>
       <p class="intro-desc">Пройди короткий тест — і отримай персональний розрахунок калорій, БЖВ та готове меню під твою ціль, підібране нутриціологом.</p>
       <ul class="intro-points">
@@ -290,6 +301,20 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       </div>
     </div>
 
+    <!-- MOTIVATION INTERSTITIAL -->
+    <div class="step" data-step="motivation">
+      <div class="photo-block">
+        <img id="motivImg" src="https://lh3.googleusercontent.com/d/ID_ФОТО_MOTIVATION" alt="" onerror="this.style.display='none';document.getElementById('motivFallback').style.display='flex';">
+        <div class="photo-fallback" id="motivFallback">💪</div>
+      </div>
+      <h2 class="motiv-title">Чудова робота! Ти вже на половині шляху</h2>
+      <p class="motiv-sub">Ще кілька відповідей — і ми розрахуємо твою точну денну норму та підберемо готове меню.</p>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next>Продовжити →</button>
+      </div>
+    </div>
+
     <!-- Q4 GOAL -->
     <div class="step" data-step="goal">
       <span class="tag">Крок 4 з 6</span>
@@ -368,7 +393,10 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
     <!-- RESULT -->
     <div class="step" data-step="result">
-      <div class="result-emoji">🎉</div>
+      <div class="photo-block ratio-wide">
+        <img id="resultImg" src="https://lh3.googleusercontent.com/d/ID_ФОТО_RESULT" alt="" onerror="this.style.display='none';document.getElementById('resultFallback').style.display='flex';">
+        <div class="photo-fallback" id="resultFallback">🎉</div>
+      </div>
       <h2 class="result-title">Твій персональний розрахунок готовий</h2>
       <p class="result-sub">На основі формули Міффліна-Сан Жеора та твоїх відповідей</p>
 
@@ -416,7 +444,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 <script>
 (function(){
   var state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, mealFreq:null, symptoms:[] };
-  var order = ['intro','gender','params','activity','goal','mealfreq','symptoms','result'];
+  var order = ['intro','gender','params','activity','motivation','goal','mealfreq','symptoms','result'];
   var questionSteps = ['gender','params','activity','goal','mealfreq','symptoms'];
   var current = 'intro';
 
