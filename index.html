@@ -186,6 +186,8 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
   box-shadow:0 14px 30px rgba(232,98,143,.38);transition:background .18s ease,transform .12s ease;
 }
 .cta-btn:hover{background:var(--pink-deep-dark);transform:translateY(-1px)}
+.family-note{display:none;margin-bottom:18px;background:var(--green-50);border:2px dashed var(--green-600);border-radius:18px;padding:14px 16px;font-size:13.5px;color:var(--ink);line-height:1.6;text-align:center}
+.family-note a{color:var(--pink-deep-dark);font-weight:800;text-decoration:underline;white-space:nowrap}
 .result-foot{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:14px}
 .result-foot button{background:none;border:none;color:var(--green-700);font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline}
 
@@ -206,7 +208,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
   <div class="brandbar"><span class="dot"></span><span>Тест на харчування</span></div>
 
   <div class="progress-wrap" id="progressWrap">
-    <div class="progress-label"><span id="progressText">Крок 1 з 6</span><span id="progressPct">0%</span></div>
+    <div class="progress-label"><span id="progressText">Крок 1 з 7</span><span id="progressPct">0%</span></div>
     <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
   </div>
 
@@ -231,7 +233,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
     <!-- Q1 GENDER -->
     <div class="step" data-step="gender">
-      <span class="tag">Крок 1 з 6</span>
+      <span class="tag">Крок 1 з 7</span>
       <h2 class="q-title">Яка твоя стать?</h2>
       <p class="q-sub">Потрібно для точного розрахунку базового обміну речовин</p>
       <div class="options" id="genderOptions">
@@ -246,7 +248,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
     <!-- Q2 PARAMS -->
     <div class="step" data-step="params">
-      <span class="tag">Крок 2 з 6</span>
+      <span class="tag">Крок 2 з 7</span>
       <h2 class="q-title">Твої параметри</h2>
       <p class="q-sub">Вкажи чесні дані — від цього залежить точність розрахунку</p>
       <div class="fields">
@@ -274,7 +276,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
     <!-- Q3 ACTIVITY -->
     <div class="step" data-step="activity">
-      <span class="tag">Крок 3 з 6</span>
+      <span class="tag">Крок 3 з 7</span>
       <h2 class="q-title">Який у тебе рівень активності?</h2>
       <p class="q-sub">Оціни звичайний тиждень, а не найкращий чи найгірший</p>
       <div class="options" id="activityOptions">
@@ -317,7 +319,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
     <!-- Q4 GOAL -->
     <div class="step" data-step="goal">
-      <span class="tag">Крок 4 з 6</span>
+      <span class="tag">Крок 4 з 7</span>
       <h2 class="q-title">Яка твоя ціль?</h2>
       <div class="options" id="goalOptions">
         <button class="option-btn" type="button" data-value="loss">
@@ -339,9 +341,30 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       </div>
     </div>
 
-    <!-- Q5 MEAL FREQ -->
+    <!-- Q5 COOK FOR -->
+    <div class="step" data-step="cookfor">
+      <span class="tag">Крок 5 з 7</span>
+      <h2 class="q-title">Для кого підбираємо меню?</h2>
+      <p class="q-sub">Це впливає на формат страв і порції</p>
+      <div class="options" id="cookforOptions">
+        <button class="option-btn" type="button" data-value="self">
+          <span class="option-main">🍽️ Тільки для себе</span>
+          <span class="option-note">Індивідуальні порції під твій КБЖВ</span>
+        </button>
+        <button class="option-btn" type="button" data-value="family">
+          <span class="option-main">👨‍👩‍👧 Для всієї родини</span>
+          <span class="option-note">Одна страва — смачно і збалансовано для всіх</span>
+        </button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- Q6 MEAL FREQ -->
     <div class="step" data-step="mealfreq">
-      <span class="tag">Крок 5 з 6</span>
+      <span class="tag">Крок 6 з 7</span>
       <h2 class="q-title">Скільки разів на день ти харчуєшся?</h2>
       <div class="options" id="mealfreqOptions">
         <button class="option-btn" type="button" data-value="chaotic">
@@ -363,9 +386,9 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       </div>
     </div>
 
-    <!-- Q6 SYMPTOMS -->
+    <!-- Q7 SYMPTOMS -->
     <div class="step" data-step="symptoms">
-      <span class="tag">Крок 6 з 6</span>
+      <span class="tag">Крок 7 з 7</span>
       <h2 class="q-title">Що з цього тобі знайоме?</h2>
       <p class="q-sub">Можна вибрати кілька варіантів</p>
       <div class="options" id="symptomsOptions">
@@ -421,7 +444,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       <div class="product-card">
         <div class="product-image">
           <img id="menuImg" src="" alt="Меню харчування" onerror="this.style.display='none';document.getElementById('imgFallback').style.display='flex';">
-          <div class="img-fallback" id="imgFallback"><span id="fallbackKcal">1450</span><span>ккал меню</span></div>
+          <div class="img-fallback" id="imgFallback"><span id="fallbackKcal">1450</span><span id="fallbackLabel">ккал меню</span></div>
         </div>
         <div class="product-body">
           <p class="product-title" id="productTitle">Система харчування на 1450 ккал</p>
@@ -435,6 +458,10 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
         </div>
       </div>
 
+      <div class="family-note" id="familyNote">
+        👨‍👩‍👧 Готуєш для всієї родини? У нас є окреме <strong>сімейне меню на ~1600 ккал</strong> — готуєш одну страву, а смакує всім. <a href="#" id="familyNoteLink">Хочу сімейне меню →</a>
+      </div>
+
       <p class="result-foot">Меню підбирається автоматично під твій розрахунок · <button type="button" id="restartBtn">пройти тест ще раз</button></p>
     </div>
 
@@ -443,9 +470,9 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
 <script>
 (function(){
-  var state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, mealFreq:null, symptoms:[] };
-  var order = ['intro','gender','params','activity','motivation','goal','mealfreq','symptoms','result'];
-  var questionSteps = ['gender','params','activity','goal','mealfreq','symptoms'];
+  var state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, cookFor:null, mealFreq:null, symptoms:[] };
+  var order = ['intro','gender','params','activity','motivation','goal','cookfor','mealfreq','symptoms','result'];
+  var questionSteps = ['gender','params','activity','goal','cookfor','mealfreq','symptoms'];
   var current = 'intro';
 
   var steps = {};
@@ -485,12 +512,12 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 
   document.getElementById('startBtn').addEventListener('click', goNext);
   document.getElementById('restartBtn').addEventListener('click', function(){
-    state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, mealFreq:null, symptoms:[] };
+    state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, cookFor:null, mealFreq:null, symptoms:[] };
     document.querySelectorAll('.option-btn').forEach(function(b){ b.classList.remove('selected'); });
     document.getElementById('inputAge').value='';
     document.getElementById('inputWeight').value='';
     document.getElementById('inputHeight').value='';
-    updateNextState('gender'); updateNextState('activity'); updateNextState('goal'); updateNextState('mealfreq'); updateNextState('symptoms');
+    updateNextState('gender'); updateNextState('activity'); updateNextState('goal'); updateNextState('cookfor'); updateNextState('mealfreq'); updateNextState('symptoms');
     showStep('intro');
   });
 
@@ -503,6 +530,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
     if(stepKey==='gender') enabled = !!state.gender;
     if(stepKey==='activity') enabled = !!state.activity;
     if(stepKey==='goal') enabled = !!state.goal;
+    if(stepKey==='cookfor') enabled = !!state.cookFor;
     if(stepKey==='mealfreq') enabled = !!state.mealFreq;
     if(stepKey==='symptoms') enabled = state.symptoms.length > 0;
     nextBtnFor(stepKey).disabled = !enabled;
@@ -523,6 +551,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
   singleSelect('genderOptions','gender', function(v){ state.gender = v; });
   singleSelect('activityOptions','activity', function(v){ state.activity = parseFloat(v); });
   singleSelect('goalOptions','goal', function(v){ state.goal = v; });
+  singleSelect('cookforOptions','cookfor', function(v){ state.cookFor = v; });
   singleSelect('mealfreqOptions','mealfreq', function(v){ state.mealFreq = v; });
 
   var symptomsContainer = document.getElementById('symptomsOptions');
@@ -603,6 +632,9 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
     snacking: 'Часті перекуси «між ділом» непомітно додають сотні зайвих калорій на день, навіть якщо основні прийоми їжі здаються помірними.'
   };
 
+  var FAMILY_GRADE = 1650;
+  var FAMILY_DISPLAY = '1600';
+
   function computeResults(){
     var bmr;
     if(state.gender === 'female'){
@@ -629,22 +661,49 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
     document.getElementById('valFat').textContent = fat + 'г';
     document.getElementById('valCarbs').textContent = carbs + 'г';
 
+    var isFamilyMenu = (state.cookFor === 'family' && menuCal === FAMILY_GRADE);
+
     var img = document.getElementById('menuImg');
     img.style.display = '';
     document.getElementById('imgFallback').style.display = 'none';
-    img.src = 'https://admin.vgsolutions.cloud/static/img/menu-' + menuCal + '.jpg';
-    document.getElementById('fallbackKcal').textContent = menuCal;
+    var fallbackKcalEl = document.getElementById('fallbackKcal');
+    var fallbackLabelEl = document.getElementById('fallbackLabel');
+    var familyNote = document.getElementById('familyNote');
+    var familyNoteLink = document.getElementById('familyNoteLink');
 
-    document.getElementById('productTitle').textContent = 'Система харчування на ' + menuCal + ' ккал';
-    document.getElementById('productDesc').textContent = 'Ніяких суворих заборон і голодувань — тільки збалансовані страви, прості рецепти та порції під твій КБЖВ. Це ' + goalDesc[state.goal] + ', без стресу для організму.';
-    document.getElementById('ctaBtn').textContent = 'Хочу систему харчування на ' + menuCal + ' ккал';
+    if(isFamilyMenu){
+      document.getElementById('menuPill').textContent = 'Сімейне меню ~' + FAMILY_DISPLAY + ' ккал';
+      img.src = 'https://admin.vgsolutions.cloud/static/img/menu-family.jpg';
+      fallbackKcalEl.textContent = 'Сімейне';
+      fallbackLabelEl.textContent = 'меню ~' + FAMILY_DISPLAY + ' ккал';
+      document.getElementById('productTitle').textContent = 'Сімейний раціон: здоров\'я та легкість';
+      document.getElementById('productDesc').textContent = 'Готуєш одну страву — а харчується вся родина: 4 прийоми їжі на день, прості рецепти без окремого готування, збалансовані під твою ціль ' + goalLabel[state.goal] + '.';
+      document.getElementById('ctaBtn').textContent = 'Хочу сімейне меню';
+      familyNote.style.display = 'none';
+    } else {
+      img.src = 'https://admin.vgsolutions.cloud/static/img/menu-' + menuCal + '.jpg';
+      fallbackKcalEl.textContent = menuCal;
+      fallbackLabelEl.textContent = 'ккал меню';
+      document.getElementById('productTitle').textContent = 'Система харчування на ' + menuCal + ' ккал';
+      document.getElementById('productDesc').textContent = 'Ніяких суворих заборон і голодувань — тільки збалансовані страви, прості рецепти та порції під твій КБЖВ. Це ' + goalDesc[state.goal] + ', без стресу для організму.';
+      document.getElementById('ctaBtn').textContent = 'Хочу систему харчування на ' + menuCal + ' ккал';
+
+      if(state.cookFor === 'family'){
+        familyNote.style.display = 'block';
+        familyNoteLink.textContent = 'Хочу сімейне меню на ~' + FAMILY_DISPLAY + ' ккал →';
+      } else {
+        familyNote.style.display = 'none';
+      }
+    }
+
+    var menuLabel = isFamilyMenu ? ('сімейному меню на ~' + FAMILY_DISPLAY + ' ккал') : ('меню на ' + menuCal + ' ккал');
 
     var diagIntro = document.getElementById('diagIntro');
     var diagList = document.getElementById('diagList');
     diagList.innerHTML = '';
 
     if(state.symptoms.indexOf('normal') !== -1){
-      diagIntro.textContent = 'Судячи з відповідей, із харчуванням у тебе вже все непогано — тобі просто бракує готової системи, яка порахує все за тебе. Твоє меню на ' + menuCal + ' ккал вже враховує ціль ' + goalLabel[state.goal] + '.';
+      diagIntro.textContent = 'Судячи з відповідей, із харчуванням у тебе вже все непогано — тобі просто бракує готової системи, яка порахує все за тебе. Твоє ' + menuLabel + ' вже враховує ціль ' + goalLabel[state.goal] + '.';
     } else {
       var tips = [];
       if(state.mealFreq === 'chaotic') tips.push(mealFreqTips.chaotic);
@@ -660,7 +719,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       var closing = document.createElement('li');
       closing.style.color = 'var(--green-700)';
       closing.innerHTML = '';
-      closing.textContent = 'Усі ці ризики вже враховані в твоєму меню на ' + menuCal + ' ккал: чіткі порції, баланс БЖВ у кожному прийомі їжі та прості рецепти без голодувань.';
+      closing.textContent = 'Усі ці ризики вже враховані в твоєму ' + menuLabel + ': чіткі порції, баланс БЖВ у кожному прийомі їжі та прості рецепти без голодувань.';
       diagList.appendChild(closing);
     }
   }
