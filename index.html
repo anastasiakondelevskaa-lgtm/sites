@@ -176,10 +176,6 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
 .includes-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
 .includes-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink);line-height:1.5}
 .includes-list li::before{content:'✓';flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--green-100);color:var(--green-700);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
-.price-old{font-size:15px;color:var(--ink-soft);text-decoration:line-through}
-.price-new{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:700;color:var(--pink-deep-dark)}
-.price-badge{background:var(--pink-deep);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
 
 .cta-btn{
   display:block;width:100%;text-align:center;text-decoration:none;
@@ -457,12 +453,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
           <p class="product-title" id="productTitle">Система харчування на 1450 ккал</p>
           <p class="product-desc" id="productDesc">Ніяких суворих заборон і голодувань — тільки збалансовані страви, прості рецепти та порції під твій КБЖВ. Їж смачно і при цьому йди до своєї цілі без стресу для організму.</p>
           <ul class="includes-list" id="includesList"></ul>
-          <div class="price-row">
-            <span class="price-old">850 ₴</span>
-            <span class="price-new">490 ₴</span>
-            <span class="price-badge">-42%</span>
-          </div>
-          <a href="#" class="cta-btn" id="ctaBtn">Хочу систему харчування на 1450 ккал</a>
+          <a href="landing_31_menu.html#menu-1450" class="cta-btn" id="ctaBtn">Забрати своє меню на 1450 ккал →</a>
         </div>
       </div>
 
@@ -697,7 +688,9 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       fallbackLabelEl.textContent = 'меню ~' + FAMILY_DISPLAY + ' ккал';
       document.getElementById('productTitle').textContent = 'Сімейний раціон: здоров\'я та легкість';
       document.getElementById('productDesc').textContent = 'Готуєш одну страву — а харчується вся родина: 4 прийоми їжі на день, прості рецепти без окремого готування, збалансовані під твою ціль ' + goalLabel[state.goal] + '.';
-      document.getElementById('ctaBtn').textContent = 'Хочу сімейне меню';
+      var ctaBtnFamily = document.getElementById('ctaBtn');
+      ctaBtnFamily.textContent = 'Забрати сімейне меню →';
+      ctaBtnFamily.href = 'landing_31_menu.html#menu-family';
       familyNote.style.display = 'none';
       includesItems = [
         '4 тижні харчування для всієї родини — готуєш одну страву на всіх',
@@ -711,7 +704,9 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       fallbackLabelEl.textContent = 'ккал меню';
       document.getElementById('productTitle').textContent = 'Система харчування на ' + menuCal + ' ккал';
       document.getElementById('productDesc').textContent = 'Ніяких суворих заборон і голодувань — тільки збалансовані страви, прості рецепти та порції під твій КБЖВ. Це ' + goalDesc[state.goal] + ', без стресу для організму.';
-      document.getElementById('ctaBtn').textContent = 'Хочу систему харчування на ' + menuCal + ' ккал';
+      var ctaBtnIndividual = document.getElementById('ctaBtn');
+      ctaBtnIndividual.textContent = 'Забрати своє меню на ' + menuCal + ' ккал →';
+      ctaBtnIndividual.href = 'landing_31_menu.html#menu-' + menuCal;
       includesItems = [
         '31-денний раціон під твій калораж ' + menuCal + ' ккал',
         'Рецепти з фото та покроковим приготуванням',
@@ -722,6 +717,7 @@ h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2}
       if(state.cookFor === 'family'){
         familyNote.style.display = 'block';
         familyNoteLink.textContent = 'Хочу сімейне меню на ~' + FAMILY_DISPLAY + ' ккал →';
+        familyNoteLink.href = 'landing_31_menu.html#menu-family';
       } else {
         familyNote.style.display = 'none';
       }
