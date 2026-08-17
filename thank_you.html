@@ -9,14 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
-  Сторінка підтверджує оплату. Назва придбаного меню й сума підставляються
-  автоматично з URL-параметрів ?menu=1650&price=490 (приклад посилання, куди
-  платіжна система/сервіс має редіректити після успішної оплати:
-  thank-you.html?menu=1650&price=490). Якщо параметрів немає — показується
-  загальний текст без конкретної назви меню.
-
-  ЗОБРАЖЕННЯ: плейсхолдер із src="https://admin.vgsolutions.cloud/static/img/<файл>".
-  Очікуваний файл: hero-main.jpg (та сама головна фотографія тарілки, що й на лендінгу).
+  Універсальна сторінка підтвердження оплати — без ціни й без назви
+  конкретного меню, тому та сама сторінка підходить для будь-якого
+  з 6 продуктів (5 персональних меню + сімейне).
 -->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -118,12 +113,9 @@ h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:14px}
 .success-hero h1{font-size:clamp(30px,5vw,44px);margin-bottom:16px}
 .order-card{
   max-width:460px;margin:34px auto 0;background:#fff;border:1.5px solid var(--line);
-  border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-sm);text-align:left;
+  border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-sm);
 }
-.order-card .row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:14.5px}
-.order-card .row+.row{border-top:1px dashed var(--line)}
-.order-card .row span:first-child{color:var(--ink-soft)}
-.order-card .row b{color:var(--green-950);font-family:'Fredoka';font-size:17px}
+.order-card p{font-family:'Fredoka';font-size:19px;color:var(--green-950)}
 
 /* ---------- STEPS ---------- */
 .steps-grid{display:flex;flex-direction:column;gap:14px;margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto}
@@ -159,7 +151,6 @@ footer p{max-width:480px;margin:0 auto;line-height:1.6;opacity:.75}
 @media(max-width:640px){
   section{padding:48px 0}
   .order-card{margin-left:16px;margin-right:16px}
-  .order-card .row{flex-direction:column;align-items:flex-start;gap:4px}
   .crosssell{flex-direction:column;text-align:center}
 }
 </style>
@@ -182,10 +173,8 @@ footer p{max-width:480px;margin:0 auto;line-height:1.6;opacity:.75}
     <h1>Дякуємо за покупку!</h1>
     <p class="lead center">Твоя система харчування вже готується до відправки. Лист із меню, рецептами та всіма бонусами прийде на пошту, яку ти вказала під час оплати.</p>
 
-    <div class="order-card">
-      <div class="row"><span>Меню</span><b id="order-menu">Система на 31 день</b></div>
-      <div class="row"><span>Бонуси</span><b>4 гайди в подарунок</b></div>
-      <div class="row"><span>Сплачено</span><b id="order-price">490 ₴</b></div>
+    <div class="order-card center">
+      <p>Твоє меню на 31 день і всі 4 бонуси вже чекають тебе тут 📩</p>
     </div>
   </div>
 </section>
@@ -247,6 +236,12 @@ footer p{max-width:480px;margin:0 auto;line-height:1.6;opacity:.75}
         <p>Пиши в директ — відповідаємо особисто</p>
         <a href="https://www.instagram.com/olena_maletych?igsh=MXg5bDhwbHp0aDRnMA==" target="_blank" rel="noopener" class="btn outline" style="border-color:#fff;color:#fff">Написати →</a>
       </div>
+      <div class="support-card fi">
+        <div class="ic">✈️</div>
+        <h3>Telegram</h3>
+        <p>Пиши нам напряму — відповідаємо швидко</p>
+        <a href="#" target="_blank" rel="noopener" class="btn outline" style="border-color:#fff;color:#fff">Написати →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -270,27 +265,6 @@ footer p{max-width:480px;margin:0 auto;line-height:1.6;opacity:.75}
 </footer>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const menu = params.get('menu');
-const price = params.get('price');
-
-const MENU_LABELS = {
-  '1250':'Меню 1250 ккал',
-  '1450':'Меню 1450 ккал',
-  '1650':'Меню 1650 ккал',
-  '1900':'Меню 1900 ккал',
-  '2200':'Меню 2200 ккал',
-  'family':'Сімейне меню на 31 день',
-};
-
-if(menu && MENU_LABELS[menu]){
-  document.getElementById('order-menu').textContent = MENU_LABELS[menu];
-}
-if(price){
-  const n = parseFloat(price);
-  if(!isNaN(n)) document.getElementById('order-price').textContent = Math.round(n) + ' ₴';
-}
-
 const io = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
 },{threshold:.12});
