@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!--
+  ФОТО: усі зображення зараз — плейсхолдери виду
+  https://lh3.googleusercontent.com/d/НАЗВА_ID
+  Заміни НАЗВА_ID на реальний Google Drive file ID (файл має бути відкритий
+  "для всіх, у кого є посилання"). Список усіх 13 місць по порядку на сторінці:
+    1. HERO_PHOTO_ID              — головне фото хіро-блоку
+    2. PROGRAM_1_DIAGNOSTYKA_ID   — іконка модуля "Діагностика"
+    3. PROGRAM_2_LEKCIYA_ID       — іконка модуля "Лекція"
+    4. PROGRAM_3_TRENUVANNYA_ID   — іконка модуля "6 тренувань"
+    5. PROGRAM_4_SHOV_ID          — іконка модуля "Робота зі швом"
+    6. BA_FEATURED_ZAMIRY_ID      — фото до/після з реальними замірами
+    7. BA_1_SVITLANA_ID           — фото до/після (Світлана)
+    8. BA_2_SOLOMIYA_ID           — фото до/після (Соломія)
+    9. BA_3_OKSANA_ID             — фото до/після (Оксана)
+    10. ABOUT_PHOTO_OLENA_ID      — фото в блоці "Про мене"
+    11. BONUS_1_MENU_ID           — фото бонусу "Меню від вздуття"
+    12. BONUS_2_LIMFO_ID          — фото бонусу "Лімфодренажні вправи"
+    13. BONUS_3_KNYGA_ID          — фото бонусу "Книга рецептів"
+-->
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Мінус випираючий живіт за 21 день</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-soft: #FAFAF8;
+    --bg-deep: #EFEDE8;
+    --ink: #111111;
+    --ink-soft: #545248;
+    --mute: #9B968A;
+    --line: #E6E3DB;
+    --line-mid: #D6D2C6;
+    --accent: #FF5A36;
+    --accent-deep: #D8431F;
+    --accent-soft: #FFF0EA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  .bento>*,.diast-compare>*,.prog-row>*,.results-grid>*,.result-row>*,
+  .ba-featured>*,.ba-grid>*,.about-grid>*,.about-facts>*,.testi-grid>*,
+  .bonus-card>*,.bonus-cta-card>*{min-width:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Instrument Serif',serif}
+  .mono{font-family:'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-weight:600;font-size:.85em}
+
+  .live{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;animation:livePulse 1.6s ease-in-out infinite;flex-shrink:0}
+  @keyframes livePulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.5}}
+
+  /* FLASH */
+  .flash-bar{background:var(--ink);color:#fff;padding:11px 16px;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(255,255,255,.1)}
+  .flash-bar.hidden{display:none}
+  .flash-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:14px;position:relative}
+  .flash-text{font-size:.8rem;color:rgba(255,255,255,.65)}
+  .flash-text b{color:#fff;font-weight:600}
+  .flash-timer{display:inline-flex;align-items:center;gap:3px;font-variant-numeric:tabular-nums}
+  .flash-timer .ft-num{color:var(--accent);font-size:.82rem;font-weight:700}
+  .flash-cta{display:inline-flex;align-items:center;gap:4px;color:#fff;padding:5px 0;font-size:.78rem;font-weight:600;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.4);transition:border-color .2s}
+  .flash-cta:hover{border-color:#fff}
+  .flash-close{position:absolute;right:0;background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1.1rem;width:24px;height:24px}
+  @media(max-width:760px){
+    .flash-bar{padding:8px 32px 8px 12px}
+    .flash-inner{flex-wrap:wrap;gap:6px 8px;justify-content:flex-start}
+    .flash-text{font-size:.68rem;line-height:1.3;flex:1 1 100%;order:1}
+    .flash-timer{order:2}
+    .flash-timer .ft-num{font-size:.76rem}
+    .flash-cta{font-size:.7rem;order:3;margin-left:auto}
+    .flash-close{right:6px}
+  }
+
+  /* HERO */
+  .hero{padding:20px 16px 28px}
+  .bento{display:grid;max-width:1280px;margin:0 auto;grid-template-columns:1fr;gap:10px}
+  .bento-card{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:22px;position:relative;overflow:hidden;min-width:0}
+
+  .b-hero-photo{padding:0;background-color:var(--bg-deep);background-size:cover;background-position:center 22%;position:relative;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;border:none}
+  .b-hero-overlay{padding:22px 22px 24px;background:linear-gradient(to top, rgba(10,8,6,0.9) 0%, rgba(10,8,6,0.45) 40%, rgba(10,8,6,0) 74%);color:#fff;position:relative;z-index:2}
+  .b-hero-overlay h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.85rem,6.2vw,3.1rem);line-height:1.06;letter-spacing:-.025em;color:#fff;margin-bottom:10px}
+  .b-hero-overlay h1 i{color:var(--accent);font-style:normal}
+  .b-hero-overlay .sub{font-size:.92rem;color:rgba(255,255,255,.78);line-height:1.5;max-width:540px;font-weight:400}
+  .b-hero-overlay .sub b{color:#fff;font-weight:600}
+  .b-hero-photo .ph-num{position:absolute;top:14px;right:14px;background:rgba(10,8,6,.55);backdrop-filter:blur(14px);color:#fff;border-radius:2px;display:inline-flex;align-items:center;gap:9px;z-index:3;padding:7px 10px 7px 7px}
+  .b-hero-photo .ph-num .ph-label{color:rgba(255,255,255,.6);font-size:.58rem;font-weight:700;letter-spacing:.1em;padding:0;line-height:1;text-transform:uppercase;border-right:1px solid rgba(255,255,255,.25);padding-right:8px}
+  .b-hero-photo .ph-num .ph-body{display:flex;flex-direction:column;line-height:1;gap:3px}
+  .b-hero-photo .ph-num .ph-value{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--accent);letter-spacing:-.01em;line-height:.95}
+  .b-hero-photo .ph-num .ph-caption{font-size:.58rem;letter-spacing:.03em;color:rgba(255,255,255,.6);text-transform:uppercase}
+
+  .b-price{display:flex;flex-direction:column;gap:8px}
+  .b-price-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .b-price .label{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:600}
+  .b-price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .b-price .old{font-family:'Inter',sans-serif;font-size:1.1rem;color:var(--mute);text-decoration:line-through;line-height:1;font-weight:500}
+  .b-price .new{font-family:'Instrument Serif',serif;font-size:clamp(3.2rem,10vw,4.6rem);line-height:.95;letter-spacing:-.02em;display:inline-flex;align-items:baseline;color:var(--ink)}
+  .b-price .new sup{font-size:.3em;margin-left:2px;align-self:flex-start;margin-top:.4em;font-weight:400;color:var(--mute)}
+  .b-price .save{color:var(--accent-deep);font-size:.85rem;font-weight:700;letter-spacing:.02em;line-height:1;display:inline-flex;align-items:center}
+  .b-cta{background:var(--ink);color:#fff;padding:19px 22px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:14px;transition:opacity .2s;border-color:var(--ink);border-radius:4px}
+  .b-cta:hover{opacity:.85}
+  .b-cta-text{font-size:1rem;font-weight:600;letter-spacing:-.005em}
+  .b-cta .arr{width:20px;height:20px;color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s}
+  .b-cta:hover .arr{transform:translateX(4px)}
+  .b-stat{padding:18px 20px;display:flex;flex-direction:column;gap:0}
+  .b-stat .stat-row{display:flex;align-items:center;gap:9px;font-size:.8rem;color:var(--ink-soft);font-weight:500;padding:8px 0}
+  .b-stat .stat-row svg{color:var(--accent-deep);flex-shrink:0}
+  .b-stat .stat-row+.stat-row{border-top:1px solid var(--line)}
+  @media(min-width:760px){.bento{grid-template-columns:1.6fr 1fr;gap:12px}.b-hero-photo{grid-column:1;grid-row:1/span 3;min-height:600px}.b-price{grid-column:2;grid-row:1}.b-cta{grid-column:2;grid-row:2}.b-stat{grid-column:2;grid-row:3}}
+  @media(min-width:1000px){.bento{grid-template-columns:1.8fr 1fr}.b-hero-overlay{padding:36px 36px 32px}.b-hero-overlay h1{font-size:clamp(2.3rem,4.6vw,3.4rem)}.b-hero-overlay .sub{font-size:1rem}}
+
+  /* SECTIONS */
+  section{padding:60px 16px}
+  .wrap{max-width:1200px;margin:0 auto}
+  .section-head{display:flex;flex-direction:column;gap:9px;margin-bottom:30px;max-width:760px}
+  .section-head.center{text-align:center;align-items:center;margin:0 auto 30px}
+  .eyebrow{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600;display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:'';width:14px;height:1px;background:var(--accent)}
+  .sh-title{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.8rem,4.6vw,2.8rem);line-height:1.08;letter-spacing:-.025em;color:var(--ink)}
+  .sh-title i{color:var(--accent-deep);font-style:normal}
+  .sh-desc{color:var(--ink-soft);font-size:.98rem;line-height:1.6;max-width:560px}
+
+  /* PAIN */
+  .pain-section{padding:52px 16px}
+  .pain-chips{display:flex;flex-wrap:wrap;gap:9px;max-width:920px;margin:0 auto;justify-content:center}
+  .pain-chip{background:var(--bg);border:1px solid var(--line-mid);padding:11px 16px;border-radius:100px;font-size:.86rem;font-weight:500;color:var(--ink-soft);display:inline-flex;align-items:center;transition:border-color .2s,color .2s}
+  .pain-chip:hover{border-color:var(--ink);color:var(--ink)}
+
+  /* CAUSES */
+  .diastasis-section{padding:52px 16px}
+  .diastasis-inner{max-width:860px;margin:0 auto;text-align:center}
+  .diast-compare{display:grid;grid-template-columns:1fr;gap:1px;margin-top:26px;text-align:left;background:var(--line)}
+  @media(min-width:760px){.diast-compare{grid-template-columns:1fr 1.3fr}}
+  .diast-card{background:var(--bg);padding:24px}
+  .diast-card--accent{background:var(--ink);color:#fff}
+  .diast-tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:10px}
+  .diast-card--accent .diast-tag{color:var(--accent)}
+  .diast-card p{font-size:.92rem;line-height:1.55;color:var(--ink-soft)}
+  .diast-card--accent p{color:rgba(255,255,255,.75)}
+  .diast-reasons{list-style:none;display:flex;flex-direction:column;gap:0}
+  .diast-reasons li{padding:8px 0;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem;line-height:1.4;display:flex;gap:10px}
+  .diast-reasons li:first-child{border-top:none}
+  .diast-reasons li::before{content:'—';color:var(--accent);font-weight:700;flex-shrink:0}
+
+  /* WHO */
+  .who-section{padding:60px 0}
+  .who-section .section-head{padding:0 16px}
+  .who-hint{display:flex;align-items:center;gap:8px;padding:0 16px;margin-bottom:14px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:600}
+  .who-hint .swipe-arrow{display:inline-flex;animation:swipeArrow 1.6s ease-in-out infinite;color:var(--accent)}
+  @keyframes swipeArrow{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+  .who-rail{display:flex;gap:1px;overflow-x:auto;padding:8px 16px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .who-rail::-webkit-scrollbar{display:none}
+  .who-card{flex:0 0 78%;max-width:320px;background:var(--bg);border:1px solid var(--line);padding:22px;scroll-snap-align:start;transition:border-color .2s;min-width:0}
+  .who-card:hover{border-color:var(--ink)}
+  .who-card h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.15;margin-bottom:10px;letter-spacing:-.01em}
+  .who-card p{font-size:.86rem;color:var(--ink-soft);line-height:1.55}
+  .who-progress{max-width:1280px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:10px}
+  .who-track{flex:1;height:1px;background:var(--line-mid);position:relative;overflow:hidden}
+  .who-thumb{position:absolute;top:0;left:0;height:100%;background:var(--accent);width:30%;transition:left .15s ease-out}
+  .who-count{font-size:.7rem;color:var(--mute);letter-spacing:.04em;font-weight:600;min-width:38px;text-align:right}
+  .who-count strong{color:var(--ink);font-weight:700}
+  @media(min-width:760px){.who-card{flex:0 0 320px}.who-hint{display:none}}
+
+  /* PROGRAM */
+  .program-section{padding:60px 16px}
+  .prog-list-v{display:flex;flex-direction:column;gap:0;max-width:1080px;margin:0 auto;border-top:1px solid var(--line)}
+  .prog-row{display:grid;grid-template-columns:56px 1fr;grid-template-areas:"img content";gap:16px;padding:24px 0;align-items:start;border-bottom:1px solid var(--line);min-width:0}
+  .prog-row .prog-img{grid-area:img;width:56px;height:56px;border-radius:2px;background-size:cover;background-position:center;background-color:var(--bg-deep);flex-shrink:0}
+  .prog-row .prog-content{grid-area:content;min-width:0}
+  .prog-row h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.15;color:var(--ink);margin-bottom:7px;letter-spacing:-.01em}
+  .prog-row p{color:var(--ink-soft);font-size:.9rem;line-height:1.5}
+  .prog-bullets{grid-column:1/-1;list-style:none;display:flex;flex-direction:column;gap:0;margin-top:2px}
+  .prog-bullets li{color:var(--ink-soft);font-size:.88rem;padding:8px 0;border-top:1px dashed var(--line);display:flex;align-items:center;gap:10px;line-height:1.4}
+  .prog-bullets li::before{content:'—';color:var(--accent-deep);font-weight:700;flex-shrink:0}
+  @media(min-width:760px){.prog-row{grid-template-columns:80px 1fr;gap:24px;padding:28px 0}.prog-row .prog-img{width:80px;height:80px}.prog-row h3{font-size:1.35rem}}
+
+  /* RESULTS */
+  .results-section{padding:60px 16px}
+  .results-grid{display:grid;grid-template-columns:1fr;gap:0;max-width:1080px;margin:0 auto;border-top:1px solid var(--line)}
+  .result-row{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center;transition:padding-left .25s;min-width:0}
+  .result-row:hover{padding-left:8px}
+  .result-row .rn{font-family:'Instrument Serif',serif;font-size:1.55rem;color:var(--mute);font-style:normal;line-height:1}
+  .result-row p{font-size:.96rem;line-height:1.5;color:var(--ink-soft)}
+  .result-row p b{color:var(--ink);font-weight:700}
+  @media(min-width:760px){.results-grid{grid-template-columns:1fr 1fr;gap:0 48px}}
+
+  /* BA */
+  .ba-section{padding:60px 16px}
+  .ba-featured{max-width:1180px;margin:0 auto 26px;background:var(--ink);border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr;color:#fff}
+  @media(min-width:760px){.ba-featured{grid-template-columns:1fr 1.2fr}}
+  .ba-feat-photo{position:relative;aspect-ratio:3/4;background-size:cover;background-position:center;background-color:#26221c}
+  .ba-feat-body{padding:26px 24px}
+  @media(min-width:760px){.ba-feat-body{padding:34px 38px}}
+  .ba-feat-tag{display:inline-flex;align-items:center;gap:6px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:600}
+  .ba-feat-title{font-family:'Inter',sans-serif;font-weight:700;font-size:1.35rem;line-height:1.2;margin-bottom:16px;letter-spacing:-.01em}
+  .ba-feat-title i{color:var(--accent);font-style:normal}
+  .ba-feat-table{list-style:none;display:flex;flex-direction:column;gap:0;margin-bottom:16px}
+  .ba-feat-table li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 10px;padding:9px 0;border-top:1px solid rgba(255,255,255,.12);font-size:.88rem}
+  .ba-feat-table li:first-child{border-top:none}
+  .ba-feat-table .fl-name{color:rgba(255,255,255,.62)}
+  .ba-feat-table .fl-val{font-weight:500;font-variant-numeric:tabular-nums}
+  .ba-feat-table .fl-val b{color:var(--accent);font-weight:700}
+  .ba-feat-total{display:inline-block;border:1px solid rgba(255,90,54,.4);padding:8px 14px;border-radius:2px;font-size:.82rem;font-weight:500;line-height:1.4;color:rgba(255,255,255,.9)}
+  .ba-feat-total b{color:var(--accent)}
+
+  .ba-grid{display:grid;grid-template-columns:1fr;gap:1px;max-width:1180px;margin:0 auto;background:var(--line)}
+  @media(min-width:760px){.ba-grid{grid-template-columns:repeat(3,1fr)}}
+  .ba-card{background:var(--bg);overflow:hidden;min-width:0}
+  .ba-pair{position:relative;aspect-ratio:3/4;overflow:hidden;background-size:cover;background-position:center;background-color:var(--bg-deep)}
+  .ba-pair::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,.5);z-index:2}
+  .ba-stamp{position:absolute;top:10px;background:rgba(10,8,6,.6);backdrop-filter:blur(8px);color:#fff;padding:4px 10px;border-radius:2px;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;z-index:3}
+  .ba-stamp.before{left:10px}
+  .ba-stamp.after{right:10px;color:var(--accent)}
+  .ba-info{padding:16px 18px}
+  .ba-info h4{font-family:'Inter',sans-serif;font-weight:700;font-size:1.02rem;margin-bottom:4px;letter-spacing:-.005em}
+  .ba-info p{font-size:.83rem;color:var(--ink-soft);line-height:1.5}
+  .ba-info p b{color:var(--accent-deep);font-weight:700}
+
+  /* ABOUT */
+  .about-section{padding:60px 16px}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:1180px;margin:0 auto;align-items:center}
+  @media(min-width:900px){.about-grid{grid-template-columns:1fr 1.2fr;gap:56px}}
+  .about-photo{aspect-ratio:4/5;background-size:cover;background-position:center;background-color:var(--bg-deep);border-radius:4px;overflow:hidden;position:relative;border:1px solid var(--line)}
+  .about-tag{position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.94);padding:7px 12px;border-radius:2px;font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+  .about-quote{font-family:'Instrument Serif',serif;font-size:1.35rem;line-height:1.3;margin:16px 0 20px;padding-left:16px;border-left:2px solid var(--accent);font-style:italic;color:var(--ink)}
+  .about-desc{color:var(--ink-soft);font-size:.96rem;line-height:1.65}
+  .about-desc b{color:var(--ink);font-weight:600}
+  .about-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:24px;background:var(--line);border:1px solid var(--line)}
+  .fact-card{background:var(--bg);padding:16px 18px}
+  .fact-num{font-family:'Instrument Serif',serif;font-size:1.6rem;color:var(--ink);line-height:1;margin-bottom:5px}
+  .fact-label{font-size:.76rem;color:var(--ink-soft);line-height:1.4}
+
+  /* TESTI */
+  .testi-section{padding:60px 16px}
+  .testi-grid{display:grid;grid-template-columns:1fr;gap:1px;max-width:1080px;margin:0 auto;background:var(--line);border:1px solid var(--line)}
+  @media(min-width:760px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+  .testi-card{background:var(--bg);padding:22px 20px;min-width:0}
+  .testi-quote{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.5;margin-bottom:16px;color:var(--ink-soft)}
+  .testi-author-row{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid var(--line)}
+  .testi-avatar-ph{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-mid);color:var(--ink);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:700;font-size:.78rem}
+  .testi-author-name{font-weight:600;font-size:.86rem}
+  .testi-author-meta{font-size:.66rem;color:var(--mute);margin-top:1px;font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+  .testi-stars{color:var(--accent);letter-spacing:2px;font-size:.75rem;margin-left:auto}
+
+  /* BONUSES */
+  .bonus-section{padding:60px 16px}
+  .bonus-grid{display:flex;flex-direction:column;gap:0;max-width:900px;margin:0 auto;border-top:1px solid var(--line)}
+  .bonus-card{border-bottom:1px solid var(--line);display:grid;grid-template-columns:72px 1fr;gap:16px;padding:20px 0;align-items:center;min-width:0}
+  .bonus-photo{width:72px;height:72px;aspect-ratio:1;border-radius:2px;background-size:cover;background-position:center;background-color:var(--bg-deep);flex-shrink:0}
+  .bonus-meta{padding:0}
+  .bonus-tag{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:5px;font-weight:600}
+  .bonus-card h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;line-height:1.15;margin-bottom:5px;letter-spacing:-.005em}
+  .bonus-card p{color:var(--ink-soft);font-size:.83rem;line-height:1.5;margin-bottom:8px}
+  .bonus-price{display:inline-flex;align-items:baseline;gap:8px;font-size:.78rem}
+  .bonus-price s{color:var(--mute)}
+  .bonus-price strong{color:var(--accent-deep);font-weight:700}
+  @media(min-width:760px){.bonus-card{grid-template-columns:100px 1fr;padding:24px 0;gap:22px}.bonus-photo{width:100px;height:100px}.bonus-card h3{font-size:1.25rem}}
+  .bonus-cta-card{max-width:1180px;margin:32px auto 0;background:var(--ink);border-radius:4px;padding:26px;display:grid;grid-template-columns:1fr;gap:18px;align-items:center;color:#fff}
+  @media(min-width:760px){.bonus-cta-card{grid-template-columns:1fr auto;padding:30px 34px}}
+  .bonus-cta-card h3{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(1.1rem,2.6vw,1.4rem);line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
+  .bonus-cta-card h3 i{color:var(--accent);font-style:normal}
+  .bcc-timer{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums}
+  .bcc-timer .tnum{color:var(--accent);font-weight:700;font-size:.92rem}
+  .bcc-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:15px 22px;border-radius:2px;font-weight:600;font-size:.86rem;text-decoration:none;transition:opacity .2s;white-space:nowrap}
+  .bcc-cta:hover{opacity:.85}
+
+  /* PRICING */
+  .pricing-section{padding:60px 16px}
+  .pricing-card{max-width:680px;margin:0 auto;background:var(--ink);color:#fff;border-radius:4px;padding:38px 26px;text-align:center;position:relative}
+  @media(min-width:760px){.pricing-card{padding:52px 46px}}
+  .pricing-tag{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:20px}
+  .pricing-card h2{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.6rem,4.4vw,2.3rem);line-height:1.12;margin-bottom:26px;letter-spacing:-.02em}
+  .pricing-card h2 i{color:var(--accent);font-style:normal}
+  .pricing-value{display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:12px}
+  .pv-old{font-family:'Inter',sans-serif;font-size:1.2rem;color:rgba(255,255,255,.4);text-decoration:line-through;font-weight:500}
+  .pv-new{font-family:'Instrument Serif',serif;font-size:clamp(3.2rem,8.5vw,4.8rem);line-height:1;letter-spacing:-.01em;color:var(--accent)}
+  .pv-new sup{font-size:.32em}
+  .pricing-note{color:rgba(255,255,255,.55);font-size:.83rem;margin-bottom:26px}
+  .pricing-note b{color:var(--accent)}
+  .pricing-timer{display:inline-flex;border:1px solid rgba(255,255,255,.14);margin-bottom:26px}
+  .ptm-unit{padding:11px 20px;min-width:64px}
+  .ptm-unit+.ptm-unit{border-left:1px solid rgba(255,255,255,.14)}
+  .ptm-num{font-family:'Instrument Serif',serif;font-size:1.5rem;line-height:1;color:var(--accent)}
+  .ptm-label{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;opacity:.5;margin-top:3px;font-weight:600}
+  .pricing-features{text-align:left;max-width:440px;margin:0 auto 24px;list-style:none;border-top:1px solid rgba(255,255,255,.1)}
+  .pricing-features li{padding:11px 0 11px 22px;position:relative;font-size:.88rem;border-bottom:1px solid rgba(255,255,255,.1);font-weight:400;color:rgba(255,255,255,.85)}
+  .pricing-features li::before{content:'—';position:absolute;left:0;top:11px;color:var(--accent);font-weight:700;font-size:.85rem}
+  .bonus-banner{border:1px solid rgba(255,255,255,.14);padding:13px 16px;margin:0 auto 14px;max-width:520px;font-size:.86rem;line-height:1.4;color:rgba(255,255,255,.8);text-align:left}
+  .bonus-banner b{color:var(--accent);font-weight:600}
+  .start-info{display:block;padding:10px 0;color:rgba(255,255,255,.6);font-size:.82rem;font-weight:400;margin:0 auto 20px;text-align:left;max-width:520px;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+  @media(max-width:760px){.start-info{font-size:.76rem;line-height:1.35}.bonus-banner{font-size:.82rem;padding:13px 14px}}
+  .start-info b{color:var(--accent);font-weight:600}
+  .start-info .si-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:livePulse 1.6s ease-in-out infinite;flex-shrink:0;display:inline-block;margin-right:8px}
+  .forever-badge{color:var(--accent);font-weight:600;font-size:.85em;border-bottom:1px solid var(--accent)}
+  .forever-inline{color:var(--ink);font-weight:700;border-bottom:1px solid var(--accent)}
+  .pricing-cta{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--accent);color:#fff;padding:17px 22px;border-radius:2px;text-decoration:none;font-weight:600;font-size:.92rem;transition:opacity .2s;gap:14px}
+  .pricing-cta:hover{opacity:.88}
+  .pricing-cta .pca{width:18px;height:18px;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+  /* FAQ */
+  .faq-section{padding:60px 16px}
+  .faq-wrap{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;background:none;border:none;padding:19px 4px;text-align:left;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Inter',sans-serif;font-size:.98rem;font-weight:600;color:var(--ink);transition:color .2s}
+  .faq-q:hover{color:var(--accent-deep)}
+  .faq-icon{width:16px;height:16px;display:flex;align-items:center;justify-content:center;transition:transform .3s;flex-shrink:0;margin-left:14px;color:var(--ink)}
+  .faq-icon::before{content:'+';font-size:1.2rem;font-weight:300}
+  .faq-item.open .faq-icon{transform:rotate(45deg);color:var(--accent)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--ink-soft);font-size:.9rem;line-height:1.6}
+  .faq-item.open .faq-a{max-height:320px;padding:0 4px 20px}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:rgba(255,255,255,.5);padding:48px 16px 24px;text-align:center}
+  .footer-logo{font-family:'Instrument Serif',serif;font-size:1.5rem;color:#fff;margin-bottom:12px}
+  .footer-logo i{color:var(--accent);font-style:italic}
+  footer p{font-size:.83rem;max-width:500px;margin:0 auto 18px}
+  .footer-links{display:flex;gap:18px;justify-content:center;font-size:.76rem;margin-bottom:22px;flex-wrap:wrap}
+  .footer-links a{color:#fff;text-decoration:none;opacity:.6;transition:opacity .2s}
+  .footer-links a:hover{opacity:1}
+  .footer-copy{font-size:.68rem;opacity:.35;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.9,.3,1.05)}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="flash-bar" id="flashBar">
+  <div class="flash-inner">
+    <span class="flash-text"><b>−75% + 3 бонуси</b> · згорає через</span>
+    <div class="flash-timer"><span class="ft-num" id="fb-m">10</span><span style="color:var(--accent)">:</span><span class="ft-num" id="fb-s">00</span></div>
+    <a href="#buy" class="flash-cta">Купити 490 ₴ →</a>
+    <button class="flash-close" id="flashClose">×</button>
+  </div>
+</div>
+
+
+
+<header class="hero">
+  <div class="bento">
+    <div class="bento-card b-hero-photo" data-src="https://lh3.googleusercontent.com/d/HERO_PHOTO_ID">
+      <div class="b-hero-overlay">
+        <h1>Мінус <i>випираючий</i> живіт за 21 день</h1>
+        <p class="sub"><b>6 тренувань по 15 хв удома</b>, які нарешті працюють.</p>
+      </div>
+      <div class="ph-num">
+        <span class="ph-label">ДО</span>
+        <span class="ph-body">
+          <span class="ph-value">−8 см</span>
+          <span class="ph-caption">у талії · 3 тижні*</span>
+        </span>
+      </div>
+    </div>
+    <div class="bento-card b-price">
+      <div class="b-price-top">
+        <span class="label mono">Спецціна сьогодні</span>
+        <span class="save">−75%</span>
+      </div>
+      <div class="b-price-row">
+        <span class="old">1990 ₴</span>
+        <span class="new">490<sup>₴</sup></span>
+      </div>
+    </div>
+    <a href="#buy" class="bento-card b-cta">
+      <span class="b-cta-text">Купити зі знижкою</span>
+      <span class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </a>
+    <div class="bento-card b-stat">
+      <div class="stat-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Доступ <strong class="forever-inline">назавжди</strong></div>
+      <div class="stat-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 15 хв на день</div>
+      <div class="stat-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 3 бонуси у подарунок</div>
+    </div>
+  </div>
+</header>
+
+<section class="pain-section">
+  <div class="section-head center reveal">
+    <div class="eyebrow">Знайоме відчуття</div>
+    <h2 class="sh-title">Ти схудла, а <i>живіт</i> усе одно випирає</h2>
+    <p class="sh-desc">9 з 10 жінок качають прес роками — а живіт залишається. Бо плоский живіт роблять не скручування, а глибокі м'язи: поперечний, тазове дно та правильне дихання.</p>
+  </div>
+  <div class="pain-chips">
+    <span class="pain-chip reveal">Живіт випирає навіть зранку</span>
+    <span class="pain-chip reveal">Валик внизу живота, хоч і не товста</span>
+    <span class="pain-chip reveal">Качаєш прес — марно</span>
+    <span class="pain-chip reveal">Після пологів живіт не втягнувся</span>
+    <span class="pain-chip reveal">Постійні набряки та важкість</span>
+    <span class="pain-chip reveal">Нема часу на зал</span>
+  </div>
+</section>
+
+<section class="diastasis-section">
+  <div class="wrap">
+    <div class="diastasis-inner reveal">
+      <div class="eyebrow">Важливо розуміти</div>
+      <h2 class="sh-title">Валик внизу живота — <i>це завжди жир?</i></h2>
+      <p class="sh-desc" style="margin:0 auto">Ні. Часто причина глибша, ніж просто жир, — і в кожної свій набір причин.</p>
+      <div class="diast-compare">
+        <div class="diast-card">
+          <div class="diast-tag">Просто жир</div>
+          <p>Прибирається дефіцитом калорій і кардіо. Живіт зменшується рівномірно разом з усім тілом.</p>
+        </div>
+        <div class="diast-card diast-card--accent">
+          <div class="diast-tag">Найчастіше — комбінація причин</div>
+          <ul class="diast-reasons">
+            <li>Діастаз — розходження м'язів по білій лінії живота</li>
+            <li>Неправильне дихання — живіт «випихається» замість втягуватись</li>
+            <li>Слабкі м'язи тазового дна (МТД)</li>
+            <li>Постава — живіт випирає навіть без жиру</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="who-section">
+  <div class="section-head reveal">
+    <div class="eyebrow">Для кого</div>
+    <h2 class="sh-title">Ця програма <i>точно</i> для тебе, якщо…</h2>
+    <p class="sh-desc">Я розробила цю систему для звичайних жінок — для тих, у кого обмаль часу, але багато бажання нарешті побачити себе в дзеркалі й посміхнутися.</p>
+  </div>
+  <div class="who-hint">
+    <span class="swipe-arrow">→</span>
+    <span>Гортай вбік</span>
+  </div>
+  <div class="who-rail" id="whoRail">
+    <div class="who-card reveal"><h3>Ти мама в декреті</h3><p>Шукаєш 15 хвилин на день, щоб повернути собі тіло — без нянь, зали та спортклубів. Тренуєшся, коли дитина спить.</p></div>
+    <div class="who-card reveal"><h3>Тебе дістали дієти</h3><p>Гречка на воді, кефірні дні, марафони без результату. Хочеш їсти смачно й бачити результат.</p></div>
+    <div class="who-card reveal"><h3>Ти качала прес — марно</h3><p>Робила скручування щодня, а живіт лишився. Бо проблема — у поперечному м'язі, а не в пресі.</p></div>
+    <div class="who-card reveal"><h3>Тебе бісить живіт</h3><p>Ти худа, але живіт стирчить. Не знаєш, що з цим робити. Програма саме про це — про глибокі м'язи.</p></div>
+    <div class="who-card reveal"><h3>Немає часу на зал</h3><p>Робота, діти, дім. На дорогу в зал немає сил. Усе, що треба — килимок та 15 хвилин удома.</p></div>
+    <div class="who-card reveal"><h3>Хочеш результат надовго</h3><p>Не «схудла й набрала знову», а стабільне тіло на роки. Система звичок, які працюють усе життя.</p></div>
+  </div>
+  <div class="who-progress">
+    <div class="who-track"><div class="who-thumb" id="whoThumb"></div></div>
+    <div class="who-count"><strong id="whoCurrent">1</strong>/<span id="whoTotal">6</span></div>
+  </div>
+</section>
+
+<section class="program-section" id="program">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Що всередині</div>
+      <h2 class="sh-title">Програма, <i>яка реально</i> прибирає живіт</h2>
+      <p class="sh-desc">Жодної води. Жодних «універсальних комплексів на все тіло». Тільки те, що прицільно працює з випираючим животом.</p>
+    </div>
+    <div class="prog-list-v">
+      <div class="prog-row reveal">
+        <div class="prog-img" data-src="https://lh3.googleusercontent.com/d/PROGRAM_1_DIAGNOSTYKA_ID"></div>
+        <div class="prog-content">
+          <h3>Діагностика</h3>
+          <p>Два тести, які за 2 хвилини покажуть, чому живіт випирає саме у тебе.</p>
+        </div>
+          <ul class="prog-bullets"><li>Чи правильно ти дихаєш?</li><li>Чи працює твій поперечний м'яз?</li></ul>
+      </div>
+      <div class="prog-row reveal">
+        <div class="prog-img" data-src="https://lh3.googleusercontent.com/d/PROGRAM_2_LEKCIYA_ID"></div>
+        <div class="prog-content">
+          <h3>Лекція</h3>
+          <p>Теорія, без якої будь-які тренування — марна трата часу.</p>
+        </div>
+          <ul class="prog-bullets"><li>Чому з'являються набряки</li><li>Проблемні зони: що з ними робити</li><li>М'язи тазового дна — головний секрет</li></ul>
+      </div>
+      <div class="prog-row reveal">
+        <div class="prog-img" data-src="https://lh3.googleusercontent.com/d/PROGRAM_3_TRENUVANNYA_ID"></div>
+        <div class="prog-content">
+          <h3>6 тренувань</h3>
+          <p>Коротко, точково, з розбором техніки. Доступ назавжди.</p>
+        </div>
+          <ul class="prog-bullets"><li>Комплекс для осанки</li><li>Комплекс для м'язів живота</li><li>Комплекс для м'язів тазового дна</li></ul>
+      </div>
+      <div class="prog-row reveal">
+        <div class="prog-img" data-src="https://lh3.googleusercontent.com/d/PROGRAM_4_SHOV_ID"></div>
+        <div class="prog-content">
+          <h3>Робота зі швом</h3>
+          <p>Окремий модуль для тих, хто народжував через кесарів розтин.</p>
+        </div>
+          <ul class="prog-bullets"><li>Безпечне відновлення тканин</li><li>Робота з рубцевою зоною</li><li>Протипоказання та запобіжники</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results-section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Після програми</div>
+      <h2 class="sh-title">Що ти <i>реально</i> отримаєш</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-row reveal"><div class="rn">01</div><p><b>Плоский живіт</b> без скручувань і залу — за рахунок роботи з поперечним м'язом і диханням.</p></div>
+      <div class="result-row reveal"><div class="rn">02</div><p><b>Мінус 1–3 кг води</b> вже першого тижня, коли налагодиться дихання й піде застій.</p></div>
+      <div class="result-row reveal"><div class="rn">03</div><p><b>Талія стає вужчою</b> — у середньому мінус 4–8 см за 3 тижні.</p></div>
+      <div class="result-row reveal"><div class="rn">04</div><p><b>Зникають набряки</b> — і ранкове відображення в дзеркалі перестає лякати.</p></div>
+      <div class="result-row reveal"><div class="rn">05</div><p><b>Повертаєш талію</b> після пологів — навіть якщо м'язи «розійшлися».</p></div>
+      <div class="result-row reveal"><div class="rn">06</div><p><b>Самооцінка зростає</b> разом з формою. Повертається бажання фотографуватися.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ba-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Реальні результати</div>
+      <h2 class="sh-title">До і <i>після</i> програми</h2>
+      <p class="sh-desc">Фото моїх дівчат — звичайних жінок, які пройшли програму. Без фотошопу, без жорстких дієт, без залу.</p>
+    </div>
+
+    <div class="ba-featured reveal">
+      <div class="ba-feat-photo" data-src="https://lh3.googleusercontent.com/d/BA_FEATURED_ZAMIRY_ID"></div>
+      <div class="ba-feat-body">
+        <div class="ba-feat-tag">✓ Реальні заміри учасниці</div>
+        <h3 class="ba-feat-title">Заміри <i>до → після</i> за 21 день</h3>
+        <ul class="ba-feat-table">
+          <li><span class="fl-name">Вага</span><span class="fl-val">60,8 → 58,1 кг <b>(−2,7 кг)</b></span></li>
+          <li><span class="fl-name">Талія</span><span class="fl-val">75 → 73 см <b>(−2 см)</b></span></li>
+          <li><span class="fl-name">Живіт</span><span class="fl-val">90 → 86 см <b>(−4 см)</b></span></li>
+          <li><span class="fl-name">Стегна</span><span class="fl-val">96 → 94 см <b>(−2 см)</b></span></li>
+          <li><span class="fl-name">Стегно (10 см вище коліна)</span><span class="fl-val">55 → 53 см <b>(−2 см)</b></span></li>
+          <li><span class="fl-name">Груди</span><span class="fl-val">96 → 91 см <b>(−5 см)</b></span></li>
+        </ul>
+        <span class="ba-feat-total">Разом: <b>−2,7 кг</b> і мінус по кожному показнику</span>
+      </div>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-card reveal"><div class="ba-pair" data-src="https://lh3.googleusercontent.com/d/BA_1_SVITLANA_ID"><span class="ba-stamp before">До</span><span class="ba-stamp after">Після</span></div><div class="ba-info"><h4>Світлана, 44 роки</h4><p><b>Плоский живіт і тонус</b> · довготривала робота за методикою</p></div></div>
+      <div class="ba-card reveal"><div class="ba-pair" data-src="https://lh3.googleusercontent.com/d/BA_2_SOLOMIYA_ID"><span class="ba-stamp before">До</span><span class="ba-stamp after">Після</span></div><div class="ba-info"><h4>Соломія, 22 роки</h4><p><b>−5 см у талії</b> · 21 день</p></div></div>
+      <div class="ba-card reveal"><div class="ba-pair" data-src="https://lh3.googleusercontent.com/d/BA_3_OKSANA_ID"><span class="ba-stamp before">До</span><span class="ba-stamp after">Після</span></div><div class="ba-info"><h4>Оксана, 36 років</h4><p><b>−6 см у талії</b> · 5 тижнів</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo reveal" data-src="https://lh3.googleusercontent.com/d/ABOUT_PHOTO_OLENA_ID"><div class="about-tag">★ Сертифікований тренер</div></div>
+      <div class="reveal">
+        <div class="eyebrow">Про мене</div>
+        <h2 class="sh-title" style="margin-top:8px">Олена <i>Малетич</i></h2>
+        <div class="about-quote">«Я точно знаю, що відчуває жінка, коли не впізнає себе в дзеркалі. Те, що зараз у програмі — це система, яка допомогла мені й сотням моїх дівчат. І допоможе тобі.»</div>
+        <p class="about-desc">Сертифікований фітнес-тренер з <b>7-річним досвідом</b>, засновниця власної фітнес-студії. Розробила авторську методику, яка працює для всіх — для мам у декреті, дівчат перед літом, жінок після 35, і тих, хто роками не міг позбутися випираючого живота.</p>
+        <div class="about-facts">
+          <div class="fact-card"><div class="fact-num">7 років</div><div class="fact-label">у фітнес-індустрії</div></div>
+          <div class="fact-card"><div class="fact-num">−22 кг</div><div class="fact-label">схудла після пологів</div></div>
+          <div class="fact-card"><div class="fact-num">1000+</div><div class="fact-label">дівчат пройшли програму</div></div>
+          <div class="fact-card"><div class="fact-num">★★★★★</div><div class="fact-label">середня оцінка</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-section">
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <p class="testi-quote">«Вчора відпрацювала перше тренування, сподобалось дуже, і харчування теж гарне. Легкість. З ранку прокинулась вже енерджі)»</p>
+      <div class="testi-author-row">
+        <div class="testi-avatar-ph">Т</div>
+        <div><div class="testi-author-name">Тетяна</div><div class="testi-author-meta mono">Учасниця програми</div></div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <p class="testi-quote">«Доброго дня!!!! Хочу поділись враженнями, я зробила перше заняття, активізація м'язів))) Мені прям дуже сподобалось!!!!! І дуже швидко 🥰😍»</p>
+      <div class="testi-author-row">
+        <div class="testi-avatar-ph">М</div>
+        <div><div class="testi-author-name">Марія</div><div class="testi-author-meta mono">Учасниця програми</div></div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <p class="testi-quote">«Привітик, програма подобається, дякую за додаткові бонуси 😊 Почала тільки сьогодні твою програму. Поки все дається важко, але думаю результат буде того вартий 🥰 Також хочу подякувати за роз'яснення техніки, це дуже допомагає правильно виконувати вправи і зосередитись.»</p>
+      <div class="testi-author-row">
+        <div class="testi-avatar-ph">Є</div>
+        <div><div class="testi-author-name">Єлизавета</div><div class="testi-author-meta mono">Учасниця програми</div></div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bonus-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">У подарунок</div>
+      <h2 class="sh-title">3 бонуси<br><i>вартістю</i> 2 670 ₴</h2>
+      <p class="sh-desc">Сьогодні — разом із програмою, безкоштовно. Завтра — доведеться купувати окремо.</p>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card reveal"><div class="bonus-photo" data-src="https://lh3.googleusercontent.com/d/BONUS_1_MENU_ID"></div><div class="bonus-meta"><h3>Меню від вздуття</h3><p>Які продукти надувають живіт — і чим їх замінити. Тиждень готового меню.</p><div class="bonus-price"><s>590 ₴</s><strong>→ 0 ₴</strong></div></div></div>
+      <div class="bonus-card reveal"><div class="bonus-photo" data-src="https://lh3.googleusercontent.com/d/BONUS_2_LIMFO_ID"></div><div class="bonus-meta"><h3>Лімфодренажні вправи</h3><p>10 хвилин уранці — і набряки йдуть, шкіра стає пружнішою вже через 3 дні.</p><div class="bonus-price"><s>890 ₴</s><strong>→ 0 ₴</strong></div></div></div>
+      <div class="bonus-card reveal"><div class="bonus-photo" data-src="https://lh3.googleusercontent.com/d/BONUS_3_KNYGA_ID"></div><div class="bonus-meta"><h3>Книга рецептів</h3><p>100+ рецептів смачної та здорової їжі. Все з розрахунком КБЖВ.</p><div class="bonus-price"><s>1 190 ₴</s><strong>→ 0 ₴</strong></div></div></div>
+    </div>
+    <div class="bonus-cta-card reveal">
+      <div>
+        <h3>Забирай усе <i>разом із програмою</i> поки діє пропозиція</h3>
+        <div class="bcc-timer">
+          <span class="tnum" id="bt-m">10</span><span>:</span><span class="tnum" id="bt-s">00</span>
+          <span class="mono" style="opacity:.6;font-size:.78rem;margin-left:6px">залишилось</span>
+        </div>
+      </div>
+      <a href="#buy" class="bcc-cta">Забрати за 490 ₴<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="buy">
+  <div class="wrap">
+    <div class="pricing-card reveal">
+      <div class="pricing-tag"><span class="live"></span> Знижка −75% згорає сьогодні</div>
+      <h2>Забирай програму <i>зараз</i> — за спецціною</h2>
+      <div class="pricing-value">
+        <span class="pv-old">1990 ₴</span>
+        <span class="pv-new">490<sup>₴</sup></span>
+      </div>
+      <p class="pricing-note">Цінність усіх матеріалів — <b>понад 5000 ₴</b></p>
+      <div class="pricing-timer">
+        <div class="ptm-unit"><div class="ptm-num" id="t-m">10</div><div class="ptm-label mono">хвилин</div></div>
+        <div class="ptm-unit"><div class="ptm-num" id="t-s">00</div><div class="ptm-label mono">секунд</div></div>
+      </div>
+      <div class="bonus-banner">
+        <span>Встигнеш за <b>10 хв</b> — отримаєш усі <b>3 бонуси на 2 670 ₴</b> у подарунок</span>
+      </div>
+      <div class="start-info">
+        <span class="si-dot"></span>
+        <span><b>Миттєвий доступ</b> одразу після оплати · тренуєшся у своєму темпі</span>
+      </div>
+      <ul class="pricing-features">
+        <li>6 коротких тренувань з поясненням техніки</li>
+        <li>Лекція та два тести на діагностику</li>
+        <li>Модуль роботи зі швом після кесаревого</li>
+        <li>Меню від вздуття (бонус)</li>
+        <li>Лімфодренажний комплекс (бонус)</li>
+        <li>Книга рецептів — 100+ страв (бонус)</li>
+        <li><span class="forever-badge">Доступ назавжди</span> у Telegram-боті</li>
+      </ul>
+      <a href="thanks.html" class="pricing-cta">Купити за 490 ₴<span class="pca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Питання</div>
+      <h2 class="sh-title">Поширені <i>запитання</i></h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item"><button class="faq-q">Коли стартує програма?<span class="faq-icon"></span></button><div class="faq-a">Ти отримаєш доступ до уроків одразу після оплати — жодного чекання.</div></div>
+      <div class="faq-item"><button class="faq-q">Що робити після оплати?<span class="faq-icon"></span></button><div class="faq-a">Після оплати на email прийде лист із доступом до Telegram-бота, де зберігаються всі матеріали.</div></div>
+      <div class="faq-item"><button class="faq-q">Скільки триває доступ?<span class="faq-icon"></span></button><div class="faq-a">Доступ до програми залишається назавжди.</div></div>
+      <div class="faq-item"><button class="faq-q">Який необхідний інвентар?<span class="faq-icon"></span></button><div class="faq-a">Все, що потрібно — килимок. Окремі вправи можна ускладнити з невеликим інвентарем, але це необов'язково.</div></div>
+      <div class="faq-item"><button class="faq-q">А якщо я зовсім новачок?<span class="faq-icon"></span></button><div class="faq-a">Програма створена саме для новачків. Кожна вправа пояснюється детально, формат «повторюй за мною».</div></div>
+      <div class="faq-item"><button class="faq-q">Чи є протипоказання?<span class="faq-icon"></span></button><div class="faq-a">Так, є ряд протипоказань. Якщо є сумніви — обов'язково проконсультуйся з лікарем або <b>напиши мені в Direct</b>.</div></div>
+      <div class="faq-item"><button class="faq-q">Чи можна на ГВ?<span class="faq-icon"></span></button><div class="faq-a">Так, тренування та меню адаптовані для мам на грудному вигодовуванні.</div></div>
+      <div class="faq-item"><button class="faq-q">Яка політика повернення?<span class="faq-icon"></span></button><div class="faq-a">Програма — цифровий продукт (відео й матеріали в Telegram-боті), доступ до якого відкривається одразу після оплати і який можна зберегти чи скопіювати. Тому після оплати повернення коштів не передбачено.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Олена <i>Малетич</i></div>
+  <p>Допомагаю жінкам повернути форму, впевненість у собі та відчуття легкості в тілі — без дієт і залу.</p>
+  <div class="footer-links">
+    <a href="#">Instagram</a><a href="#">Telegram</a><a href="#">Договір-оферта</a><a href="#">Політика конфіденційності</a>
+  </div>
+  <div class="footer-copy">© 2026 Олена Малетич</div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-src]').forEach(el=>{const url=el.getAttribute('data-src');if(url)el.style.backgroundImage=`url("${url}")`});
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')})});
+
+  (function(){
+    const rail=document.getElementById('whoRail');
+    const thumb=document.getElementById('whoThumb');
+    const cur=document.getElementById('whoCurrent');
+    if(!rail||!thumb)return;
+    const cards=rail.querySelectorAll('.who-card');
+    const total=cards.length;
+    function update(){
+      const max=rail.scrollWidth-rail.clientWidth;
+      const pct=max>0?(rail.scrollLeft/max):0;
+      const thumbW=Math.max(20,100/total);
+      const trackPct=pct*(100-thumbW);
+      thumb.style.width=thumbW+'%';
+      thumb.style.left=trackPct+'%';
+      const idx=Math.min(total,Math.max(1,Math.round(pct*(total-1))+1));
+      if(cur)cur.textContent=idx;
+    }
+    rail.addEventListener('scroll',update,{passive:true});
+    update();
+  })();
+  (function(){const KEY='flashEndsAt';const D=10*60*1000;const bar=document.getElementById('flashBar');const cb=document.getElementById('flashClose');const t={fb_m:document.getElementById('fb-m'),fb_s:document.getElementById('fb-s'),t_m:document.getElementById('t-m'),t_s:document.getElementById('t-s'),bt_m:document.getElementById('bt-m'),bt_s:document.getElementById('bt-s')};let e=parseInt(sessionStorage.getItem(KEY),10);if(!e||isNaN(e)||e<Date.now()){e=Date.now()+D;sessionStorage.setItem(KEY,String(e))}if(bar&&sessionStorage.getItem('flashClosed')==='1')bar.classList.add('hidden');function s(el,v){if(el)el.textContent=v}function tick(){const d=e-Date.now();if(d<=0){e=Date.now()+D;sessionStorage.setItem(KEY,String(e));return}const m=Math.floor(d/60000);const ss=Math.floor((d%60000)/1000);const mm=String(m).padStart(2,'0');const sss=String(ss).padStart(2,'0');s(t.fb_m,mm);s(t.fb_s,sss);s(t.t_m,mm);s(t.t_s,sss);s(t.bt_m,mm);s(t.bt_s,sss)}tick();const iv=setInterval(tick,1000);if(cb)cb.addEventListener('click',()=>{if(bar)bar.classList.add('hidden');sessionStorage.setItem('flashClosed','1')})})();
+</script>
+</body>
+</html>
