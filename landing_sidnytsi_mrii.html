@@ -15,11 +15,11 @@
   --cream:#F5F1E3;
   --cream-2:#ECE6D2;
   --cream-3:#E4DBC0;
-  --forest:#0C3A2A;
-  --forest-2:#0F4531;
-  --forest-deep:#082A1E;
-  --lime:#C6F53A;
-  --lime-dark:#A9D928;
+  --forest:#3B2418;
+  --forest-2:#4A2E1E;
+  --forest-deep:#20120A;
+  --lime:#FF6F9E;
+  --lime-dark:#E14C82;
   --ink:#12140F;
   --ink-soft:#3C4238;
   --muted:#71715C;
@@ -121,10 +121,13 @@ h1.hero-title{
 
 .hero-photo-wrap{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--cream-3);border:2px solid var(--ink);}
 .hero-photo{width:100%;height:100%;background:var(--cream-3);display:flex;align-items:center;justify-content:center;color:var(--forest);font-family:'Space Grotesk',sans-serif;font-size:18px;position:relative;}
-.hero-photo img{width:100%;height:100%;object-fit:cover;}
-.photo-placeholder{text-align:center;padding:40px;}
-.photo-placeholder svg{margin:0 auto 16px;opacity:0.4;}
-.photo-link{display:block;font-size:11px;margin-top:8px;opacity:0.6;font-family:'Inter',sans-serif;word-break:break-all;}
+
+/* image placeholders — replace with real photos in Tilda */
+.img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--cream-3);color:var(--ink-soft);text-align:center;padding:14px;box-sizing:border-box;}
+.img-ph .ph-icon{font-size:26px;opacity:0.5;}
+.img-ph .ph-label{font-size:11.5px;font-weight:600;line-height:1.35;}
+.ph-tile{aspect-ratio:3/4;border-radius:var(--radius-sm);border:2px dashed var(--ink);background:var(--cream-3);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--ink-soft);opacity:0.55;}
+.ph-avatar{width:44px;height:44px;border-radius:50%;background:var(--cream-3);border:2px dashed var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--ink-soft);flex-shrink:0;}
 
 .hero-name-tag{position:absolute;bottom:0;left:0;right:0;background:var(--forest);color:var(--cream);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
 .hero-name-tag .name{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;}
@@ -139,7 +142,6 @@ h1.hero-title{
 
 /* photo strip + ticker */
 .photo-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:0 0 0;position:relative;z-index:2;}
-.photo-strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-sm);border:2px solid var(--ink);background:var(--cream-3);}
 .ticker{overflow:hidden;background:var(--lime);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;margin-top:44px;}
 .ticker-track{display:flex;gap:36px;width:max-content;animation:tickerScroll 26s linear infinite;}
 .ticker-track span{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest);white-space:nowrap;}
@@ -169,8 +171,7 @@ section{padding:96px 0;position:relative;}
 /* ============ ДЛЯ КОГО ============ */
 .whom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .whom-card{padding:34px 30px;}
-.whom-num{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--muted);font-weight:600;margin-bottom:20px;letter-spacing:0.06em;}
-.whom-icon{width:52px;height:52px;background:var(--lime);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;}
+.whom-icon{width:52px;height:52px;background:var(--lime);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px;}
 .whom-title{font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2;text-transform:none;}
 .whom-desc{font-size:15px;color:var(--ink-soft);line-height:1.55;}
 
@@ -194,7 +195,6 @@ section{padding:96px 0;position:relative;}
 
 .program-points{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .point-card{padding:34px 28px;}
-.point-num{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;color:var(--forest);-webkit-text-stroke:0;line-height:1;margin-bottom:20px;}
 .point-title{font-size:20px;color:var(--ink);margin-bottom:10px;text-transform:none;}
 .point-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
 
@@ -206,7 +206,9 @@ section{padding:96px 0;position:relative;}
 
 .bonus-track{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;}
 .bonus-card{overflow:hidden;display:flex;flex-direction:column;padding:0 0 26px;}
-.bonus-photo{width:100%;height:auto;display:block;margin-bottom:20px;border-radius:18px 18px 0 0;}
+.bonus-photo{aspect-ratio:4/3;width:100%;margin-bottom:20px;border-radius:18px 18px 0 0;background:var(--cream-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;box-sizing:border-box;}
+.bonus-photo .ph-icon{font-size:22px;opacity:0.5;}
+.bonus-photo .ph-label{font-size:11px;font-weight:600;}
 .bonus-icon{width:50px;height:50px;background:var(--lime);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 24px 18px;}
 .bonus-title{font-size:19px;color:var(--ink);margin-bottom:10px;line-height:1.2;padding:0 24px;text-transform:none;}
 .bonus-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin-bottom:20px;flex:1;padding:0 24px;}
@@ -222,14 +224,14 @@ section{padding:96px 0;position:relative;}
 /* ============ ВІДГУКИ ============ */
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .review-card{padding:30px 28px;position:relative;}
-.review-quote{font-family:'Space Grotesk',sans-serif;font-size:56px;line-height:1;color:var(--lime);position:absolute;top:14px;right:22px;z-index:0;}
+.review-quote{font-family:'Space Grotesk',sans-serif;font-size:56px;line-height:1;color:var(--lime);opacity:0.4;position:absolute;top:14px;right:22px;z-index:0;}
 .review-stars{color:var(--forest);font-size:14px;letter-spacing:2px;margin-bottom:14px;position:relative;z-index:1;}
 .review-text{font-size:16px;color:var(--ink);line-height:1.55;margin-bottom:20px;position:relative;z-index:1;font-weight:500;}
 .review-author{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--line);}
 .author-name{font-weight:700;font-size:14px;color:var(--ink);}
 .author-role{font-size:12px;color:var(--muted);}
 .author-info{display:flex;align-items:center;gap:12px;}
-.author-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--cream-3);border:2px solid var(--ink);}
+.author-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:var(--cream-3);}
 .review-highlight{display:inline-block;margin-top:14px;background:var(--lime);padding:6px 12px;border-radius:var(--radius-pill);font-size:12px;font-weight:700;color:var(--forest);}
 
 /* ============ ЯК ПРАЦЮЄ ============ */
@@ -258,7 +260,6 @@ section{padding:96px 0;position:relative;}
 .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center;}
 .about-photo-wrap{position:relative;}
 .about-photo{aspect-ratio:4/5;background:var(--cream-3);border-radius:var(--radius);overflow:hidden;border:2px solid var(--ink);position:relative;}
-.about-photo img{width:100%;height:100%;object-fit:cover;}
 .about-pill-top{position:absolute;top:20px;left:20px;background:var(--white);border:1px solid var(--ink);padding:8px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;}
 .about-pill-top .dot{width:7px;height:7px;background:var(--lime);border-radius:50%;border:1px solid var(--ink);}
 .about-pill-bottom{position:absolute;bottom:0;right:0;background:var(--lime);color:var(--forest);padding:14px 22px;border-radius:var(--radius) 0 0 0;text-align:center;}
@@ -438,11 +439,9 @@ footer a:hover{color:var(--lime);}
             <span class="overlay-pill">✨ Бонуси для результату</span>
           </div>
           <div class="hero-photo">
-            <img src="https://lh3.googleusercontent.com/d/1btl0ltfQ_yIRriCnwl5ZZPSLt120vCrG=w1200" alt="Олена Малетич" onerror="this.style.display='none';this.parentElement.querySelector('.photo-placeholder').style.display='block';">
-            <div class="photo-placeholder" style="display:none;">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <div>Місце для фото Олени</div>
-              <div class="photo-link">https://lh3.googleusercontent.com/d/1btl0ltfQ_yIRriCnwl5ZZPSLt120vCrG</div>
+            <div class="img-ph">
+              <span class="ph-icon">🖼️</span>
+              <span class="ph-label">Фото Олени — hero<br>(вставити з Тільди, 4:5)</span>
             </div>
           </div>
           <div class="hero-name-tag">
@@ -460,12 +459,12 @@ footer a:hover{color:var(--lime);}
     </div>
 
     <div class="photo-strip reveal">
-      <img src="https://lh3.googleusercontent.com/d/1btl0ltfQ_yIRriCnwl5ZZPSLt120vCrG=w400" alt="Олена Малетич" onerror="this.style.display='none';">
-      <img src="https://lh3.googleusercontent.com/d/14oUdny7gPT4E-UjSsMeYycFjjeFy9gGg=w400" alt="Олена Малетич" onerror="this.style.display='none';">
-      <img src="https://lh3.googleusercontent.com/d/1Uqh-qM1e1NibICtv3DGMVoc_CK3hqwKz=w400" alt="Ірина" onerror="this.style.display='none';">
-      <img src="https://lh3.googleusercontent.com/d/1wxukVIybZNOR2b3MQ12wVQUPy6f80jcO=w400" alt="Марина" onerror="this.style.display='none';">
-      <img src="https://lh3.googleusercontent.com/d/1I2mh2GHYBkltHWnpBjWV6ZjATt8NQoOD=w400" alt="Наталя" onerror="this.style.display='none';">
-      <img src="https://lh3.googleusercontent.com/d/1_rX2qopl7JCsJVaMIM0d2oUmkmPsQwiY=w400" alt="Аня" onerror="this.style.display='none';">
+      <div class="ph-tile">🖼️</div>
+      <div class="ph-tile">🖼️</div>
+      <div class="ph-tile">🖼️</div>
+      <div class="ph-tile">🖼️</div>
+      <div class="ph-tile">🖼️</div>
+      <div class="ph-tile">🖼️</div>
     </div>
   </div>
   <div class="ticker">
@@ -484,25 +483,21 @@ footer a:hover{color:var(--lime);}
 
     <div class="whom-grid">
       <div class="whom-card hard-card reveal">
-        <div class="whom-num">01</div>
         <div class="whom-icon">🍑</div>
         <h3 class="whom-title">Мрієш про округлі сідниці</h3>
         <p class="whom-desc">Хочеш красиву форму без виснажливих походів у спортзал.</p>
       </div>
       <div class="whom-card hard-card reveal">
-        <div class="whom-num">02</div>
         <div class="whom-icon">▶️</div>
         <h3 class="whom-title">Втомилася від «нарізок» вправ</h3>
         <p class="whom-desc">Хочеш тренуватися у форматі «повторюй за мною» — без пауз і пошуку відео.</p>
       </div>
       <div class="whom-card hard-card reveal">
-        <div class="whom-num">03</div>
         <div class="whom-icon">🤱</div>
         <h3 class="whom-title">Мама у декреті чи на ГВ</h3>
         <p class="whom-desc">Програма безпечна, а меню збалансоване й поживне.</p>
       </div>
       <div class="whom-card hard-card reveal">
-        <div class="whom-num">04</div>
         <div class="whom-icon">🌿</div>
         <h3 class="whom-title">Хочеш позбутися целюліту</h3>
         <p class="whom-desc">В'ялості шкіри та набряків — раз і назавжди.</p>
@@ -537,17 +532,14 @@ footer a:hover{color:var(--lime);}
 
     <div class="program-points">
       <div class="point-card hard-card reveal">
-        <div class="point-num">01</div>
         <h3 class="point-title">Активація</h3>
         <p class="point-desc">Вмикаємо нейром'язовий зв'язок, щоб горіли саме сідниці, а не перекачувалися ноги.</p>
       </div>
       <div class="point-card hard-card reveal">
-        <div class="point-num">02</div>
         <h3 class="point-title">Об'єм та форма</h3>
         <p class="point-desc">Глибоке опрацювання великого, середнього та малого м'язів сідниць під різними кутами.</p>
       </div>
       <div class="point-card hard-card reveal">
-        <div class="point-num">03</div>
         <h3 class="point-title">Лімфодренаж</h3>
         <p class="point-desc">Вправи для ліквідації набряків, покращення метаболізму та тонусу шкіри.</p>
       </div>
@@ -572,7 +564,7 @@ footer a:hover{color:var(--lime);}
 
     <div class="bonus-track">
       <div class="bonus-card hard-card reveal">
-        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/1nqmwc6g8MA1hCq1N2OJkLv8Qo40GdcyN=w800" alt="Меню на 21 день" onerror="this.style.display='none';">
+        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Меню на 21 день</span></div>
         <div class="bonus-icon">🎁</div>
         <h3 class="bonus-title">Меню на 21 день</h3>
         <p class="bonus-desc">Раціон із різноманітними рецептами. Продукти доступні з будь-якого супермаркету, жодної екзотики. Швидко і для всієї родини.</p>
@@ -582,7 +574,7 @@ footer a:hover{color:var(--lime);}
         </div>
       </div>
       <div class="bonus-card hard-card reveal">
-        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/1-wK_02uZOHhGk0YMEa5tOQDBqBObQfFT=w800" alt="Гайд соуси без калорій" onerror="this.style.display='none';">
+        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Соуси без калорій</span></div>
         <div class="bonus-icon">🫙</div>
         <h3 class="bonus-title">Гайд «Соуси без калорій»</h3>
         <p class="bonus-desc">Смачні соуси, дресинги та заправки на будь-який смак — без зайвих калорій. Урізноманітнюють будь-яку страву без шкоди фігурі.</p>
@@ -592,7 +584,7 @@ footer a:hover{color:var(--lime);}
         </div>
       </div>
       <div class="bonus-card hard-card reveal">
-        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/13J5c6OpdO7ZVsc8TZn3kI6lnRVRp42bn=w800" alt="Гайд про десерти" onerror="this.style.display='none';">
+        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Десерти</span></div>
         <div class="bonus-icon">🍰</div>
         <h3 class="bonus-title">Гайд про десерти</h3>
         <p class="bonus-desc">Корисні солодкі альтернативи, щоб худнути смачно і без зривів.</p>
@@ -602,7 +594,7 @@ footer a:hover{color:var(--lime);}
         </div>
       </div>
       <div class="bonus-card hard-card reveal">
-        <img class="bonus-photo" src="https://lh3.googleusercontent.com/d/1-f5gXeRa51QXltzqTxBe-F9EaML26McE=w800" alt="Гайд про целюліт" onerror="this.style.display='none';">
+        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Целюліт</span></div>
         <div class="bonus-icon">🍊</div>
         <h3 class="bonus-title">Гайд про целюліт</h3>
         <p class="bonus-desc">Покрокова інструкція: як через харчування та догляд зробити шкіру ідеально гладкою.</p>
@@ -637,7 +629,7 @@ footer a:hover{color:var(--lime);}
         <p class="review-text">Нереально! Я вперше почала відчувати свої сідниці, а не ноги. Раніше робила вправи і думала, що все не для мене… а тут прям ВАУ.</p>
         <div class="review-author">
           <div class="author-info">
-            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1Uqh-qM1e1NibICtv3DGMVoc_CK3hqwKz=w200" alt="Ірина" onerror="this.style.display='none';">
+            <div class="author-avatar ph-avatar">І</div>
             <div>
               <div class="author-name">Ірина, 29</div>
               <div class="author-role">Учасниця курсу</div>
@@ -653,7 +645,7 @@ footer a:hover{color:var(--lime);}
         <p class="review-text">Дівчата, мої сідниці НІКОЛИ так не виглядали! Чесно, аж не вірю в дзеркало. Такі круглі, підкачані! Чоловік питає: «що ти там робиш такого?»</p>
         <div class="review-author">
           <div class="author-info">
-            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1wxukVIybZNOR2b3MQ12wVQUPy6f80jcO=w200" alt="Марина" onerror="this.style.display='none';">
+            <div class="author-avatar ph-avatar">М</div>
             <div>
               <div class="author-name">Марина, 34</div>
               <div class="author-role">Учасниця курсу</div>
@@ -669,7 +661,7 @@ footer a:hover{color:var(--lime);}
         <p class="review-text">Це щось неймовірне! За 21 день мінус 7 кг, і найголовніше — я втримую вагу. Я ще ні разу так не гордилась собою!</p>
         <div class="review-author">
           <div class="author-info">
-            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1I2mh2GHYBkltHWnpBjWV6ZjATt8NQoOD=w200" alt="Наталя" onerror="this.style.display='none';">
+            <div class="author-avatar ph-avatar">Н</div>
             <div>
               <div class="author-name">Наталя, 38</div>
               <div class="author-role">Учасниця курсу</div>
@@ -685,7 +677,7 @@ footer a:hover{color:var(--lime);}
         <p class="review-text">Не знаю як, але в мене реально з'явилась талія! Животик підтягнувся, і я вперше за 5 років одягнула джинси без втягування.</p>
         <div class="review-author">
           <div class="author-info">
-            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1_rX2qopl7JCsJVaMIM0d2oUmkmPsQwiY=w200" alt="Аня" onerror="this.style.display='none';">
+            <div class="author-avatar ph-avatar">А</div>
             <div>
               <div class="author-name">Аня, 28</div>
               <div class="author-role">Учасниця курсу</div>
@@ -701,7 +693,7 @@ footer a:hover{color:var(--lime);}
         <p class="review-text">Я навіть не вірила, що в моєму віці можна так підкачати сідниці. Чоловік задоволений! Дякую за курс!</p>
         <div class="review-author">
           <div class="author-info">
-            <img class="author-avatar" src="https://lh3.googleusercontent.com/d/1-SCePAk4qKyjcs0EoF0oCyoNTM4GfLmx=w200" alt="Людмила" onerror="this.style.display='none';">
+            <div class="author-avatar ph-avatar">Л</div>
             <div>
               <div class="author-name">Людмила, 42</div>
               <div class="author-role">Учасниця курсу</div>
@@ -785,11 +777,9 @@ footer a:hover{color:var(--lime);}
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
         <div class="about-photo">
-          <img src="https://lh3.googleusercontent.com/d/14oUdny7gPT4E-UjSsMeYycFjjeFy9gGg=w1200" alt="Олена Малетич" onerror="this.style.display='none';this.parentElement.querySelector('.photo-placeholder').style.display='block';">
-          <div class="photo-placeholder" style="display:none;text-align:center;padding:40px;color:var(--forest);font-family:'Space Grotesk',sans-serif;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 16px;opacity:0.4;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            <div>Місце для фото</div>
-            <div class="photo-link" style="font-size:11px;margin-top:8px;opacity:0.6;font-family:Inter,sans-serif;word-break:break-all;">https://lh3.googleusercontent.com/d/14oUdny7gPT4E-UjSsMeYycFjjeFy9gGg</div>
+          <div class="img-ph">
+            <span class="ph-icon">🖼️</span>
+            <span class="ph-label">Фото Олени — про автора<br>(вставити з Тільди, 4:5)</span>
           </div>
         </div>
         <div class="about-pill-top"><span class="dot"></span>Сертифікований тренер</div>
