@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1922192068520311');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1922192068520311&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Сідниці мрії: тренування вдома · Олена Малетич</title>
@@ -128,6 +145,8 @@ h1.hero-title{
 .img-ph .ph-label{font-size:11.5px;font-weight:500;line-height:1.35;color:var(--cream-soft);}
 .ph-tile{aspect-ratio:3/4;border-radius:var(--radius-sm);border:1px dashed var(--line);background:var(--bg-2);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--cream-faint);}
 .ph-avatar{width:44px;height:44px;border-radius:50%;background:var(--bg-2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:500;font-size:14px;color:var(--gold-soft);flex-shrink:0;}
+.hero-photo img,.about-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--line);display:block;}
 
 .hero-name-tag{position:absolute;bottom:0;left:0;right:0;background:rgba(20,16,12,0.82);backdrop-filter:blur(12px);color:var(--on-photo);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(216,178,107,0.3);}
 .hero-name-tag .name{font-family:'Fraunces',serif;font-size:17px;font-weight:500;}
@@ -202,7 +221,7 @@ section{padding:100px 0;position:relative;}
 
 .bonus-track{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;}
 .bonus-card{overflow:hidden;display:flex;flex-direction:column;padding:0 0 26px;}
-.bonus-photo{aspect-ratio:4/3;width:100%;margin-bottom:20px;border-radius:23px 23px 0 0;background:var(--bg-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--cream-faint);text-align:center;padding:10px;box-sizing:border-box;}
+.bonus-photo{aspect-ratio:4/3;width:100%;margin-bottom:20px;border-radius:23px 23px 0 0;background:var(--bg-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--cream-faint);text-align:center;padding:10px;box-sizing:border-box;object-fit:cover;}
 .bonus-photo .ph-icon{font-size:22px;opacity:0.6;}
 .bonus-photo .ph-label{font-size:11px;font-weight:500;color:var(--cream-soft);}
 .bonus-icon{width:48px;height:48px;background:rgba(216,178,107,0.1);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 24px 16px;}
@@ -227,7 +246,7 @@ section{padding:100px 0;position:relative;}
 .author-name{font-weight:600;font-size:14px;color:var(--cream);}
 .author-role{font-size:12px;color:var(--cream-faint);}
 .author-info{display:flex;align-items:center;gap:12px;}
-.author-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:var(--bg-3);}
+.author-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:var(--bg-3);object-fit:cover;}
 .review-highlight{display:inline-block;margin-top:14px;background:transparent;border:1px solid var(--gold-dim);padding:6px 12px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;color:var(--gold-soft);}
 
 /* ============ ЯК ПРАЦЮЄ ============ */
@@ -430,10 +449,7 @@ footer a:hover{color:var(--gold-soft);}
             <span class="overlay-pill">✨ Бонуси для результату</span>
           </div>
           <div class="hero-photo">
-            <div class="img-ph">
-              <span class="ph-icon">🖼️</span>
-              <span class="ph-label">Фото Олени — hero<br>(вставити з Тільди, 4:5)</span>
-            </div>
+            <img src="https://static.tildacdn.net/tild3264-3562-4131-b164-633835626235/IMG_20260824_160843_.jpg" alt="Олена Малетич">
           </div>
           <div class="hero-name-tag">
             <div>
@@ -450,12 +466,12 @@ footer a:hover{color:var(--gold-soft);}
     </div>
 
     <div class="photo-strip reveal">
-      <div class="ph-tile">🖼️</div>
-      <div class="ph-tile">🖼️</div>
-      <div class="ph-tile">🖼️</div>
-      <div class="ph-tile">🖼️</div>
-      <div class="ph-tile">🖼️</div>
-      <div class="ph-tile">🖼️</div>
+      <img src="https://optim.tildacdn.net/tild3535-3066-4334-a537-323536656530/-/format/webp/1000008256.jpg.webp" alt="Олена Малетич">
+      <img src="https://optim.tildacdn.net/tild3138-3563-4232-b539-633738306139/-/format/webp/1000001140.jpg.webp" alt="Олена Малетич">
+      <img src="https://optim.tildacdn.net/tild3363-3265-4230-b738-626533373033/-/format/webp/1000006349.jpg.webp" alt="Олена Малетич">
+      <img src="https://optim.tildacdn.net/tild6561-6361-4434-b564-386233373563/-/format/webp/1000001141.jpg.webp" alt="Олена Малетич">
+      <img src="https://optim.tildacdn.net/tild6561-6361-4434-b564-386233373563/-/format/webp/1000001141.jpg.webp" alt="Олена Малетич">
+      <img src="https://optim.tildacdn.net/tild3831-3039-4762-b037-633639336331/-/format/webp/1000006348.jpg.webp" alt="Олена Малетич">
     </div>
   </div>
   <div class="ticker">
@@ -556,7 +572,7 @@ footer a:hover{color:var(--gold-soft);}
 
     <div class="bonus-track">
       <div class="bonus-card soft-card reveal">
-        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Меню на 21 день</span></div>
+        <img class="bonus-photo" src="https://optim.tildacdn.net/tild6133-3065-4930-b164-646365643537/-/format/webp/1000008255.png.webp" alt="Меню на 21 день">
         <div class="bonus-icon">🎁</div>
         <h3 class="bonus-title">Меню на 21 день</h3>
         <p class="bonus-desc">Раціон із різноманітними рецептами. Продукти доступні з будь-якого супермаркету, жодної екзотики. Швидко і для всієї родини.</p>
@@ -566,7 +582,7 @@ footer a:hover{color:var(--gold-soft);}
         </div>
       </div>
       <div class="bonus-card soft-card reveal">
-        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Соуси без калорій</span></div>
+        <img class="bonus-photo" src="https://optim.tildacdn.net/tild3434-6561-4634-b866-343961323336/-/format/webp/Screenshot_20260525-.png.webp" alt="Соуси без калорій">
         <div class="bonus-icon">🫙</div>
         <h3 class="bonus-title">Гайд «Соуси без калорій»</h3>
         <p class="bonus-desc">Смачні соуси, дресинги та заправки на будь-який смак — без зайвих калорій. Урізноманітнюють будь-яку страву без шкоди фігурі.</p>
@@ -576,7 +592,7 @@ footer a:hover{color:var(--gold-soft);}
         </div>
       </div>
       <div class="bonus-card soft-card reveal">
-        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Десерти</span></div>
+        <img class="bonus-photo" src="https://optim.tildacdn.net/tild3330-6664-4134-b439-323833633236/-/format/webp/Screenshot_20260525-.png.webp" alt="Гайд про десерти">
         <div class="bonus-icon">🍰</div>
         <h3 class="bonus-title">Гайд про десерти</h3>
         <p class="bonus-desc">Корисні солодкі альтернативи, щоб худнути смачно і без зривів.</p>
@@ -586,7 +602,7 @@ footer a:hover{color:var(--gold-soft);}
         </div>
       </div>
       <div class="bonus-card soft-card reveal">
-        <div class="bonus-photo"><span class="ph-icon">🖼️</span><span class="ph-label">Фото: Целюліт</span></div>
+        <img class="bonus-photo" src="https://optim.tildacdn.net/tild3036-3431-4237-b437-353066313761/-/format/webp/Screenshot_20260525-.png.webp" alt="Гайд про целюліт">
         <div class="bonus-icon">🍊</div>
         <h3 class="bonus-title">Гайд про целюліт</h3>
         <p class="bonus-desc">Покрокова інструкція: як через харчування та догляд зробити шкіру ідеально гладкою.</p>
@@ -621,7 +637,7 @@ footer a:hover{color:var(--gold-soft);}
         <p class="review-text">Нереально! Я вперше почала відчувати свої сідниці, а не ноги. Раніше робила вправи і думала, що все не для мене… а тут прям ВАУ.</p>
         <div class="review-author">
           <div class="author-info">
-            <div class="author-avatar ph-avatar">І</div>
+            <img class="author-avatar" src="https://optim.tildacdn.net/tild6431-3163-4432-b239-313733396336/-/format/webp/0b3e40384d3e19b4db6a.jpg.webp" alt="Ірина">
             <div>
               <div class="author-name">Ірина, 29</div>
               <div class="author-role">Учасниця курсу</div>
@@ -637,7 +653,7 @@ footer a:hover{color:var(--gold-soft);}
         <p class="review-text">Дівчата, мої сідниці НІКОЛИ так не виглядали! Чесно, аж не вірю в дзеркало. Такі круглі, підкачані! Чоловік питає: «що ти там робиш такого?»</p>
         <div class="review-author">
           <div class="author-info">
-            <div class="author-avatar ph-avatar">М</div>
+            <img class="author-avatar" src="https://optim.tildacdn.net/tild6664-6365-4134-b631-346437356631/-/format/webp/1000008258.jpg.webp" alt="Марина">
             <div>
               <div class="author-name">Марина, 34</div>
               <div class="author-role">Учасниця курсу</div>
@@ -653,7 +669,7 @@ footer a:hover{color:var(--gold-soft);}
         <p class="review-text">Це щось неймовірне! За 21 день мінус 7 кг, і найголовніше — я втримую вагу. Я ще ні разу так не гордилась собою!</p>
         <div class="review-author">
           <div class="author-info">
-            <div class="author-avatar ph-avatar">Н</div>
+            <img class="author-avatar" src="https://optim.tildacdn.net/tild3534-3465-4735-b539-376335643664/-/format/webp/1000008259.jpg.webp" alt="Наталя">
             <div>
               <div class="author-name">Наталя, 38</div>
               <div class="author-role">Учасниця курсу</div>
@@ -669,7 +685,7 @@ footer a:hover{color:var(--gold-soft);}
         <p class="review-text">Не знаю як, але в мене реально з'явилась талія! Животик підтягнувся, і я вперше за 5 років одягнула джинси без втягування.</p>
         <div class="review-author">
           <div class="author-info">
-            <div class="author-avatar ph-avatar">А</div>
+            <img class="author-avatar" src="https://static.tildacdn.net/tild3838-6337-4438-b134-663461313066/1000008260.jpg" alt="Аня">
             <div>
               <div class="author-name">Аня, 28</div>
               <div class="author-role">Учасниця курсу</div>
@@ -685,7 +701,7 @@ footer a:hover{color:var(--gold-soft);}
         <p class="review-text">Я навіть не вірила, що в моєму віці можна так підкачати сідниці. Чоловік задоволений! Дякую за курс!</p>
         <div class="review-author">
           <div class="author-info">
-            <div class="author-avatar ph-avatar">Л</div>
+            <img class="author-avatar" src="https://static.tildacdn.net/tild3038-3538-4633-b131-626464653035/1000008261.jpg" alt="Людмила">
             <div>
               <div class="author-name">Людмила, 42</div>
               <div class="author-role">Учасниця курсу</div>
@@ -766,10 +782,7 @@ footer a:hover{color:var(--gold-soft);}
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
         <div class="about-photo">
-          <div class="img-ph">
-            <span class="ph-icon">🖼️</span>
-            <span class="ph-label">Фото Олени — про автора<br>(вставити з Тільди, 4:5)</span>
-          </div>
+          <img src="https://optim.tildacdn.net/tild3762-3238-4066-b965-663061303038/-/format/webp/1000008225.jpg.webp" alt="Олена Малетич">
         </div>
         <div class="about-pill-top"><span class="dot"></span>Сертифікований тренер</div>
         <div class="about-pill-bottom">
@@ -820,7 +833,7 @@ footer a:hover{color:var(--gold-soft);}
         <div class="tariff-price-row">
           <span class="tariff-price">399<span class="cur"> грн</span></span>
         </div>
-        <a href="#" class="tariff-btn">Обрати 12 тренувань →</a>
+        <a href="https://t.me/maletych_bot?start=4PctAZphyIY2CgKV" class="tariff-btn">Обрати 12 тренувань →</a>
       </div>
 
       <div class="tariff-card reveal">
@@ -836,7 +849,7 @@ footer a:hover{color:var(--gold-soft);}
         <div class="tariff-price-row">
           <span class="tariff-price">599<span class="cur"> грн</span></span>
         </div>
-        <a href="#" class="tariff-btn">Обрати 20 тренувань →</a>
+        <a href="https://t.me/maletych_bot?start=tC3paXYkxg3XgxOR" class="tariff-btn">Обрати 20 тренувань →</a>
       </div>
     </div>
 
