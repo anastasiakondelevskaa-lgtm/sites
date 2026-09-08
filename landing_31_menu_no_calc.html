@@ -6,7 +6,7 @@
 <title>31 день збалансованого харчування — Олена Малетич</title>
 <meta name="description" content="31 день збалансованого харчування без голоду, складних інгредієнтів і виснажливих дієт. Готове меню зі звичайних продуктів, рецепти з фото, списки покупок і гід по замінах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
   ЗОБРАЖЕННЯ: усі фото на сторінці — плейсхолдери з src="https://admin.vgsolutions.cloud/static/img/<файл>".
   Щойно на цьому шляху зʼявиться файл з відповідною назвою — він автоматично підʼявиться на сайті
@@ -66,7 +66,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.serif{font-family:'Fraunces',serif;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--green-950)}
+h1,h2,h3,.serif{font-family:'Manrope',sans-serif;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--green-950)}
 img{max-width:100%;display:block}
 a{color:inherit}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
@@ -90,34 +90,24 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
   padding:18px 30px;background:var(--pink-deep);color:#fff;
   font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;
   text-decoration:none;border:none;border-radius:999px;cursor:pointer;
-  box-shadow:0 12px 30px rgba(232,98,143,.35);
-  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  transition:background .15s ease;
   text-align:center;
 }
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(232,98,143,.42);background:var(--pink-deep-dark)}
+.btn:hover{background:var(--pink-deep-dark)}
 .btn.block{width:100%}
-.btn.outline{background:transparent;color:var(--green-900);border:2px solid var(--green-900);box-shadow:none}
+.btn.outline{background:transparent;color:var(--green-900);border:2px solid var(--green-900)}
 .btn.outline:hover{background:var(--green-900);color:#fff}
-.btn.light{background:#fff;color:var(--pink-deep-dark);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+.btn.light{background:#fff;color:var(--pink-deep-dark);border:1.5px solid var(--line)}
 .btn.sm{padding:12px 20px;font-size:13px}
 .pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
 .pill.coral{background:var(--pink-deep);color:#fff}
 .pill.green{background:var(--green-700);color:#fff}
 .pill.ghost{background:rgba(255,255,255,.65);color:var(--green-900);border:1px solid var(--green-200)}
 .card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
-.glass{
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(16px) saturate(160%);
-  -webkit-backdrop-filter:blur(16px) saturate(160%);
-  border:1px solid rgba(255,255,255,.6);
-}
+
 .fi{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .fi.show{opacity:1;transform:none}
-.grid-bg{
-  background-color:var(--green-50);
-  background-image:radial-gradient(circle at 15% 20%, rgba(106,153,104,.13), transparent 45%),
-                    radial-gradient(circle at 85% 75%, rgba(239,122,82,.10), transparent 45%);
-}
+.grid-bg{background-color:var(--green-50)}
 .section-beige{background:var(--beige-100)}
 .section-green{background:var(--green-900);color:var(--green-50)}
 .section-green h2,.section-green .serif{color:#fff}
@@ -183,13 +173,13 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .hero-float-card .t{font-size:12px;font-weight:700;color:var(--green-950)}
 .hero-float-card .s{font-size:11px;color:var(--ink-soft)}
 .hero-discount-badge{
-  position:absolute;top:-18px;right:-18px;width:96px;height:96px;border-radius:50%;
-  background:var(--coral);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:0 14px 30px rgba(239,122,82,.4);transform:rotate(8deg);text-align:center;
+  position:absolute;top:16px;right:16px;padding:10px 16px;border-radius:14px;
+  background:#fff;color:var(--green-950);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;
+  border:1px solid var(--line);text-align:left;
 }
-.hero-discount-badge b{font-size:24px;line-height:1}
-.hero-discount-badge span{font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
-@media(max-width:640px){.hero-float-card{left:0;bottom:-20px;width:190px}.hero-discount-badge{right:0}}
+.hero-discount-badge b{font-size:17px;line-height:1.1}
+.hero-discount-badge span{font-size:10px;color:var(--ink-soft);font-weight:600}
+@media(max-width:640px){.hero-float-card{left:0;bottom:-20px;width:190px}}
 
 /* ---------- EXPERT ---------- */
 .expert-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
@@ -207,7 +197,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:560px){.problem-grid{grid-template-columns:1fr}}
 .problem-card{background:#fff;border-radius:var(--radius-md);padding:28px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
 .problem-card .ic{font-size:28px;margin-bottom:14px}
-.num-badge{width:40px;height:40px;border-radius:11px;background:var(--green-950);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-size:17px;flex-shrink:0}
+.num-badge{width:40px;height:40px;border-radius:11px;background:var(--green-950);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-size:17px;flex-shrink:0}
 .num-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .num-head h3{margin-bottom:0!important}
 .problem-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
@@ -224,12 +214,12 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:900px){.inside-grid{grid-template-columns:1fr}}
 .feat-list{display:flex;flex-direction:column;gap:22px}
 .feat{display:flex;gap:16px;align-items:flex-start}
-.feat .ic{width:46px;height:46px;border-radius:12px;background:var(--green-950);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-size:16px;flex-shrink:0}
+.feat .ic{width:46px;height:46px;border-radius:12px;background:var(--green-950);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-size:16px;flex-shrink:0}
 .feat h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:4px;color:var(--green-950)}
 .feat p{font-size:14px;color:var(--ink-soft)}
 .week-mock{background:#fff;border-radius:28px;box-shadow:var(--shadow-lg);padding:26px;border:1px solid var(--line)}
 .week-mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.week-mock-head b{font-family:'Fraunces';font-size:18px}
+.week-mock-head b{font-family:'Manrope';font-size:18px}
 .day-row{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border-radius:14px;font-size:13px;gap:10px}
 .day-row+.day-row{margin-top:8px}
 .day-row.active{background:var(--green-100)}
@@ -262,7 +252,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:560px){.bonus-grid{grid-template-columns:1fr}}
 .bonus-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative}
 .bonus-card .ph-img{aspect-ratio:4/3;border-radius:0;border-width:0 0 1.5px 0}
-.bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Fraunces';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
+.bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Manrope';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
 .bonus-body{padding:22px}
 .bonus-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
 .bonus-card p{font-size:13.5px;color:var(--ink-soft)}
@@ -275,12 +265,12 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .offer .lead{color:var(--green-200);margin-left:auto;margin-right:auto}
 .date-badge{display:inline-flex;flex-direction:column;align-items:center;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:18px 34px;margin:32px 0;backdrop-filter:blur(6px)}
 .date-badge .d-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green-200)}
-.date-badge .d-val{font-family:'Fraunces';font-size:32px;color:#fff}
+.date-badge .d-val{font-family:'Manrope';font-size:32px;color:#fff}
 
 /* ---------- FAMILY MENU ---------- */
 .fam-macros{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:36px 0 44px}
 .fm-chip{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 22px;border-radius:16px;min-width:120px}
-.fm-chip b{font-family:'Fraunces';font-size:20px}
+.fm-chip b{font-family:'Manrope';font-size:20px}
 .fm-chip span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;opacity:.75}
 .fm-kcal{background:#fbe2e8;color:#9c2f47}
 .fm-p{background:var(--green-100);color:var(--green-900)}
@@ -303,41 +293,41 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .fam-checks{max-width:640px;margin:0 auto}
 
 /* ---------- PRICING ---------- */
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-@media(max-width:960px){.price-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.price-grid{grid-template-columns:1fr}}
-.price-card{background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-sm);border:1.5px solid var(--line);display:flex;flex-direction:column;position:relative;transition:transform .2s ease,box-shadow .2s ease;scroll-margin-top:112px}
-.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
-.price-card .ph-img{aspect-ratio:16/10;border-radius:0;border-width:0 0 1.5px 0}
-.price-card-body{padding:26px}
-.price-top-tag{position:absolute;top:14px;left:14px;background:var(--coral);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:999px;z-index:2;max-width:calc(100% - 28px)}
-.price-goal{font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:10px;min-height:34px}
-.price-kcal{font-family:'Fraunces';font-size:28px;margin-bottom:14px}
+.price-list{display:flex;flex-direction:column;gap:14px;margin-top:44px}
+.price-card{background:#fff;border-radius:18px;border:1.5px solid var(--line);scroll-margin-top:112px}
+.price-card-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:16px;width:100%;padding:20px 22px;cursor:pointer}
+.phc-tag{flex-shrink:0;background:var(--green-50);color:var(--green-700);font-size:11px;font-weight:700;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.phc-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.phc-goal{font-size:12.5px;color:var(--ink-soft)}
+.phc-kcal{font-family:'Manrope';font-weight:600;font-size:17px;color:var(--green-950)}
+.phc-price{flex-shrink:0;font-family:'Manrope';font-weight:700;font-size:22px;color:var(--green-950)}
+.phc-chev{flex-shrink:0;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink-soft);transition:transform .2s ease}
+.price-card.open .phc-chev{transform:rotate(180deg)}
+.price-card-body{display:none;padding:0 22px 26px}
+.price-card.open .price-card-body{display:block}
+.price-card-body .ph-img{aspect-ratio:16/10;border-radius:14px;margin-bottom:18px}
+@media(max-width:520px){
+  .price-card-head{flex-wrap:wrap;row-gap:10px}
+  .phc-tag{order:1}
+  .phc-price{order:2;margin-left:auto}
+  .phc-chev{order:3}
+  .phc-info{order:4;flex-basis:100%}
+}
+.price-goal-body{display:none}
 .price-macros{display:flex;flex-direction:column;gap:5px;font-size:11.5px;color:var(--ink-soft);margin-bottom:18px;background:var(--green-50);border-radius:12px;padding:10px 12px}
 .price-macros .row{display:flex;justify-content:space-between}
 .price-macros b{color:var(--green-900)}
-.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
-.old-price{font-size:15px;color:var(--ink-soft);text-decoration:line-through}
-.new-price{font-family:'Fraunces';font-size:32px;font-weight:700;color:var(--green-950)}
-.save-tag{font-size:12px;font-weight:800;color:var(--coral-dark);margin-bottom:18px}
 .price-feats{list-style:none;font-size:13px;color:var(--ink-soft);margin-bottom:24px}
 .price-feats li{padding-left:22px;position:relative;margin-bottom:8px}
 .price-feats li::before{content:'✓';position:absolute;left:0;color:var(--green-600);font-weight:800}
-.price-card.flagship{grid-column:1/-1;background:linear-gradient(135deg,var(--green-900),var(--green-700));border-color:var(--pink-line)}
-.price-card.flagship .price-goal,.price-card.flagship .price-kcal,.price-card.flagship p{color:#fff}
+.price-card.flagship{background:linear-gradient(135deg,var(--green-900),var(--green-700));border-color:var(--pink-line)}
+.price-card.flagship .phc-tag{background:#fff;color:var(--green-900)}
+.price-card.flagship .phc-goal,.price-card.flagship .phc-kcal,.price-card.flagship .phc-price,.price-card.flagship .phc-chev,.price-card.flagship p{color:#fff}
 .price-card.flagship .price-macros{background:rgba(255,255,255,.1)}
 .price-card.flagship .price-macros b,.price-card.flagship .price-macros span{color:#fff}
-.price-card.flagship .old-price{color:rgba(255,255,255,.65)}
-.price-card.flagship .new-price{color:#fff}
-.price-card.flagship .save-tag{color:#ffd8e6}
 .price-card.flagship .price-feats{color:rgba(255,255,255,.85)}
 .price-card.flagship .price-feats li::before{color:#c8f0c0}
 .price-card.flagship .ph-img{border-color:var(--pink-line)}
-@media(min-width:641px){
-  .price-card.flagship{flex-direction:row;align-items:stretch}
-  .price-card.flagship .ph-img{width:38%;aspect-ratio:auto;border-width:0 3px 0 0;flex-shrink:0}
-  .price-card.flagship .price-card-body{flex:1;padding:34px}
-}
 
 /* ---------- TESTIMONIALS ---------- */
 .rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
@@ -368,7 +358,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 /* ---------- FOOTER ---------- */
 footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28px;font-size:13px}
 .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:36px}
-.foot-logo{font-family:'Fraunces';font-size:22px;color:#fff;margin-bottom:10px}
+.foot-logo{font-family:'Manrope';font-size:22px;color:#fff;margin-bottom:10px}
 .foot-logo span{color:var(--coral)}
 .foot-links{display:flex;gap:26px;flex-wrap:wrap}
 .foot-links a{text-decoration:none;color:rgba(255,255,255,.65)}
@@ -389,7 +379,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 <div class="topbar">
   <div class="topbar-inner">
     <span class="topbar-text">Меню + 4 бонуси за 🔥 супер ціною</span>
-    <a href="#pricing" class="btn block">Забрати знижку -66%</a>
+    <a href="#pricing" class="btn block">Обрати меню</a>
   </div>
 </div>
 
@@ -422,7 +412,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
   <div class="container hero-grid">
     <div class="fi show">
       <div class="hero-badges">
-        <span class="pill coral">-66% до <span id="hero-date">15 серпня</span></span>
+        <span class="pill coral">Ціна діє до <span id="hero-date">15 серпня</span></span>
         <span class="pill green">Не дієта — система на 31 день</span>
       </div>
       <h1>31 день <em>збалансованого харчування</em> — без голоду, складних інгредієнтів і виснажливих дієт</h1>
@@ -438,11 +428,11 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Головне фото — тарілка / меню</span></div>
         <img src="https://admin.vgsolutions.cloud/static/img/hero-main.jpg" alt="Збалансована тарілка з меню на 31 день" onerror="this.style.display='none'">
       </div>
-      <div class="hero-discount-badge"><b>-66%</b><span>до <span id="hero-badge-date">15.08</span></span></div>
-      <div class="hero-float-card card glass">
+      <div class="hero-discount-badge"><b>290 ₴</b><span>до <span id="hero-badge-date">15.08</span></span></div>
+      <div class="hero-float-card card">
         <div class="ph-img">
           <div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:14px">🍽️</span></div>
-          <img src="https://admin.vgsolutions.cloud/static/img/hero-float.jpg" alt="Страва з меню" onerror="this.style.display='none'">
+          <img src="https://admin.vgsolutions.cloud/static/img/hero-float.jpg" alt="Страва з меню" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div>
           <div class="t">День 12 з 31</div>
@@ -509,12 +499,12 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <h2>Так виглядає твоє меню</h2>
     </div>
     <div class="preview-row fi" id="previewRow">
-      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка меню</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-1.jpg" alt="Обкладинка меню" onerror="this.style.display='none'"><span class="tag">Обкладинка</span></div>
-      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Розклад на день</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-2.jpg" alt="Розклад на день" onerror="this.style.display='none'"><span class="tag">План на день</span></div>
-      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Список покупок на тиждень</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-3.jpg" alt="Список покупок" onerror="this.style.display='none'"><span class="tag">Список покупок</span></div>
-      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Сторінка рецепта з фото</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-4.jpg" alt="Сторінка рецепта" onerror="this.style.display='none'"><span class="tag">Рецепт</span></div>
-      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Гід по замінах продуктів</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-5.jpg" alt="Гід по замінах" onerror="this.style.display='none'"><span class="tag">Гід по замінах</span></div>
-      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Бонусний гайд</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-6.jpg" alt="Бонусний гайд" onerror="this.style.display='none'"><span class="tag">Бонус</span></div>
+      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка меню</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-1.jpg" alt="Обкладинка меню" loading="lazy" onerror="this.style.display='none'"><span class="tag">Обкладинка</span></div>
+      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Розклад на день</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-2.jpg" alt="Розклад на день" loading="lazy" onerror="this.style.display='none'"><span class="tag">План на день</span></div>
+      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Список покупок на тиждень</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-3.jpg" alt="Список покупок" loading="lazy" onerror="this.style.display='none'"><span class="tag">Список покупок</span></div>
+      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Сторінка рецепта з фото</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-4.jpg" alt="Сторінка рецепта" loading="lazy" onerror="this.style.display='none'"><span class="tag">Рецепт</span></div>
+      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Гід по замінах продуктів</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-5.jpg" alt="Гід по замінах" loading="lazy" onerror="this.style.display='none'"><span class="tag">Гід по замінах</span></div>
+      <div class="preview-card ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Бонусний гайд</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-preview-6.jpg" alt="Бонусний гайд" loading="lazy" onerror="this.style.display='none'"><span class="tag">Бонус</span></div>
     </div>
     <div class="preview-arrows fi" style="justify-content:center;margin-top:24px">
       <button class="arr" id="prevPrev" aria-label="Назад">←</button>
@@ -532,14 +522,14 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <p class="lead center">Приклади страв із системи — за правилом «здорової тарілки».</p>
     </div>
     <div class="gal-grid">
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обід</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-1.jpg" alt="Тарілка з меню — обід" onerror="this.style.display='none'"><span class="tag">Обід</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Вечеря</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-2.jpg" alt="Тарілка з меню — вечеря" onerror="this.style.display='none'"><span class="tag">Вечеря</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Сніданок</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-3.jpg" alt="Тарілка з меню — сніданок" onerror="this.style.display='none'"><span class="tag">Сніданок</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обід</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-4.jpg" alt="Тарілка з меню — обід" onerror="this.style.display='none'"><span class="tag">Обід</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Сніданок</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-5.jpg" alt="Тарілка з меню — сніданок" onerror="this.style.display='none'"><span class="tag">Сніданок</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Вечеря</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-6.jpg" alt="Тарілка з меню — вечеря" onerror="this.style.display='none'"><span class="tag">Вечеря</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обід</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-7.jpg" alt="Тарілка з меню — обід" onerror="this.style.display='none'"><span class="tag">Обід</span></div>
-      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Чіт-міл</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-8.jpg" alt="Чіт-міл" onerror="this.style.display='none'"><span class="tag">🍕 Чіт-міл</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обід</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-1.jpg" alt="Тарілка з меню — обід" loading="lazy" onerror="this.style.display='none'"><span class="tag">Обід</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Вечеря</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-2.jpg" alt="Тарілка з меню — вечеря" loading="lazy" onerror="this.style.display='none'"><span class="tag">Вечеря</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Сніданок</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-3.jpg" alt="Тарілка з меню — сніданок" loading="lazy" onerror="this.style.display='none'"><span class="tag">Сніданок</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обід</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-4.jpg" alt="Тарілка з меню — обід" loading="lazy" onerror="this.style.display='none'"><span class="tag">Обід</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Сніданок</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-5.jpg" alt="Тарілка з меню — сніданок" loading="lazy" onerror="this.style.display='none'"><span class="tag">Сніданок</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Вечеря</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-6.jpg" alt="Тарілка з меню — вечеря" loading="lazy" onerror="this.style.display='none'"><span class="tag">Вечеря</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обід</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-7.jpg" alt="Тарілка з меню — обід" loading="lazy" onerror="this.style.display='none'"><span class="tag">Обід</span></div>
+      <div class="gal-item fi ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Чіт-міл</span></div><img src="https://admin.vgsolutions.cloud/static/img/gallery-8.jpg" alt="Чіт-міл" loading="lazy" onerror="this.style.display='none'"><span class="tag">🍕 Чіт-міл</span></div>
     </div>
   </div>
 </section>
@@ -555,22 +545,22 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="bonus-grid">
       <div class="bonus-card fi">
         <span class="num">1</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Замінники продуктів</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-1.jpg" alt="Гід «Замінники продуктів»" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Замінники продуктів</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-1.jpg" alt="Гід «Замінники продуктів»" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Гід «Замінники продуктів»</h3><p>Як замінити прості товари на аналоги, багатші на користь — без втрати смаку й бюджету.</p></div>
       </div>
       <div class="bonus-card fi">
         <span class="num">2</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Як читати етикетки</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-2.jpg" alt="Гід «Як читати етикетки»" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Як читати етикетки</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-2.jpg" alt="Гід «Як читати етикетки»" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Гід «Як читати етикетки»</h3><p>На що дивитись у складі, щоб впевнено обирати справді якісні продукти в будь-якому магазині.</p></div>
       </div>
       <div class="bonus-card fi">
         <span class="num">3</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Топ-15 страв за 15 хв</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-3.jpg" alt="Топ-15 страв за 15 хвилин" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Топ-15 страв за 15 хв</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-3.jpg" alt="Топ-15 страв за 15 хвилин" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Топ-15 страв за 15 хвилин</h3><p>Швидкі, прості й смачні рішення на той день, коли часу на кухні зовсім немає.</p></div>
       </div>
       <div class="bonus-card fi">
         <span class="num">4</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Підтримка без зривів</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-4.jpg" alt="Чек-лист «Підтримка без зривів»" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Підтримка без зривів</span></div><img src="https://admin.vgsolutions.cloud/static/img/bonus-4.jpg" alt="Чек-лист «Підтримка без зривів»" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Чек-лист «Підтримка без зривів»</h3><p>Як позбутися почуття провини після піци чи солодкого і м'яко повернутися до ритму.</p></div>
       </div>
     </div>
@@ -585,10 +575,10 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <h2>Зафіксуй спеціальну ціну на систему та 4 бонуси прямо зараз</h2>
     <p class="lead">Акційна ціна діє до <b id="offer-date" style="color:#fff">15 серпня</b>. Після — система повертається до звичайної вартості без бонусів у подарунок.</p>
     <div class="date-badge fi">
-      <span class="d-label">Знижка діє до</span>
+      <span class="d-label">Ціна діє до</span>
       <span class="d-val" id="offer-date-big">15 серпня</span>
     </div>
-    <a href="#pricing" class="btn">Забрати знижку -66% →</a>
+    <a href="#pricing" class="btn">Обрати меню →</a>
   </div>
 </section>
 
@@ -627,10 +617,10 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     </div>
 
     <div class="fam-preview-grid">
-      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Список покупок: АТБ + Сільпо</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-1.jpg" alt="Список покупок сімейного меню" onerror="this.style.display='none'"></div>
-      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Меню на день з фото страв</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-2.jpg" alt="Меню на день" onerror="this.style.display='none'"></div>
-      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Книга рецептів для родини</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-3.jpg" alt="Книга рецептів" onerror="this.style.display='none'"></div>
-      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Порція окремо для тебе</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-4.jpg" alt="Порція для жінки" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Список покупок: АТБ + Сільпо</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-1.jpg" alt="Список покупок сімейного меню" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Меню на день з фото страв</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-2.jpg" alt="Меню на день" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Книга рецептів для родини</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-3.jpg" alt="Книга рецептів" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph-img fi" style="aspect-ratio:3/4"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Порція окремо для тебе</span></div><img src="https://admin.vgsolutions.cloud/static/img/family-preview-4.jpg" alt="Порція для жінки" loading="lazy" onerror="this.style.display='none'"></div>
     </div>
 
     <ul class="expert-checks fam-checks">
@@ -655,104 +645,116 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <a href="#menu-family" class="pill green" style="margin-top:16px;text-decoration:none;padding:10px 20px;font-size:12px">👨‍👩‍👧 + Сімейне меню для всіх →</a>
     </div>
 
-    <div class="price-grid">
+    <div class="price-list">
       <div class="price-card fi" id="menu-1250">
-        <div class="ph-img"><span class="price-top-tag">Максимальний дефіцит</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1250 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1250.jpg" alt="Меню 1250 ккал" onerror="this.style.display='none'"></div>
+        <button type="button" class="price-card-head">
+          <span class="phc-tag">Максимальний дефіцит</span>
+          <span class="phc-info"><span class="phc-goal">Мала вага або мінімальна активність</span><span class="phc-kcal">1250 ккал</span></span>
+          <span class="phc-price">290 ₴</span>
+          <span class="phc-chev">⌄</span>
+        </button>
         <div class="price-card-body">
-          <div class="price-goal">Мала вага або мінімальна активність</div>
-          <div class="price-kcal">1250 ккал</div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1250 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>80 г · 320 ккал</b></div>
             <div class="row"><span>Жири</span><b>45 г · 405 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>130 г · 520 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">290 ₴</span></div>
-          <div class="save-tag">Знижка -66% · Заощадь 560 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
       <div class="price-card fi" id="menu-1450">
-        <div class="ph-img"><span class="price-top-tag">Помірний дефіцит</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1450 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1450.jpg" alt="Меню 1450 ккал" onerror="this.style.display='none'"></div>
+        <button type="button" class="price-card-head">
+          <span class="phc-tag">Помірний дефіцит</span>
+          <span class="phc-info"><span class="phc-goal">Середнє схуднення</span><span class="phc-kcal">1450 ккал</span></span>
+          <span class="phc-price">290 ₴</span>
+          <span class="phc-chev">⌄</span>
+        </button>
         <div class="price-card-body">
-          <div class="price-goal">Середнє схуднення</div>
-          <div class="price-kcal">1450 ккал</div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1450 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>95 г · 380 ккал</b></div>
             <div class="row"><span>Жири</span><b>50 г · 450 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>155 г · 620 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">290 ₴</span></div>
-          <div class="save-tag">Знижка -66% · Заощадь 560 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
       <div class="price-card fi" id="menu-1650">
-        <div class="ph-img"><span class="price-top-tag">М'який дефіцит</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1650 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1650.jpg" alt="Меню 1650 ккал" onerror="this.style.display='none'"></div>
+        <button type="button" class="price-card-head">
+          <span class="phc-tag">М'який дефіцит</span>
+          <span class="phc-info"><span class="phc-goal">Базова підтримка ваги</span><span class="phc-kcal">1650 ккал</span></span>
+          <span class="phc-price">290 ₴</span>
+          <span class="phc-chev">⌄</span>
+        </button>
         <div class="price-card-body">
-          <div class="price-goal">Базова підтримка ваги</div>
-          <div class="price-kcal">1650 ккал</div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1650 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>110 г · 440 ккал</b></div>
             <div class="row"><span>Жири</span><b>55 г · 495 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>180 г · 720 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">290 ₴</span></div>
-          <div class="save-tag">Знижка -66% · Заощадь 560 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
       <div class="price-card fi" id="menu-1900">
-        <div class="ph-img"><span class="price-top-tag">Активна підтримка</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1900 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1900.jpg" alt="Меню 1900 ккал" onerror="this.style.display='none'"></div>
+        <button type="button" class="price-card-head">
+          <span class="phc-tag">Активна підтримка</span>
+          <span class="phc-info"><span class="phc-goal">Помірний набір м'язів або схуднення для активних</span><span class="phc-kcal">1900 ккал</span></span>
+          <span class="phc-price">290 ₴</span>
+          <span class="phc-chev">⌄</span>
+        </button>
         <div class="price-card-body">
-          <div class="price-goal">Помірний набір м'язів або схуднення для активних</div>
-          <div class="price-kcal">1900 ккал</div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1900 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>120 г · 480 ккал</b></div>
             <div class="row"><span>Жири</span><b>65 г · 585 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>210 г · 840 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">290 ₴</span></div>
-          <div class="save-tag">Знижка -66% · Заощадь 560 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
       <div class="price-card fi" id="menu-2200">
-        <div class="ph-img"><span class="price-top-tag">Високий калораж</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 2200 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-2200.jpg" alt="Меню 2200 ккал" onerror="this.style.display='none'"></div>
+        <button type="button" class="price-card-head">
+          <span class="phc-tag">Високий калораж</span>
+          <span class="phc-info"><span class="phc-goal">Набір маси або високі фізичні навантаження</span><span class="phc-kcal">2200 ккал</span></span>
+          <span class="phc-price">290 ₴</span>
+          <span class="phc-chev">⌄</span>
+        </button>
         <div class="price-card-body">
-          <div class="price-goal">Набір маси або високі фізичні навантаження</div>
-          <div class="price-kcal">2200 ккал</div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 2200 ккал</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>130 г · 520 ккал</b></div>
             <div class="row"><span>Жири</span><b>70 г · 630 ккал</b></div>
             <div class="row"><span>Вуглеводи</span><b>260 г · 1040 ккал</b></div>
           </div>
-          <div class="price-row"><span class="old-price">850 ₴</span><span class="new-price">290 ₴</span></div>
-          <div class="save-tag">Знижка -66% · Заощадь 560 ₴</div>
           <ul class="price-feats"><li>31 день меню + рецепти з фото</li><li>Списки покупок на тиждень</li><li>1 чіт-міл щонеділі</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn block">Обрати меню →</a>
         </div>
       </div>
 
       <div class="price-card flagship fi" id="menu-family">
-        <div class="ph-img"><span class="price-top-tag" style="background:#fff;color:var(--green-900)">Топ вибір для сім'ї</span><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Сімейне меню</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-family.jpg" alt="Сімейне меню на 31 день" onerror="this.style.display='none'"></div>
+        <button type="button" class="price-card-head">
+          <span class="phc-tag">Топ вибір для сім'ї</span>
+          <span class="phc-info"><span class="phc-goal">Чоловік · дружина · 1–2 дітей</span><span class="phc-kcal">Сімейне меню на 31 день</span></span>
+          <span class="phc-price">490 ₴</span>
+          <span class="phc-chev">⌄</span>
+        </button>
         <div class="price-card-body">
-          <div class="price-goal">Чоловік · дружина · 1–2 дітей</div>
-          <div class="price-kcal">Сімейне меню на 31 день</div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Сімейне меню</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
           <p style="font-size:14px;color:rgba(255,255,255,.85);margin-bottom:16px;max-width:480px">Один продуктовий кошик на тиждень — на всю родину. Готуєш один раз, а не окремо собі й окремо всім іншим.</p>
           <div class="price-macros">
             <div class="row"><span>Порції</span><b>під кожного члена родини</b></div>
             <div class="row"><span>Раціон</span><b>без обмежень</b></div>
           </div>
-          <div class="price-row"><span class="old-price">1360 ₴</span><span class="new-price">490 ₴</span></div>
-          <div class="save-tag">Знижка -64% · Заощадь 870 ₴</div>
           <ul class="price-feats"><li>31 день меню для всієї сім'ї</li><li>Спільний список покупок на тиждень</li><li>Рецепти з фото та заміни продуктів</li><li>4 бонуси в подарунок</li></ul>
           <a href="#" class="btn light block">Обрати сімейне меню →</a>
         </div>
@@ -768,7 +770,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <div class="fi">
         <div class="expert-photo ph-img">
           <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Олена Малетич</span></div>
-          <img src="https://admin.vgsolutions.cloud/static/img/trainer-photo.jpg" alt="Олена Малетич — сертифікований нутриціолог та фітнес-тренер" onerror="this.style.display='none'">
+          <img src="https://admin.vgsolutions.cloud/static/img/trainer-photo.jpg" alt="Олена Малетич — сертифікований нутриціолог та фітнес-тренер" loading="lazy" onerror="this.style.display='none'">
         </div>
       </div>
       <div class="fi">
@@ -799,7 +801,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     </div>
     <div class="rev-grid">
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-1.jpg" alt="Відгук клієнтки Ірина" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-1.jpg" alt="Відгук клієнтки Ірина" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Харчуюся по меню — поки вага з кожним днем все менше! Але іноді порція така, що просто не можу так багато з'їсти)»</p>
@@ -807,7 +809,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-2.jpg" alt="Відгук клієнтки Ілона" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-2.jpg" alt="Відгук клієнтки Ілона" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Ділюсь результатами. За 2 місяці мінус 8 кг 😧 Працюємо далі 👍 Дякую 🔥»</p>
@@ -815,7 +817,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-3.jpg" alt="Відгук клієнтки Ольга" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-3.jpg" alt="Відгук клієнтки Ольга" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Навіть якщо не буде великого мінусу, я не засмучусь, тому що почала себе набагато краще почувати. Зранку немає тяжкості, більше енергії. Личко очистилось — за тиждень дуже помітні зміни».</p>
@@ -823,7 +825,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-4.jpg" alt="Відгук клієнтки Yuliia" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-4.jpg" alt="Відгук клієнтки Yuliia" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Я теж намагаюсь готувати на всю родину. І от іноді відчуваю, що не голодна, але ж приготувала — і наче самій вже починає хотітися🤤 А чоловіку готую ситно, і виходить, що з ним з'їдаю майже таку ж порцію. Плюс — що я його так само привчила до збалансованої їжі».</p>
@@ -861,11 +863,11 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 <!-- ================= FINAL CTA ================= -->
 <section class="final-cta">
   <div class="container-narrow center">
-    <span class="eyebrow coral">Встигни зі знижкою</span>
+    <span class="eyebrow coral">Не відкладай на завтра</span>
     <h2>Почни свою систему на 31 день вже сьогодні</h2>
     <p class="lead center" style="margin-bottom:12px">Обери меню за калорійністю — і отримай готову систему харчування та 4 бонуси в подарунок.</p>
-    <p class="lead center" style="margin-bottom:32px;font-weight:700;color:var(--green-900)">Акційна ціна діє до <span id="fc-date">15 серпня</span></p>
-    <a href="#pricing" class="btn">Забрати знижку -66% →</a>
+    <p class="lead center" style="margin-bottom:32px;font-weight:700;color:var(--green-900)">Ціна діє до <span id="fc-date">15 серпня</span></p>
+    <a href="#pricing" class="btn">Обрати меню →</a>
   </div>
 </section>
 
@@ -893,7 +895,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 </footer>
 
 <div class="mobile-sticky">
-  <a href="#pricing" class="btn block">Забрати знижку -66% →</a>
+  <a href="#pricing" class="btn block">Обрати меню →</a>
 </div>
 
 <script>
@@ -941,6 +943,21 @@ if(navBurger && navMobilePanel){
   prev.addEventListener('click', ()=> row.scrollBy({left:-step(), behavior:'smooth'}));
   next.addEventListener('click', ()=> row.scrollBy({left:step(), behavior:'smooth'}));
 })();
+
+// ---------- Pricing accordion ----------
+function openMenuCard(id){
+  document.querySelectorAll('.price-card.open').forEach(c=>c.classList.remove('open'));
+  const card = document.getElementById(id);
+  if(card) card.classList.add('open');
+}
+document.querySelectorAll('.price-card-head').forEach(head=>{
+  head.addEventListener('click', ()=>{
+    const card = head.closest('.price-card');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.price-card.open').forEach(c=>c.classList.remove('open'));
+    if(!isOpen) card.classList.add('open');
+  });
+});
 
 // ---------- FAQ accordion ----------
 document.querySelectorAll('.faq-item').forEach(item=>{
