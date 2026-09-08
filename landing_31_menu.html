@@ -6,7 +6,7 @@
 <title>31 день збалансованого харчування — Олена Малетич</title>
 <meta name="description" content="31 день збалансованого харчування без голоду, складних інгредієнтів і виснажливих дієт. Готове меню зі звичайних продуктів, рецепти з фото, списки покупок і гід по замінах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
   ЗОБРАЖЕННЯ: усі фото на сторінці — плейсхолдери з src="https://admin.vgsolutions.cloud/static/img/<файл>".
   Щойно на цьому шляху зʼявиться файл з відповідною назвою — він автоматично підʼявиться на сайті
@@ -24,32 +24,32 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green-950:#1f2e1f;
-  --green-900:#2b3f2a;
-  --green-700:#3f6b42;
-  --green-600:#4d7d4c;
-  --green-500:#6a9968;
-  --green-300:#a9c9a2;
-  --green-200:#cfe3c6;
-  --green-100:#e6f0df;
-  --green-50:#f2f7ee;
-  --beige-100:#f7f1e4;
-  --beige-200:#f0e6d2;
-  --beige-300:#e6d7bb;
+  --green-950:#242a1c;
+  --green-900:#3b4726;
+  --green-700:#5c6b3d;
+  --green-600:#6e7f49;
+  --green-500:#8a9762;
+  --green-300:#bcc79c;
+  --green-200:#d8dfc0;
+  --green-100:#ebefdd;
+  --green-50:#f5f6ec;
+  --beige-100:#f4ede0;
+  --beige-200:#eee1cb;
+  --beige-300:#e3d2b3;
   --cream:#fbf8f2;
   --white:#ffffff;
-  --coral:#ef7a52;
-  --coral-dark:#d9603a;
-  --pink:#e6f0df;
-  --pink-light:#fdece3;
-  --pink-deep:#ef7a52;
-  --pink-deep-dark:#d9603a;
-  --pink-line:#e4ddc9;
-  --canvas-green:#fbf8f2;
-  --canvas-green-dark:#f7f1e4;
-  --ink:#232821;
-  --ink-soft:#565f52;
-  --line:#e4ddc9;
+  --coral:#c98a9c;
+  --coral-dark:#a96e80;
+  --pink:#f5e3e8;
+  --pink-light:#faf0f3;
+  --pink-deep:#c98a9c;
+  --pink-deep-dark:#a96e80;
+  --pink-line:#eddfe2;
+  --canvas-green:#7c8a54;
+  --canvas-green-dark:#6c7947;
+  --ink:#2a2a20;
+  --ink-soft:#6d6c5c;
+  --line:#e7e1d2;
   --shadow-sm:0 2px 10px rgba(43,63,42,.06);
   --shadow-md:0 14px 40px rgba(43,63,42,.10);
   --shadow-lg:0 26px 70px rgba(43,63,42,.14);
@@ -65,7 +65,11 @@ body{
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  padding:18px;
 }
+@media(max-width:640px){body{padding:8px}}
+body>.topbar{border-radius:24px 24px 0 0}
+body>footer{border-radius:0 0 24px 24px}
 h1,h2,h3,.serif{font-family:'Manrope',sans-serif;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--green-950)}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -87,20 +91,20 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:18px 30px;background:var(--pink-deep);color:#fff;
+  padding:18px 30px;background:var(--green-700);color:#fff;
   font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;
   text-decoration:none;border:none;border-radius:999px;cursor:pointer;
   transition:background .15s ease;
   text-align:center;
 }
-.btn:hover{background:var(--pink-deep-dark)}
+.btn:hover{background:var(--green-900)}
 .btn.block{width:100%}
 .btn.outline{background:transparent;color:var(--green-900);border:2px solid var(--green-900)}
 .btn.outline:hover{background:var(--green-900);color:#fff}
-.btn.light{background:#fff;color:var(--pink-deep-dark);border:1.5px solid var(--line)}
+.btn.light{background:#fff;color:var(--green-900);border:1.5px solid var(--line)}
 .btn.sm{padding:12px 20px;font-size:13px}
 .pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
-.pill.coral{background:var(--pink-deep);color:#fff}
+.pill.coral{background:var(--pink-light);color:var(--coral-dark)}
 .pill.green{background:var(--green-700);color:#fff}
 .pill.ghost{background:rgba(255,255,255,.65);color:var(--green-900);border:1px solid var(--green-200)}
 .card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
@@ -159,7 +163,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .hero-grid>*{min-width:0}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
 .hero h1{font-size:clamp(34px,4.6vw,56px);margin-bottom:22px}
-.hero h1 em{font-style:normal;color:var(--green-700);background:linear-gradient(180deg,transparent 62%,var(--green-200) 62%)}
+.hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--coral-dark)}
 .hero-badges{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
 .hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;align-items:center}
 .hero-note{margin-top:18px;font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
