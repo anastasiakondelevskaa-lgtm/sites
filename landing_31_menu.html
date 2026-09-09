@@ -357,7 +357,9 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .price-list{display:flex;flex-direction:column;gap:14px;margin-top:44px}
 .price-card{background:#fff;border-radius:14px;border:2px solid var(--line);scroll-margin-top:112px}
 .price-card-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:16px;width:100%;padding:16px 22px;cursor:pointer}
-.phc-thumb{width:52px;height:52px;border-radius:10px;flex-shrink:0;overflow:hidden}
+.phc-thumb{width:52px;height:52px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:24px;background:var(--green-50);border:2px solid var(--line)}
+.phc-arrow{font-size:26px;font-weight:800;color:var(--coral);line-height:1}
+.price-card.flagship .phc-thumb{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
 .phc-tag{flex-shrink:0;background:var(--green-50);color:var(--green-700);font-size:11px;font-weight:700;padding:6px 12px;border-radius:10px;white-space:nowrap}
 .phc-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
 .phc-goal{font-size:12.5px;color:var(--ink-soft)}
@@ -372,7 +374,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .price-card-body .ph-img{aspect-ratio:16/10;border-radius:14px;margin-bottom:18px}
 @media(max-width:520px){
   .price-card-head{display:grid;grid-template-columns:44px 1fr auto;column-gap:12px;row-gap:8px;align-items:center}
-  .phc-thumb{width:44px;height:44px;grid-column:1;grid-row:1}
+  .phc-thumb{width:44px;height:44px;font-size:20px;grid-column:1;grid-row:1}
   .phc-tag{grid-column:2;grid-row:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .phc-chev{grid-column:3;grid-row:1;width:34px;height:34px;font-size:16px}
   .phc-info{grid-column:1/-1;grid-row:2}
@@ -622,7 +624,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="price-list">
       <div class="price-card fi" id="menu-1250">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb">🌱</div>
           <span class="phc-tag">Максимальний дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Мала вага або мінімальна активність</span><span class="phc-kcal">1250 ккал</span></span>
           <span class="phc-chev">⌄</span>
@@ -641,7 +643,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1450">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb"><span class="phc-arrow">↓</span></div>
           <span class="phc-tag">Помірний дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Середнє схуднення</span><span class="phc-kcal">1450 ккал</span></span>
           <span class="phc-chev">⌄</span>
@@ -660,7 +662,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1650">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb">💚</div>
           <span class="phc-tag">М'який дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Базова підтримка ваги</span><span class="phc-kcal">1650 ккал</span></span>
           <span class="phc-chev">⌄</span>
@@ -679,7 +681,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1900">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb">💪🏻</div>
           <span class="phc-tag">Активна підтримка</span>
           <span class="phc-info"><span class="phc-goal">Помірний набір м'язів або схуднення для активних</span><span class="phc-kcal">1900 ккал</span></span>
           <span class="phc-chev">⌄</span>
@@ -698,7 +700,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-2200">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb">🔥</div>
           <span class="phc-tag">Високий калораж</span>
           <span class="phc-info"><span class="phc-goal">Набір маси або високі фізичні навантаження</span><span class="phc-kcal">2200 ккал</span></span>
           <span class="phc-chev">⌄</span>
@@ -717,7 +719,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card flagship fi" id="menu-family">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb">👥</div>
           <span class="phc-tag">Топ вибір для сім'ї</span>
           <span class="phc-info"><span class="phc-goal">Чоловік · дружина · 1–2 дітей</span><span class="phc-kcal">Сімейне меню на 31 день</span></span>
           <span class="phc-chev">⌄</span>
