@@ -165,6 +165,23 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 }
 .hero-discount-badge b{font-size:17px;line-height:1.1}
 .hero-discount-badge span{font-size:10px;color:var(--ink-soft);font-weight:600}
+@media(max-width:640px){
+  .hero{padding:16px 0 28px}
+  .hero-grid{grid-template-columns:1.15fr 1fr;gap:12px;align-items:start}
+  .hero-badges{gap:5px;margin-bottom:10px}
+  .hero-badges .pill{font-size:8.5px;padding:5px 8px;letter-spacing:.04em}
+  .hero h1{font-size:19px;line-height:1.25;margin-bottom:10px}
+  .hero h1 em{text-decoration-thickness:2px;text-underline-offset:3px}
+  .hero .lead{display:none}
+  .hero-actions{margin-top:10px;flex-direction:column;align-items:stretch;gap:8px}
+  .hero-actions .btn{padding:11px 12px;font-size:11.5px}
+  .hero-note{display:none}
+  .hero-photo-main{aspect-ratio:3/4;border-radius:12px}
+  .hero-photo-main img{object-position:center 8%}
+  .hero-discount-badge{top:8px;right:8px;padding:6px 9px;border-radius:9px}
+  .hero-discount-badge b{font-size:12px}
+  .hero-discount-badge span{font-size:7.5px}
+}
 
 /* ---------- EXPERT ---------- */
 .expert-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
