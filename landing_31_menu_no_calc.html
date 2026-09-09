@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
-  ЗОБРАЖЕННЯ: більшість фото лежать локально в папці img/ поруч із цим файлом
-  (реальні фото зі старого сайту на Tilda — тримати цю папку поруч при завантаженні на хостинг).
-  testimonial-1.jpg … testimonial-4.jpg — досі плейсхолдери з src="https://admin.vgsolutions.cloud/static/img/<файл>",
-  бо потрібні реальні скріни відгуків/фото результатів конкретних клієнток (не можна підставляти чужі фото).
+  ЗОБРАЖЕННЯ: усі src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/<файл>" — це плейсхолдери.
+  Заміни PASTE_TILDA_ID_HERE на реальний ID картинки з Тільди для кожного фото (пошук по файлу,
+  напр. hero-main.jpg, menu-1250.jpg, bonus-1.jpg, trainer-photo.jpg, testimonial-1.jpg тощо).
+  Поки посилання не замінено — замість фото показується запасна плашка з підписом.
 -->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -457,7 +457,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="hero-visual fi show">
       <div class="hero-photo-main ph-img">
         <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Головне фото — Олена з тарілкою</span></div>
-        <img src="img/hero-main.jpg" alt="Олена Малетич з тарілкою з меню на 31 день" onerror="this.style.display='none'">
+        <img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/hero-main.jpg" alt="Олена Малетич з тарілкою з меню на 31 день" onerror="this.style.display='none'">
       </div>
       <div class="hero-discount-badge"><b>290 ₴</b><span>до <span id="hero-badge-date">15.08</span></span></div>
     </div>
@@ -476,22 +476,22 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="bonus-row" id="bonusRow">
       <div class="bonus-card fi">
         <span class="num">1</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Замінники продуктів</span></div><img src="img/bonus-1.jpg" alt="Гід «Замінники продуктів»" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Замінники продуктів</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/bonus-1.jpg" alt="Гід «Замінники продуктів»" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Гід «Замінники продуктів»</h3><p>Як замінити прості товари на аналоги, багатші на користь — без втрати смаку й бюджету.</p></div>
       </div>
       <div class="bonus-card fi">
         <span class="num">2</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Як читати етикетки</span></div><img src="img/bonus-2.jpg" alt="Гід «Як читати етикетки»" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Як читати етикетки</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/bonus-2.jpg" alt="Гід «Як читати етикетки»" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Гід «Як читати етикетки»</h3><p>На що дивитись у складі, щоб впевнено обирати справді якісні продукти в будь-якому магазині.</p></div>
       </div>
       <div class="bonus-card fi">
         <span class="num">3</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Топ-15 страв за 15 хв</span></div><img src="img/bonus-3.jpg" alt="Топ-15 страв за 15 хвилин" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Топ-15 страв за 15 хв</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/bonus-3.jpg" alt="Топ-15 страв за 15 хвилин" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Топ-15 страв за 15 хвилин</h3><p>Швидкі, прості й смачні рішення на той день, коли часу на кухні зовсім немає.</p></div>
       </div>
       <div class="bonus-card fi">
         <span class="num">4</span>
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Підтримка без зривів</span></div><img src="img/bonus-4.jpg" alt="Чек-лист «Підтримка без зривів»" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Обкладинка: Підтримка без зривів</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/bonus-4.jpg" alt="Чек-лист «Підтримка без зривів»" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="bonus-body"><h3>Чек-лист «Підтримка без зривів»</h3><p>Як позбутися почуття провини після піци чи солодкого і м'яко повернутися до ритму.</p></div>
       </div>
     </div>
@@ -519,13 +519,13 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="price-list">
       <div class="price-card fi" id="menu-1250">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="img/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Максимальний дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Мала вага або мінімальна активність</span><span class="phc-kcal">1250 ккал</span></span>
           <span class="phc-chev">⌄</span>
         </button>
         <div class="price-card-body">
-          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1250 ккал</span></div><img src="img/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1250 ккал</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>80 г · 320 ккал</b></div>
             <div class="row"><span>Жири</span><b>45 г · 405 ккал</b></div>
@@ -538,13 +538,13 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1450">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="img/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Помірний дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Середнє схуднення</span><span class="phc-kcal">1450 ккал</span></span>
           <span class="phc-chev">⌄</span>
         </button>
         <div class="price-card-body">
-          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1450 ккал</span></div><img src="img/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1450 ккал</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>95 г · 380 ккал</b></div>
             <div class="row"><span>Жири</span><b>50 г · 450 ккал</b></div>
@@ -557,13 +557,13 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1650">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="img/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">М'який дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Базова підтримка ваги</span><span class="phc-kcal">1650 ккал</span></span>
           <span class="phc-chev">⌄</span>
         </button>
         <div class="price-card-body">
-          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1650 ккал</span></div><img src="img/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1650 ккал</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>110 г · 440 ккал</b></div>
             <div class="row"><span>Жири</span><b>55 г · 495 ккал</b></div>
@@ -576,13 +576,13 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1900">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="img/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Активна підтримка</span>
           <span class="phc-info"><span class="phc-goal">Помірний набір м'язів або схуднення для активних</span><span class="phc-kcal">1900 ккал</span></span>
           <span class="phc-chev">⌄</span>
         </button>
         <div class="price-card-body">
-          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1900 ккал</span></div><img src="img/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 1900 ккал</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>120 г · 480 ккал</b></div>
             <div class="row"><span>Жири</span><b>65 г · 585 ккал</b></div>
@@ -595,13 +595,13 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-2200">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="img/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Високий калораж</span>
           <span class="phc-info"><span class="phc-goal">Набір маси або високі фізичні навантаження</span><span class="phc-kcal">2200 ккал</span></span>
           <span class="phc-chev">⌄</span>
         </button>
         <div class="price-card-body">
-          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 2200 ккал</span></div><img src="img/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Меню 2200 ккал</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <div class="price-macros">
             <div class="row"><span>Білки</span><b>130 г · 520 ккал</b></div>
             <div class="row"><span>Жири</span><b>70 г · 630 ккал</b></div>
@@ -614,13 +614,13 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card flagship fi" id="menu-family">
         <button type="button" class="price-card-head">
-          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="img/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Топ вибір для сім'ї</span>
           <span class="phc-info"><span class="phc-goal">Чоловік · дружина · 1–2 дітей</span><span class="phc-kcal">Сімейне меню на 31 день</span></span>
           <span class="phc-chev">⌄</span>
         </button>
         <div class="price-card-body">
-          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Сімейне меню</span></div><img src="img/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Сімейне меню</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
           <p style="font-size:14px;color:rgba(255,255,255,.85);margin-bottom:16px;max-width:480px">Один продуктовий кошик на тиждень — на всю родину. Готуєш один раз, а не окремо собі й окремо всім іншим.</p>
           <div class="price-macros">
             <div class="row"><span>Порції</span><b>під кожного члена родини</b></div>
@@ -641,7 +641,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <div class="fi">
         <div class="expert-photo ph-img">
           <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: Олена Малетич</span></div>
-          <img src="img/trainer-photo.jpg" alt="Олена Малетич — сертифікований нутриціолог та фітнес-тренер" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/trainer-photo.jpg" alt="Олена Малетич — сертифікований нутриціолог та фітнес-тренер" loading="lazy" onerror="this.style.display='none'">
         </div>
       </div>
       <div class="fi">
@@ -671,7 +671,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     </div>
     <div class="rev-grid">
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-1.jpg" alt="Відгук клієнтки Ірина" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/testimonial-1.jpg" alt="Відгук клієнтки Ірина" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Харчуюся по меню — поки вага з кожним днем все менше! Але іноді порція така, що просто не можу так багато з'їсти)»</p>
@@ -679,7 +679,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-2.jpg" alt="Відгук клієнтки Ілона" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/testimonial-2.jpg" alt="Відгук клієнтки Ілона" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Ділюсь результатами. За 2 місяці мінус 8 кг 😧 Працюємо далі 👍 Дякую 🔥»</p>
@@ -687,7 +687,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-3.jpg" alt="Відгук клієнтки Ольга" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/testimonial-3.jpg" alt="Відгук клієнтки Ольга" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Навіть якщо не буде великого мінусу, я не засмучусь, тому що почала себе набагато краще почувати. Зранку немає тяжкості, більше енергії. Личко очистилось — за тиждень дуже помітні зміни».</p>
@@ -695,7 +695,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         </div>
       </div>
       <div class="rev-card fi">
-        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://admin.vgsolutions.cloud/static/img/testimonial-4.jpg" alt="Відгук клієнтки Yuliia" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="ph-img"><div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Скріншот відгуку / фото результату</span></div><img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/testimonial-4.jpg" alt="Відгук клієнтки Yuliia" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="rev-body">
           <div class="rev-stars">★★★★★</div>
           <p>«Я теж намагаюсь готувати на всю родину. І от іноді відчуваю, що не голодна, але ж приготувала — і наче самій вже починає хотітися🤤 А чоловіку готую ситно, і виходить, що з ним з'їдаю майже таку ж порцію. Плюс — що я його так само привчила до збалансованої їжі».</p>
