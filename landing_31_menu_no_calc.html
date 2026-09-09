@@ -154,32 +154,29 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 }
 
 /* ---------- HERO ---------- */
-.hero{padding:36px 0 90px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2}
-.hero-grid>*{min-width:0}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-.hero h1{font-size:clamp(34px,4.6vw,56px);margin-bottom:22px}
-.hero h1 em{font-style:normal;color:var(--coral-dark);text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:6px;text-decoration-color:var(--pink-deep)}
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;border:none;border-radius:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,15,12,.05) 0%,rgba(15,15,12,.55) 55%,rgba(15,15,12,.92) 100%)}
+.hero-bg .ph-fallback{justify-content:flex-start;padding-top:70px;color:rgba(255,255,255,.55)}
+.hero-content{position:relative;z-index:2;padding:72px 0 56px;max-width:760px;color:#fff}
+.hero h1{font-size:clamp(34px,4.6vw,56px);margin-bottom:22px;color:#fff}
+.hero h1 em{font-style:normal;color:#fff;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:6px;text-decoration-color:var(--pink-deep)}
+.hero .lead{color:rgba(255,255,255,.88)}
 .hero-badges{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.hero .pill.green{border:1.5px solid rgba(255,255,255,.4)}
 .hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;align-items:center}
-.hero-note{margin-top:18px;font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
-.hero-visual{position:relative}
-.hero-photo-main{border-radius:16px;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
-.hero-float-card{
-  position:absolute;bottom:-26px;left:-32px;width:230px;padding:16px;
-  display:flex;gap:12px;align-items:center;border-radius:12px;
-}
-.hero-float-card .ph-img{width:56px;height:56px;border-radius:14px;flex-shrink:0}
-.hero-float-card .t{font-size:12px;font-weight:700;color:var(--green-950)}
-.hero-float-card .s{font-size:11px;color:var(--ink-soft)}
+.hero-actions .btn.outline{border-color:#fff;color:#fff}
+.hero-actions .btn.outline:hover{background:#fff;color:var(--ink)}
+.hero-note{margin-top:18px;font-size:13px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .hero-discount-badge{
-  position:absolute;top:16px;right:16px;padding:10px 16px;border-radius:14px;
+  position:absolute;top:24px;right:24px;z-index:3;padding:10px 16px;border-radius:14px;
   background:#fff;color:var(--green-950);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;
   border:2px solid var(--line);text-align:left;
 }
 .hero-discount-badge b{font-size:17px;line-height:1.1}
 .hero-discount-badge span{font-size:10px;color:var(--ink-soft);font-weight:600}
-@media(max-width:640px){.hero-float-card{left:0;bottom:-20px;width:190px}}
+@media(max-width:640px){.hero{min-height:78vh}.hero-content{padding:40px 0 40px}}
 
 /* ---------- EXPERT ---------- */
 .expert-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
@@ -295,7 +292,8 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 /* ---------- PRICING ---------- */
 .price-list{display:flex;flex-direction:column;gap:14px;margin-top:44px}
 .price-card{background:#fff;border-radius:14px;border:2px solid var(--line);scroll-margin-top:112px}
-.price-card-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:16px;width:100%;padding:20px 22px;cursor:pointer}
+.price-card-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:16px;width:100%;padding:16px 22px;cursor:pointer}
+.phc-thumb{width:52px;height:52px;border-radius:10px;flex-shrink:0;overflow:hidden}
 .phc-tag{flex-shrink:0;background:var(--green-50);color:var(--green-700);font-size:11px;font-weight:700;padding:6px 12px;border-radius:10px;white-space:nowrap}
 .phc-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
 .phc-goal{font-size:12.5px;color:var(--ink-soft)}
@@ -307,11 +305,12 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .price-card.open .price-card-body{display:block}
 .price-card-body .ph-img{aspect-ratio:16/10;border-radius:14px;margin-bottom:18px}
 @media(max-width:520px){
-  .price-card-head{flex-wrap:wrap;row-gap:10px}
-  .phc-tag{order:1}
-  .phc-price{order:2;margin-left:auto}
-  .phc-chev{order:3}
-  .phc-info{order:4;flex-basis:100%}
+  .price-card-head{display:grid;grid-template-columns:44px 1fr auto auto;column-gap:12px;row-gap:8px;align-items:center}
+  .phc-thumb{width:44px;height:44px;grid-column:1;grid-row:1}
+  .phc-tag{grid-column:2;grid-row:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .phc-price{grid-column:3;grid-row:1}
+  .phc-chev{grid-column:4;grid-row:1}
+  .phc-info{grid-column:1/-1;grid-row:2}
 }
 .price-goal-body{display:none}
 .price-macros{display:flex;flex-direction:column;gap:5px;font-size:11.5px;color:var(--ink-soft);margin-bottom:18px;background:var(--green-50);border-radius:12px;padding:10px 12px}
@@ -408,9 +407,15 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 </div>
 
 <!-- ================= HERO ================= -->
-<section class="hero grid-bg" id="top">
-  <div class="container hero-grid">
-    <div class="fi show">
+<section class="hero" id="top">
+  <div class="hero-bg ph-img">
+    <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Головне фото — тарілка / меню</span></div>
+    <img src="https://admin.vgsolutions.cloud/static/img/hero-main.jpg" alt="Збалансована тарілка з меню на 31 день" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-discount-badge"><b>290 ₴</b><span>до <span id="hero-badge-date">15.08</span></span></div>
+  <div class="container">
+    <div class="hero-content fi show">
       <div class="hero-badges">
         <span class="pill coral">Ціна діє до <span id="hero-date">15 серпня</span></span>
         <span class="pill green">Не дієта — система на 31 день</span>
@@ -422,23 +427,6 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
         <a href="#inside" class="btn outline">Що всередині системи</a>
       </div>
       <div class="hero-note">🥑 Прості продукти · 🍕 1 чіт-міл щонеділі · 📖 4 бонуси в подарунок</div>
-    </div>
-    <div class="hero-visual fi show">
-      <div class="hero-photo-main ph-img">
-        <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Головне фото — тарілка / меню</span></div>
-        <img src="https://admin.vgsolutions.cloud/static/img/hero-main.jpg" alt="Збалансована тарілка з меню на 31 день" onerror="this.style.display='none'">
-      </div>
-      <div class="hero-discount-badge"><b>290 ₴</b><span>до <span id="hero-badge-date">15.08</span></span></div>
-      <div class="hero-float-card card">
-        <div class="ph-img">
-          <div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:14px">🍽️</span></div>
-          <img src="https://admin.vgsolutions.cloud/static/img/hero-float.jpg" alt="Страва з меню" loading="lazy" onerror="this.style.display='none'">
-        </div>
-        <div>
-          <div class="t">День 12 з 31</div>
-          <div class="s">Приклад дня з меню</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -648,6 +636,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
     <div class="price-list">
       <div class="price-card fi" id="menu-1250">
         <button type="button" class="price-card-head">
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1250.jpg" alt="Меню 1250 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Максимальний дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Мала вага або мінімальна активність</span><span class="phc-kcal">1250 ккал</span></span>
           <span class="phc-price">290 ₴</span>
@@ -667,6 +656,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1450">
         <button type="button" class="price-card-head">
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1450.jpg" alt="Меню 1450 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Помірний дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Середнє схуднення</span><span class="phc-kcal">1450 ккал</span></span>
           <span class="phc-price">290 ₴</span>
@@ -686,6 +676,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1650">
         <button type="button" class="price-card-head">
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1650.jpg" alt="Меню 1650 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">М'який дефіцит</span>
           <span class="phc-info"><span class="phc-goal">Базова підтримка ваги</span><span class="phc-kcal">1650 ккал</span></span>
           <span class="phc-price">290 ₴</span>
@@ -705,6 +696,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-1900">
         <button type="button" class="price-card-head">
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-1900.jpg" alt="Меню 1900 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Активна підтримка</span>
           <span class="phc-info"><span class="phc-goal">Помірний набір м'язів або схуднення для активних</span><span class="phc-kcal">1900 ккал</span></span>
           <span class="phc-price">290 ₴</span>
@@ -724,6 +716,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card fi" id="menu-2200">
         <button type="button" class="price-card-head">
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-2200.jpg" alt="Меню 2200 ккал" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Високий калораж</span>
           <span class="phc-info"><span class="phc-goal">Набір маси або високі фізичні навантаження</span><span class="phc-kcal">2200 ккал</span></span>
           <span class="phc-price">290 ₴</span>
@@ -743,6 +736,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
 
       <div class="price-card flagship fi" id="menu-family">
         <button type="button" class="price-card-head">
+          <div class="phc-thumb ph-img"><div class="ph-fallback" style="padding:2px"><span class="ic" style="font-size:16px">🖼️</span></div><img src="https://admin.vgsolutions.cloud/static/img/menu-family.jpg" alt="Сімейне меню на 31 день" loading="lazy" onerror="this.style.display='none'"></div>
           <span class="phc-tag">Топ вибір для сім'ї</span>
           <span class="phc-info"><span class="phc-goal">Чоловік · дружина · 1–2 дітей</span><span class="phc-kcal">Сімейне меню на 31 день</span></span>
           <span class="phc-price">490 ₴</span>
