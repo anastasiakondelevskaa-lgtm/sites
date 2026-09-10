@@ -5,13 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>Тест: розрахуй свій ідеальний раціон</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!--
-  ЗОБРАЖЕННЯ: усі src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/<файл>" — це плейсхолдери.
-  Заміни PASTE_TILDA_ID_HERE на реальний ID картинки з Тільди для кожного фото
-  (quiz-intro.jpg, quiz-motivation.jpg, quiz-result.jpg — та menu-XXXX.jpg / menu-family.jpg,
-  ті самі файли, що й на лендінгу). Поки посилання не замінено — показується заглушка з підписом.
--->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -135,7 +129,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
 .ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;color:var(--ink-soft)}
 .ph-fallback .ic{font-size:22px;opacity:.6}
 .ph-fallback .cap{font-size:11px;font-weight:700;line-height:1.4;max-width:180px}
-.photo-block{width:100%;min-height:160px;border-radius:var(--radius-md);margin-bottom:16px}
+.photo-block{width:100%;aspect-ratio:1/1;border-radius:var(--radius-md);margin-bottom:16px}
 
 /* MOTIVATION INTERSTITIAL */
 .motiv-title{font-size:clamp(20px,5.5vw,25px);color:var(--green-950);text-align:center;margin-bottom:8px}
@@ -174,7 +168,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
 .diag-list li::before{content:'!';flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#fff;border:1.5px solid var(--coral);color:var(--coral-dark);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
 
 .product-card{border:2px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:18px}
-.product-image{width:100%;min-height:160px}
+.product-image{width:100%;aspect-ratio:1/1}
 .product-body{padding:16px 18px 18px;background:#fff}
 .product-title{font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;color:var(--green-950);margin-bottom:6px}
 .product-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px}
@@ -221,7 +215,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
     <div class="step active" data-step="intro">
       <div class="photo-block ph-img">
         <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: старт тесту</span></div>
-        <img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/quiz-intro.jpg" alt="Тест на харчування" onerror="this.style.display='none'">
+        <img src="https://static.tildacdn.net/tild3533-3961-4435-b236-316538653762/1000008112.jpg" alt="Тест на харчування" onerror="this.style.display='none'">
       </div>
       <h1 class="intro-title">Дізнайся свою денну норму КБЖВ за 60 секунд</h1>
       <p class="intro-desc">Пройди короткий тест — і отримай персональний розрахунок калорій, БЖВ та готове меню під твою ціль, підібране нутриціологом.</p>
@@ -310,7 +304,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
     <div class="step" data-step="motivation">
       <div class="photo-block ph-img">
         <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: мотивація</span></div>
-        <img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/quiz-motivation.jpg" alt="Ти на половині шляху" onerror="this.style.display='none'">
+        <img src="https://static.tildacdn.net/tild3533-3961-4435-b236-316538653762/1000008112.jpg" alt="Ти на половині шляху" onerror="this.style.display='none'">
       </div>
       <h2 class="motiv-title">Чудова робота! Ти вже на половині шляху</h2>
       <p class="motiv-sub">Ще кілька відповідей — і ми розрахуємо твою точну денну норму та підберемо готове меню.</p>
@@ -421,7 +415,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
     <div class="step" data-step="result">
       <div class="photo-block ph-img">
         <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: результат</span></div>
-        <img src="https://static.tildacdn.com/PASTE_TILDA_ID_HERE/quiz-result.jpg" alt="Твій результат готовий" onerror="this.style.display='none'">
+        <img src="https://static.tildacdn.net/tild3533-3961-4435-b236-316538653762/1000008112.jpg" alt="Твій результат готовий" onerror="this.style.display='none'">
       </div>
       <h2 class="result-title">Твій персональний розрахунок готовий</h2>
       <p class="result-sub">На основі формули Міффліна-Сан Жеора та твоїх відповідей</p>
@@ -613,6 +607,15 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
     return 2200;
   }
 
+  var MENU_IMAGES = {
+    1250: 'https://optim.tildacdn.net/tild3432-3933-4836-a465-636331616264/-/format/webp/1000008090.png.webp',
+    1450: 'https://optim.tildacdn.net/tild6361-6338-4862-a630-313632333930/-/format/webp/1000008092.png.webp',
+    1650: 'https://optim.tildacdn.net/tild3737-3065-4138-b534-343665383265/-/format/webp/1000008094.png.webp',
+    1900: 'https://optim.tildacdn.net/tild6362-3734-4566-b833-626530663039/-/format/webp/1000008096.png.webp',
+    2200: 'https://optim.tildacdn.net/tild6463-3266-4534-a334-663331356436/-/format/webp/1000008098.png.webp',
+    family: 'https://optim.tildacdn.net/tild6133-3766-4333-b166-396162356362/-/format/webp/1000008100.png.webp'
+  };
+
   var macroSplit = {
     loss:     {p:0.30, f:0.30, c:0.40},
     maintain: {p:0.25, f:0.30, c:0.45},
@@ -678,7 +681,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
 
     if(isFamilyMenu){
       productImg.style.display = 'block';
-      productImg.src = 'https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-family.jpg';
+      productImg.src = MENU_IMAGES.family;
       document.getElementById('menuPill').textContent = 'Сімейне меню ~' + FAMILY_DISPLAY + ' ккал';
       fallbackKcalEl.textContent = 'Сімейне';
       fallbackLabelEl.textContent = 'меню ~' + FAMILY_DISPLAY + ' ккал';
@@ -696,7 +699,7 @@ h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:
       ];
     } else {
       productImg.style.display = 'block';
-      productImg.src = 'https://static.tildacdn.com/PASTE_TILDA_ID_HERE/menu-' + menuCal + '.jpg';
+      productImg.src = MENU_IMAGES[menuCal];
       fallbackKcalEl.textContent = menuCal;
       fallbackLabelEl.textContent = 'ккал меню';
       document.getElementById('productTitle').textContent = 'Система харчування на ' + menuCal + ' ккал';
