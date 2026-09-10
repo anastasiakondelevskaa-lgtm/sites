@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Тест: розрахуй свій ідеальний раціон</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-950:#0f0f0c;
+  --green-900:#1c1c17;
+  --green-700:#3a3a32;
+  --green-600:#4d4d43;
+  --green-100:#eeeee6;
+  --green-50:#eef7f1;
+  --cream:#f6fbf8;
+  --coral:#1a9c5b;
+  --coral-dark:#0f7a44;
+  --pink-light:#eafaf1;
+  --line:#14140f;
+  --ink:#14140f;
+  --ink-soft:#5a5a52;
+  --radius-lg:16px;
+  --radius-md:12px;
+  --radius-sm:8px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  min-height:100svh;
+  position:relative;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:800;line-height:1.2;color:var(--green-950)}
+
+.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.22;z-index:0;pointer-events:none}
+.blob1{width:280px;height:280px;background:var(--coral);top:-90px;left:-90px}
+.blob2{width:260px;height:260px;background:var(--green-100);bottom:-100px;right:-100px}
+
+.page{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:22px 16px 48px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+
+.brandbar{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px}
+.brandbar .dot{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.brandbar span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-700)}
+
+.progress-wrap{margin-bottom:18px;display:none}
+.progress-wrap.active{display:block}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:8px}
+.progress-track{height:10px;background:var(--green-100);border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:var(--coral);border-radius:999px;transition:width .4s ease}
+
+.card{
+  background:#fff;
+  border:2px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:26px 20px;
+}
+
+.step{display:none}
+.step.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.tag{display:inline-block;background:var(--green-50);color:var(--green-700);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-sm);margin-bottom:14px}
+.q-title{font-size:clamp(20px,5.5vw,26px);color:var(--green-950);margin-bottom:8px}
+.q-sub{font-size:14px;color:var(--ink-soft);margin-bottom:20px;line-height:1.6}
+
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+.option-btn{
+  display:flex;flex-direction:column;gap:2px;
+  width:100%;text-align:left;
+  padding:16px 18px;
+  border-radius:var(--radius-md);
+  border:2px solid var(--line);
+  background:var(--green-50);
+  font-family:'Manrope',sans-serif;
+  cursor:pointer;
+  transition:background .18s ease,border-color .18s ease,transform .12s ease;
+}
+.option-btn:hover{border-color:var(--coral);background:var(--pink-light)}
+.option-btn.selected{background:var(--coral);border-color:var(--coral)}
+.option-main{font-size:16px;font-weight:700;color:var(--ink)}
+.option-btn.selected .option-main{color:#fff}
+.option-note{font-size:12.5px;color:var(--ink-soft)}
+.option-btn.selected .option-note{color:var(--pink-light)}
+
+.check-btn{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px}
+.check-box{width:24px;height:24px;flex-shrink:0;border-radius:7px;border:2px solid var(--coral);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;background:#fff}
+.option-btn.selected .check-box{background:#fff;color:var(--coral)}
+.check-box::after{content:''}
+.option-btn.selected .check-box::after{content:'✓'}
+
+.fields{display:flex;flex-direction:column;gap:14px;margin-bottom:6px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--green-900);margin-bottom:6px}
+.field input{
+  width:100%;padding:14px 16px;border-radius:var(--radius-md);border:2px solid var(--line);
+  font-family:'Manrope',sans-serif;font-size:16px;color:var(--ink);background:var(--green-50);
+  outline:none;transition:border-color .18s ease;
+}
+.field input:focus{border-color:var(--coral);background:#fff}
+.field-error{font-size:12px;color:var(--coral-dark);margin-top:5px;display:none}
+.field.invalid input{border-color:var(--coral-dark)}
+.field.invalid .field-error{display:block}
+
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}
+.btn-primary{
+  flex:1;
+  background:linear-gradient(135deg,#22b06b 0%,var(--coral-dark) 100%);color:#fff;border:none;border-radius:10px;
+  padding:16px 20px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;transition:filter .15s ease,transform .12s ease;
+}
+.btn-primary:hover:not(:disabled){filter:brightness(1.08)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-ghost{
+  background:transparent;border:none;color:var(--ink-soft);font-family:'Manrope',sans-serif;
+  font-size:14px;font-weight:700;cursor:pointer;padding:14px 8px;
+}
+.btn-ghost:hover{color:var(--green-700)}
+
+/* PHOTO PLACEHOLDER (same pattern as the landing pages) */
+.ph-img{position:relative;overflow:hidden;background:var(--green-50);border:2px solid var(--line)}
+.ph-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:none}
+.ph-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;color:var(--ink-soft)}
+.ph-fallback .ic{font-size:22px;opacity:.6}
+.ph-fallback .cap{font-size:11px;font-weight:700;line-height:1.4;max-width:180px}
+.photo-block{width:100%;aspect-ratio:1/1;border-radius:var(--radius-md);margin-bottom:16px}
+
+/* MOTIVATION INTERSTITIAL */
+.motiv-title{font-size:clamp(20px,5.5vw,25px);color:var(--green-950);text-align:center;margin-bottom:8px}
+.motiv-sub{font-size:14px;color:var(--ink-soft);text-align:center;margin-bottom:22px;line-height:1.6}
+
+/* INTRO */
+.intro-title{font-size:clamp(24px,7vw,32px);color:var(--green-950);margin-bottom:12px}
+.intro-desc{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:22px}
+.intro-points{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.intro-points li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink)}
+.intro-points li::before{content:'✓';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--green-100);color:var(--green-700);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.btn-start{width:100%;background:linear-gradient(135deg,#22b06b 0%,var(--coral-dark) 100%);color:#fff;border:none;border-radius:10px;padding:18px 20px;font-size:16px;font-weight:700;cursor:pointer;transition:filter .15s ease}
+.btn-start:hover{filter:brightness(1.08)}
+.intro-foot{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:14px}
+
+/* RESULT */
+.result-title{text-align:center;font-size:clamp(21px,6vw,27px);color:var(--green-950);margin-bottom:4px}
+.result-sub{text-align:center;font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+
+.kcal-block{background:var(--green-900);border-radius:var(--radius-lg);padding:22px 18px;text-align:center;margin-bottom:16px}
+.kcal-num{font-family:'Manrope',sans-serif;font-size:44px;font-weight:800;color:#fff;line-height:1}
+.kcal-num span{font-size:18px;font-weight:600;color:var(--green-100)}
+.kcal-caption{font-size:12.5px;color:var(--green-100);margin-top:6px}
+.menu-pill{display:inline-block;margin-top:12px;background:var(--coral);color:#fff;font-size:12.5px;font-weight:800;padding:7px 16px;border-radius:var(--radius-sm)}
+
+.kbju-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.kbju-item{background:var(--green-50);border:2px solid var(--line);border-radius:var(--radius-md);padding:14px 8px;text-align:center}
+.kbju-val{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--green-900)}
+.kbju-lbl{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+.diag-block{background:var(--pink-light);border:2px solid var(--coral);border-radius:var(--radius-md);padding:16px 16px 14px;margin-bottom:18px}
+.diag-title{font-size:14px;font-weight:800;color:var(--green-900);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.diag-text{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:8px}
+.diag-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.diag-list li{font-size:13.5px;color:var(--ink);line-height:1.55;display:flex;gap:8px}
+.diag-list li::before{content:'!';flex-shrink:0;width:18px;height:18px;border-radius:50%;background:#fff;border:1.5px solid var(--coral);color:var(--coral-dark);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+
+.product-card{border:2px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:18px}
+.product-image{width:100%;aspect-ratio:1/1}
+.product-body{padding:16px 18px 18px;background:#fff}
+.product-title{font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;color:var(--green-950);margin-bottom:6px}
+.product-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px}
+.includes-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.includes-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink);line-height:1.5}
+.includes-list li::before{content:'✓';flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--green-100);color:var(--green-700);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+
+.cta-btn{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:linear-gradient(135deg,#22b06b 0%,var(--coral-dark) 100%);color:#fff;font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;
+  padding:18px 16px;border-radius:10px;border:none;cursor:pointer;
+  transition:filter .15s ease;
+}
+.cta-btn:hover{filter:brightness(1.08)}
+.family-note{display:none;margin-bottom:18px;background:var(--green-50);border:2px dashed var(--coral);border-radius:var(--radius-md);padding:14px 16px;font-size:13.5px;color:var(--ink);line-height:1.6;text-align:center}
+.family-note a{color:var(--coral-dark);font-weight:800;text-decoration:underline;white-space:nowrap}
+.result-foot{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:14px}
+.result-foot button{background:none;border:none;color:var(--green-700);font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline}
+
+@media(min-width:560px){
+  .page{padding:40px 20px}
+  .card{padding:34px 32px;border-radius:24px}
+  .nav-row{margin-top:28px}
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="page">
+
+  <div class="brandbar"><span class="dot"></span><span>Тест на харчування</span></div>
+
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-label"><span id="progressText">Крок 1 з 7</span><span id="progressPct">0%</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <div class="card">
+
+    <!-- INTRO -->
+    <div class="step active" data-step="intro">
+      <div class="photo-block ph-img">
+        <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: старт тесту</span></div>
+        <img src="https://optim.tildacdn.net/tild3533-3961-4435-b236-316538653762/-/format/webp/1000008112.jpg.webp" alt="Тест на харчування" onerror="this.style.display='none'">
+      </div>
+      <h1 class="intro-title">Дізнайся свою денну норму КБЖВ за 60 секунд</h1>
+      <p class="intro-desc">Пройди короткий тест — і отримай персональний розрахунок калорій, БЖВ та готове меню під твою ціль, підібране нутриціологом.</p>
+      <ul class="intro-points">
+        <li>Точна формула Міффліна-Сан Жеора</li>
+        <li>Врахування твого способу харчування та звичок</li>
+        <li>Готове меню без суворих дієт і заборон</li>
+      </ul>
+      <button class="btn-start" id="startBtn" type="button">Почати тест →</button>
+      <p class="intro-foot">Займе не більше 1 хвилини</p>
+    </div>
+
+    <!-- Q1 GENDER -->
+    <div class="step" data-step="gender">
+      <span class="tag">Крок 1 з 7</span>
+      <h2 class="q-title">Яка твоя стать?</h2>
+      <p class="q-sub">Потрібно для точного розрахунку базового обміну речовин</p>
+      <div class="options" id="genderOptions">
+        <button class="option-btn" type="button" data-value="female"><span class="option-main">Жінка</span></button>
+        <button class="option-btn" type="button" data-value="male"><span class="option-main">Чоловік</span></button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- Q2 PARAMS -->
+    <div class="step" data-step="params">
+      <span class="tag">Крок 2 з 7</span>
+      <h2 class="q-title">Твої параметри</h2>
+      <p class="q-sub">Вкажи чесні дані — від цього залежить точність розрахунку</p>
+      <div class="fields">
+        <div class="field" id="fieldAge">
+          <label for="inputAge">Вік, років</label>
+          <input type="number" id="inputAge" inputmode="numeric" placeholder="Наприклад, 32" min="14" max="90">
+          <p class="field-error">Вкажи вік від 14 до 90 років</p>
+        </div>
+        <div class="field" id="fieldWeight">
+          <label for="inputWeight">Вага, кг</label>
+          <input type="number" id="inputWeight" inputmode="numeric" placeholder="Наприклад, 65" min="30" max="250">
+          <p class="field-error">Вкажи вагу від 30 до 250 кг</p>
+        </div>
+        <div class="field" id="fieldHeight">
+          <label for="inputHeight">Зріст, см</label>
+          <input type="number" id="inputHeight" inputmode="numeric" placeholder="Наприклад, 168" min="100" max="220">
+          <p class="field-error">Вкажи зріст від 100 до 220 см</p>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- Q3 ACTIVITY -->
+    <div class="step" data-step="activity">
+      <span class="tag">Крок 3 з 7</span>
+      <h2 class="q-title">Який у тебе рівень активності?</h2>
+      <p class="q-sub">Оціни звичайний тиждень, а не найкращий чи найгірший</p>
+      <div class="options" id="activityOptions">
+        <button class="option-btn" type="button" data-value="1.2">
+          <span class="option-main">Мінімальний</span>
+          <span class="option-note">Сидяча робота, без спорту</span>
+        </button>
+        <button class="option-btn" type="button" data-value="1.375">
+          <span class="option-main">Легкий</span>
+          <span class="option-note">Тренування 1–3 рази на тиждень</span>
+        </button>
+        <button class="option-btn" type="button" data-value="1.55">
+          <span class="option-main">Помірний</span>
+          <span class="option-note">Тренування 3–5 разів на тиждень</span>
+        </button>
+        <button class="option-btn" type="button" data-value="1.725">
+          <span class="option-main">Високий</span>
+          <span class="option-note">Тренування 6–7 разів на тиждень</span>
+        </button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- MOTIVATION INTERSTITIAL -->
+    <div class="step" data-step="motivation">
+      <div class="photo-block ph-img">
+        <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: мотивація</span></div>
+        <img src="https://optim.tildacdn.net/tild3236-3733-4466-b761-626166313931/-/format/webp/1000008082.jpg.webp" alt="Ти на половині шляху" onerror="this.style.display='none'">
+      </div>
+      <h2 class="motiv-title">Чудова робота! Ти вже на половині шляху</h2>
+      <p class="motiv-sub">Ще кілька відповідей — і ми розрахуємо твою точну денну норму та підберемо готове меню.</p>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next>Продовжити →</button>
+      </div>
+    </div>
+
+    <!-- Q4 GOAL -->
+    <div class="step" data-step="goal">
+      <span class="tag">Крок 4 з 7</span>
+      <h2 class="q-title">Яка твоя ціль?</h2>
+      <div class="options" id="goalOptions">
+        <button class="option-btn" type="button" data-value="loss">
+          <span class="option-main">Схуднення</span>
+          <span class="option-note">Комфортний дефіцит калорій</span>
+        </button>
+        <button class="option-btn" type="button" data-value="maintain">
+          <span class="option-main">Підтримка ваги</span>
+          <span class="option-note">Тримати стабільну форму</span>
+        </button>
+        <button class="option-btn" type="button" data-value="gain">
+          <span class="option-main">Набір м'язів</span>
+          <span class="option-note">Профіцит калорій для росту м'язів</span>
+        </button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- Q5 COOK FOR -->
+    <div class="step" data-step="cookfor">
+      <span class="tag">Крок 5 з 7</span>
+      <h2 class="q-title">Для кого підбираємо меню?</h2>
+      <p class="q-sub">Це впливає на формат страв і порції</p>
+      <div class="options" id="cookforOptions">
+        <button class="option-btn" type="button" data-value="self">
+          <span class="option-main">Тільки для себе</span>
+          <span class="option-note">Індивідуальні порції під твій КБЖВ</span>
+        </button>
+        <button class="option-btn" type="button" data-value="family">
+          <span class="option-main">Для всієї родини</span>
+          <span class="option-note">Одна страва — смачно і збалансовано для всіх</span>
+        </button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- Q6 MEAL FREQ -->
+    <div class="step" data-step="mealfreq">
+      <span class="tag">Крок 6 з 7</span>
+      <h2 class="q-title">Скільки разів на день ти харчуєшся?</h2>
+      <div class="options" id="mealfreqOptions">
+        <button class="option-btn" type="button" data-value="chaotic">
+          <span class="option-main">1–2 рази</span>
+          <span class="option-note">Хаотично, коли встигаю</span>
+        </button>
+        <button class="option-btn" type="button" data-value="regular">
+          <span class="option-main">3 рази</span>
+          <span class="option-note">Сніданок, обід, вечеря</span>
+        </button>
+        <button class="option-btn" type="button" data-value="snacking">
+          <span class="option-main">4+ рази</span>
+          <span class="option-note">Плюс постійні перекуси</span>
+        </button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Далі</button>
+      </div>
+    </div>
+
+    <!-- Q7 SYMPTOMS -->
+    <div class="step" data-step="symptoms">
+      <span class="tag">Крок 7 з 7</span>
+      <h2 class="q-title">Що з цього тобі знайоме?</h2>
+      <p class="q-sub">Можна вибрати кілька варіантів</p>
+      <div class="options" id="symptomsOptions">
+        <button class="option-btn check-btn" type="button" data-value="bloating">
+          <span class="check-box"></span><span class="option-main">Тяжкість або здуття після їжі</span>
+        </button>
+        <button class="option-btn check-btn" type="button" data-value="sugar">
+          <span class="check-box"></span><span class="option-main">Тяга до солодкого після обіду чи вечері</span>
+        </button>
+        <button class="option-btn check-btn" type="button" data-value="skipBreakfast">
+          <span class="check-box"></span><span class="option-main">Пропускаю сніданок, а ввечері переїдаю</span>
+        </button>
+        <button class="option-btn check-btn" type="button" data-value="macros">
+          <span class="check-box"></span><span class="option-main">Не розумію, скільки білків і жирів мені потрібно</span>
+        </button>
+        <button class="option-btn check-btn" type="button" data-value="normal">
+          <span class="check-box"></span><span class="option-main">У мене все в нормі, просто шукаю готове меню</span>
+        </button>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" type="button" data-back>← Назад</button>
+        <button class="btn-primary" type="button" data-next disabled>Отримати результат</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="step" data-step="result">
+      <div class="photo-block ph-img">
+        <div class="ph-fallback"><span class="ic">🖼️</span><span class="cap">Фото: результат</span></div>
+        <img src="https://optim.tildacdn.net/tild3836-6136-4735-b462-363032633739/-/format/webp/1000008084.jpg.webp" alt="Твій результат готовий" onerror="this.style.display='none'">
+      </div>
+      <h2 class="result-title">Твій персональний розрахунок готовий</h2>
+      <p class="result-sub">На основі формули Міффліна-Сан Жеора та твоїх відповідей</p>
+
+      <div class="kcal-block">
+        <div class="kcal-num" id="targetKcal">0<span> ккал/день</span></div>
+        <div class="kcal-caption">Твоя денна норма для досягнення цілі</div>
+        <div class="menu-pill" id="menuPill">Меню 1450 ккал</div>
+      </div>
+
+      <div class="kbju-grid">
+        <div class="kbju-item"><div class="kbju-val" id="valProtein">0г</div><div class="kbju-lbl">Білки</div></div>
+        <div class="kbju-item"><div class="kbju-val" id="valFat">0г</div><div class="kbju-lbl">Жири</div></div>
+        <div class="kbju-item"><div class="kbju-val" id="valCarbs">0г</div><div class="kbju-lbl">Вуглеводи</div></div>
+      </div>
+
+      <div class="diag-block" id="diagBlock">
+        <div class="diag-title">Діагностика від нутриціолога</div>
+        <p class="diag-text" id="diagIntro"></p>
+        <ul class="diag-list" id="diagList"></ul>
+      </div>
+
+      <button class="btn-primary" type="button" data-next id="toMenuBtn" style="width:100%">Переглянути моє меню →</button>
+    </div>
+
+    <!-- MENU OFFER -->
+    <div class="step" data-step="menuOffer">
+      <div class="product-card">
+        <div class="product-image ph-img">
+          <div class="ph-fallback"><span class="ic" id="fallbackKcal">1450</span><span class="cap" id="fallbackLabel">ккал меню</span></div>
+          <img src="" alt="Твоє меню" id="productImg" onerror="this.style.display='none'">
+        </div>
+        <div class="product-body">
+          <p class="product-title" id="productTitle">Система харчування на 1450 ккал</p>
+          <p class="product-desc" id="productDesc">Ніяких суворих заборон і голодувань — тільки збалансовані страви, прості рецепти та порції під твій КБЖВ. Їж смачно і при цьому йди до своєї цілі без стресу для організму.</p>
+          <ul class="includes-list" id="includesList"></ul>
+          <a href="https://app.zenedu.io/l/JI5aqmMmvCbB2zRj" class="cta-btn" id="ctaBtn">Оформити меню на 1450 ккал за 290 ₴ →</a>
+        </div>
+      </div>
+
+      <div class="family-note" id="familyNote">
+        Готуєш для всієї родини? У нас є окреме <strong>сімейне меню на ~1600 ккал</strong> за 490 ₴ — готуєш одну страву, а смакує всім. <a href="#" id="familyNoteLink">Хочу сімейне меню →</a>
+      </div>
+
+      <p class="result-foot"><button type="button" id="backToResultBtn">← до розрахунку</button> · Меню підбирається автоматично під твій розрахунок · <button type="button" id="restartBtn">пройти тест ще раз</button></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var PAYMENT_LINKS = {
+    1250: 'https://app.zenedu.io/l/t2pZl3tVLl9QgZpY',
+    1450: 'https://app.zenedu.io/l/JI5aqmMmvCbB2zRj',
+    1650: 'https://app.zenedu.io/l/SCj77RgQlTRGt3K1',
+    1900: 'https://app.zenedu.io/l/pyl9nk2L0Q7fvnc0',
+    2200: 'https://app.zenedu.io/l/MeNQRPPMaAk7rV5r',
+    family: 'https://app.zenedu.io/l/4FQsJPAEePw7kZLV'
+  };
+  var state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, cookFor:null, mealFreq:null, symptoms:[] };
+  var order = ['intro','gender','params','activity','motivation','goal','cookfor','mealfreq','symptoms','result','menuOffer'];
+  var questionSteps = ['gender','params','activity','goal','cookfor','mealfreq','symptoms'];
+  var current = 'intro';
+
+  var steps = {};
+  document.querySelectorAll('.step').forEach(function(el){ steps[el.getAttribute('data-step')] = el; });
+  var progressWrap = document.getElementById('progressWrap');
+  var progressFill = document.getElementById('progressFill');
+  var progressText = document.getElementById('progressText');
+  var progressPct = document.getElementById('progressPct');
+
+  function showStep(key){
+    Object.keys(steps).forEach(function(k){ steps[k].classList.toggle('active', k===key); });
+    current = key;
+    var qIndex = questionSteps.indexOf(key);
+    if(qIndex === -1){
+      progressWrap.classList.remove('active');
+    } else {
+      progressWrap.classList.add('active');
+      var pct = Math.round(((qIndex) / questionSteps.length) * 100);
+      progressFill.style.width = pct + '%';
+      progressText.textContent = 'Крок ' + (qIndex+1) + ' з ' + questionSteps.length;
+      progressPct.textContent = pct + '%';
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function goNext(){
+    var idx = order.indexOf(current);
+    if(current === 'symptoms'){
+      computeResults();
+    }
+    if(idx < order.length - 1) showStep(order[idx+1]);
+  }
+  function goBack(){
+    var idx = order.indexOf(current);
+    if(idx > 0) showStep(order[idx-1]);
+  }
+
+  document.getElementById('startBtn').addEventListener('click', goNext);
+  document.getElementById('backToResultBtn').addEventListener('click', goBack);
+  document.getElementById('restartBtn').addEventListener('click', function(){
+    state = { gender:null, age:null, weight:null, height:null, activity:null, goal:null, cookFor:null, mealFreq:null, symptoms:[] };
+    document.querySelectorAll('.option-btn').forEach(function(b){ b.classList.remove('selected'); });
+    document.getElementById('inputAge').value='';
+    document.getElementById('inputWeight').value='';
+    document.getElementById('inputHeight').value='';
+    updateNextState('gender'); updateNextState('activity'); updateNextState('goal'); updateNextState('cookfor'); updateNextState('mealfreq'); updateNextState('symptoms');
+    showStep('intro');
+  });
+
+  document.querySelectorAll('[data-back]').forEach(function(b){ b.addEventListener('click', goBack); });
+  document.querySelectorAll('[data-next]').forEach(function(b){ b.addEventListener('click', goNext); });
+
+  function nextBtnFor(stepKey){ return steps[stepKey].querySelector('[data-next]'); }
+  function updateNextState(stepKey){
+    var enabled = false;
+    if(stepKey==='gender') enabled = !!state.gender;
+    if(stepKey==='activity') enabled = !!state.activity;
+    if(stepKey==='goal') enabled = !!state.goal;
+    if(stepKey==='cookfor') enabled = !!state.cookFor;
+    if(stepKey==='mealfreq') enabled = !!state.mealFreq;
+    if(stepKey==='symptoms') enabled = state.symptoms.length > 0;
+    nextBtnFor(stepKey).disabled = !enabled;
+  }
+
+  function singleSelect(containerId, stepKey, onPick){
+    var container = document.getElementById(containerId);
+    container.querySelectorAll('.option-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        container.querySelectorAll('.option-btn').forEach(function(b){ b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        onPick(btn.getAttribute('data-value'));
+        updateNextState(stepKey);
+      });
+    });
+  }
+
+  singleSelect('genderOptions','gender', function(v){ state.gender = v; });
+  singleSelect('activityOptions','activity', function(v){ state.activity = parseFloat(v); });
+  singleSelect('goalOptions','goal', function(v){ state.goal = v; });
+  singleSelect('cookforOptions','cookfor', function(v){ state.cookFor = v; });
+  singleSelect('mealfreqOptions','mealfreq', function(v){ state.mealFreq = v; });
+
+  var symptomsContainer = document.getElementById('symptomsOptions');
+  symptomsContainer.querySelectorAll('.option-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var val = btn.getAttribute('data-value');
+      if(val === 'normal'){
+        symptomsContainer.querySelectorAll('.option-btn').forEach(function(b){ b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        state.symptoms = ['normal'];
+      } else {
+        var normalBtn = symptomsContainer.querySelector('[data-value="normal"]');
+        normalBtn.classList.remove('selected');
+        state.symptoms = state.symptoms.filter(function(s){ return s!=='normal'; });
+        btn.classList.toggle('selected');
+        if(btn.classList.contains('selected')){
+          if(state.symptoms.indexOf(val)===-1) state.symptoms.push(val);
+        } else {
+          state.symptoms = state.symptoms.filter(function(s){ return s!==val; });
+        }
+      }
+      updateNextState('symptoms');
+    });
+  });
+
+  var fields = [
+    {id:'inputAge', wrap:'fieldAge', min:14, max:90, key:'age'},
+    {id:'inputWeight', wrap:'fieldWeight', min:30, max:250, key:'weight'},
+    {id:'inputHeight', wrap:'fieldHeight', min:100, max:220, key:'height'}
+  ];
+  function validateParams(){
+    var allValid = true;
+    fields.forEach(function(f){
+      var input = document.getElementById(f.id);
+      var wrap = document.getElementById(f.wrap);
+      var val = parseFloat(input.value);
+      var valid = !isNaN(val) && val >= f.min && val <= f.max;
+      wrap.classList.toggle('invalid', input.value !== '' && !valid);
+      if(valid) state[f.key] = val; else state[f.key] = null;
+      if(!valid) allValid = false;
+    });
+    nextBtnFor('params').disabled = !allValid;
+    return allValid;
+  }
+  fields.forEach(function(f){
+    document.getElementById(f.id).addEventListener('input', validateParams);
+  });
+
+  function menuGrade(cal){
+    if(cal <= 1350) return 1250;
+    if(cal <= 1550) return 1450;
+    if(cal <= 1750) return 1650;
+    if(cal <= 2000) return 1900;
+    return 2200;
+  }
+
+  var MENU_IMAGES = {
+    1250: 'https://optim.tildacdn.net/tild3432-3933-4836-a465-636331616264/-/format/webp/1000008090.png.webp',
+    1450: 'https://optim.tildacdn.net/tild6361-6338-4862-a630-313632333930/-/format/webp/1000008092.png.webp',
+    1650: 'https://optim.tildacdn.net/tild3737-3065-4138-b534-343665383265/-/format/webp/1000008094.png.webp',
+    1900: 'https://optim.tildacdn.net/tild6362-3734-4566-b833-626530663039/-/format/webp/1000008096.png.webp',
+    2200: 'https://optim.tildacdn.net/tild6463-3266-4534-a334-663331356436/-/format/webp/1000008098.png.webp',
+    family: 'https://optim.tildacdn.net/tild6133-3766-4333-b166-396162356362/-/format/webp/1000008100.png.webp'
+  };
+
+  var macroSplit = {
+    loss:     {p:0.30, f:0.30, c:0.40},
+    maintain: {p:0.25, f:0.30, c:0.45},
+    gain:     {p:0.30, f:0.25, c:0.45}
+  };
+
+  var goalLabel = { loss:'схуднення', maintain:'підтримки форми', gain:'набору м\'язів' };
+  var goalDesc = {
+    loss: 'система харчування для плавного та комфортного схуднення',
+    maintain: 'система харчування для підтримки твоєї форми',
+    gain: 'система харчування для якісного набору м\'язової маси'
+  };
+
+  var symptomTips = {
+    bloating: 'Відчуття тяжкості та здуття означає, що організму важко перетравлювати теперішній раціон. У меню підібрані легкозасвоювані поєднання продуктів, які знімають навантаження з травлення.',
+    sugar: 'Тяга до солодкого після їжі — ознака різких стрибків цукру в крові. Кожен прийом їжі в меню збалансований за БЖВ, тому рівень цукру тримається стабільним, а тяга до солодкого зникає.',
+    skipBreakfast: 'Пропущений сніданок змушує організм «доганяти» калорії ввечері, що веде до переїдання перед сном. У меню є простий швидкий сніданок, який запускає метаболізм з ранку.',
+    macros: 'Якщо не рахувати білки, жири та вуглеводи — легко переїдати навіть «здоровою» їжею. Ми вже порахували все за тебе: просто готуй за готовими рецептами.'
+  };
+  var mealFreqTips = {
+    chaotic: 'Харчування 1–2 рази на день — це стрес для метаболізму, який сповільнює обмін речовин і провокує переїдання ввечері.',
+    snacking: 'Часті перекуси «між ділом» непомітно додають сотні зайвих калорій на день, навіть якщо основні прийоми їжі здаються помірними.'
+  };
+
+  var FAMILY_GRADE = 1650;
+  var FAMILY_DISPLAY = '1600';
+
+  function computeResults(){
+    var bmr;
+    if(state.gender === 'female'){
+      bmr = 10*state.weight + 6.25*state.height - 5*state.age - 161;
+    } else {
+      bmr = 10*state.weight + 6.25*state.height - 5*state.age + 5;
+    }
+    var tdee = bmr * state.activity;
+    var target;
+    if(state.goal === 'loss') target = tdee * 0.8;
+    else if(state.goal === 'gain') target = tdee * 1.12;
+    else target = tdee;
+    target = Math.round(target);
+
+    var menuCal = menuGrade(target);
+    var split = macroSplit[state.goal] || macroSplit.maintain;
+    var protein = Math.round((menuCal * split.p) / 4);
+    var fat = Math.round((menuCal * split.f) / 9);
+    var carbs = Math.round((menuCal * split.c) / 4);
+
+    document.getElementById('targetKcal').innerHTML = target + '<span> ккал/день</span>';
+    document.getElementById('menuPill').textContent = 'Меню ' + menuCal + ' ккал';
+    document.getElementById('valProtein').textContent = protein + 'г';
+    document.getElementById('valFat').textContent = fat + 'г';
+    document.getElementById('valCarbs').textContent = carbs + 'г';
+
+    var isFamilyMenu = (state.cookFor === 'family' && menuCal === FAMILY_GRADE);
+    var includesItems = [];
+    document.getElementById('toMenuBtn').textContent = 'Переглянути моє меню на ' + (isFamilyMenu ? ('~' + FAMILY_DISPLAY) : menuCal) + ' ккал →';
+
+    var productImg = document.getElementById('productImg');
+    var fallbackKcalEl = document.getElementById('fallbackKcal');
+    var fallbackLabelEl = document.getElementById('fallbackLabel');
+    var familyNote = document.getElementById('familyNote');
+    var familyNoteLink = document.getElementById('familyNoteLink');
+
+    if(isFamilyMenu){
+      productImg.style.display = 'block';
+      productImg.src = MENU_IMAGES.family;
+      document.getElementById('menuPill').textContent = 'Сімейне меню ~' + FAMILY_DISPLAY + ' ккал';
+      fallbackKcalEl.textContent = 'Сімейне';
+      fallbackLabelEl.textContent = 'меню ~' + FAMILY_DISPLAY + ' ккал';
+      document.getElementById('productTitle').textContent = 'Сімейний раціон: здоров\'я та легкість для всієї родини';
+      document.getElementById('productDesc').textContent = 'Готуєш одну страву — а харчується вся родина: чоловік, діти і ти. 31 день готового меню, 4 прийоми їжі на день, прості рецепти без окремого готування "для себе" і окремо "для всіх", збалансовані під твою ціль ' + goalLabel[state.goal] + '. Це не дієта для однієї людини за столом — це нова звичка харчування для всієї сім\'ї, яку легко тримати роками.';
+      var ctaBtnFamily = document.getElementById('ctaBtn');
+      ctaBtnFamily.textContent = 'Оформити сімейне меню за 490 ₴ →';
+      ctaBtnFamily.href = PAYMENT_LINKS.family;
+      familyNote.style.display = 'none';
+      includesItems = [
+        '31 день меню для всієї родини — готуєш одну страву на всіх, а не окремо собі й окремо іншим',
+        'Спільний список покупок на тиждень — менше зайвих витрат і забутих продуктів',
+        'Рецепти з фото та покроковим приготуванням, зрозумілі навіть без досвіду',
+        'Заміни продуктів під смаки й алергії кожного члена родини',
+        '~' + FAMILY_DISPLAY + ' ккал/день для мами, легко адаптується під потреби решти родини',
+        '4 бонуси в подарунок: гіди по замінах, етикетках, швидких стравах і підтримці без зривів',
+        'Оплата один раз — доступ до меню одразу після оплати, без очікування'
+      ];
+    } else {
+      productImg.style.display = 'block';
+      productImg.src = MENU_IMAGES[menuCal];
+      fallbackKcalEl.textContent = menuCal;
+      fallbackLabelEl.textContent = 'ккал меню';
+      document.getElementById('productTitle').textContent = 'Система харчування на ' + menuCal + ' ккал';
+      document.getElementById('productDesc').textContent = 'Ніяких суворих заборон і голодувань — тільки збалансовані страви, прості рецепти та порції під твій КБЖВ. Це ' + goalDesc[state.goal] + ', без стресу для організму. Меню розписане на всі 31 день наперед: не треба самій рахувати калорії чи вигадувати, що приготувати — просто відкриваєш день і готуєш за готовим рецептом.';
+      var ctaBtnIndividual = document.getElementById('ctaBtn');
+      ctaBtnIndividual.textContent = 'Оформити меню на ' + menuCal + ' ккал за 290 ₴ →';
+      ctaBtnIndividual.href = PAYMENT_LINKS[menuCal];
+      includesItems = [
+        '31-денний раціон під твій калораж ' + menuCal + ' ккал, розписаний по днях',
+        'Рецепти з фото та покроковим приготуванням — готуєш за 15–30 хв',
+        'Список покупок на кожен тиждень — менше зайвого в кошику',
+        '1 чіт-міл щонеділі, вже врахований у балансі калорій — без почуття провини',
+        'Легка домашня їжа без вагань, без суворих заборон і зривів',
+        '4 бонуси в подарунок: гіди по замінах, етикетках, швидких стравах і підтримці',
+        'Оплата один раз — доступ до меню одразу після оплати, без очікування'
+      ];
+
+      if(state.cookFor === 'family'){
+        familyNote.style.display = 'block';
+        familyNoteLink.textContent = 'Хочу сімейне меню на ~' + FAMILY_DISPLAY + ' ккал за 490 ₴ →';
+        familyNoteLink.href = PAYMENT_LINKS.family;
+      } else {
+        familyNote.style.display = 'none';
+      }
+    }
+
+    var includesList = document.getElementById('includesList');
+    includesList.innerHTML = '';
+    includesItems.forEach(function(t){
+      var li = document.createElement('li');
+      li.textContent = t;
+      includesList.appendChild(li);
+    });
+
+    var menuLabel = isFamilyMenu ? ('сімейному меню на ~' + FAMILY_DISPLAY + ' ккал') : ('меню на ' + menuCal + ' ккал');
+
+    var diagIntro = document.getElementById('diagIntro');
+    var diagList = document.getElementById('diagList');
+    diagList.innerHTML = '';
+
+    if(state.symptoms.indexOf('normal') !== -1){
+      diagIntro.textContent = 'Судячи з відповідей, із харчуванням у тебе вже все непогано — тобі просто бракує готової системи, яка порахує все за тебе. Твоє ' + menuLabel + ' вже враховує ціль ' + goalLabel[state.goal] + '.';
+    } else {
+      var tips = [];
+      if(state.mealFreq === 'chaotic') tips.push(mealFreqTips.chaotic);
+      if(state.mealFreq === 'snacking') tips.push(mealFreqTips.snacking);
+      state.symptoms.forEach(function(s){ if(symptomTips[s]) tips.push(symptomTips[s]); });
+
+      diagIntro.textContent = 'Твій поточний режим харчування може заважати результату:';
+      tips.forEach(function(t){
+        var li = document.createElement('li');
+        li.textContent = t;
+        diagList.appendChild(li);
+      });
+      var closing = document.createElement('li');
+      closing.style.color = 'var(--green-700)';
+      closing.textContent = 'Усі ці ризики вже враховані в твоєму ' + menuLabel + ': чіткі порції, баланс БЖВ у кожному прийомі їжі та прості рецепти без голодувань.';
+      diagList.appendChild(closing);
+    }
+  }
+})();
+</script>
+</body>
+</html>
