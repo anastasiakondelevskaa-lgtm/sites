@@ -294,6 +294,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 @media(max-width:640px){.bonus-card{flex:0 0 76%}}
 .bonus-card .ph-img{aspect-ratio:auto;border-radius:0;border-width:0 0 1.5px 0}
 .bonus-card .ph-img img{position:static;width:100%;height:auto;object-fit:contain}
+.bonus-card .ph-fallback{display:none}
 .bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Manrope';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
 .bonus-body{padding:22px}
 .bonus-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
@@ -468,8 +469,7 @@ footer{background:var(--green-950);color:rgba(255,255,255,.65);padding:56px 0 28
       <h1>31 день <em>збалансованого харчування</em><span class="hero-h1-tail"> — без голоду, складних інгредієнтів і виснажливих дієт</span></h1>
       <p class="lead">Готове меню на кожен день зі звичайних продуктів. Рецепти з фото, списки покупок на тиждень і жодних заборон — тільки система, яка приживається надовго.</p>
       <div class="hero-actions">
-        <a href="PASTE_QUIZ_URL_HERE" class="btn">Пройти квіз і підібрати меню</a>
-        <a href="#pricing" class="btn outline">Обрати меню за калорійністю</a>
+        <a href="#pricing" class="btn">Обрати меню за калорійністю</a>
       </div>
       <div class="hero-note">🥑 Прості продукти · 🍕 1 чіт-міл щонеділі · 📖 4 бонуси в подарунок</div>
     </div>
@@ -847,6 +847,16 @@ document.querySelectorAll('.price-card-head').forEach(head=>{
     if(!isOpen) card.classList.add('open');
   });
 });
+
+// ---------- Open matching menu when arriving from the quiz (#menu-1450 etc.) ----------
+(function(){
+  const hashId = location.hash.slice(1);
+  if(!hashId || hashId.indexOf('menu-') !== 0) return;
+  const card = document.getElementById(hashId);
+  if(!card) return;
+  openMenuCard(hashId);
+  requestAnimationFrame(()=> card.scrollIntoView({behavior:'auto', block:'start'}));
+})();
 
 // ---------- FAQ accordion ----------
 document.querySelectorAll('.faq-item').forEach(item=>{
