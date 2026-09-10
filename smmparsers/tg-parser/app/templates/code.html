@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block title %}Код из Telegram{% endblock %}
+{% block body %}
+<div class="top"><h1>Парсер Telegram</h1></div>
+<div class="card">
+  <h2>Код подтверждения</h2>
+  <p class="hint">Telegram отправил код на номер {{ phone }} — он приходит в сам мессенджер,
+     а не смс. Введите его здесь.</p>
+  {% if error %}<div class="msg bad">{{ error }}</div>{% endif %}
+  <form method="post" action="{{ base }}/sign-in">
+    <input type="hidden" name="phone" value="{{ phone }}">
+    <div class="row"><label for="c">Код</label>
+      <input id="c" name="code" inputmode="numeric" autocomplete="one-time-code" autofocus required></div>
+    <button type="submit">Подтвердить</button>
+  </form>
+</div>
+<footer><a href="{{ base }}/">Начать заново</a></footer>
+{% endblock %}

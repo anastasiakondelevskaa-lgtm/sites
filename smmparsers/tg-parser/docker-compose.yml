@@ -1,0 +1,13 @@
+services:
+  tg-parser:
+    build: .
+    container_name: tg-parser
+    restart: unless-stopped
+    env_file: .env
+    # Наружу НЕ выпускаем: снаружи пускает только nginx, он же держит TLS.
+    ports:
+      - "127.0.0.1:8099:8080"
+    volumes:
+      - tgdata:/data
+volumes:
+  tgdata:

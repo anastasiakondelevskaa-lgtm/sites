@@ -1,0 +1,440 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="top">
+  <h1>Парсер Telegram</h1>
+  <form method="post" action="{{ base }}/logout"><button class="ghost" type="submit">Выйти</button></form>
+</div>
+
+{% if error %}<div class="msg bad">{{ error }}</div>{% endif %}
+{% if tg.warn %}<div class="msg bad">{{ tg.warn }}</div>{% endif %}
+
+{% if tg.needs_keys %}
+<div class="card">
+  <h2>Ключи приложения Telegram</h2>
+  <p class="hint">Задаются один раз. Возьмите их на <a href="https://my.telegram.org" target="_blank"
+     rel="noopener">my.telegram.org</a> → API development tools, войдя под тем номером, которым
+     будете парсить. Ключи <b>личные</b>: они видны только вам и хранятся на сервере
+     в зашифрованном виде. Коллега вводит свои.</p>
+
+  <details>
+    <summary>Где взять api_id и api_hash — по шагам</summary>
+    <ol class="steps">
+      <li>Откройте <a href="https://my.telegram.org" target="_blank" rel="noopener">my.telegram.org</a>
+          и введите номер того аккаунта, которым будете парсить — в международном виде,
+          например <code>+380671234567</code>.</li>
+      <li>Код придёт <b>в само приложение Telegram</b>, а не смс. Найдите его в чате
+          «Telegram» и введите на сайте.</li>
+      <li>Выберите пункт <b>API development tools</b>.</li>
+      <li>Заполните форму. Обязательны только два поля:
+          <b>App title</b> — любое название, например <code>parser</code>;
+          <b>Short name</b> — латиницей, от 5 до 32 символов. Платформу можно оставить
+          <code>Other</code>, описание — пустым.</li>
+      <li>Нажмите <b>Create application</b>.</li>
+      <li>На открывшейся странице возьмите <b>App api_id</b> (число) и
+          <b>App api_hash</b> (32 символа) и впишите их в форму выше.</li>
+    </ol>
+    <div class="warn">
+      Приложение создаётся один раз на аккаунт: если вы уже создавали его раньше,
+      формы не будет — значения просто показаны на странице.
+      <b>api_hash — это ключ, равный доступу приложения к аккаунту:</b> не пересылайте его
+      в переписке и не публикуйте. Если он утёк — заведите ключи под другим аккаунтом.
+    </div>
+  </details>
+  <form method="post" action="{{ base }}/keys">
+    <div class="two">
+      <div class="row"><label for="ai">api_id</label>
+        <input id="ai" name="api_id" inputmode="numeric" placeholder="12345678" required></div>
+      <div class="row"><label for="ah">api_hash</label>
+        <input id="ah" name="api_hash" placeholder="строка из 32 символов" required></div>
+    </div>
+    <button type="submit">Сохранить</button>
+  </form>
+</div>
+
+{% elif not tg.connected %}
+<div class="card">
+  <h2>Подключение аккаунта</h2>
+  <p class="hint">Введите номер в международном виде. Telegram пришлёт код в сам мессенджер.</p>
+  <form method="post" action="{{ base }}/send-code">
+    <div class="row"><label for="ph">Номер телефона</label>
+      <input id="ph" name="phone" inputmode="tel" placeholder="+380..." autofocus required></div>
+    <button type="submit">Получить код</button>
+  </form>
+</div>
+<div class="card">
+  <h2>Сменить ключи приложения</h2>
+  <p class="hint">Если нужно подключиться под другим приложением Telegram. Замена сбросит
+     подключённый аккаунт — код придёт заново.</p>
+
+  <details>
+    <summary>Где взять api_id и api_hash — по шагам</summary>
+    <ol class="steps">
+      <li>Откройте <a href="https://my.telegram.org" target="_blank" rel="noopener">my.telegram.org</a>
+          и введите номер того аккаунта, которым будете парсить — в международном виде,
+          например <code>+380671234567</code>.</li>
+      <li>Код придёт <b>в само приложение Telegram</b>, а не смс. Найдите его в чате
+          «Telegram» и введите на сайте.</li>
+      <li>Выберите пункт <b>API development tools</b>.</li>
+      <li>Заполните форму. Обязательны только два поля:
+          <b>App title</b> — любое название, например <code>parser</code>;
+          <b>Short name</b> — латиницей, от 5 до 32 символов. Платформу можно оставить
+          <code>Other</code>, описание — пустым.</li>
+      <li>Нажмите <b>Create application</b>.</li>
+      <li>На открывшейся странице возьмите <b>App api_id</b> (число) и
+          <b>App api_hash</b> (32 символа) и впишите их в форму выше.</li>
+    </ol>
+    <div class="warn">
+      Приложение создаётся один раз на аккаунт: если вы уже создавали его раньше,
+      формы не будет — значения просто показаны на странице.
+      <b>api_hash — это ключ, равный доступу приложения к аккаунту:</b> не пересылайте его
+      в переписке и не публикуйте. Если он утёк — заведите ключи под другим аккаунтом.
+    </div>
+  </details>
+  <form method="post" action="{{ base }}/keys">
+    <div class="two">
+      <div class="row"><label for="ai2">api_id</label><input id="ai2" name="api_id" inputmode="numeric" required></div>
+      <div class="row"><label for="ah2">api_hash</label><input id="ah2" name="api_hash" required></div>
+    </div>
+    <button class="ghost" type="submit">Заменить</button>
+  </form>
+</div>
+
+{% else %}
+<div class="card">
+  <div class="who">
+    <span class="dot"></span>
+    <span>Подключён: <b>{{ tg.name }}</b>{% if tg.username %} · @{{ tg.username }}{% endif %}
+      {% if tg.phone %} · +{{ tg.phone }}{% endif %}</span>
+    <form method="post" action="{{ base }}/disconnect" style="margin-left:auto"
+          onsubmit="return confirm('Отключить аккаунт? Для следующего парсинга понадобится код из Telegram.')">
+      <button class="ghost" type="submit">Отключить</button></form>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Что искать</h2>
+  <p class="hint">Обе даты включительно, по киевскому времени. В списке — только те чаты,
+     в которых состоит подключённый аккаунт.</p>
+  <div class="row"><label for="t">Группа</label>
+    <select id="pick"><option value="">— выберите из ваших чатов —</option></select>
+    <input id="t" style="margin-top:8px" placeholder="или впишите название, @ник, ссылку t.me либо id" required></div>
+  <div class="row"><label for="k">Ключевое слово</label>
+    <input id="k" placeholder="#тренування" required></div>
+  <div class="two">
+    <div class="row"><label for="d1">С даты</label><input id="d1" type="date" required></div>
+    <div class="row"><label for="d2">По дату</label><input id="d2" type="date" required></div>
+  </div>
+  <button id="go" type="button">Искать</button>
+</div>
+
+<div class="card" id="res" hidden>
+  <h2 id="res-title">Идёт поиск</h2>
+  <p class="hint" id="res-note">Telegram отдаёт историю порциями — это занимает время.</p>
+  <div class="stat">
+    <div>Просмотрено<b id="scanned">0</b></div>
+    <div>Найдено<b id="found">0</b></div>
+    <div>Дошли до<b id="pos">—</b></div>
+    <div>Прошло<b id="secs">0 с</b></div>
+  </div>
+  <div class="bar" id="bar"><i></i></div>
+</div>
+
+<div class="card" id="hist-card" hidden>
+  <label for="hist">Прошлые поиски</label>
+  <select id="hist"></select>
+</div>
+
+<div class="card" id="table-card" hidden>
+  <div class="tabs">
+    <button type="button" id="tab-people" aria-pressed="true">Рейтинг</button>
+    <button type="button" id="tab-msg" aria-pressed="false">Сообщения</button>
+    <button type="button" class="ghost" id="csv" style="margin-left:auto">Скачать CSV</button>
+  </div>
+  <p class="shown-of" id="about"></p>
+  <p class="warnline" id="trunc" hidden></p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Поиск по тексту, имени или нику">
+    <select id="author"><option value="">Все авторы</option></select>
+    <div class="dates">
+      <input id="f1" type="date" aria-label="Показывать с даты">
+      <input id="f2" type="date" aria-label="Показывать по дату">
+    </div>
+    <select id="sortby" style="grid-column:1/-1">
+      <option value="count">Сортировать: сначала с наибольшим числом совпадений</option>
+      <option value="last">Сортировать: по последнему сообщению</option>
+      <option value="name">Сортировать: по имени</option>
+    </select>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="list" id="list"></div>
+  <div class="empty" id="empty" hidden>Под фильтры ничего не подошло.</div>
+</div>
+
+{% endif %}
+
+<footer>Доступ по общему паролю · страница закрыта от поисковиков</footer>
+
+<script>
+const base = {{ base|tojson }};
+const $ = (id) => document.getElementById(id);
+const num = (n) => (n || 0).toLocaleString("ru-RU");
+let rows = [], mode = "people", timer = null;
+
+let sortBy = "count";     // рейтинг: по числу совпадений, по имени, по последней дате
+
+function people(list) {
+  const by = new Map();
+  for (const r of list) {
+    const key = r.user_id || r.username || r.name || "—";
+    let g = by.get(key);
+    if (!g) { g = {name: r.name || r.username || "—", username: r.username || "",
+                   user_id: r.user_id || "", count: 0, first: r.date, last: r.date,
+                   last_id: -1, last_link: ""}; by.set(key, g); }
+    g.count += 1;
+    if (r.date < g.first) g.first = r.date;
+    if (r.date > g.last) g.last = r.date;
+    // «Последнее» берём по НОМЕРУ сообщения, а не по дате: дата — это день,
+    // и у нескольких сообщений одного дня она одинакова.
+    if (Number(r.message_id) > g.last_id) { g.last_id = Number(r.message_id); g.last_link = r.link; }
+  }
+  return [...by.values()];
+}
+
+function filtered() {
+  const q = $("q").value.trim().toLowerCase();
+  const who = $("author").value, f1 = $("f1").value, f2 = $("f2").value;
+  return rows.filter((r) => {
+    if (who && String(r.user_id) !== who) return false;
+    if (f1 && r.date < f1) return false;
+    if (f2 && r.date > f2) return false;
+    if (q && !((r.text || "") + " " + (r.name || "") + " " + (r.username || "")).toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function ranked() {
+  const p = people(filtered());
+  p.sort((a, b) => {
+    if (sortBy === "name") return String(a.name).localeCompare(String(b.name), "ru");
+    if (sortBy === "last") return b.last < a.last ? -1 : b.last > a.last ? 1 : 0;
+    return b.count - a.count || String(a.name).localeCompare(String(b.name), "ru");
+  });
+  return p;
+}
+
+function render() {
+  const box = $("list");
+  if (mode === "people") {
+    const data = ranked();
+    const max = data.reduce((m, x) => Math.max(m, x.count), 0) || 1;
+    box.innerHTML = data.map((r, i) => {
+      const top = sortBy === "count" && i === 0 && r.count > 0;
+      const period = r.first === r.last ? r.first : r.first + " — " + r.last;
+      return `<div class="rank${top ? " top" : ""}">
+        <div class="place">${i + 1}</div>
+        <div>
+          <div class="rname">${esc(r.name)}</div>
+          <div class="rsub">${who(r)}${period}${r.last_link
+              ? ` · <a href="${r.last_link}" target="_blank" rel="noopener">последнее ↗</a>` : ""}</div>
+          <div class="rbar"><i style="width:${Math.round((r.count / max) * 100)}%"></i></div>
+        </div>
+        <div class="rcount"><b>${num(r.count)}</b><span>${plural(r.count)}</span></div>
+      </div>`;
+    }).join("");
+    $("empty").hidden = data.length > 0;
+    const all = people(rows).length;
+    $("count").innerHTML = data.length === all
+      ? `<b>${num(all)}</b> участников · сверху тот, у кого совпадений больше всех`
+      : `Показано <b>${num(data.length)}</b> из ${num(all)} участников`;
+    return;
+  }
+
+  const data = filtered().slice().sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  box.innerHTML = data.map((r) => `<div class="msg-item">
+      <div class="msg-head">
+        <span class="who2">${esc(r.name || r.username || "—")}</span>
+        <span class="when">${esc(r.date)}</span>
+        <a class="open" href="${r.link}" target="_blank" rel="noopener">открыть ↗</a>
+      </div>
+      <div class="msg-text">${esc(r.text || "")}</div>
+    </div>`).join("");
+  $("empty").hidden = data.length > 0;
+  $("count").innerHTML = data.length === rows.length
+    ? `<b>${num(rows.length)}</b> ${plural(rows.length, true)}`
+    : `Показано <b>${num(data.length)}</b> из ${num(rows.length)}`;
+}
+
+/** Как назвать человека: ник, если он есть; иначе id — по нему его тоже находят. */
+function who(r) {
+  if (r.username) return "@" + esc(r.username) + " · ";
+  if (r.user_id) return "id " + esc(r.user_id) + " · ";
+  return "";
+}
+
+function plural(n, full) {
+  const a = Math.abs(n) % 100, b = a % 10;
+  const w = a > 10 && a < 20 ? "совпадений" : b === 1 ? "совпадение" : b > 1 && b < 5 ? "совпадения" : "совпадений";
+  return full ? w : w;
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+}
+
+function toCsv() {
+  const people_ = mode === "people";
+  const cols = people_
+    ? ["place", "name", "username", "user_id", "count", "first", "last", "last_link"]
+    : ["message_id", "date", "count", "user_id", "username", "name", "text", "views", "link"];
+  const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const src = people_ ? ranked().map((r, i) => Object.assign({place: i + 1}, r)) : filtered();
+  const body = src.map((r) => cols.map((c) => cell(r[c])).join(",")).join("\n");
+  // BOM — иначе Excel открывает кириллицу как крякозябры
+  const blob = new Blob(["﻿" + cols.join(",") + "\n" + body], {type: "text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = (mode === "people" ? "telegram-po-lyudyam" : "telegram-soobshcheniya") + ".csv";
+  a.click(); URL.revokeObjectURL(a.href);
+}
+
+const go = $("go");
+if (go) {
+  ["q", "author", "f1", "f2"].forEach((id) => {
+    const el = $(id);
+    el.addEventListener("input", render);
+    el.addEventListener("change", render);
+  });
+  $("sortby").addEventListener("change", () => { sortBy = $("sortby").value; render(); });
+  $("tab-msg").addEventListener("click", () => setMode("messages"));
+  $("tab-people").addEventListener("click", () => setMode("people"));
+  $("csv").addEventListener("click", toCsv);
+
+  function setMode(m) {
+    mode = m;
+    $("tab-msg").setAttribute("aria-pressed", String(m === "messages"));
+    $("tab-people").setAttribute("aria-pressed", String(m === "people"));
+    $("sortby").hidden = m !== "people";
+    render();
+  }
+
+  // Результат переживает перезагрузку: он лежит на диске, и страница при открытии
+  // сама подтягивает последний прогон. А если прогон ещё идёт — подхватывает его ход.
+  (async () => {
+    const r = await fetch(base + "/history");
+    if (!r.ok) return;
+    const h = await r.json();
+    if (h.running) {
+      $("res").hidden = false; $("bar").hidden = false;
+      clearInterval(timer); timer = setInterval(poll, 1000); poll();
+    }
+    const items = h.items || [];
+    if (!items.length) return;
+    $("hist").innerHTML = items.map((x) =>
+      `<option value="${x.id}">${esc(label(x))}</option>`).join("");
+    $("hist-card").hidden = false;
+    $("hist").addEventListener("change", () => load($("hist").value));
+    if (!h.running) await load(items[0].id);
+  })();
+
+  function label(x) {
+    const p = x.params || {};
+    const when = x.finished ? new Date(x.finished * 1000).toLocaleString("ru-RU",
+      {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"}) : "";
+    return `${when} · «${p.keyword || ""}» · ${p.from || ""} — ${p.to || ""} · найдено ${x.found ?? 0}`;
+  }
+
+  const pick = $("pick");
+  if (pick) {
+    pick.addEventListener("change", () => { if (pick.value) $("t").value = pick.value; });
+    (async () => {
+      const r = await fetch(base + "/dialogs");
+      if (!r.ok) return;
+      const d = await r.json();
+      if (!d.items || !d.items.length) return;
+      pick.innerHTML = '<option value="">— выберите из ваших чатов —</option>' +
+        d.items.map((x) => {
+          const full = x.title + (x.username ? " · @" + x.username : "");
+          const short = full.length > 52 ? full.slice(0, 51) + "…" : full;
+          return `<option value="${x.id}" title="${esc(full)}">${esc(short)}</option>`;
+        }).join("");
+    })();
+  }
+
+  go.addEventListener("click", async () => {
+    const body = new FormData();
+    body.append("target", $("t").value);
+    body.append("keyword", $("k").value);
+    body.append("date_from", $("d1").value);
+    body.append("date_to", $("d2").value);
+    go.disabled = true;
+    const r = await fetch(base + "/run", {method: "POST", body});
+    const j = await r.json();
+    if (!r.ok) { go.disabled = false; alert(j.error || "Не удалось запустить"); return; }
+    $("res").hidden = false;
+    $("table-card").hidden = true;
+    $("bar").hidden = false;
+    $("res-title").textContent = "Идёт поиск";
+    $("res-note").textContent = "Telegram отдаёт историю порциями — это занимает время.";
+    clearInterval(timer);
+    timer = setInterval(poll, 1000);
+    poll();
+  });
+
+  async function poll() {
+    const r = await fetch(base + "/progress");
+    if (!r.ok) return;
+    const p = await r.json();
+    $("scanned").textContent = num(p.scanned);
+    $("found").textContent = num(p.found);
+    $("pos").textContent = p.position || "—";
+    $("secs").textContent = (p.seconds || 0) + " с";
+    if (p.state === "running") return;
+    clearInterval(timer);
+    go.disabled = false;
+    $("bar").hidden = true;
+    if (p.state === "error") {
+      $("res-title").textContent = "Не получилось";
+      $("res-note").textContent = p.error || "Неизвестная ошибка";
+      return;
+    }
+    $("res-title").textContent = p.found ? "Готово" : "Готово, но ничего не найдено";
+    $("res-note").textContent = p.found
+      ? "Ниже таблица — её можно фильтровать и выгружать."
+      : "Ни одно сообщение в этом диапазоне не содержит ключевое слово. Проверьте даты и написание.";
+    if (p.found) {
+      const hr = await fetch(base + "/history");
+      if (hr.ok) {
+        const h = await hr.json();
+        $("hist").innerHTML = (h.items || []).map((x) =>
+          `<option value="${x.id}">${esc(label(x))}</option>`).join("");
+        $("hist-card").hidden = !(h.items || []).length;
+      }
+      await load(p.id);
+    }
+  }
+
+  async function load(id) {
+    const r = await fetch(base + "/results/" + id);
+    if (!r.ok) return;
+    const d = await r.json();
+    rows = d.rows || [];
+    const seen = new Map();
+    for (const x of rows) if (!seen.has(x.user_id)) seen.set(x.user_id, x.name || x.username || "—");
+    $("author").innerHTML = '<option value="">Все авторы</option>' +
+      [...seen.entries()].sort((a, b) => String(a[1]).localeCompare(String(b[1]), "ru"))
+        .map(([id2, nm]) => `<option value="${esc(id2)}">${esc(nm)}</option>`).join("");
+    $("q").value = ""; $("f1").value = ""; $("f2").value = "";
+    const p = d.params || {};
+    $("about").textContent = p.keyword
+      ? `«${p.keyword}» · ${p.target || ""} · ${p.from || ""} — ${p.to || ""}`
+      : "";
+    if ($("hist").value !== id) $("hist").value = id;
+    $("trunc").hidden = !d.truncated;
+    if (d.truncated) $("trunc").textContent =
+      `На экране первые ${num(d.limit)} из ${num(d.total)} — остальное есть в файле, который собран целиком.`;
+    $("table-card").hidden = false;
+    setMode("people");
+  }
+}
+</script>
+{% endblock %}
