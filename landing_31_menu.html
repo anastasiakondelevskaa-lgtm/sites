@@ -319,8 +319,7 @@ h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
 .bonus-card{scroll-snap-align:start;flex:0 0 260px;background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);border:2px solid var(--line);position:relative}
 @media(max-width:640px){.bonus-card{flex:0 0 76%}}
 .bonus-card .ph-img{aspect-ratio:auto;border-radius:0;border-width:0 0 1.5px 0}
-.bonus-card .ph-img img{position:static;width:100%;height:auto;object-fit:contain}
-.bonus-card .ph-fallback{display:none}
+.bonus-card .ph-img img{position:relative;z-index:1;width:100%;height:auto;object-fit:contain}
 .bonus-card .num{position:absolute;top:14px;right:14px;font-family:'Manrope';font-size:13px;color:#fff;background:rgba(43,63,42,.55);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
 .bonus-body{padding:22px}
 .bonus-card h3{font-family:'Manrope';font-size:16px;font-weight:800;margin-bottom:8px;color:var(--green-950)}
