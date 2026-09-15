@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MALETYCH CLUB — клуб, де тебе ведуть за руку</title>
+<meta name="description" content="Не ще один план тренувань. Тренування, харчування та техніку виконання особисто контролює тренерка клубу. Перший місяць — 390 грн.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#faf4ec;--cream-2:#f1e3d0;--card:#ffffff;
+  --ink:#2c241d;--muted:#8a7b6a;--border:#ecdcc6;
+  --accent:#c1663f;--accent-dark:#a04f2f;--accent-soft:#f3ddce;
+  --dark:#3c2a20;--dark-2:#4a3527;
+  --shadow:0 10px 28px rgba(60,42,32,.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15}
+.container{max-width:640px;margin:0 auto;padding:0 22px}
+.container-wide{max-width:900px;margin:0 auto;padding:0 22px}
+section{padding:56px 0}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+.bg-cream2{background:var(--cream-2)}
+.bg-dark{background:var(--dark);color:#f2e6d8}
+.bg-dark .muted-on-dark{color:#c9b3a1}
+
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.eyebrow .num{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--accent)}
+.eyebrow .label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow .line{flex:1;height:1px;background:var(--border)}
+.bg-dark .eyebrow .label{color:#c9b3a1}
+.bg-dark .eyebrow .line{background:rgba(255,255,255,.14)}
+
+.btn{display:inline-block;padding:17px 32px;background:var(--accent);color:#fff;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;text-align:center;text-decoration:none;border:none;border-radius:999px;cursor:pointer;transition:background .2s,transform .15s;box-shadow:0 8px 20px rgba(193,102,63,.28)}
+.btn:hover{background:var(--accent-dark)}
+.btn:active{transform:scale(.98)}
+.btn-block{display:block;width:100%}
+.btn-ghost{background:transparent;border:1.5px solid rgba(242,230,216,.5);color:#f2e6d8;box-shadow:none}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-sm{padding:11px 22px;font-size:13px;box-shadow:none}
+.btn-outline{background:transparent;border:1.5px solid var(--accent);color:var(--accent);box-shadow:none}
+.btn-outline:hover{background:var(--accent-soft)}
+
+.fi{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.fi.show{opacity:1;transform:none}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:rgba(250,244,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+header.scrolled{border-color:var(--border);box-shadow:0 2px 16px rgba(60,42,32,.05)}
+.header-inner{max-width:900px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fraunces',serif;font-weight:700;font-size:18px;letter-spacing:.01em;color:var(--ink);text-decoration:none;display:flex;align-items:baseline;gap:6px}
+.logo span{color:var(--accent);font-style:italic;font-weight:500}
+.header-cta{padding:10px 20px;font-size:12.5px;box-shadow:none}
+
+/* HERO */
+#hero{padding:40px 0 8px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-120px;right:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 70%);z-index:0}
+.hero-inner{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);color:var(--accent-dark);font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:7px 16px;border-radius:999px;margin-bottom:22px;box-shadow:var(--shadow)}
+.hero-h1{font-size:clamp(32px,9vw,48px);font-weight:600;line-height:1.14;letter-spacing:-.01em;color:var(--ink);margin-bottom:18px}
+.hero-h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.hero-sub{font-size:16.5px;line-height:1.65;color:var(--ink);margin-bottom:30px;max-width:480px}
+.hero-sub strong{font-weight:600;color:var(--accent-dark)}
+
+.week-mock{margin-top:44px;border-radius:22px;background:#fff;padding:24px;box-shadow:var(--shadow)}
+.week-mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.week-mock-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.week-mock-badge{font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--accent-dark);background:var(--accent-soft);padding:5px 12px;border-radius:999px}
+.week-days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.week-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--muted);background:var(--cream);border-radius:12px}
+.week-day.on{background:var(--accent);color:#fff}
+
+/* PAIN */
+.pain-cards{display:flex;flex-direction:column;gap:10px}
+.pain-card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:16px 20px;font-size:15px;line-height:1.5;display:flex;gap:12px;align-items:flex-start}
+.pain-card::before{content:'✕';color:var(--accent);font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
+.section-h{font-size:clamp(24px,6vw,32px);font-weight:600;margin-bottom:14px;color:var(--ink)}
+.section-lead{font-size:15px;color:var(--muted);margin-bottom:30px;max-width:460px}
+.bg-dark .section-h{color:#f2e6d8}
+
+/* THESIS */
+.thesis-quote{font-family:'Fraunces',serif;font-size:clamp(24px,6.5vw,34px);font-style:italic;font-weight:500;line-height:1.35;margin-bottom:26px}
+.thesis-quote em{color:#e8a87c;font-style:italic}
+.thesis-vs{font-size:14px;color:#c9b3a1;margin-bottom:20px}
+.thesis-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.thesis-item{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.55}
+.thesis-item::before{content:'✦';color:#e8a87c;font-size:12px;margin-top:4px}
+.thesis-rare{font-size:13px;color:#c9b3a1;font-style:italic}
+
+/* FEATURE GRID */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:680px){.feat-grid{grid-template-columns:1fr}}
+.feat{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:22px}
+.feat-ico{width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent-dark);font-size:16px;border-radius:12px;margin-bottom:14px}
+.feat-title{font-family:'Fraunces',serif;font-weight:600;font-size:18px;margin-bottom:8px}
+.feat-body{font-size:14px;color:var(--muted);line-height:1.6}
+.feat-body strong{color:var(--ink);font-weight:600}
+.feat-body ul{list-style:none;display:flex;flex-direction:column;gap:5px;margin-top:8px}
+.feat-body li{position:relative;padding-left:15px;color:var(--ink)}
+.feat-body li::before{content:'—';position:absolute;left:0;color:var(--muted)}
+
+/* UPSELL PROGRAM CARDS */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:780px){.prog-grid{grid-template-columns:1fr}}
+.prog-card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column}
+.prog-tag{align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);padding:5px 11px;border-radius:999px;margin-bottom:14px}
+.prog-title{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-bottom:8px}
+.prog-desc{font-size:13.5px;color:var(--muted);line-height:1.55;margin-bottom:18px;flex:1}
+.prog-price{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:14px}
+.prog-price small{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:var(--muted)}
+
+/* PROOF */
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.proof-slot{aspect-ratio:4/5;border-radius:18px;border:1.5px dashed var(--border);background:var(--cream-2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:14px}
+.proof-slot .ico{font-size:20px;color:var(--muted);opacity:.6}
+.proof-slot .lbl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.proof-slot .sub{font-size:11px;color:var(--muted);opacity:.75}
+
+/* FAQ */
+.faq{background:var(--card);border-radius:16px;margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:15px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:'Fraunces',serif;font-size:22px;color:var(--accent);flex-shrink:0;transition:transform .2s}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq-a{padding:0 20px 20px;font-size:14px;color:var(--muted);line-height:1.6}
+
+/* PRICING */
+.price-card{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:30px 26px;position:relative;overflow:hidden}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}
+.price-row:last-of-type{border-bottom:none}
+.price-label{font-size:13px;color:var(--muted)}
+.price-label strong{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-top:2px}
+.price-val{font-family:'Fraunces',serif;font-size:26px;font-weight:600;white-space:nowrap}
+.price-val small{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:var(--muted)}
+.price-note{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:18px;line-height:1.55}
+.price-note::before{content:'ⓘ';color:var(--accent);flex-shrink:0}
+.price-badge{position:absolute;top:0;right:0;background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px 7px 20px;border-bottom-left-radius:14px}
+
+/* BONUS */
+.bonus-card{border:1px solid rgba(232,168,124,.3);background:rgba(232,168,124,.08);border-radius:20px;padding:24px;margin-bottom:14px}
+.bonus-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bonus-ico{font-size:18px}
+.bonus-title{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:#f2e6d8}
+.bonus-body{font-size:14px;color:#d9c6b6;line-height:1.6}
+.bonus-body strong{color:#f0d0ac}
+.prize-row{display:flex;gap:10px;margin-top:14px}
+.prize-chip{flex:1;text-align:center;border:1px solid rgba(232,168,124,.3);border-radius:14px;padding:14px 6px}
+.prize-chip .amt{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:#f0d0ac}
+.prize-chip .lbl{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#c9b3a1;margin-top:2px}
+
+#final{text-align:center}
+#final .thesis-quote{font-size:clamp(26px,7vw,38px)}
+
+footer{padding:44px 0 calc(30px + env(safe-area-inset-bottom,0px));background:var(--dark);color:#b8a494;font-size:12.5px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:14px}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{color:#d9c6b6;text-decoration:none}
+.footer-links a:hover{color:#f2e6d8}
+.footer-legal{border-top:1px solid rgba(255,255,255,.08);padding-top:16px;line-height:1.7}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="#hero" class="logo">MALETYCH<span>CLUB</span></a>
+    <a href="#pricing" class="btn header-cta">Приєднатись</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container hero-inner">
+    <span class="hero-tag fi">● Онлайн фітнес-клуб</span>
+    <h1 class="hero-h1 fi">Не ще один план тренувань. Клуб, де тебе <em>ведуть за руку.</em></h1>
+    <p class="hero-sub fi">Тренування, харчування, техніка виконання — усе <strong>під особистим контролем тренерки клубу</strong>. Щодня, а не раз на місяць.</p>
+    <a href="#pricing" class="btn btn-block fi">Приєднатись до клубу — перший місяць 390 грн</a>
+
+    <div class="week-mock fi">
+      <div class="week-mock-top">
+        <span class="week-mock-title">Твій тиждень у клубі</span>
+        <span class="week-mock-badge">Прогресивна система</span>
+      </div>
+      <div class="week-days">
+        <div class="week-day on">Пн</div>
+        <div class="week-day">Вт</div>
+        <div class="week-day on">Ср</div>
+        <div class="week-day">Чт</div>
+        <div class="week-day on">Пт</div>
+        <div class="week-day">Сб</div>
+        <div class="week-day">Нд</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="eyebrow fi"><span class="num">01</span><span class="label">Знайомо?</span><span class="line"></span></div>
+    <h2 class="section-h fi">Ти вже пробувала. Але щось не спрацювало</h2>
+    <p class="section-lead fi">І справа не в тобі — просто плани й меню самі по собі не дають зворотного зв'язку.</p>
+    <div class="pain-cards">
+      <div class="pain-card fi">Купила план тренувань — не знаю, чи правильно виконую вправи</div>
+      <div class="pain-card fi">Є меню — не розумію, як його адаптувати під себе</div>
+      <div class="pain-card fi">Роблю все «наосліп», без зворотного зв'язку</div>
+      <div class="pain-card fi">Немає підтримки, коли хочеться зірватись</div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING / THESIS -->
+<section id="thesis" class="bg-dark">
+  <div class="container">
+    <div class="eyebrow fi"><span class="num">02</span><span class="label">Чим ми відрізняємось</span><span class="line"></span></div>
+    <p class="thesis-quote fi">«Клуб, де тебе ведуть за руку <em>30 днів</em>, а не просто скидають план»</p>
+    <p class="thesis-vs fi">Конкуренти дають план тренувань. Maletych Club дає контроль на кожному кроці:</p>
+    <div class="thesis-list">
+      <div class="thesis-item fi">Тренерка особисто розбирає твою тарілку</div>
+      <div class="thesis-item fi">Тренерка особисто виправляє техніку по відео</div>
+    </div>
+    <p class="thesis-rare fi">Це рідкість навіть серед платних онлайн-клубів.</p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="container-wide">
+    <div class="eyebrow fi"><span class="num">03</span><span class="label">Що входить у клуб</span><span class="line"></span></div>
+    <h2 class="section-h fi">Шість речей, які тримають тебе в процесі</h2>
+    <p class="section-lead fi">Не хаотичний набір відео, а система, яка ускладнюється поступово — і жива підтримка на кожному кроці.</p>
+
+    <div class="feat-grid">
+      <div class="feat fi">
+        <div class="feat-ico">1</div>
+        <div class="feat-title">Тренування</div>
+        <div class="feat-body">Структуровано і послідовно, з акцентом на поставу, глибокі м'язи живота та плаский живіт.
+          <ul>
+            <li>Пн — сідниці</li>
+            <li>Ср — верх тіла + кор</li>
+            <li>Пт — сідниці</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feat fi">
+        <div class="feat-ico">2</div>
+        <div class="feat-title">Харчування під контролем</div>
+        <div class="feat-body">Щомісяця 1 числа — нове меню з КБЖУ, адаптоване під твою особисту калорійність і БЖУ.
+          <ul>
+            <li>Тренерка особисто розбирає тарілки</li>
+            <li>Скидаєш фото їжі — отримуєш корекцію</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feat fi">
+        <div class="feat-ico">3</div>
+        <div class="feat-title">Розбір техніки</div>
+        <div class="feat-body">Надсилаєш відео виконання вправи — тренерка особисто виправляє техніку.</div>
+      </div>
+
+      <div class="feat fi">
+        <div class="feat-ico">4</div>
+        <div class="feat-title">Трекер звичок</div>
+        <div class="feat-body">Онлайн-трекер, де відмічаєш прогрес щодня. В кінці місяця видно результат: скільки тренувань виконано і які звички дотримано.</div>
+      </div>
+
+      <div class="feat fi">
+        <div class="feat-ico">5</div>
+        <div class="feat-title">Бібліотека Maletych Club</div>
+        <div class="feat-body">Окрема інформаційна гілка: лекції про харчування, тренування, психологію результату, розбір типових помилок і того, як не зриватись.</div>
+      </div>
+
+      <div class="feat fi">
+        <div class="feat-ico">6</div>
+        <div class="feat-title">Спільнота</div>
+        <div class="feat-body">Живий чат, де дівчата діляться прогресом і тарілками та підтримують одна одну. Не «група з відео», а середовище, де тебе бачать.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPSELL: POINT PROGRAMS -->
+<section id="programs" class="bg-cream2">
+  <div class="container-wide">
+    <div class="eyebrow fi"><span class="num">04</span><span class="label">Точковий результат</span><span class="line"></span></div>
+    <h2 class="section-h fi">Ще не готова до клубу? Обери окрему програму</h2>
+    <p class="section-lead fi">Разові програми без підписки — щоб спробувати формат або закрити конкретну ціль.</p>
+
+    <div class="prog-grid">
+      <div class="prog-card fi">
+        <span class="prog-tag">Старт</span>
+        <div class="prog-title">Сідниці · 12 тренувань</div>
+        <p class="prog-desc">Компактна програма для щільних, підтягнутих сідниць. Прогресивне навантаження, без важкого інвентарю.</p>
+        <div class="prog-price">390 <small>грн</small></div>
+        <a href="#" class="btn btn-outline btn-sm">Детальніше</a>
+      </div>
+
+      <div class="prog-card fi">
+        <span class="prog-tag">Розширена</span>
+        <div class="prog-title">Сідниці · 20 тренувань</div>
+        <p class="prog-desc">Більше обсягу, вищий результат, довший ефект. Для тих, хто хоче пройти шлях повністю.</p>
+        <div class="prog-price">599 <small>грн</small></div>
+        <a href="#" class="btn btn-outline btn-sm">Детальніше</a>
+      </div>
+
+      <div class="prog-card fi">
+        <span class="prog-tag">21 день</span>
+        <div class="prog-title">Як прибрати живіт за 21 день</div>
+        <p class="prog-desc">Точковий фокус на кор і талію. Короткі щоденні тренування, які легко вписати в будь-який графік.</p>
+        <div class="prog-price">399 <small>грн</small></div>
+        <a href="#" class="btn btn-outline btn-sm">Детальніше</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="proof">
+  <div class="container">
+    <div class="eyebrow fi"><span class="num">05</span><span class="label">Соціальний доказ</span><span class="line"></span></div>
+    <h2 class="section-h fi">Не слова — реальний прогрес учасниць</h2>
+    <p class="section-lead fi">Цей блок оновлюється щомісяця разом із черговим челенджем клубу.</p>
+    <div class="proof-grid">
+      <div class="proof-slot fi"><span class="ico">◐</span><span class="lbl">До / Після</span><span class="sub">кейс з челенджу</span></div>
+      <div class="proof-slot fi"><span class="ico">▤</span><span class="lbl">Тарілка</span><span class="sub">розбір тренерки</span></div>
+      <div class="proof-slot fi"><span class="ico">❝</span><span class="lbl">Відгук</span><span class="sub">учасниці клубу</span></div>
+      <div class="proof-slot fi"><span class="ico">▲</span><span class="lbl">Трекер</span><span class="sub">прогрес за місяць</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-cream2">
+  <div class="container">
+    <div class="eyebrow fi"><span class="num">06</span><span class="label">Питання</span><span class="line"></span></div>
+    <h2 class="section-h fi">Перш ніж приєднатись</h2>
+
+    <details class="faq fi">
+      <summary>Я давно не тренувалась або взагалі новачок — це для мене?</summary>
+      <div class="faq-a">Так. База тренувань побудована як прогресивна система — вона поступово ускладнюється, а не кидає тебе одразу у важкий рівень.</div>
+    </details>
+    <details class="faq fi">
+      <summary>Як саме відбувається розбір техніки?</summary>
+      <div class="faq-a">Ти надсилаєш відео виконання вправи, і тренерка особисто дивиться й виправляє техніку — так само, як з тарілками: фото їжі → особистий розбір.</div>
+    </details>
+    <details class="faq fi">
+      <summary>Що якщо меню мені не підходить за калоріями?</summary>
+      <div class="faq-a">Меню виходить щомісяця 1 числа й адаптується під особисту калорійність та БЖУ кожної учасниці, а не одне на всіх.</div>
+    </details>
+    <details class="faq fi">
+      <summary>Як працює оплата і чи можна скасувати?</summary>
+      <div class="faq-a">Це автоматична підписка (як Netflix чи YouTube Music) — перший місяць 390 грн, далі 590 грн щомісяця. Скасувати можна в будь-який момент, достатньо написати в бот або особисто менеджеру, без зайвих умов.</div>
+    </details>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="eyebrow fi"><span class="num">07</span><span class="label">Ціна і формат</span><span class="line"></span></div>
+    <h2 class="section-h fi">Один прозорий тариф</h2>
+    <p class="section-lead fi">Без фейкових таймерів і закреслених цін — ось скільки це коштує насправді.</p>
+
+    <div class="price-card fi">
+      <div class="price-badge">Автопідписка</div>
+      <div class="price-row">
+        <span class="price-label">Перший місяць<strong>Повний доступ одразу</strong></span>
+        <span class="price-val">390 грн</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">Кожен наступний місяць<strong>Автоматичне продовження</strong></span>
+        <span class="price-val">590 грн <small>/ міс</small></span>
+      </div>
+      <a href="mailto:olenamaletich@ukr.net?subject=Хочу приєднатись до Maletych Club" class="btn btn-block" style="margin-top:22px">Стати учасницею клубу</a>
+      <p class="price-note">Оплата продовжується щомісяця автоматично. Скасувати можна в будь-який момент — напиши в бот або особисто менеджеру, без зайвих умов.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section id="bonuses" class="bg-dark">
+  <div class="container">
+    <div class="eyebrow fi"><span class="num">08</span><span class="label">Бонуси та призи</span><span class="line"></span></div>
+    <h2 class="section-h fi">Цінність, яку отримуєш просто за активність</h2>
+
+    <div class="bonus-card fi">
+      <div class="bonus-top"><span class="bonus-ico">✦</span><span class="bonus-title">Бали за системність</span></div>
+      <div class="bonus-body">Кожен звіт (#тренування, #тарілка) — це бали. Хто найактивніше звітує за місяць — отримує <strong>бокс протеїнових смаколиків</strong>. Бокс дається за конкретний місяць без накопичення: новий відлік щомісяця, і шанс є в усіх учасниць клубу.</div>
+    </div>
+
+    <div class="bonus-card fi">
+      <div class="bonus-top"><span class="bonus-ico">◆</span><span class="bonus-title">Щомісячний челендж на грошові призи</span></div>
+      <div class="bonus-body">Щомісяця в клубі стартує новий челендж, де можна позмагатись за призи. Призовий фонд зростає з кожним місяцем — достатньо бути учасницею клубу, щоб встигнути приєднатись до чергового.</div>
+      <div class="prize-row">
+        <div class="prize-chip"><div class="amt">$100</div><div class="lbl">1 місце</div></div>
+        <div class="prize-chip"><div class="amt">$50</div><div class="lbl">2 місце</div></div>
+        <div class="prize-chip"><div class="amt">+</div><div class="lbl">бонуси</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final" class="bg-dark">
+  <div class="container">
+    <p class="thesis-quote fi">Досить тренуватись <em>наосліп</em></p>
+    <p class="hero-sub fi" style="color:#d9c6b6;margin-left:auto;margin-right:auto">Приєднуйся до клубу, де кожен твій крок особисто бачить і коригує тренерка клубу. Плюс — бонуси й призи щомісяця просто за активність.</p>
+    <a href="mailto:olenamaletich@ukr.net?subject=Хочу приєднатись до Maletych Club" class="btn btn-ghost btn-block fi">Стати учасницею клубу — перший місяць 390 грн</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <a href="#hero" class="logo" style="color:#f2e6d8">MALETYCH<span>CLUB</span></a>
+      <div class="footer-links">
+        <a href="#solution">Що входить</a>
+        <a href="#programs">Точкові програми</a>
+        <a href="#pricing">Ціна</a>
+        <a href="mailto:olenamaletich@ukr.net">Написати</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      Maletych Club © 2026. Усі права захищені.<br>
+      Публічна оферта · Політика конфіденційності
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  var els = document.querySelectorAll('.fi');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+});
+</script>
+</body>
+</html>
