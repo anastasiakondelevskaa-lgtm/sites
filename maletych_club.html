@@ -25,6 +25,9 @@ img{max-width:100%}
 
 .bg-alt{background:var(--bg-alt)}
 
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(34,28,22,.1)}
+
 .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .eyebrow .num{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:7px;background:var(--accent);color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
 .eyebrow .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -51,13 +54,30 @@ header.scrolled{border-color:var(--border)}
 .header-cta{padding:10px 18px;font-size:13px}
 
 /* HERO */
+#hero{position:relative;overflow:hidden;padding-top:40px}
+#hero::before{content:'';position:absolute;top:-160px;right:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 68%);z-index:0;pointer-events:none}
+#hero .container{position:relative;z-index:1}
 .hero-tag{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:7px 15px;border-radius:8px;margin-bottom:20px}
 .hero-h1{font-size:clamp(30px,8vw,44px);line-height:1.2;color:var(--ink);margin-bottom:16px}
 .hero-h1 .accent{color:var(--accent)}
 .hero-sub{font-size:16.5px;line-height:1.6;color:var(--ink);margin-bottom:26px;max-width:480px}
 .hero-sub strong{font-weight:700;color:var(--accent-dark)}
 
-.week-mock{margin-top:36px;border-radius:16px;background:#fff;border:1px solid var(--border);padding:22px}
+/* hero video */
+.video-frame{position:relative;margin-top:28px;aspect-ratio:4/5;max-height:520px;border-radius:22px;overflow:hidden;background:linear-gradient(155deg,var(--accent) 0%,var(--accent-dark) 100%);box-shadow:0 16px 36px rgba(156,79,48,.28);display:flex;align-items:flex-end;cursor:pointer}
+.video-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.14),transparent 60%)}
+.video-frame::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 4px)}
+.video-tag{position:absolute;top:16px;left:16px;z-index:2;background:rgba(0,0,0,.28);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px;backdrop-filter:blur(3px)}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:#fff;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 10px 24px rgba(0,0,0,.25);z-index:2;transition:transform .2s}
+.video-frame:hover .play-btn{transform:translate(-50%,-50%) scale(1.06)}
+.video-caption{position:relative;z-index:2;width:100%;padding:18px 20px;background:linear-gradient(to top,rgba(0,0,0,.4),transparent);color:#fff;font-size:14px;font-weight:600}
+
+.stat-row{display:flex;gap:10px;margin-top:22px}
+.stat{flex:1;text-align:center;background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 6px;box-shadow:var(--shadow)}
+.stat-num{font-size:22px;font-weight:800;color:var(--accent-dark)}
+.stat-lbl{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.3}
+
+.week-mock{margin-top:22px;border-radius:16px;background:#fff;border:1px solid var(--border);padding:22px;box-shadow:var(--shadow)}
 .week-mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
 .week-mock-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .week-mock-badge{font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);padding:5px 11px;border-radius:7px}
@@ -67,13 +87,13 @@ header.scrolled{border-color:var(--border)}
 
 /* PAIN */
 .pain-cards{display:flex;flex-direction:column;gap:9px}
-.pain-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:15px 18px;font-size:15px;line-height:1.5;display:flex;gap:12px;align-items:flex-start}
+.pain-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:15px 18px;font-size:15px;line-height:1.5;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow)}
 .pain-card::before{content:'✕';color:var(--accent);font-size:13px;font-weight:800;flex-shrink:0;margin-top:2px}
 .section-h{font-size:clamp(23px,5.5vw,30px);margin-bottom:12px;color:var(--ink)}
 .section-lead{font-size:15px;color:var(--muted);margin-bottom:26px;max-width:460px}
 
 /* CALLOUT (accent-filled block, replaces dark inversion) */
-.callout{background:var(--accent);color:#fff;border-radius:20px;padding:32px 26px}
+.callout{background:var(--accent);color:#fff;border-radius:20px;padding:32px 26px;box-shadow:0 16px 34px rgba(156,79,48,.22)}
 .callout .section-h,.callout h2{color:#fff}
 .callout .eyebrow .label{color:rgba(255,255,255,.75)}
 .callout .eyebrow .num{background:#fff;color:var(--accent-dark)}
@@ -89,7 +109,7 @@ header.scrolled{border-color:var(--border)}
 /* FEATURE GRID */
 .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:680px){.feat-grid{grid-template-columns:1fr}}
-.feat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
 .feat-ico{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:800;border-radius:8px;margin-bottom:12px}
 .feat-title{font-weight:700;font-size:17px;margin-bottom:6px}
 .feat-body{font-size:14px;color:var(--muted);line-height:1.55}
@@ -100,7 +120,7 @@ header.scrolled{border-color:var(--border)}
 /* UPSELL PROGRAM CARDS */
 .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media (max-width:780px){.prog-grid{grid-template-columns:1fr}}
-.prog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.prog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .prog-tag{align-self:flex-start;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent-dark);background:var(--accent-soft);padding:5px 10px;border-radius:7px;margin-bottom:12px}
 .prog-title{font-weight:700;font-size:18px;margin-bottom:8px}
 .prog-desc{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:16px;flex:1}
@@ -108,14 +128,19 @@ header.scrolled{border-color:var(--border)}
 .prog-price small{font-size:12px;font-weight:600;color:var(--muted)}
 
 /* PROOF — generic photo slots, ready for real screenshots */
+.ba-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.ba-slot{aspect-ratio:3/4;border-radius:16px;border:2px dashed var(--accent);background:var(--accent-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px}
+.ba-slot .tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-dark)}
+.ba-slot .lbl{font-size:11px;color:var(--accent-dark);opacity:.8}
+
 .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media (max-width:680px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
-.proof-slot{aspect-ratio:3/4;border-radius:14px;border:2px dashed var(--border);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px}
+.proof-slot{aspect-ratio:3/4;border-radius:14px;border:2px dashed var(--border);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px;box-shadow:var(--shadow)}
 .proof-slot .n{font-size:12px;font-weight:800;color:var(--muted)}
 .proof-slot .lbl{font-size:10.5px;color:var(--muted);opacity:.8;line-height:1.3}
 
 /* FAQ */
-.faq{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:9px;overflow:hidden}
+.faq{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:9px;overflow:hidden;box-shadow:var(--shadow)}
 .faq summary{list-style:none;cursor:pointer;padding:17px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:700;font-size:15px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:'+';font-size:20px;font-weight:800;color:var(--accent);flex-shrink:0;transition:transform .2s}
@@ -123,7 +148,7 @@ header.scrolled{border-color:var(--border)}
 .faq-a{padding:0 18px 18px;font-size:14px;color:var(--muted);line-height:1.55}
 
 /* PRICING */
-.price-card{background:var(--card);border:1.5px solid var(--ink);border-radius:20px;padding:28px 24px}
+.price-card{background:var(--card);border:1.5px solid var(--ink);border-radius:20px;padding:28px 24px;box-shadow:0 16px 32px rgba(34,28,22,.1)}
 .price-row{display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--border)}
 .price-row:last-of-type{border-bottom:none}
 .price-label{font-size:13px;color:var(--muted)}
@@ -167,6 +192,18 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
     <h1 class="hero-h1 fi">Не ще один план тренувань. Клуб, де тебе <span class="accent">ведуть за руку</span></h1>
     <p class="hero-sub fi">Тренування, харчування, техніка виконання — усе <strong>під особистим контролем тренерки клубу</strong>. Щодня, а не раз на місяць.</p>
     <a href="#pricing" class="btn btn-block fi">Приєднатись до клубу — перший місяць 390 грн</a>
+
+    <div class="video-frame fi" title="Сюди підуть реальні відео та посилання">
+      <span class="video-tag">Відео</span>
+      <span class="play-btn">▶</span>
+      <span class="video-caption">Знайомство з клубом · відео від тренерки</span>
+    </div>
+
+    <div class="stat-row fi">
+      <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">тренування на тиждень</div></div>
+      <div class="stat"><div class="stat-num">1×</div><div class="stat-lbl">нове меню щомісяця</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-lbl">бібліотека клубу</div></div>
+    </div>
 
     <div class="week-mock fi">
       <div class="week-mock-top">
@@ -225,7 +262,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
     <p class="section-lead fi">Не хаотичний набір відео, а система, яка ускладнюється поступово — і жива підтримка на кожному кроці.</p>
 
     <div class="feat-grid">
-      <div class="feat fi">
+      <div class="feat lift fi">
         <div class="feat-ico">1</div>
         <div class="feat-title">Тренування</div>
         <div class="feat-body">Структуровано і послідовно, з акцентом на поставу, глибокі м'язи живота та плаский живіт.
@@ -237,7 +274,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
         </div>
       </div>
 
-      <div class="feat fi">
+      <div class="feat lift fi">
         <div class="feat-ico">2</div>
         <div class="feat-title">Харчування під контролем</div>
         <div class="feat-body">Щомісяця 1 числа — нове меню з КБЖУ, адаптоване під твою особисту калорійність і БЖУ.
@@ -248,25 +285,25 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
         </div>
       </div>
 
-      <div class="feat fi">
+      <div class="feat lift fi">
         <div class="feat-ico">3</div>
         <div class="feat-title">Розбір техніки</div>
         <div class="feat-body">Надсилаєш відео виконання вправи — тренерка особисто виправляє техніку.</div>
       </div>
 
-      <div class="feat fi">
+      <div class="feat lift fi">
         <div class="feat-ico">4</div>
         <div class="feat-title">Трекер звичок</div>
         <div class="feat-body">Онлайн-трекер, де відмічаєш прогрес щодня. В кінці місяця видно результат: скільки тренувань виконано і які звички дотримано.</div>
       </div>
 
-      <div class="feat fi">
+      <div class="feat lift fi">
         <div class="feat-ico">5</div>
         <div class="feat-title">Бібліотека Maletych Club</div>
         <div class="feat-body">Окрема інформаційна гілка: лекції про харчування, тренування, психологію результату, розбір типових помилок і того, як не зриватись.</div>
       </div>
 
-      <div class="feat fi">
+      <div class="feat lift fi">
         <div class="feat-ico">6</div>
         <div class="feat-title">Спільнота</div>
         <div class="feat-body">Живий чат, де дівчата діляться прогресом і тарілками та підтримують одна одну. Не «група з відео», а середовище, де тебе бачать.</div>
@@ -283,7 +320,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
     <p class="section-lead fi">Разові програми без підписки — щоб спробувати формат або закрити конкретну ціль.</p>
 
     <div class="prog-grid">
-      <div class="prog-card fi">
+      <div class="prog-card lift fi">
         <span class="prog-tag">Старт</span>
         <div class="prog-title">Сідниці · 12 тренувань</div>
         <p class="prog-desc">Компактна програма для щільних, підтягнутих сідниць. Прогресивне навантаження, без важкого інвентарю.</p>
@@ -291,7 +328,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
         <a href="#" class="btn btn-outline btn-sm">Детальніше</a>
       </div>
 
-      <div class="prog-card fi">
+      <div class="prog-card lift fi">
         <span class="prog-tag">Розширена</span>
         <div class="prog-title">Сідниці · 20 тренувань</div>
         <p class="prog-desc">Більше обсягу, вищий результат, довший ефект. Для тих, хто хоче пройти шлях повністю.</p>
@@ -299,7 +336,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
         <a href="#" class="btn btn-outline btn-sm">Детальніше</a>
       </div>
 
-      <div class="prog-card fi">
+      <div class="prog-card lift fi">
         <span class="prog-tag">21 день</span>
         <div class="prog-title">Як прибрати живіт за 21 день</div>
         <p class="prog-desc">Точковий фокус на кор і талію. Короткі щоденні тренування, які легко вписати в будь-який графік.</p>
@@ -316,15 +353,19 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
     <div class="eyebrow fi"><span class="num">05</span><span class="label">Соціальний доказ</span></div>
     <h2 class="section-h fi">Не слова — реальний прогрес учасниць</h2>
     <p class="section-lead fi">Сюди підуть реальні скріни з каналу клубу: тренування, тарілки, відгуки, прогрес учасниць.</p>
+
+    <div class="ba-row">
+      <div class="ba-slot fi"><span class="tag">До</span><span class="lbl">кейс з челенджу</span></div>
+      <div class="ba-slot fi"><span class="tag">Після</span><span class="lbl">кейс з челенджу</span></div>
+    </div>
+
     <div class="proof-grid">
-      <div class="proof-slot fi"><span class="n">01</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">02</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">03</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">04</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">05</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">06</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">07</span><span class="lbl">Фото з каналу</span></div>
-      <div class="proof-slot fi"><span class="n">08</span><span class="lbl">Фото з каналу</span></div>
+      <div class="proof-slot lift fi"><span class="n">01</span><span class="lbl">Фото з каналу</span></div>
+      <div class="proof-slot lift fi"><span class="n">02</span><span class="lbl">Фото з каналу</span></div>
+      <div class="proof-slot lift fi"><span class="n">03</span><span class="lbl">Фото з каналу</span></div>
+      <div class="proof-slot lift fi"><span class="n">04</span><span class="lbl">Фото з каналу</span></div>
+      <div class="proof-slot lift fi"><span class="n">05</span><span class="lbl">Фото з каналу</span></div>
+      <div class="proof-slot lift fi"><span class="n">06</span><span class="lbl">Фото з каналу</span></div>
     </div>
   </div>
 </section>
