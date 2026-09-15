@@ -3,177 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MALETYCH CLUB — клуб, де тебе ведуть за руку</title>
-<meta name="description" content="Не ще один план тренувань. Тренування, харчування та техніку виконання особисто контролює тренерка клубу. Перший місяць — 390 грн.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>MALETYCH CLUB — система, яка веде до результату</title>
+<meta name="description" content="Не план тренувань. Система під особистим контролем тренерки клубу — щодня, а не раз на місяць. Перший місяць — 390 грн.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#faf6f0;--bg-alt:#f2e7d7;--card:#ffffff;
-  --ink:#221c16;--muted:#6f6155;--border:#e6d9c5;
-  --accent:#c1663f;--accent-dark:#9c4f30;--accent-soft:#f4ddce;
-  --shadow:0 2px 10px rgba(34,28,22,.05);
+  --bg:#0b0b0d;--bg-alt:#141417;--card:#19191e;--card-2:#1f1f25;
+  --ink:#f5f4f2;--muted:#a6a3ad;--border:rgba(255,255,255,.1);--border-2:rgba(255,255,255,.16);
+  --accent:#ff5c39;--accent-dark:#e2431f;--accent-soft:rgba(255,92,57,.14);
+  --lime:#c8ff4d;
+  --glow:0 0 1px rgba(255,92,57,.5),0 14px 40px rgba(255,92,57,.25);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.01em;line-height:1.18}
-.container{max-width:640px;margin:0 auto;padding:0 22px}
-.container-wide{max-width:900px;margin:0 auto;padding:0 22px}
-section{padding:52px 0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.12}
+.container{max-width:640px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+.container-wide{max-width:920px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+section{padding:60px 0;position:relative}
 img{max-width:100%}
 [hidden]{display:none!important}
 
 .bg-alt{background:var(--bg-alt)}
 
+.dots{background-image:radial-gradient(var(--border) 1px,transparent 1px);background-size:20px 20px}
+
 .lift{transition:transform .2s ease,box-shadow .2s ease}
-.lift:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(34,28,22,.1)}
+.lift:hover{transform:translateY(-4px)}
 
-.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.eyebrow .num{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:7px;background:var(--accent);color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
-.eyebrow .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow .num{display:flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 6px;border-radius:8px;background:var(--card-2);border:1px solid var(--border-2);color:var(--accent);font-size:11px;font-weight:800;flex-shrink:0;font-variant-numeric:tabular-nums}
+.eyebrow .label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
-.btn{display:inline-block;padding:17px 30px;background:var(--accent);color:#fff;font-family:'Inter',sans-serif;font-size:15.5px;font-weight:700;text-align:center;text-decoration:none;border:none;border-radius:12px;cursor:pointer;transition:background .15s,transform .1s}
-.btn:hover{background:var(--accent-dark)}
-.btn:active{transform:scale(.98)}
+.btn{display:inline-block;padding:18px 32px;background:var(--accent);color:#100a08;font-family:'Inter',sans-serif;font-size:15.5px;font-weight:800;text-align:center;text-decoration:none;border:none;border-radius:100px;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:var(--glow)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 1px rgba(255,92,57,.6),0 18px 46px rgba(255,92,57,.35)}
+.btn:active{transform:translateY(0) scale(.98)}
 .btn-block{display:block;width:100%}
-.btn-sm{padding:11px 20px;font-size:13.5px;border-radius:10px}
-.btn-outline{background:#fff;border:1.5px solid var(--border);color:var(--ink)}
-.btn-outline:hover{background:var(--bg-alt)}
-.btn-on-accent{background:#fff;color:var(--accent-dark)}
-.btn-on-accent:hover{background:var(--accent-soft)}
+.btn-sm{padding:12px 20px;font-size:13.5px;box-shadow:none}
+.btn-outline{background:transparent;border:1.5px solid var(--border-2);color:var(--ink);box-shadow:none}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-dark{background:var(--bg);color:var(--ink);box-shadow:none}
+.btn-dark:hover{background:#000}
 
-.fi{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
+.fi{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
 .fi.show{opacity:1;transform:none}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.95);backdrop-filter:blur(6px);border-bottom:1px solid transparent;transition:border-color .2s}
+header{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.75);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
 header.scrolled{border-color:var(--border)}
-.header-inner{max-width:900px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:800;font-size:17px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.header-inner{max-width:920px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
 .logo span{color:var(--accent)}
-.header-cta{padding:10px 18px;font-size:13px}
+.header-cta{padding:10px 20px;font-size:13px;box-shadow:none}
 
 /* HERO */
-#hero{position:relative;overflow:hidden;padding-top:40px}
-#hero::before{content:'';position:absolute;top:-160px;right:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 68%);z-index:0;pointer-events:none}
-#hero .container{position:relative;z-index:1}
-.hero-tag{display:inline-block;background:var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:7px 15px;border-radius:8px;margin-bottom:20px}
-.hero-h1{font-size:clamp(30px,8vw,44px);line-height:1.2;color:var(--ink);margin-bottom:16px}
+#hero{padding-top:44px;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);z-index:0;pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border-2);color:var(--accent);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border-radius:100px;margin-bottom:24px}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.hero-h1{font-size:clamp(32px,9vw,52px);line-height:1.08;color:var(--ink);margin-bottom:18px}
 .hero-h1 .accent{color:var(--accent)}
-.hero-sub{font-size:16.5px;line-height:1.6;color:var(--ink);margin-bottom:26px;max-width:480px}
-.hero-sub strong{font-weight:700;color:var(--accent-dark)}
+.hero-sub{font-size:17px;line-height:1.6;color:var(--muted);margin-bottom:28px;max-width:480px}
+.hero-sub strong{font-weight:700;color:var(--ink)}
 
 /* hero video */
-.video-frame{position:relative;margin-top:28px;aspect-ratio:4/5;max-height:520px;border-radius:22px;overflow:hidden;background:linear-gradient(155deg,var(--accent) 0%,var(--accent-dark) 100%);box-shadow:0 16px 36px rgba(156,79,48,.28);display:flex;align-items:flex-end;cursor:pointer}
-.video-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.14),transparent 60%)}
-.video-frame::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 4px)}
-.video-tag{position:absolute;top:16px;left:16px;z-index:2;background:rgba(0,0,0,.28);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px;backdrop-filter:blur(3px)}
-.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:#fff;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 10px 24px rgba(0,0,0,.25);z-index:2;transition:transform .2s}
-.video-frame:hover .play-btn{transform:translate(-50%,-50%) scale(1.06)}
-.video-caption{position:relative;z-index:2;width:100%;padding:18px 20px;background:linear-gradient(to top,rgba(0,0,0,.4),transparent);color:#fff;font-size:14px;font-weight:600}
+.video-frame{position:relative;margin-top:30px;aspect-ratio:4/5;max-height:520px;border-radius:26px;overflow:hidden;background:linear-gradient(155deg,#241a16 0%,var(--bg) 55%,#000 100%);border:1px solid var(--border-2);box-shadow:0 30px 60px rgba(0,0,0,.5);display:flex;align-items:flex-end;cursor:pointer}
+.video-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(255,92,57,.28),transparent 60%)}
+.video-tag{position:absolute;top:16px;left:16px;z-index:2;background:rgba(0,0,0,.4);border:1px solid var(--border-2);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:100px;backdrop-filter:blur(4px)}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:var(--accent);color:#100a08;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:var(--glow);z-index:2;transition:transform .2s}
+.video-frame:hover .play-btn{transform:translate(-50%,-50%) scale(1.08)}
+.video-caption{position:relative;z-index:2;width:100%;padding:20px 22px;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);color:#fff;font-size:14px;font-weight:600}
 
-.stat-row{display:flex;gap:10px;margin-top:22px}
-.stat{flex:1;text-align:center;background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 6px;box-shadow:var(--shadow)}
-.stat-num{font-size:22px;font-weight:800;color:var(--accent-dark)}
-.stat-lbl{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.3}
+.stat-row{display:flex;gap:10px;margin-top:24px}
+.stat{flex:1;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 6px}
+.stat-num{font-size:24px;font-weight:900;color:var(--accent);letter-spacing:-.02em}
+.stat-lbl{font-size:10.5px;color:var(--muted);margin-top:4px;line-height:1.3}
 
-.week-mock{margin-top:22px;border-radius:16px;background:#fff;border:1px solid var(--border);padding:22px;box-shadow:var(--shadow)}
-.week-mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
-.week-mock-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-.week-mock-badge{font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);padding:5px 11px;border-radius:7px}
+.week-mock{margin-top:24px;border-radius:18px;background:var(--card);border:1px solid var(--border);padding:24px}
+.week-mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.week-mock-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.week-mock-badge{font-size:11px;font-weight:700;color:var(--bg);background:var(--lime);padding:5px 12px;border-radius:100px}
 .week-days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.week-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--muted);background:var(--bg);border-radius:9px}
-.week-day.on{background:var(--accent);color:#fff}
+.week-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--muted);background:var(--bg-alt);border-radius:10px;border:1px solid var(--border)}
+.week-day.on{background:var(--accent);color:#100a08;border-color:var(--accent)}
 
 /* PAIN */
-.pain-cards{display:flex;flex-direction:column;gap:9px}
-.pain-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:15px 18px;font-size:15px;line-height:1.5;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow)}
+.pain-cards{display:flex;flex-direction:column;gap:10px}
+.pain-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;font-size:15px;line-height:1.5;display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
 .pain-card::before{content:'✕';color:var(--accent);font-size:13px;font-weight:800;flex-shrink:0;margin-top:2px}
-.section-h{font-size:clamp(23px,5.5vw,30px);margin-bottom:12px;color:var(--ink)}
-.section-lead{font-size:15px;color:var(--muted);margin-bottom:26px;max-width:460px}
+.section-h{font-size:clamp(24px,6vw,32px);margin-bottom:14px;color:var(--ink)}
+.section-lead{font-size:15px;color:var(--muted);margin-bottom:28px;max-width:460px}
 
-/* CALLOUT (accent-filled block, replaces dark inversion) */
-.callout{background:var(--accent);color:#fff;border-radius:20px;padding:32px 26px;box-shadow:0 16px 34px rgba(156,79,48,.22)}
-.callout .section-h,.callout h2{color:#fff}
-.callout .eyebrow .label{color:rgba(255,255,255,.75)}
-.callout .eyebrow .num{background:#fff;color:var(--accent-dark)}
+/* CALLOUT — bright accent block */
+.callout{background:var(--accent);color:#100a08;border-radius:24px;padding:34px 28px;box-shadow:0 30px 60px rgba(255,92,57,.22);position:relative;overflow:hidden}
+.callout::before{content:'';position:absolute;top:-40%;right:-20%;width:60%;height:160%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%)}
+.callout .section-h{color:#100a08}
+.callout .eyebrow .label{color:rgba(16,10,8,.65)}
+.callout .eyebrow .num{background:rgba(16,10,8,.12);border-color:rgba(16,10,8,.2);color:#100a08}
 
-.thesis-quote{font-size:clamp(22px,6vw,30px);font-weight:800;line-height:1.32;margin-bottom:22px}
-.thesis-quote .hl{color:#ffe3d0}
-.thesis-vs{font-size:14.5px;color:rgba(255,255,255,.8);margin-bottom:18px}
-.thesis-list{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
-.thesis-item{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.5;font-weight:600}
-.thesis-item::before{content:'✓';font-weight:800;flex-shrink:0;margin-top:1px}
-.thesis-rare{font-size:13.5px;color:rgba(255,255,255,.75)}
+.thesis-quote{font-size:clamp(23px,6vw,32px);font-weight:900;line-height:1.28;margin-bottom:22px;position:relative;z-index:1}
+.thesis-quote .hl{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+.thesis-vs{font-size:14.5px;color:rgba(16,10,8,.72);margin-bottom:18px;position:relative;z-index:1}
+.thesis-list{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;position:relative;z-index:1}
+.thesis-item{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.5;font-weight:700}
+.thesis-item::before{content:'✓';font-weight:900;flex-shrink:0;margin-top:1px}
+.thesis-rare{font-size:13.5px;color:rgba(16,10,8,.72);position:relative;z-index:1}
 
 /* FEATURE GRID */
 .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:680px){.feat-grid{grid-template-columns:1fr}}
-.feat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
-.feat-ico{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:800;border-radius:8px;margin-bottom:12px}
-.feat-title{font-weight:700;font-size:17px;margin-bottom:6px}
-.feat-body{font-size:14px;color:var(--muted);line-height:1.55}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.feat-ghost{position:absolute;top:-14px;right:6px;font-size:64px;font-weight:900;color:var(--ink);opacity:.05;line-height:1;pointer-events:none}
+.feat-title{font-weight:700;font-size:17px;margin-bottom:6px;position:relative}
+.feat-body{font-size:14px;color:var(--muted);line-height:1.55;position:relative}
 .feat-body ul{list-style:none;display:flex;flex-direction:column;gap:5px;margin-top:8px}
 .feat-body li{position:relative;padding-left:15px;color:var(--ink)}
-.feat-body li::before{content:'—';position:absolute;left:0;color:var(--muted)}
+.feat-body li::before{content:'—';position:absolute;left:0;color:var(--accent)}
 
 /* UPSELL PROGRAM CARDS */
 .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media (max-width:780px){.prog-grid{grid-template-columns:1fr}}
-.prog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
-.prog-tag{align-self:flex-start;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent-dark);background:var(--accent-soft);padding:5px 10px;border-radius:7px;margin-bottom:12px}
+.prog-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+.prog-tag{align-self:flex-start;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--bg);background:var(--lime);padding:5px 11px;border-radius:100px;margin-bottom:14px}
 .prog-title{font-weight:700;font-size:18px;margin-bottom:8px}
-.prog-desc{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:16px;flex:1}
-.prog-price{font-size:23px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.prog-desc{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:18px;flex:1}
+.prog-price{font-size:24px;font-weight:900;color:var(--ink);margin-bottom:14px}
 .prog-price small{font-size:12px;font-weight:600;color:var(--muted)}
 
 /* PROOF — generic photo slots, ready for real screenshots */
 .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.ba-slot{aspect-ratio:3/4;border-radius:16px;border:2px dashed var(--accent);background:var(--accent-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px}
-.ba-slot .tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-dark)}
-.ba-slot .lbl{font-size:11px;color:var(--accent-dark);opacity:.8}
+.ba-slot{aspect-ratio:3/4;border-radius:18px;border:1.5px dashed var(--accent);background:var(--accent-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px}
+.ba-slot .tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.ba-slot .lbl{font-size:11px;color:var(--muted)}
 
 .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media (max-width:680px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
-.proof-slot{aspect-ratio:3/4;border-radius:14px;border:2px dashed var(--border);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px;box-shadow:var(--shadow)}
-.proof-slot .n{font-size:12px;font-weight:800;color:var(--muted)}
-.proof-slot .lbl{font-size:10.5px;color:var(--muted);opacity:.8;line-height:1.3}
+.proof-slot{aspect-ratio:3/4;border-radius:16px;border:1.5px dashed var(--border-2);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:10px}
+.proof-slot .n{font-size:12px;font-weight:800;color:var(--accent)}
+.proof-slot .lbl{font-size:10.5px;color:var(--muted);line-height:1.3}
 
 /* FAQ */
-.faq{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:9px;overflow:hidden;box-shadow:var(--shadow)}
-.faq summary{list-style:none;cursor:pointer;padding:17px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:700;font-size:15px}
+.faq{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:9px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:700;font-size:15px;color:var(--ink)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:'+';font-size:20px;font-weight:800;color:var(--accent);flex-shrink:0;transition:transform .2s}
 .faq[open] summary::after{transform:rotate(45deg)}
-.faq-a{padding:0 18px 18px;font-size:14px;color:var(--muted);line-height:1.55}
+.faq-a{padding:0 20px 20px;font-size:14px;color:var(--muted);line-height:1.55}
 
 /* PRICING */
-.price-card{background:var(--card);border:1.5px solid var(--ink);border-radius:20px;padding:28px 24px;box-shadow:0 16px 32px rgba(34,28,22,.1)}
-.price-row{display:flex;align-items:baseline;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--border)}
+.price-card{background:var(--card);border:1px solid var(--border-2);border-radius:24px;padding:30px 26px;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}
 .price-row:last-of-type{border-bottom:none}
 .price-label{font-size:13px;color:var(--muted)}
 .price-label strong{display:block;font-size:15px;color:var(--ink);font-weight:700;margin-top:2px}
-.price-val{font-size:24px;font-weight:800;white-space:nowrap}
+.price-val{font-size:26px;font-weight:900;white-space:nowrap;color:var(--ink)}
 .price-val small{font-size:12px;font-weight:500;color:var(--muted)}
-.price-note{font-size:13px;color:var(--muted);margin-top:16px;line-height:1.5}
+.price-note{font-size:13px;color:var(--muted);margin-top:18px;line-height:1.55}
 
-/* BONUS */
-.bonus-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:22px;margin-bottom:12px}
-.bonus-top{display:flex;align-items:center;gap:10px;margin-bottom:9px}
-.bonus-title{font-weight:700;font-size:17px}
-.bonus-body{font-size:14px;line-height:1.55;color:rgba(255,255,255,.9)}
-.bonus-body strong{color:#fff}
-.prize-row{display:flex;gap:10px;margin-top:14px}
-.prize-chip{flex:1;text-align:center;background:rgba(255,255,255,.12);border-radius:12px;padding:13px 6px}
-.prize-chip .amt{font-size:20px;font-weight:800}
-.prize-chip .lbl{font-size:10px;letter-spacing:.04em;text-transform:uppercase;opacity:.8;margin-top:2px}
+/* BONUS — dark cards with neon accents */
+.bonus-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;margin-bottom:12px}
+.bonus-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bonus-title{font-weight:700;font-size:17px;color:var(--ink)}
+.bonus-body{font-size:14px;line-height:1.55;color:var(--muted)}
+.bonus-body strong{color:var(--lime)}
+.prize-row{display:flex;gap:10px;margin-top:16px}
+.prize-chip{flex:1;text-align:center;background:var(--bg-alt);border:1px solid var(--border);border-radius:14px;padding:14px 6px}
+.prize-chip .amt{font-size:21px;font-weight:900;color:var(--lime)}
+.prize-chip .lbl{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 
-footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--border);color:var(--muted);font-size:12.5px}
-.footer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:14px}
+footer{padding:44px 0 calc(30px + env(safe-area-inset-bottom,0px));background:var(--bg-alt);border-top:1px solid var(--border);color:var(--muted);font-size:12.5px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:14px}
 .footer-links{display:flex;gap:16px;flex-wrap:wrap}
 .footer-links a{color:var(--muted);text-decoration:none}
 .footer-links a:hover{color:var(--ink)}
-.footer-legal{border-top:1px solid var(--border);padding-top:14px;line-height:1.6}
+.footer-legal{border-top:1px solid var(--border);padding-top:16px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -188,8 +193,8 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
 <!-- HERO -->
 <section id="hero">
   <div class="container">
-    <span class="hero-tag fi">Онлайн фітнес-клуб</span>
-    <h1 class="hero-h1 fi">Не ще один план тренувань. Клуб, де тебе <span class="accent">ведуть за руку</span></h1>
+    <span class="hero-tag fi">Система, не план</span>
+    <h1 class="hero-h1 fi">Не план тренувань. <span class="accent">Система, яка веде до результату.</span></h1>
     <p class="hero-sub fi">Тренування, харчування, техніка виконання — усе <strong>під особистим контролем тренерки клубу</strong>. Щодня, а не раз на місяць.</p>
     <a href="#pricing" class="btn btn-block fi">Приєднатись до клубу — перший місяць 390 грн</a>
 
@@ -243,7 +248,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
   <div class="container">
     <div class="callout fi">
       <div class="eyebrow"><span class="num">02</span><span class="label">Чим ми відрізняємось</span></div>
-      <p class="thesis-quote">«Клуб, де тебе ведуть за руку <span class="hl">30 днів</span>, а не просто скидають план»</p>
+      <p class="thesis-quote">«<span class="hl">Система</span>, яка веде до результату 30 днів поспіль — а не план, який просто скидають»</p>
       <p class="thesis-vs">Конкуренти дають план тренувань. Maletych Club дає контроль на кожному кроці:</p>
       <div class="thesis-list">
         <div class="thesis-item">Тренерка особисто розбирає твою тарілку</div>
@@ -258,12 +263,12 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
 <section id="solution">
   <div class="container-wide">
     <div class="eyebrow fi"><span class="num">03</span><span class="label">Що входить у клуб</span></div>
-    <h2 class="section-h fi">Шість речей, які тримають тебе в процесі</h2>
-    <p class="section-lead fi">Не хаотичний набір відео, а система, яка ускладнюється поступово — і жива підтримка на кожному кроці.</p>
+    <h2 class="section-h fi">Шість елементів системи</h2>
+    <p class="section-lead fi">Не хаотичний набір відео, а процес, який ускладнюється поступово — і жива підтримка на кожному кроці.</p>
 
     <div class="feat-grid">
       <div class="feat lift fi">
-        <div class="feat-ico">1</div>
+        <span class="feat-ghost">01</span>
         <div class="feat-title">Тренування</div>
         <div class="feat-body">Структуровано і послідовно, з акцентом на поставу, глибокі м'язи живота та плаский живіт.
           <ul>
@@ -275,7 +280,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
       </div>
 
       <div class="feat lift fi">
-        <div class="feat-ico">2</div>
+        <span class="feat-ghost">02</span>
         <div class="feat-title">Харчування під контролем</div>
         <div class="feat-body">Щомісяця 1 числа — нове меню з КБЖУ, адаптоване під твою особисту калорійність і БЖУ.
           <ul>
@@ -286,25 +291,25 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
       </div>
 
       <div class="feat lift fi">
-        <div class="feat-ico">3</div>
+        <span class="feat-ghost">03</span>
         <div class="feat-title">Розбір техніки</div>
         <div class="feat-body">Надсилаєш відео виконання вправи — тренерка особисто виправляє техніку.</div>
       </div>
 
       <div class="feat lift fi">
-        <div class="feat-ico">4</div>
+        <span class="feat-ghost">04</span>
         <div class="feat-title">Трекер звичок</div>
         <div class="feat-body">Онлайн-трекер, де відмічаєш прогрес щодня. В кінці місяця видно результат: скільки тренувань виконано і які звички дотримано.</div>
       </div>
 
       <div class="feat lift fi">
-        <div class="feat-ico">5</div>
+        <span class="feat-ghost">05</span>
         <div class="feat-title">Бібліотека Maletych Club</div>
         <div class="feat-body">Окрема інформаційна гілка: лекції про харчування, тренування, психологію результату, розбір типових помилок і того, як не зриватись.</div>
       </div>
 
       <div class="feat lift fi">
-        <div class="feat-ico">6</div>
+        <span class="feat-ghost">06</span>
         <div class="feat-title">Спільнота</div>
         <div class="feat-body">Живий чат, де дівчата діляться прогресом і тарілками та підтримують одна одну. Не «група з відео», а середовище, де тебе бачать.</div>
       </div>
@@ -420,23 +425,21 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
 <!-- BONUSES -->
 <section id="bonuses" class="bg-alt">
   <div class="container">
-    <div class="callout fi">
-      <div class="eyebrow"><span class="num">08</span><span class="label">Бонуси та призи</span></div>
-      <h2 class="section-h">Цінність, яку отримуєш просто за активність</h2>
+    <div class="eyebrow fi"><span class="num">08</span><span class="label">Бонуси та призи</span></div>
+    <h2 class="section-h fi">Цінність, яку отримуєш просто за активність</h2>
 
-      <div class="bonus-card">
-        <div class="bonus-top"><span class="bonus-title">Бали за системність</span></div>
-        <div class="bonus-body">Кожен звіт (#тренування, #тарілка) — це бали. Хто найактивніше звітує за місяць — отримує <strong>бокс протеїнових смаколиків</strong>. Бокс дається за конкретний місяць без накопичення: новий відлік щомісяця, і шанс є в усіх учасниць клубу.</div>
-      </div>
+    <div class="bonus-card fi">
+      <div class="bonus-top"><span class="bonus-title">Бали за системність</span></div>
+      <div class="bonus-body">Кожен звіт (#тренування, #тарілка) — це бали. Хто найактивніше звітує за місяць — отримує <strong>бокс протеїнових смаколиків</strong>. Бокс дається за конкретний місяць без накопичення: новий відлік щомісяця, і шанс є в усіх учасниць клубу.</div>
+    </div>
 
-      <div class="bonus-card" style="margin-bottom:0">
-        <div class="bonus-top"><span class="bonus-title">Щомісячний челендж на грошові призи</span></div>
-        <div class="bonus-body">Щомісяця в клубі стартує новий челендж, де можна позмагатись за призи. Призовий фонд зростає з кожним місяцем — достатньо бути учасницею клубу, щоб встигнути приєднатись до чергового.</div>
-        <div class="prize-row">
-          <div class="prize-chip"><div class="amt">$100</div><div class="lbl">1 місце</div></div>
-          <div class="prize-chip"><div class="amt">$50</div><div class="lbl">2 місце</div></div>
-          <div class="prize-chip"><div class="amt">+</div><div class="lbl">бонуси</div></div>
-        </div>
+    <div class="bonus-card fi">
+      <div class="bonus-top"><span class="bonus-title">Щомісячний челендж на грошові призи</span></div>
+      <div class="bonus-body">Щомісяця в клубі стартує новий челендж, де можна позмагатись за призи. Призовий фонд зростає з кожним місяцем — достатньо бути учасницею клубу, щоб встигнути приєднатись до чергового.</div>
+      <div class="prize-row">
+        <div class="prize-chip"><div class="amt">$100</div><div class="lbl">1 місце</div></div>
+        <div class="prize-chip"><div class="amt">$50</div><div class="lbl">2 місце</div></div>
+        <div class="prize-chip"><div class="amt">+</div><div class="lbl">бонуси</div></div>
       </div>
     </div>
   </div>
@@ -448,7 +451,7 @@ footer{padding:40px 0 calc(28px + env(safe-area-inset-bottom,0px));background:va
     <div class="callout fi" style="text-align:center">
       <p class="thesis-quote">Досить тренуватись наосліп</p>
       <p class="thesis-vs" style="max-width:420px;margin-left:auto;margin-right:auto">Приєднуйся до клубу, де кожен твій крок особисто бачить і коригує тренерка клубу. Плюс — бонуси й призи щомісяця просто за активність.</p>
-      <a href="mailto:olenamaletich@ukr.net?subject=Хочу приєднатись до Maletych Club" class="btn btn-on-accent btn-block">Стати учасницею клубу — перший місяць 390 грн</a>
+      <a href="mailto:olenamaletich@ukr.net?subject=Хочу приєднатись до Maletych Club" class="btn btn-dark btn-block">Стати учасницею клубу — перший місяць 390 грн</a>
     </div>
   </div>
 </section>
