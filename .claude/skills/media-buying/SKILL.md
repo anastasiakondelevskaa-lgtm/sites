@@ -40,6 +40,31 @@ wrong. If the user hasn't given them, ask — briefly, in one block:
 Margin of 30% is a sane default for a mature vertical, 40-50% while testing —
 the buffer absorbs approve drift and attribution lag.
 
+`P` is what survives to the operator, not the sticker price. On low tickets the
+gap is large enough to change decisions: payment processing takes a fixed fee
+plus a percentage (around 7% of a `$7.50` sale, because the fixed part dominates),
+and refunds take their share on top. A `$7.50` product at 10% refunds nets about
+`$6.30`, so a "2× on ad spend" goal means CPA `$3.15`, not `$3.75`. State which
+of the two the target refers to before writing any threshold — it's a 20% swing
+in every number downstream.
+
+**Where there is a back end, `P` is LTV, not the first transaction.** A front-end
+product exists to acquire a buyer; order bumps, upsells, the core offer and
+subscriptions are where the economics actually live. Compute `P` over a fixed
+window (30 or 60 days) across all revenue per acquired buyer:
+
+| Structure | LTV/60d | CPA for 2× |
+|---|---|---|
+| front end only, `$7.50` at 10% refunds | `$6.30` | `$3.15` |
+| + bump `$12` taken by 25% | `$9.30` | `$4.65` |
+| + upsell `$40` taken by 10% | `$13.30` | `$6.65` |
+
+This matters more than any rule in this skill. Tuning thresholds and creative
+moves profitability by tens of percent; adding a back end can double the CPA the
+operation can afford, which converts directly into auctions won and volume
+available. When a funnel is front-end only and the target is aggressive, say so
+plainly — the ceiling is structural, and no threshold fixes it.
+
 Worked example: payout `$18`, approve `55%` → `BE = $9.90`, at 40% margin
 `T ≈ $5.94` → round to **`T = $6`**, test budget **`B = $18`/day**.
 
@@ -52,6 +77,16 @@ patch individual rules.
 Media buying goes wrong in two directions: killing winners during the learning
 phase, and letting losers bleed because "it might still come in". Both are
 avoided by deciding at fixed checkpoints instead of continuously staring.
+
+Budget has a floor that is independent of all of this. An ad set leaves the
+learning phase at roughly 50 conversions in 7 days, so the daily budget that
+buys stability is about `7×T`. Below it the ad set never exits learning and its
+CPA swings on platform mechanics regardless of how good the bundle is — which
+makes "stable" unreachable by tuning. Test budgets of `3×T` are for *selection*,
+not for running: they answer "junk or not" and nothing else. A promoted winner
+therefore gets **duplicated straight onto `7×T`** rather than laddered up from
+`3×T`, because a 2.5× jump would reset learning anyway; the ladder starts after
+that duplicate has had its first week.
 
 | Window | Question | Default action |
 |---|---|---|

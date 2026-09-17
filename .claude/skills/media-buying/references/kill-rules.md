@@ -77,6 +77,45 @@ so the account never accumulates winners. Loosen it (to `2×T`) when conversions
 are slow to report, tighten it (to `1.2×T`) only when volume is high enough that
 a bundle either converts early or not at all.
 
+## Why the kill thresholds sit where they do
+
+Conversions arrive as a Poisson process, so a zero is not proof of death — it
+has a calculable probability even on a healthy ad set. At true CPA `T`, spend
+`X` implies `X/T` expected conversions and the chance of observing zero anyway
+is `e^(−X/T)`:
+
+| Spend | Expected | Chance a **working** ad set shows zero |
+|---|---|---|
+| `1.5×T` | 1.5 | 22% |
+| `2×T` | 2 | 14% |
+| `3×T` | 3 | 5% |
+| `4×T` | 4 | 1.8% |
+| `5×T` | 5 | 0.7% |
+| `10×T` | 10 | 0.005% |
+
+This single table settles most threshold arguments:
+
+**Where to put kill-zero.** At `1.5×T` roughly one healthy ad set in five dies
+on its first day. Whether that's acceptable is an arithmetic question, not a
+matter of taste: on ten test ad sets of which two work, `1.5×T` saves `4×T` on
+junk and loses 0.44 of a winner, `2×T` spends that `4×T` and loses 0.27. Below
+roughly `T = $10` the winner is worth far more than the difference, so use
+`2×T`. At high `T`, where a test itself is expensive, `1.5×T` starts to pay.
+
+**Why a proven ad set gets more rope, not less.** A week-old ad set on `3×T`
+daily budget will show a blank day about once every three weeks purely from
+variance. A rule that kills on it destroys a working asset on schedule.
+
+**Why the emergency threshold must scale with budget.** On `10×T` of daily
+spend, zero is a 1-in-20,000 event — effectively impossible by chance, so it
+almost always means something actually broke and fast reaction is justified.
+The same absolute threshold that is prudent at `3×T` is negligent at `10×T`.
+When budgets move materially, the SCALE emergency stop moves with them.
+
+**Why kill-cost rules need `Results ≥ 2`.** A single expensive conversion sets
+a CPA that is one sample wide. Requiring two before acting on cost costs a few
+dollars of patience and removes most false kills.
+
 ## Settings that make rules lie
 
 **Attribution window.** Set per rule. Fast conversions (lead, registration) →
