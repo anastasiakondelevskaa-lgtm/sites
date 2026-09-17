@@ -19,21 +19,67 @@ and a silent bump is how a working autopilot starts reading empty arrays.
 ## Access setup
 
 Agents and scripts are not people and don't get added as users. The correct
-mechanism is a **System User** in Business Manager:
+mechanism is a **System User** in Business Manager. The order below matters —
+two of the steps are where setups reliably stall.
 
-1. Business Manager → Business settings → Users → **System users** → Add.
-2. Role: **Employee** (not Admin — the autopilot never needs to manage people
-   or payment methods).
-3. Assign assets: only the specific ad accounts it operates, with **Manage
-   campaigns** permission. Pixels read-only where needed.
-4. Generate token with scopes `ads_management`, `ads_read`, `business_management`
-   only if BM-level reads are genuinely needed.
-5. Store the token as a secret (GitHub Actions secret or the host's secret
-   store). Never in the repo, never in a chat message, never in a commit — a
-   leaked `ads_management` token means someone else can spend the account's
-   budget.
+**Prerequisite.** Admin on the Business Manager itself (not merely on the ad
+account), and the ad account already inside that BM. An ad account outside the
+BM cannot be assigned to a system user.
 
-Rotate the token when someone leaves the team, and keep one token per
+**1. Create an app.** Tokens are always issued on behalf of an app; without one
+the generate-token dialog shows an empty dropdown. `developers.facebook.com` →
+My Apps → Create App → type **Business** → Add Product → **Marketing API** →
+Settings → Basic → set Business Account to the BM.
+
+Development mode is fine. For ad accounts the system user holds a role on
+through the BM, `ads_management` works under Standard Access — App Review is
+only needed to operate accounts outside the business.
+
+**2. Link the app to the BM.** Business settings → Accounts → **Apps** → Add →
+Add an app ID.
+
+**3. Create the system user.** Business settings → Users → **System users** →
+Add. Role **Employee** — sufficient for campaign management, and it withholds
+control over people and payment methods.
+
+**4. Assign assets — both of them.**
+
+| Asset | Permission |
+|---|---|
+| Apps → the app from step 1 | **Develop app** |
+| Ad accounts → the accounts it operates | **Manage campaigns** |
+| Pixels (if reads are needed) | View |
+
+Assigning the *app* as an asset is the step most often skipped. Linking it to
+the BM in step 2 is not enough: without the asset assignment the token dialog
+still shows no app to pick.
+
+**5. Generate.** On the system user → Generate new token → pick the app →
+**Token expiration: Never** (a 60-day token dies unattended, at night, mid-loop)
+→ tick `ads_management` and `ads_read` (`business_management` only if BM-level
+reads are genuinely needed) → copy immediately. It is shown once.
+
+**6. Verify before trusting it.**
+
+```bash
+curl -s "https://graph.facebook.com/debug_token?input_token=$TOK&access_token=$TOK"
+curl -s "https://graph.facebook.com/$V/me/adaccounts?fields=name,account_status,currency,timezone_name&access_token=$TOK"
+curl -s "https://graph.facebook.com/$V/act_<ID>/insights?fields=spend,impressions,ctr&date_preset=yesterday&access_token=$TOK"
+```
+
+Expect `is_valid: true`, both scopes present, `expires_at: 0`. An empty
+`adaccounts` list means step 4 was not completed; error `#200` means the account
+is assigned without Manage campaigns; `#803` on an insights call usually means
+the `act_` prefix is missing or a business ID was used instead of an account ID.
+
+Note the account's `timezone_name` from that second call — every rule schedule
+and every `time_range` in this system is interpreted in it, not in the
+operator's local zone.
+
+**7. Store it as a secret.** Environment variables for interactive sessions, the
+CI secret store for the autopilot. Never in the repo, never in a commit, never
+in a chat message — a leaked `ads_management` token lets someone else spend the
+account's budget. Rotate when someone leaves the team, and keep one token per
 environment so a compromised one can be revoked without stopping everything.
 
 ## Reading performance
