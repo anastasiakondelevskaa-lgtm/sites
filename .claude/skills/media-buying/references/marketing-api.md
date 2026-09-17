@@ -82,6 +82,52 @@ in a chat message — a leaked `ads_management` token lets someone else spend th
 account's budget. Rotate when someone leaves the team, and keep one token per
 environment so a compromised one can be revoked without stopping everything.
 
+## When developer platform access is blocked
+
+`developers.facebook.com` returning "You cannot access this service" is a
+restriction on the **developer platform for that profile** — a separate object
+from the ad account. The BM, the ad accounts and delivery often keep working.
+It is common enough in performance-marketing niches to plan around rather than
+treat as an outage.
+
+First establish the scope, because the answer differs: does `business.facebook.com`
+still open, are the accounts active, and is there an identity-verification
+notice sitting in the profile's account center? An unverified profile shows the
+same wall and clears by completing verification, which is not a ban at all.
+
+The structural fact that resolves most cases: **the app does not have to belong
+to the operator.** A token is issued by a system user inside the BM; the app is
+only the issuing authority.
+
+```
+Any working developer profile  →  creates the App, sets Business Account = the BM
+The BM                         →  system user, assigned that App + the ad accounts
+Token                          →  issued inside the BM, independent of that profile
+```
+
+The person who created the app takes no part in operations afterwards. A
+partner, a colleague, an agency — anyone with genuine platform access who is
+made a BM admin. Where an agency already runs the account, partner access
+(Business settings → Partners) achieves the same thing with the token living on
+their side while account ownership stays put.
+
+Where no such profile exists, third-party platforms with pre-approved apps
+(Revealbot and similar) connect through a normal account login and cover part of
+the gap — rules on placements, custom metrics, tracker integration — at the cost
+of working inside their feature set.
+
+File the appeal linked in the block message, but run it in parallel rather than
+waiting on it.
+
+Meanwhile the automated rules in Ads Manager need no developer access at all, so
+the whole R1-R9 layer stays available. Sequence the work accordingly: rules
+first, API when an app becomes available. Nothing in the doctrine depends on the
+API existing — the API makes it faster and lets it see inside the ad set.
+
+Suggesting a workaround that evades the restriction itself — a fresh profile
+created to get around the block — is not on the table: it puts the BM and the ad
+accounts at risk of the same enforcement, which costs far more than the delay.
+
 ## Reading performance
 
 ```
