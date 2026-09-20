@@ -82,6 +82,38 @@ in a chat message — a leaked `ads_management` token lets someone else spend th
 account's budget. Rotate when someone leaves the team, and keep one token per
 environment so a compromised one can be revoked without stopping everything.
 
+## Handover checklist
+
+When someone else creates the app — an agency, a colleague, the buyer — the app
+alone grants nothing, and asking only for "the app details" produces a round
+trip. Steps 1-5 of the setup above are theirs to finish first; the two that get
+skipped are linking the app to the business and, separately, assigning it to the
+system user as an asset. Neither substitutes for the other.
+
+What comes back in plain messages, none of it secret:
+
+| Item | Why it's needed |
+|---|---|
+| App ID | identifying calls and debugging |
+| Ad account IDs | the `act_` prefixed form, all accounts in scope |
+| Business ID | BM-level reads |
+| Pixel ID | reading conversion events |
+| Account time zone | every rule schedule and insights window resolves in it |
+| Account currency | thresholds are written in one currency; a mismatch silently changes every number |
+
+The last two are not paperwork. Thresholds quoted in dollars against an account
+denominated in another currency are wrong by the exchange rate, and a rule
+scheduled for 03:00 in the wrong zone evaluates a partial day.
+
+The token itself goes through the secret store, never the conversation. Ask the
+sender to verify it first with `me/adaccounts` in the Graph API Explorer — an
+empty list means the asset assignment was missed, and catching that on their
+side saves a round trip.
+
+One setting worth asking about: if the app has `Require app secret` enabled
+under Settings → Advanced, server-side calls additionally need `appsecret_proof`
+and therefore the app secret, which travels the same way as the token.
+
 ## When developer platform access is blocked
 
 `developers.facebook.com` returning "You cannot access this service" is a
