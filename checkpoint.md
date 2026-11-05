@@ -1,12 +1,20 @@
 # Traffic checkpoint — MOM / Плоский живіт
 
-**Оновлено:** 05.11 23:35 Київ
+**Оновлено:** 06.11 00:05 Київ
 **Кабінет:** Фітнес 1, act 1009332681125045 (БМ 1186694979754184), USD, піксель 1345733194177265 / PURCHASE
 **Примітка:** файлу traffic-agent-handoff-mom-flat-belly.md у репо немає — працюю за правилами з промпту.
 
 
 
 
+
+
+## Піксель value LIVE (06.11 ~00:00)
+- u-body1 (сюди повертає WFP): код trackSingle Purchase у пікселі 1345733194177265 — /thank-you 290, /thank-you-2 490, /thank-you-3 990, /thank-you-v2 290; UAH; eventID = orderReference; дедуп через localStorage ubody_purchase_*; InitiateCheckout на кнопках. Перевірено Playwright (localStorage-запис з правильними value).
+- URL-правило Event Setup 1596396545043463 (u-body1/thank-you) → INACTIVE (щоб не дублювало). mom/nabriaky/u-body правила не чіпала.
+- Згода cookies: піксель вимкнений без згоди лише для ЄС/ЄЕЗ/UK/CH (список Vf у коді); UA та ін. — трекаються одразу. Ризик: ww-покупці з ЄС рахуються лише після «Прийняти».
+- Перша 990 (chefchoux) 05.11 ~23:45. WFP 05.11: 290×94, 490×2, 990×1, 199×8, 99×2 = 31 020 грн → $659.4.
+- ПЕРЕВІРИТИ 06.11: Meta purchase_roas / purchase value не null; Meta покупки vs WFP (просідання = консент).
 
 ## Сайт + піксель (05.11 23:50)
 - u-body2: 3 тарифи live (290 b32f576f866f8 / 490 b1566fdb3cede / 990 «Тіло мрії» b78d60c7102cb), старт 16.11. У 490 немає рядка «Топ-20 добавок»; у шапці «−85%» vs −64/−67/−75 у тарифах.
