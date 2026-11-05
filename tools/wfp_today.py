@@ -18,6 +18,7 @@ for m, s in pairs:
     if str(d.get("reasonCode")) != "1100": print(m, d.get("reasonCode"), d.get("reason")); continue
     for t in d.get("transactionList") or []:
         if t["transactionStatus"] != "Approved": continue
+        if t["amount"] == "390.00": continue  # 390 — помилкові оплати, не рахуємо (Настя 05.11)
         gross += float(t["amount"]); fee += float(t.get("fee") or 0)
         tot[(m, t["amount"])] += 1
         if t["amount"] == "290.00": hours[(int(t["createdDate"]) - t0) // 3600] += 1
