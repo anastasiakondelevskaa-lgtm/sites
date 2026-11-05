@@ -9,6 +9,7 @@
 - Правила Event Setup Tool (Purchase, без value): u-body1/thank-you 1596396545043463; mom 28431962683165796; nabriaky 1385618886462984; u-body 910504018773185. Для u-body2 правила НЕМА.
 - Код u-body2: /thank-you-2 шле Purchase value 490 UAH (ThankYouView purchaseValue); /thank-you — БЕЗ Purchase (290 не трекається кодом!). u-body1 /thank-you-v2 шле 290 з eventID.
 - План: /thank-you purchaseValue 290, /thank-you-3 990; return URL кожної кнопки WFP на свою сторінку; після запуску вимкнути URL-правило 1596396545043463 (дубль).
+- ЧЕКАЄМО: Настя скине нові крео (статика + сильний офер) → запуск через object_story_id, $13–15. Нагадування 06.11 10:00 Київ (trig_01QE13ccut3QZqav9KbScy4C).
 
 ## Розбір: чому мало 490 (05.11 ~21:45)
 - u-body2: 290 (кнопка WFP b32f576f866f8) + 490 (кнопка b1566fdb3cede → магазин chefchoux_online1).
