@@ -4,6 +4,12 @@
 **Кабінет:** Фітнес 1, act 1009332681125045 (БМ 1186694979754184), USD, піксель 1345733194177265 / PURCHASE
 **Примітка:** файлу traffic-agent-handoff-mom-flat-belly.md у репо немає — працюю за правилами з промпту.
 
+
+## 05.11 22:00 — піксель value (аудит)
+- Правила Event Setup Tool (Purchase, без value): u-body1/thank-you 1596396545043463; mom 28431962683165796; nabriaky 1385618886462984; u-body 910504018773185. Для u-body2 правила НЕМА.
+- Код u-body2: /thank-you-2 шле Purchase value 490 UAH (ThankYouView purchaseValue); /thank-you — БЕЗ Purchase (290 не трекається кодом!). u-body1 /thank-you-v2 шле 290 з eventID.
+- План: /thank-you purchaseValue 290, /thank-you-3 990; return URL кожної кнопки WFP на свою сторінку; після запуску вимкнути URL-правило 1596396545043463 (дубль).
+
 ## Розбір: чому мало 490 (05.11 ~21:45)
 - u-body2: 290 (кнопка WFP b32f576f866f8) + 490 (кнопка b1566fdb3cede → магазин chefchoux_online1).
 - u-body1: ТІЛЬКИ 290 (оплата wayforpay.com/payment/s80f3b429761f). Частина оголошень (відео-пости, напр. Inst «5») веде на u-body1 → там 490 немає взагалі.
