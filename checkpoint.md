@@ -26,6 +26,13 @@
 
 - ТАБЛИЦЯ ЗВІТУ (Google Sheets, оновлюю щоцикла): https://docs.google.com/spreadsheets/d/1gBKr599UcexfC8DEsX9NroVg96T5cN97idO-lVlG4Jw — вкладки «По днях» (sheetId 0), «Погодинно» (1), «Кабінети» (2); формули з «;». Стара Drive-копія 1BbE7b0B… і порожня «(live)» 1gxdKN0t… — не використовуються.
 
+## Перевірка u-body2 thank-you (06.11 ~23:50, Playwright)
+- /thank-you → Purchase 290 UAH, /thank-you-2 → 490, /thank-you-3 → 990 (trackSingle 1345733194177265), через ~0.3–0.6 с після завантаження; eventID = orderReference з URL (TEST123 ок), інакше UUID.
+- Повторне відкриття тієї ж сторінки — Purchase не шле (localStorage ubody_purchase_*).
+- Через ~5 с авто-редірект у t.me/intensiploskiyzhivit_bot — піксель встигає.
+- InitiateCheckout 290/490/990 на 3 кнопках — ок.
+- Кнопки WFP на u-body2 ті самі (b32f576f866f8 / b1566fdb3cede / b78d60c7102cb) — куди повертає WFP, звідси не перевірити (secure.wayforpay.com заблокований). Потрібна тестова оплата.
+
 ## Цикл 23:26 (06.11)
 - WFP: 79 покупців (290×50, 490×11, 990×18, книги×18), 39 492 грн, $840.44.
 - Meta: $537.29 → чистими +$303. Чек $10.64, CPA $6.80, ROAS 1.56.
